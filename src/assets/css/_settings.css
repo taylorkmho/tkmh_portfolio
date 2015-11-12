@@ -1,0 +1,53 @@
+$easeOutExpo:            cubic-bezier(0.19, 1, 0.22, 1);
+$row-width:              62.5rem;
+$column-gutter:          1rem;
+$sectionBaseZ:           100;
+
+$header-font-family:     Oswald, sans-serif;
+$title-font-family:      "Londrina Solid", sans-serif;
+$body-font-family:       "Source Sans Pro", "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;
+
+$c-primary: #bada55;
+$c-bg-color: #eee;
+
+* {
+  box-sizing: border-box;
+}
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+%plainlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+%reset-header-margin {
+  h1,h2,h3,h4,h5,h6 { margin: 0; }
+}
+
+@define mixin overlayColor $overlay-color, $opacity: .8 {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: color($overlay-color a($opacity));
+    z-index: $sectionBaseZ;
+  }
+  .container {
+    position: relative;
+    z-index: $sectionBaseZ + 20;
+  }
+}
+
+@lost gutter $column-gutter;

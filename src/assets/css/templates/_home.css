@@ -1,0 +1,5 @@
+section.splash {
+  background: $c-primary;
+  height: 80vh;
+  width: 100%;
+}

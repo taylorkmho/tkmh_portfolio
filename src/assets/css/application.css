@@ -1,0 +1,16 @@
+@import 'normalize.css/normalize.css';
+
+@font-face {
+  font-family: 'lg';
+  src: url('../fonts/lg.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/lg.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/lg.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/lg.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/lg.svg#lg') format('svg'); /* Legacy iOS */
+};
+
+@import 'settings';
+@import 'structure';
+@import 'animations';
+
+@import 'templates/home';

@@ -1,0 +1,32 @@
+html, body {
+  font-size: 90%;
+}
+
+@media screen and (min-width: 1200px) {
+  html, body {
+    font-size: 100%;
+  }
+}
+
+body {
+  font-family: $body-font-family;
+  background: $c-bg-color;
+  color: #222;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $header-font-family;
+  font-weight: 400;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.spritesheet {
+  display: none;
+}
