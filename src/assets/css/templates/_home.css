@@ -30,11 +30,39 @@
       letter-spacing: .125vw;
     }
     p {
+      color: #ccc;
       font-size: 1.1rem;
       line-height: 1.5;
       margin-top: $column-gutter;
       br {
         display: none;
+      }
+    }
+    a {
+      position: relative;
+      color: #ccc;
+      text-decoration: none;
+
+      transition: color 250ms $easeOutExpo;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        height: 5px;
+        width: 105%;
+        margin-left: -2.5%;
+
+        background: color($c-primary tint(20%) a(.25));
+
+        transition: height 250ms $easeOutExpo;
+      }
+      &:hover {
+        color: #fff;
+        &:after {
+          height: 100%;
+        }
       }
     }
   }
