@@ -12,6 +12,7 @@
     padding: $column-gutter calc($column-gutter * 2);
 
     color: #fff;
+
     h1, h4, p {
       margin: 0;
       transition: font 1500ms $easeOutExpo;
@@ -30,7 +31,11 @@
     }
     p {
       font-size: 1.1rem;
-      margin-top: calc($column-gutter*4);
+      line-height: 1.5;
+      margin-top: $column-gutter;
+      br {
+        display: none;
+      }
     }
   }
 }
@@ -39,13 +44,40 @@
   .splash {
     &__container {
       h1 {
-        font: 6rem/1 $title-font-family;
+        font: 5rem/1 $title-font-family;
       }
       h4 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         letter-spacing: .1rem;
       }
     }
   }
 
+}
+
+@media screen and (min-width: 1000px) {
+  .splash {
+    .flexbox &__container {
+      display: flex;
+      &__column {
+        lost-column: 1/2 2;
+        &:nth-of-type(1) {
+          h1, h4 {
+            max-width: 540px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+        &:nth-of-type(2) {
+          display: flex;
+          align-self: center;
+        }
+        p {
+          display: block;
+          margin: 0 auto;
+          br { display: initial; }
+        }
+      }
+    }
+  }
 }
