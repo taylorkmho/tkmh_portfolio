@@ -19,6 +19,8 @@
     h1 {
       font: 10vw/1 $title-font-family;
       margin-bottom: $column-gutter;
+      font-weight: 800;
+      font-style: italic;
     }
     h4 {
       color: $c-primary;

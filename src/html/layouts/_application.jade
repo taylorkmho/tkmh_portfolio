@@ -1,4 +1,4 @@
-//- include ../mixins/_mixins.jade
+include ../_modules/_mixins.jade
 block vars
   - var bodyTemplate = "default"
   - var pageTitle = ""
@@ -17,7 +17,9 @@ html
     block additionalHead
 
   body(data-template="#{bodyTemplate}")
+    .spritesheet
+      include ../../../tmp/sprite.svg
     //- include ../shared/_google-analytics
-    block header
+    include ../shared/_navigation
     main.main
       block content

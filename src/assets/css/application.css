@@ -13,4 +13,6 @@
 @import '_structure.css';
 /* @import '_animations.css'; */
 
+@import 'components/_navigation.css';
+
 @import 'templates/_home.css';
