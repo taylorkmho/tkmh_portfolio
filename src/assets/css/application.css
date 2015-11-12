@@ -13,6 +13,8 @@
 @import '_structure.css';
 /* @import '_animations.css'; */
 
+@import 'modules/_social-media.css';
+
 @import 'components/_navigation.css';
 
 @import 'templates/_home.css';

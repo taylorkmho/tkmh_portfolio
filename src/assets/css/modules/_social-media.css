@@ -1,0 +1,23 @@
+.social-media {
+  display: flex;
+  list-style: none;
+  margin: $column-gutter auto;
+  padding: 0;
+  li {
+    display: inline-block;
+    margin: 0 calc($column-gutter / 2);
+  }
+  a {
+    &:hover svg use {
+      fill: #fff;
+    }
+  }
+  svg {
+    height: 2rem;
+    width: auto;
+    use {
+      fill: color($c-primary shade(30%));
+      transition: fill 500ms $easeOutExpo;
+    }
+  }
+}

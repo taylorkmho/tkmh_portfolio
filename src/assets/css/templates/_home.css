@@ -42,28 +42,6 @@
       position: relative;
       color: #ccc;
       text-decoration: none;
-
-      transition: color 250ms $easeOutExpo;
-      &:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-
-        height: 5px;
-        width: 105%;
-        margin-left: -2.5%;
-
-        background: color($c-primary tint(20%) a(.25));
-
-        transition: height 250ms $easeOutExpo;
-      }
-      &:hover {
-        color: #fff;
-        &:after {
-          height: 100%;
-        }
-      }
     }
   }
 }
@@ -99,11 +77,35 @@
         &:nth-of-type(2) {
           display: flex;
           align-self: center;
+          flex-direction: column;
         }
         p {
           display: block;
           margin: 0 auto;
           br { display: initial; }
+          a {
+            transition: color 250ms $easeOutExpo;
+            &:after {
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: 0;
+
+              height: 5px;
+              width: 105%;
+              margin-left: -2.5%;
+
+              background: color($c-primary tint(20%) a(.25));
+
+              transition: height 250ms $easeOutExpo;
+            }
+            &:hover {
+              color: #fff;
+              &:after {
+                height: 100%;
+              }
+            }
+          }
         }
       }
     }
