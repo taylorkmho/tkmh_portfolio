@@ -1,0 +1,2 @@
+$.fn.equalHeights=function(i){return $(this).each(function(){var i=0;$(this).children().each(function(e){$(this).css("min-height","initial"),$(this).innerHeight()>i&&(i=$(this).innerHeight())}),$(this).children().css({"min-height":i})}),this};var setHeights=function(){$("[data-equalheights]").length&&($("[data-equalheights]").equalHeights(),console.log("equalHeights fired!"))},id;setHeights(),$(window).resize(function(){clearTimeout(id),id=setTimeout(setHeights,500)});
+//# sourceMappingURL=maps/app.js.map
