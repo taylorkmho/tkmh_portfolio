@@ -35,3 +35,8 @@ img {
 .spritesheet {
   display: none;
 }
+
+::selection {
+  background: color(#fff a(.5));
+  color: #222;
+}
