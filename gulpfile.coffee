@@ -159,8 +159,6 @@ gulp.task 'html', ['svgSprites'], ->
     .pipe gulp.dest(paths.dist.html)
 
 
-
-
 gulp.task 'css', ->
   postCSSProcessors = [
     postcssimport from: "#{paths.src.css}/app.css"
@@ -283,6 +281,9 @@ gulp.task 'favicon-ico', ->
   gulp.src(["#{paths.src.images}/favicon/*.ico"])
     .pipe gulp.dest(paths.base.dist)
 
+gulp.task 'cname', ->
+  gulp.src (["#{paths.base.src}/CNAME"])
+    .pipe gulp.dest(paths.base.dist)
 
 gulp.task 'clean', ->
   deleteFolderRecursive(paths.base.dist)
