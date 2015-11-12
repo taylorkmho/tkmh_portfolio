@@ -502,6 +502,39 @@ img {
 }
 /* @import '_animations.css'; */
 
+.social-media {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 16px auto;
+  margin: 1rem auto;
+  padding: 0;
+}
+
+.social-media li {
+  display: inline-block;
+  margin: 0 8px;
+  margin: 0 0.5rem;
+}
+
+.social-media a:hover svg use {
+  fill: #fff;
+}
+
+.social-media svg {
+  height: 32px;
+  height: 2rem;
+  width: auto;
+}
+
+.social-media svg use {
+  fill: rgb(21, 47, 59);
+  -webkit-transition: fill 500ms cubic-bezier(0.19, 1, 0.22, 1);
+          transition: fill 500ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
 .navigation {
   position: absolute;
   top: 0;
@@ -591,30 +624,6 @@ img {
   position: relative;
   color: #ccc;
   text-decoration: none;
-  -webkit-transition: color 250ms cubic-bezier(0.19, 1, 0.22, 1);
-          transition: color 250ms cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.splash__container a:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 5px;
-  width: 105%;
-  margin-left: -2.5%;
-  background: #4B6977;
-  background: rgba(75, 105, 119, 0.25);
-  -webkit-transition: height 250ms cubic-bezier(0.19, 1, 0.22, 1);
-          transition: height 250ms cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.splash__container a:hover {
-  color: #fff;
-}
-
-.splash__container a:hover:after {
-  height: 100%;
 }
 
 @media screen and (min-width: 640px) {
@@ -665,6 +674,11 @@ img {
     -webkit-align-self: center;
         -ms-flex-item-align: center;
             align-self: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .flexbox .splash__container__column p {
     display: block;
@@ -672,6 +686,29 @@ img {
   }
   .flexbox .splash__container__column p br {
     display: initial;
+  }
+  .flexbox .splash__container__column p a {
+    -webkit-transition: color 250ms cubic-bezier(0.19, 1, 0.22, 1);
+            transition: color 250ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .flexbox .splash__container__column p a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    width: 105%;
+    margin-left: -2.5%;
+    background: #4B6977;
+    background: rgba(75, 105, 119, 0.25);
+    -webkit-transition: height 250ms cubic-bezier(0.19, 1, 0.22, 1);
+            transition: height 250ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .flexbox .splash__container__column p a:hover {
+    color: #fff;
+  }
+  .flexbox .splash__container__column p a:hover:after {
+    height: 100%;
   }
 }
 /*# sourceMappingURL=maps/app.css.map */
