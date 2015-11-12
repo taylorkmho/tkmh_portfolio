@@ -13,6 +13,7 @@ filter            = require 'gulp-filter'
 foreach           = require 'gulp-foreach'
 jade              = require 'gulp-jade'
 jshint            = require 'gulp-jshint'
+ghPages           = require 'gulp-gh-pages'
 gulpIf            = require 'gulp-if'
 imagemin          = require 'gulp-imagemin'
 imageResize       = require 'gulp-image-resize'
@@ -139,6 +140,10 @@ onWarning = (error) -> handleError.call(this, 'warning', error)
 ######################
 # Tasks
 ######################
+
+gulp.task 'deploy', ->
+  gulp.src "./dist/**/*"
+    .pipe ghPages()
 
 gulp.task 'static-files', ->
   gulp.src "#{paths.base.src}/*.*"
