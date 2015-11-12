@@ -3,12 +3,12 @@ $row-width:              62.5rem;
 $column-gutter:          1rem;
 $sectionBaseZ:           100;
 
-$header-font-family:     Oswald, sans-serif;
-$title-font-family:      "Londrina Solid", sans-serif;
-$body-font-family:       "Source Sans Pro", "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;
+$body-font-family:       "adelle-sans", "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;
+$title-font-family:      "kepler-std-extended-display", serif;
+$header-font-family:     $body-font-family;
 
-$c-primary: #bada55;
-$c-bg-color: #eee;
+$c-primary:              #1E4355;
+$c-bg-color:             #5A5856;
 
 * {
   box-sizing: border-box;
@@ -32,22 +32,5 @@ $c-bg-color: #eee;
   h1,h2,h3,h4,h5,h6 { margin: 0; }
 }
 
-@define mixin overlayColor $overlay-color, $opacity: .8 {
-  position: relative;
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: color($overlay-color a($opacity));
-    z-index: $sectionBaseZ;
-  }
-  .container {
-    position: relative;
-    z-index: $sectionBaseZ + 20;
-  }
-}
 
 @lost gutter $column-gutter;
