@@ -9,8 +9,8 @@
        url('../fonts/lg.svg#lg') format('svg'); /* Legacy iOS */
 };
 
-@import 'settings';
-@import 'structure';
-@import 'animations';
+@import '_settings.css';
+@import '_structure.css';
+/* @import '_animations.css'; */
 
-@import 'templates/home';
+@import 'templates/_home.css';

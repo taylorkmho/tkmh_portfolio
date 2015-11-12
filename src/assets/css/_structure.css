@@ -8,6 +8,11 @@ html, body {
   }
 }
 
+html, body, main.main {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   font-family: $body-font-family;
   background: $c-bg-color;

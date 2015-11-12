@@ -1,5 +1,49 @@
-section.splash {
-  background: $c-primary;
-  height: 80vh;
+.splash {
   width: 100%;
+  height: 100%;
+  background: $c-bg-color;
+  &__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    padding: $column-gutter calc($column-gutter * 2);
+
+    color: #fff;
+    h1, h4, p {
+      margin: 0;
+      transition: font 1500ms $easeOutExpo;
+    }
+    h1 {
+      font: 10vw/1 $title-font-family;
+      margin-bottom: $column-gutter;
+    }
+    h4 {
+      color: $c-primary;
+      font-size: 5vw;
+      font-weight: 600;
+      letter-spacing: .125vw;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-top: calc($column-gutter*4);
+    }
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .splash {
+    &__container {
+      h1 {
+        font: 6rem/1 $title-font-family;
+      }
+      h4 {
+        font-size: 2.5rem;
+        letter-spacing: .1rem;
+      }
+    }
+  }
+
 }
