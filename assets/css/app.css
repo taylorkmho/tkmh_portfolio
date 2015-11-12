@@ -488,6 +488,18 @@ img {
 .spritesheet {
   display: none;
 }
+
+::-moz-selection {
+  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.5);
+  color: #222;
+}
+
+::selection {
+  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.5);
+  color: #222;
+}
 /* @import '_animations.css'; */
 
 .navigation {
