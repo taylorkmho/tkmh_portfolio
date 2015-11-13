@@ -149,7 +149,7 @@ gulp.task 'static-files', ->
   gulp.src "#{paths.base.src}/*.*"
     .pipe gulp.dest(paths.base.dist)
 
-gulp.task 'html', ['svgSprites'], ->
+gulp.task 'html', ['svgSprites','cname'], ->
   gulp.src "#{paths.src.html}/**/[^_]*.jade"
     # .pipe changed(paths.src.html)
     # .pipe data((file) -> requireUncached paths.src.data + '/fsadfasd.json' )
