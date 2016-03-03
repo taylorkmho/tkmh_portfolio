@@ -1,0 +1,11 @@
+@import 'normalize.css/normalize.css';
+
+@import '_settings.css';
+@import '_structure.css';
+/* @import '_animations.css'; */
+
+@import 'modules/_social-media.css';
+
+@import 'components/_navigation.css';
+
+@import 'templates/_home.css';
