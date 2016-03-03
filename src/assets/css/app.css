@@ -7,5 +7,4 @@
 @import 'modules/_social-media.css';
 
 @import 'components/_navigation.css';
-
-@import 'templates/_home.css';
+@import 'components/_main.css';

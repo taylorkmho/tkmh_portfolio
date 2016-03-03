@@ -4,16 +4,11 @@ block vars
   - var bodyTemplate = "home"
 
 block content
-  section.splash
-    .splash__container
-      .splash__container__column
-        h1 Life is about staying fresh.
-        h4 A web developer with a knack for learning new things.
-      .splash__container__column
-        p From web development to video production to motion graphics. <br>I constantly find myself in new fields of creativity. <br>I believe it takes understanding <em>all sorts of skills</em> to innovate.
-        +social-media
-          +social-media__block("icon-codepen", "0 0 1 1", "http://codepen.io/tellaho")
-          +social-media__block("icon-linkedin", "0 0 1 1", "https://www.linkedin.com/in/taylorho")
-          +social-media__block("icon-twitter", "0 0 1 1", "http://twitter.com/tkmh")
-          +social-media__block("icon-instagram", "0 0 1 1", "http://instagram.com/tellaho")
-          +social-media__block("icon-facebook", "0 0 1 1", "http://facebook.com/taylor.ho")
+  section.main
+    .main__column.splash
+    .main__column.content
+      h2 Aloha no, I&rsquo;m Taylor Ho.
+      h4 I am a front-end web developer and production professional with over five years of <strike>polished</strike> experience.
+      //- It has been my goal to create viable products on the web for freelance and agency clients alike. Intuitive and usable user interface experiences are always need-to-have&rsquo;s, with technology and design as my tools.
+      - for (var i=0; i<20; i++)
+        h1 right column

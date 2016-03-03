@@ -32,11 +32,7 @@ img {
   vertical-align: middle;
 }
 
-.spritesheet {
-  display: none;
-}
-
-::selection {
+/* ::selection {
   background: color(#fff a(.5));
   color: #222;
-}
+} */
