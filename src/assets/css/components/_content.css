@@ -1,22 +1,27 @@
 .content {
   line-height: 1.75;
-  h2 {
-    font-size: 150%;
-    margin: calc($column-gutter*8) 0 0;
-  }
-  h4 {
+  > h3 {
     font-size: 125%;
-    margin: 0 0 calc($column-gutter*8);
+    margin: 0;
+    &:first-of-type {
+      margin-top: calc($column-gutter*2);
+    }
+    &:last-of-type {
+      margin-bottom: calc($column-gutter*4);
+    }
   }
 }
 
 @media screen and (min-width: $mq-split) {
   .content {
-    h2 {
-      font-size: 250%;
-    }
-    h4 {
+    > h3 {
       font-size: 150%;
+      &:first-of-type {
+        margin-top: calc($column-gutter*8);
+      }
+      &:last-of-type {
+        margin-bottom: calc($column-gutter*8);
+      }
     }
   }
 }

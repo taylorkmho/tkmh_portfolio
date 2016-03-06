@@ -6,11 +6,19 @@
 }
 
 .project {
+  margin-bottom: calc($column-gutter);
   &__thumb {
     display: block;
     height: 0;
     padding-bottom: 50%;
     background-size: cover;
     background-position: center center;
+  }
+  &__text {
+    text-decoration: none;
+    color: $c-body-font;
+    h4 {
+      margin: calc($column-gutter*.5) 0;
+    }
   }
 }
