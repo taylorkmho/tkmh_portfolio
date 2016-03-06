@@ -1,18 +1,17 @@
 .content {
-  padding-top: 2rem;
   line-height: 1.75;
   h2 {
     font-size: 150%;
+    margin: calc($column-gutter*8) 0 0;
   }
   h4 {
     font-size: 125%;
+    margin: 0 0 calc($column-gutter*8);
   }
 }
 
 @media screen and (min-width: $mq-split) {
   .content {
-    padding-top: 8rem;
-    padding-bottom: 4rem;
     h2 {
       font-size: 250%;
     }
