@@ -5,6 +5,7 @@
 /* @import '_animations.css'; */
 
 @import 'modules/_social-media.css';
+@import 'modules/_projects.css';
 
-@import 'components/_navigation.css';
-@import 'components/_main.css';
+@import 'components/_splash.css';
+@import 'components/_content.css';
