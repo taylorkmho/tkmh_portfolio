@@ -1,0 +1,16 @@
+.projects {
+  lost-utility: clearfix;
+  &__project {
+    lost-column: 1/2 2;
+  }
+}
+
+.project {
+  &__thumb {
+    display: block;
+    height: 0;
+    padding-bottom: 50%;
+    background-size: cover;
+    background-position: center center;
+  }
+}
