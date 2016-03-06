@@ -1,7 +1,7 @@
 .projects {
   lost-utility: clearfix;
   &__project {
-    lost-column: 1/2 2;
+    lost-column: 1/2 2 2rem;
   }
 }
 
@@ -10,7 +10,7 @@
   &__thumb {
     display: block;
     height: 0;
-    padding-bottom: 50%;
+    padding-bottom: 66.6%;
     background-size: cover;
     background-position: center center;
   }
