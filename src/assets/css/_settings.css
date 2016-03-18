@@ -8,7 +8,8 @@ $body-font-family:       "adelle-sans", "Helvetica Neue", Arial, Helvetica, Verd
 $title-font-family:      "kepler-std-extended-display", serif;
 $header-font-family:     $body-font-family;
 
-$c-primary:              #1E4355;
+$c-primary:              #039ca9;
+$c-secondary:            #6b5d57;
 $c-bg-color:             #eee;
 $c-body-font:            #222;
 

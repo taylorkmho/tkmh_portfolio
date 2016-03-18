@@ -1,0 +1,13 @@
+.btn {
+  &--primary {
+    background-color: #fff;
+    padding: calc($column-gutter/4) calc($column-gutter/2);
+    border-radius: 4px;
+    border: 2px solid transparent;
+    &:hover {
+      background-color: transparent;
+      color: #fff !important;
+      border: 2px solid #fff;
+    }
+  }
+}
