@@ -9,4 +9,13 @@ block content
     .main__column.content
       h3 Aloha no, I&rsquo;m Taylor Ho.
       h3 I am a front-end developer from the Aloha State with over five years of <strike>polished</strike> experience. Making things for people to enjoy on the web is what I do best.
-      include _modules/_projects.jade
+      .projects
+        - for (var i=0; i<6; i++)
+          .projects__project.project(style="background-color: #02B770;")
+            .project__copy.copy
+              include ../assets/images/svg/logo-jjd.svg
+              p.copy__tagline A restaurant website + web app for drawing things on this guy&rsquo;s mug.
+              ul.copy__links
+                li: a.btn.btn--primary(href="http://jjdolans.com" target="_blank" style="color: #02B770;") case study
+                li: a(href="http://jjdolans.com" target="_blank") view site
+            .project__thumb.project__thumb--mobile(style="background-image: url('assets/images/projects/jjdolans-mobile.jpg');")
