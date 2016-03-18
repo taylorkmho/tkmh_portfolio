@@ -20,11 +20,20 @@
     right: calc(2*$column-gutter);
     display: block;
     width: 20%;
-    height: calc(100% - 2*$column-gutter);
+    height: calc(100% - 4*$column-gutter);
     background-size: cover;
     background-position: top center;
     &--mobile {
-
+      &:after {
+        content: "";
+        background-image: url("../../assets/images/mockup-iphone.png");
+        background-size: 100% auto;
+        position: absolute;
+        top: -40px;
+        left: -12px;
+        width: 118%;
+        height: calc(100% + 40px);
+      }
     }
   }
   &__copy {
