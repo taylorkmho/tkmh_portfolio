@@ -9,6 +9,7 @@ var gulp              = require('gulp'),
     postcssEasyImport = require('postcss-easy-import'),
     postcssNested     = require('postcss-nested'),
     postcssPXtoREM    = require('postcss-pxtorem'),
+    postcssColorFunc  = require('postcss-color-function'),
     postcssSimpleVars = require('postcss-simple-vars');
 
 gulp.task('css', function() {
@@ -18,6 +19,7 @@ gulp.task('css', function() {
         postcssNested,
         postcssPXtoREM,
         postcssSimpleVars,
+        postcssColorFunc,
         autoprefixer({ browsers: browserReqs }),
         lost
       ];
