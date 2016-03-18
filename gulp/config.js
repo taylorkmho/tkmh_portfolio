@@ -5,28 +5,27 @@
 
 var paths = {
   base: {
-    root: '',
-    src: './src/',
-    dist: './dist/',
-    tmp: './tmp/'
+    root:     '',
+    src:      './src/',
+    dist:     './dist/',
+    tmp:      './tmp/'
   }
 };
 
 paths.src = {
-  css: paths.base.src + 'assets/css',
-  // data: paths.base.src + 'data',
-  // fonts: paths.base.src + 'assets/fonts',
-  js: paths.base.src + 'assets/js',
-  images: paths.base.src + 'assets/images',
-  html: paths.base.src + 'html'
+  css:        paths.base.src + 'assets/css',
+  js:         paths.base.src + 'assets/js',
+  images:     paths.base.src + 'assets/images',
+  data:       paths.base.src + 'assets/data',
+  html:       paths.base.src + 'html'
 };
 
 paths.dist = {
-  css: paths.base.dist + 'assets/css',
-  // fonts: paths.base.dist + 'assets/fonts',
-  js: paths.base.dist + 'assets/js',
-  images: paths.base.dist + 'assets/images',
-  html: paths.base.dist + ''
+  css:        paths.base.dist + 'assets/css',
+  fonts:      paths.base.dist + 'assets/fonts',
+  js:         paths.base.dist + 'assets/js',
+  images:     paths.base.dist + 'assets/images',
+  html:       paths.base.dist + ''
 };
 
 /*
