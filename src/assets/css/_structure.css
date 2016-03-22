@@ -32,10 +32,10 @@ img {
   vertical-align: middle;
 }
 
-/* ::selection {
-  background: color(#fff a(.5));
-  color: #222;
-} */
+::selection {
+  background: color(#333 a(.75));
+  color: #aaa;
+}
 
 .main {
   &__column {
