@@ -1,0 +1,14 @@
+{
+  "projects": [
+    {
+      "name": "JJ Dolan&rsquo;s",
+      "abbr": "jjd",
+      "hexColor": "#02B770",
+      "description": "A restaurant website + web app for drawing things on this guy&rsquo;s mug.",
+      "url": "http://jjdolans.com",
+      "caseStudy": null,
+      "thumbSize": "mobile",
+      "thumbURL": "jjdolans-mobile.jpg"
+    }
+  ]
+}

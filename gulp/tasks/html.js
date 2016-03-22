@@ -1,11 +1,17 @@
 var gulp         = require('gulp'),
+    data         = require('gulp-data'),
+    fs           = require('fs'),
     paths        = require('../config').paths,
     errorHandler = require('../config').swallowError,
     jade         = require ('gulp-jade');
 
 gulp.task('html', function() {
   return gulp.src(paths.src.html + "/**/[^_]*.jade")
-    .pipe(jade()).on('error', errorHandler)
+    .pipe(data(function(file) {
+      // return paths.src.data + "/projects.json";
+      return JSON.parse(fs.readFileSync(paths.src.data + '/projects.json'));
+    }))
+    .pipe(jade())
+    .on('error', errorHandler)
     .pipe(gulp.dest(paths.dist.html))
-    .on('error', errorHandler);
 });
