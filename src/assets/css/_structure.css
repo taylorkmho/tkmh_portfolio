@@ -46,9 +46,6 @@ img {
       padding-bottom: 2rem;
     }
   }
-  h2, p {
-    margin: 0;
-  }
 }
 
 @media screen and (min-width: $mq-split) {
