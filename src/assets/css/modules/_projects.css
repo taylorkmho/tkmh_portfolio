@@ -16,14 +16,31 @@
   background-color: $c-secondary;
   &__thumb {
     position: absolute;
-    bottom: 0;
-    right: calc(2*$column-gutter);
     display: block;
-    width: 20%;
-    height: calc(90%);
     background-size: cover;
     background-position: top center;
-    &--mobile {
+    [data-format="desktop"] & {
+      bottom: 0;
+      right: 1rem;
+      width: 40%;
+      height: calc(100%*(2/3));
+      &:after {
+        content: "";
+        background-image: url("../../assets/images/mockup-desktop.png");
+        background-size: 100% auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 110%;
+        transform: scale(1.07) translateY(-6.5%);
+      }
+    }
+    [data-format="mobile"] & {
+      bottom: 0;
+      right: calc(2*$column-gutter);
+      width: 20%;
+      height: 90%;
       &:after {
         content: "";
         background-image: url("../../assets/images/mockup-iphone.png");
@@ -39,6 +56,11 @@
   }
   &__copy {
     padding: calc($column-gutter*2);
-    padding-right: 30%;
+    [data-format="desktop"] & {
+      padding-right: 47.5%;
+    }
+    [data-format="mobile"] & {
+      padding-right: 30%;
+    }
   }
 }
