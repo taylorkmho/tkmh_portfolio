@@ -8,7 +8,7 @@ block content
     .main__column.splash
     .main__column.content
       h3 Aloha no, I&rsquo;m Taylor Ho.
-      h3 I am a front-end developer from the Aloha State with over five years of <strike>polished</strike> experience. Making enjoyable things on  the web is what I do best.
+      h3 I am a front-end developer in San Francisco (from the Aloha State) with over five years of experience. Making enjoyable things on  the web is what I do best.
       .projects
         each project in projects
           .projects__project.project(style="background-color: #{project.hexColor};")
@@ -20,6 +20,6 @@ block content
                   li: a.btn.btn--primary(href=project.caseStudy target="_blank" style="color: #{project.hexColor};") case study
                 li: a(href=project.url target="_blank") view site
             - if (project.thumbSize === "mobile")
-              .project__thumb.project__thumb--mobile(style="background-image: url('assets/images/projects/#{project.thumbURL}');")
+              .project__thumb.project__thumb--mobile(style="background-image: url('assets/images/projects/#{project.abbr}-mobile.jpg');")
             - else if (project.thumbSize === "desktop")
-              .project__thumb.project__thumb--desktop(style="background-image: url('assets/images/projects/#{project.thumbURL}');")
+              .project__thumb.project__thumb--desktop(style="background-image: url('assets/images/projects/#{project.abbr}-desktop.jpg');")

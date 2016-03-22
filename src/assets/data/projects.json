@@ -4,11 +4,28 @@
       "name": "JJ Dolan&rsquo;s",
       "abbr": "jjd",
       "hexColor": "#02B770",
-      "description": "A restaurant website + web app for drawing things on this guy&rsquo;s mug.",
+      "description": "A restaurant website + web app for drawing things on this guy&rsquo;s funny mug.",
       "url": "http://jjdolans.com",
       "caseStudy": null,
-      "thumbSize": "mobile",
-      "thumbURL": "jjdolans-mobile.jpg"
+      "thumbSize": "mobile"
+    },
+    {
+      "name": "Hallowbaloo",
+      "abbr": "hbl",
+      "hexColor": "#F3BA25",
+      "description": "A music festival website optimized to display an array of typography, photography, and vector artwork.",
+      "url": "http://hallowbaloo.com/2015",
+      "caseStudy": null,
+      "thumbSize": "mobile"
+    },
+    {
+      "name": "Blake Entertainment",
+      "abbr": "bla",
+      "hexColor": "#222",
+      "description": "A branding website for Hawaii-based event planner.",
+      "url": "http://blakeentertainmenthawaii.com",
+      "caseStudy": null,
+      "thumbSize": "desktop"
     }
   ]
 }
