@@ -1,9 +1,48 @@
 .intro {
-  padding: calc($column-gutter*8) calc($column-gutter*2);
-  h2 {
-    margin-top: 0;
+  lost-center: $row-width--inner;
+  padding: calc($column-gutter*4) $column-gutter;
+  &__aside {
+    h2 {
+      position: relative;
+      margin: 0;
+      font-size: 3.25rem;
+      letter-spacing: .25rem;
+      br {
+        display: none;
+      }
+    }
   }
-  h3 {
-    margin-bottom: 0;
+  &__main {
+    p {
+      font-size: 1.25rem;
+      &:first-of-type {
+        margin-top: 0;
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .intro {
+    &__aside, &__main {
+      lost-column: 1/2 2;
+    }
+    &__aside h2 {
+      br {
+        display: inline;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -2rem;
+        left: 0;
+        height: .5rem;
+        width: 6rem;
+        background: #ccc;
+      }
+    }
   }
 }

@@ -2,6 +2,9 @@ $easeOutExpo:            cubic-bezier(0.19, 1, 0.22, 1);
 $column-gutter:          1rem;
 $sectionBaseZ:           100;
 
+$row-width:              1400px;
+$row-width--inner:       920px;
+
 $mq-split:               920px;
 
 $body-font-family:       "ff-tisa-web-pro", sans-serif;
@@ -9,7 +12,7 @@ $header-font-family:      "museo-sans", "Helvetica Neue", Arial, Helvetica, Verd
 
 $c-primary:              #039ca9;
 $c-secondary:            #6b5d57;
-$c-bg-color:             #eee;
+$c-bg-color:             #fff;
 $c-body-font:            #222;
 
 * {
@@ -29,10 +32,5 @@ $c-body-font:            #222;
   margin: 0;
   padding: 0;
 }
-
-%reset-header-margin {
-  h1,h2,h3,h4,h5,h6 { margin: 0; }
-}
-
 
 @lost gutter $column-gutter;

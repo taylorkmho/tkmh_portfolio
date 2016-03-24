@@ -1,3 +1,9 @@
 .splash {
-  background-color: $c-secondary;
+  display: flex;
+  min-height: 420px;
+  height: 80vh;
+  align-items: center;
+  h2 {
+    margin: 0;
+  }
 }
