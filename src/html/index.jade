@@ -4,27 +4,26 @@ block vars
   - var bodyTemplate = "home"
 
 block content
-  section.main
-    .main__column.splash
-    .main__column.content
-      section.intro
-        h2 Aloha no, I&rsquo;m Taylor Ho.
-        h3 I am a front-end developer in San Francisco with over five years of experience. From the Aloha State, entertaining people with  things on the web is what I do best.
-      section.projects
-        each project in projects
-          .projects__project.project(style="background-color: #{project.hexColor};" data-format=project.thumbSize)
-            .project__copy.copy
-              img.copy__logo(src="assets/images/svg/logo-#{project.abbr}.svg")
-              p.copy__tagline!= project.description
-              ul.copy__links
-                - if (project.caseStudy !== null)
-                  li: a.btn.btn--primary(href=project.caseStudy target="_blank" style="color: #{project.hexColor};") case study
-                li: a(href=project.url target="_blank") view site
-            - if (project.thumbSize === "mobile")
-              .project__thumb(style="background-image: url('assets/images/projects/#{project.abbr}-mobile.jpg');")
-            - else if (project.thumbSize === "desktop")
-              .project__thumb(style="background-image: url('assets/images/projects/#{project.abbr}-desktop.jpg');")
-      section.writing
-        .writing__article
-          h2 Here are 10 Things I learned at Epicurrence: The Montues
-          h4 8 min read
+  section.splash
+  section.intro
+    aside
+      h2 I BUILD WEB APPS + SITES FOR A LIVING
+    main
+  section.projects
+    each project in projects
+      .projects__project.project(style="background-color: #{project.hexColor};" data-format=project.thumbSize)
+        .project__copy.copy
+          img.copy__logo(src="assets/images/svg/logo-#{project.abbr}.svg")
+          p.copy__tagline!= project.description
+          ul.copy__links
+            - if (project.caseStudy !== null)
+              li: a.btn.btn--primary(href=project.caseStudy target="_blank" style="color: #{project.hexColor};") case study
+            li: a(href=project.url target="_blank") view site
+        - if (project.thumbSize === "mobile")
+          .project__thumb(style="background-image: url('assets/images/projects/#{project.abbr}-mobile.jpg');")
+        - else if (project.thumbSize === "desktop")
+          .project__thumb(style="background-image: url('assets/images/projects/#{project.abbr}-desktop.jpg');")
+  section.writing
+    .writing__article
+      h2 Here are 10 Things I learned at Epicurrence: The Montues
+      h4 8 min read
