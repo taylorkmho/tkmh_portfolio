@@ -4,9 +4,8 @@ $sectionBaseZ:           100;
 
 $mq-split:               920px;
 
-$body-font-family:       "adelle-sans", "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;
-$title-font-family:      "kepler-std-extended-display", serif;
-$header-font-family:     $body-font-family;
+$body-font-family:       "ff-tisa-web-pro", sans-serif;
+$header-font-family:      "museo-sans", "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;
 
 $c-primary:              #039ca9;
 $c-secondary:            #6b5d57;
