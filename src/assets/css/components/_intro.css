@@ -1,0 +1,9 @@
+.intro {
+  padding: calc($column-gutter*8) calc($column-gutter*2);
+  h2 {
+    margin-top: 0;
+  }
+  h3 {
+    margin-bottom: 0;
+  }
+}

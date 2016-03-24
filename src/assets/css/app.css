@@ -8,6 +8,9 @@
 @import 'modules/_projects.css';
 @import 'modules/_copy.css';
 
+@import 'components/_main.css';
 @import 'components/_splash.css';
 @import 'components/_content.css';
+@import 'components/_intro.css';
+
 @import 'components/_buttons.css';

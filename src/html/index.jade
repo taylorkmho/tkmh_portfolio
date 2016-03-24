@@ -7,9 +7,10 @@ block content
   section.main
     .main__column.splash
     .main__column.content
-      h2 Aloha no, I&rsquo;m Taylor Ho.
-      h3 I am a front-end developer in San Francisco with over five years of experience. From the Aloha State, entertaining people with  things on the web is what I do best.
-      .projects
+      section.intro
+        h2 Aloha no, I&rsquo;m Taylor Ho.
+        h3 I am a front-end developer in San Francisco with over five years of experience. From the Aloha State, entertaining people with  things on the web is what I do best.
+      section.projects
         each project in projects
           .projects__project.project(style="background-color: #{project.hexColor};" data-format=project.thumbSize)
             .project__copy.copy
@@ -23,3 +24,7 @@ block content
               .project__thumb(style="background-image: url('assets/images/projects/#{project.abbr}-mobile.jpg');")
             - else if (project.thumbSize === "desktop")
               .project__thumb(style="background-image: url('assets/images/projects/#{project.abbr}-desktop.jpg');")
+      section.writing
+        .writing__article
+          h2 Here are 10 Things I learned at Epicurrence: The Montues
+          h4 8 min read
