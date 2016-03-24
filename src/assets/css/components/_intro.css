@@ -1,11 +1,11 @@
 .intro {
   lost-center: $row-width--inner;
-  padding: calc($column-gutter*4) $column-gutter;
+  padding: calc($column-gutter*3) $column-gutter;
   &__aside {
     h2 {
       position: relative;
       margin: 0;
-      font-size: 3.25rem;
+      font-size: 3rem;
       letter-spacing: .25rem;
       br {
         display: none;

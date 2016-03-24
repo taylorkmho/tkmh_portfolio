@@ -23,6 +23,6 @@ gulp.task('js', function() {
 
   gulp.src(bower())
     .pipe(filter('*.{js,map}'))
-    .pipe(gulp.dest(paths.dist.js))
+    .pipe(gulp.dest(paths.dist.js+'/vendor'))
     .on('error', errorHandler);
 });

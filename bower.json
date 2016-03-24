@@ -18,7 +18,8 @@
     "fastclick": "~1.0.6",
     "jquery": "~2.1.4",
     "modernizr": "~2.8.3",
-    "normalize.css": "~3.0.3"
+    "normalize.css": "~3.0.3",
+    "flickity": "^1.2.0"
   },
   "overrides": {
     "modernizr": {
@@ -26,6 +27,9 @@
     },
     "jquery": {
       "main": "dist/jquery.min.js"
+    },
+    "flickity": {
+      "main": "dist/flickity.pkgd.min.js"
     }
   }
 }

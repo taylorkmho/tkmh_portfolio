@@ -14,18 +14,18 @@ block content
         p Based in San Francisco, I am a professional front-end web developer with a love for creating enjoyable digital experiences. <em>I am currently looking for new opportunities</em>.
   section.projects
     each project in projects
-      .projects__project.project(style="background-color: #{project.hexColor};" data-format=project.thumbSize)
+      .projects__project.project(data-format=project.thumbSize)
         .project__copy.copy
           img.copy__logo(src="assets/images/svg/logo-#{project.abbr}.svg")
-          p.copy__tagline!= project.description
+          //- p.copy__tagline!= project.description
           ul.copy__links
             - if (project.caseStudy !== null)
               li: a.btn.btn--primary(href=project.caseStudy target="_blank" style="color: #{project.hexColor};") case study
             li: a(href=project.url target="_blank") view site
-        - if (project.thumbSize === "mobile")
-          .project__thumb(style="background-image: url('assets/images/projects/#{project.abbr}-mobile.jpg');")
-        - else if (project.thumbSize === "desktop")
-          .project__thumb(style="background-image: url('assets/images/projects/#{project.abbr}-desktop.jpg');")
+        //- - if (project.thumbSize === "mobile")
+        //-   .project__thumb(style="background-image: url('assets/images/projects/#{project.abbr}-mobile.jpg');")
+        //- - else if (project.thumbSize === "desktop")
+        //-   .project__thumb(style="background-image: url('assets/images/projects/#{project.abbr}-desktop.jpg');")
   section.writing
     .writing__article
       h2 Here are 10 Things I learned at Epicurrence: The Montues

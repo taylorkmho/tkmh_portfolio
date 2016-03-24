@@ -1,19 +1,62 @@
 .projects {
   lost-utility: clearfix;
-  &__project {
-    /* lost-column: 1/2 2 2rem; */
+  /* lost-center: $row-width; */
+}
+
+.flickity {
+  &-viewport {
+    background-color: color($c-primary shade(10%));
+  }
+  &-prev-next-button {
+    border-radius: 0;
+    width: 34px;
+    background-color: color(#000 a(.5));
+    &:hover {
+      background-color: color(#000 a(.6));
+    }
+    svg {
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 80%;
+      width: auto;
+      .arrow {
+        fill: #fff;
+      }
+    }
+    &.previous {
+      left: 0;
+    }
+    &.next {
+      right: 0;
+    }
   }
 }
 
 .project {
   position: relative;
-  display: block;
-  margin-bottom: calc($column-gutter);
-  overflow: hidden;
-  border-radius: 8px;
+  z-index: 110;
+  width: calc(100% / 3);
   height: 0;
-  padding-bottom: calc(100%/3);
-  background-color: $c-secondary;
+  margin-right: $column-gutter;
+  background-color: $c-primary;
+  padding: $column-gutter $column-gutter 20%;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    transform: translateX(100%);
+    height: calc($column-gutter);
+    width: calc($column-gutter);
+    background-color: #fff;
+  }
+  &:before {
+    top: 0;
+  }
+  &:after {
+    bottom: 0;
+  }
   &__thumb {
     position: absolute;
     display: block;
@@ -54,7 +97,7 @@
       }
     }
   }
-  &__copy {
+  /* &__copy {
     padding: calc($column-gutter*2);
     [data-format="desktop"] & {
       padding-right: 47.5%;
@@ -62,5 +105,5 @@
     [data-format="mobile"] & {
       padding-right: 30%;
     }
-  }
+  } */
 }
