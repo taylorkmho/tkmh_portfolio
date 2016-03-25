@@ -20,3 +20,7 @@ block content
           - if (project.caseStudy !== null)
             li: a.btn.btn--primary(href=project.caseStudy target="_blank") case study
           li: a.btn(href=project.url target="_blank") view site
+  section.skills
+    each skill in skills
+      .skills__skill.skill
+        h1.skill__title!= skill.title
