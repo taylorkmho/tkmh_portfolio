@@ -1,6 +1,57 @@
 .projects {
   lost-utility: clearfix;
-  /* lost-center: $row-width; */
+}
+
+.project {
+  position: relative;
+  z-index: 110;
+  width: calc(100% / 3);
+  height: 0;
+  margin-right: $column-gutter;
+  background-color: $c-primary;
+  padding: $column-gutter $column-gutter 20%;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    transform: translateX(100%);
+    height: calc($column-gutter);
+    width: calc($column-gutter);
+    background-color: #fff;
+  }
+  &:before {
+    top: 0;
+  }
+  &:after {
+    bottom: 0;
+  }
+  &__logo {
+    display: block;
+    height: 3rem;
+    margin-bottom: $column-gutter;
+    path {
+      fill: #fff;
+    }
+  }
+  &__links {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    list-style: none;
+    margin: calc($column-gutter*2) 0 0;
+    padding: $column-gutter;
+    li {
+      display: inline-block;
+      margin-right: $column-gutter;
+    }
+    a {
+      &:not(.btn) {
+        color: #fff;
+      }
+      text-decoration: none;
+    }
+  }
 }
 
 .flickity {
@@ -31,79 +82,4 @@
       right: 0;
     }
   }
-}
-
-.project {
-  position: relative;
-  z-index: 110;
-  width: calc(100% / 3);
-  height: 0;
-  margin-right: $column-gutter;
-  background-color: $c-primary;
-  padding: $column-gutter $column-gutter 20%;
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    right: 0;
-    transform: translateX(100%);
-    height: calc($column-gutter);
-    width: calc($column-gutter);
-    background-color: #fff;
-  }
-  &:before {
-    top: 0;
-  }
-  &:after {
-    bottom: 0;
-  }
-  &__thumb {
-    position: absolute;
-    display: block;
-    background-size: cover;
-    background-position: top center;
-    [data-format="desktop"] & {
-      bottom: 0;
-      right: 1rem;
-      width: 40%;
-      height: calc(100%*(2/3));
-      &:after {
-        content: "";
-        background-image: url("../../assets/images/mockup-desktop.png");
-        background-size: 100% auto;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 110%;
-        transform: scale(1.07) translateY(-6.5%);
-      }
-    }
-    [data-format="mobile"] & {
-      bottom: 0;
-      right: calc(2*$column-gutter);
-      width: 20%;
-      height: 90%;
-      &:after {
-        content: "";
-        background-image: url("../../assets/images/mockup-iphone.png");
-        background-size: 100% auto;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 109%;
-        transform: scale(1.2) translateY(-8%);
-      }
-    }
-  }
-  /* &__copy {
-    padding: calc($column-gutter*2);
-    [data-format="desktop"] & {
-      padding-right: 47.5%;
-    }
-    [data-format="mobile"] & {
-      padding-right: 30%;
-    }
-  } */
 }

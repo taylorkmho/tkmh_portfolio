@@ -15,18 +15,8 @@ block content
   section.projects
     each project in projects
       .projects__project.project(data-format=project.thumbSize)
-        .project__copy.copy
-          img.copy__logo(src="assets/images/svg/logo-#{project.abbr}.svg")
-          //- p.copy__tagline!= project.description
-          ul.copy__links
-            - if (project.caseStudy !== null)
-              li: a.btn.btn--primary(href=project.caseStudy target="_blank" style="color: #{project.hexColor};") case study
-            li: a(href=project.url target="_blank") view site
-        //- - if (project.thumbSize === "mobile")
-        //-   .project__thumb(style="background-image: url('assets/images/projects/#{project.abbr}-mobile.jpg');")
-        //- - else if (project.thumbSize === "desktop")
-        //-   .project__thumb(style="background-image: url('assets/images/projects/#{project.abbr}-desktop.jpg');")
-  section.writing
-    .writing__article
-      h2 Here are 10 Things I learned at Epicurrence: The Montues
-      h4 8 min read
+        img.project__logo(src="assets/images/svg/logo-#{project.abbr}.svg")
+        ul.project__links
+          - if (project.caseStudy !== null)
+            li: a.btn.btn--primary(href=project.caseStudy target="_blank") case study
+          li: a.btn(href=project.url target="_blank") view site
