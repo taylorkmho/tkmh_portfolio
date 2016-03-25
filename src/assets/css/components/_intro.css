@@ -41,7 +41,7 @@
         left: 0;
         height: .5rem;
         width: 6rem;
-        background: #ccc;
+        background: $c-primary;
       }
     }
   }
