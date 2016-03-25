@@ -8,8 +8,7 @@ var gulp         = require('gulp'),
 gulp.task('html', function() {
   return gulp.src(paths.src.html + "/**/[^_]*.jade")
     .pipe(data(function(file) {
-      // return paths.src.data + "/projects.json";
-      return JSON.parse(fs.readFileSync(paths.src.data + '/projects.json'));
+      return JSON.parse(fs.readFileSync(paths.src.data + '/content.json'));
     }))
     .pipe(jade())
     .on('error', errorHandler)

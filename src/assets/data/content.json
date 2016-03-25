@@ -6,7 +6,7 @@
       "hexColor": "#eb4329",
       "description": "A web app driven by several RESTful API&rsquo;s. Tools include MongoDB, Express, Node.js, and d3.",
       "url": "http://surfstat.us",
-      "caseStudy": null,
+      "caseStudy": "http://medium.com",
       "thumbSize": "desktop"
     },
     {
@@ -44,6 +44,27 @@
       "url": "http://blakeentertainmenthawaii.com",
       "caseStudy": null,
       "thumbSize": "desktop"
+    }
+  ],
+
+  "skills": [
+    {
+      "title": "HTML"
+    },
+    {
+      "title": "CSS"
+    },
+    {
+      "title": "JAVASCRIPT"
+    },
+    {
+      "title": "DESIGN"
+    },
+    {
+      "title": "TEAM THINKING"
+    },
+    {
+      "title": "BUSINESS"
     }
   ]
 }
