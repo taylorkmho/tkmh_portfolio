@@ -6,17 +6,7 @@
       "hexColor": "#eb4329",
       "description": "A web app driven by several RESTful API&rsquo;s. Tools include MongoDB, Express, Node.js, and d3.",
       "url": "http://surfstat.us",
-      "caseStudy": "http://medium.com",
-      "thumbSize": "desktop"
-    },
-    {
-      "name": "JJ Dolan&rsquo;s",
-      "abbr": "jjd",
-      "hexColor": "#02B770",
-      "description": "A restaurant website + web app for drawing things on this guy&rsquo;s funny mug.",
-      "url": "http://jjdolans.com",
-      "caseStudy": null,
-      "thumbSize": "mobile"
+      "caseStudy": "http://medium.com"
     },
     {
       "name": "Foundry Salon",
@@ -24,17 +14,31 @@
       "hexColor": "#d5c1a5",
       "description": "A hair salon website designed with minimal aesthetics to suit the company&rsquo;s branding.",
       "url": "http://foundrysalon.com",
-      "caseStudy": null,
-      "thumbSize": "desktop"
+      "caseStudy": "http://medium.com"
+    },
+    {
+      "name": "Surfjack Hotel",
+      "abbr": "sjk",
+      "hexColor": "#837b54",
+      "description": "A branding website for Hawaii-based event planner. Built with HTML5, CSS3, and Ruby-on-Rails",
+      "url": "http://surfjack.com",
+      "caseStudy": null
+    },
+    {
+      "name": "JJ Dolan&rsquo;s",
+      "abbr": "jjd",
+      "hexColor": "#02b770",
+      "description": "A restaurant website + web app for drawing things on this guy&rsquo;s funny mug.",
+      "url": "http://jjdolans.com",
+      "caseStudy": null
     },
     {
       "name": "Hallowbaloo",
       "abbr": "hbl",
-      "hexColor": "#F3BA25",
+      "hexColor": "#5d0f43",
       "description": "A music festival website optimized to display an array of typography, photography, and vector artwork.",
       "url": "http://hallowbaloo.com/2015",
-      "caseStudy": null,
-      "thumbSize": "mobile"
+      "caseStudy": null
     },
     {
       "name": "Blake Entertainment",
@@ -42,8 +46,7 @@
       "hexColor": "#222",
       "description": "A branding website for Hawaii-based event planner. Built with HTML5, CSS3, and Ruby-on-Rails",
       "url": "http://blakeentertainmenthawaii.com",
-      "caseStudy": null,
-      "thumbSize": "desktop"
+      "caseStudy": null
     }
   ],
 
