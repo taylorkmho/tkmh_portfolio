@@ -1,6 +1,5 @@
 .intro {
   lost-center: $row-width--inner;
-  padding: calc($column-gutter*3) $column-gutter;
   &__aside {
     h2 {
       position: relative;

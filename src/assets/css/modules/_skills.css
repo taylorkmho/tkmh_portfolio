@@ -1,6 +1,5 @@
 .skills {
-  lost-center: $row-width;
-  padding: calc($column-gutter*3) 0;
+  lost-center: $row-width--inner;
   &__skill {
     lost-column: 1/3 3;
     margin-bottom: $column-gutter;

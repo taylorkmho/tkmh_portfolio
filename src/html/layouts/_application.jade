@@ -17,10 +17,6 @@ html
     block additionalHead
 
   body(data-template="#{bodyTemplate}")
-    include ../shared/_google-analytics
-    main.main
-      block content
-    script(src="//npmcdn.com/flickity@1.2/dist/flickity.pkgd.min.js")
-    script.
-      window.Flickity || document.write('<script src="assets/js/vendor/flickity.pkgd.min.js">\x3C/script>')
+    //- include ../shared/_google-analytics
+    block content
     script(src="assets/js/app.js")

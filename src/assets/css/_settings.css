@@ -2,7 +2,7 @@ $easeOutExpo:            cubic-bezier(0.19, 1, 0.22, 1);
 $column-gutter:          2rem;
 $sectionBaseZ:           100;
 
-$row-width:              992px;
+$row-width:              1200px;
 $row-width--inner:       820px;
 
 $mq-split:               920px;
