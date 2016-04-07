@@ -22,7 +22,7 @@
   padding: $column-gutter $column-gutter 75%;
   &__logo {
     display: block;
-    height: 3rem;
+    height: 8vw;
     margin-bottom: $column-gutter;
     path {
       fill: #fff;
@@ -61,6 +61,9 @@
     padding-bottom: calc(100%/3);
     &:nth-last-child(-n+2) {
       margin-bottom: 0;
+    }
+    &__logo {
+      height: 3rem;
     }
   }
 }

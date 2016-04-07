@@ -12,11 +12,18 @@
     background-color: #fff;
     color: $c-primary;
     border: 2px solid transparent;
-    transition: all 125ms ease-out;
-    &:hover {
-      background-color: transparent;
-      color: #fff !important;
-      border: 2px solid #fff;
+  }
+}
+
+@media screen and (min-width: $mq-small) {
+  .btn {
+    &--primary {
+      transition: all 125ms ease-out;
+      &:hover {
+        background-color: transparent;
+        color: #fff !important;
+        border: 2px solid #fff;
+      }
     }
   }
 }
