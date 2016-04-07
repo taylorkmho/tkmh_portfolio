@@ -51,6 +51,12 @@
     background-size: 100% auto;
     box-shadow: 0 0 2rem 0 color(#000 a(.25));
     transform: rotate(4deg);
+    transition: transform 500ms ease-out;
+  }
+  &:hover {
+    .project__screenshot {
+      transform: rotate(3deg) translateX(-1rem);
+    }
   }
 }
 

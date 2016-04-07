@@ -14,9 +14,12 @@ block content
         p I’m a driven Front-end Developer &amp; Designer with several years of experience, taking products from concept all the way to launch. I love making things just work.
   section.projects
     each project in projects
-      .projects__project.project(data-format=project.thumbSize style="background-image: url('assets/images/projects/#{project.abbr}-bg.jpg'); background-color: #{project.hexColor};")
+      .projects__project.project.lazyloaded(data-format=project.thumbSize data-src="assets/images/projects/#{project.abbr}-bg.jpg" style="background-color: #{project.hexColor};")
+        //- (style="background-image: url('assets/images/projects/#{project.abbr}-bg.jpg'); background-color: #{project.hexColor};")
         img.project__logo(src="assets/images/svg/logo-#{project.abbr}.svg")
-        .project__screenshot(style="background-image: url(assets/images/projects/#{project.abbr}-screen.jpg);")
+        //- .project__screenshot.lazyloaded(data-src="assets/images/projects/#{project.abbr}-screen.jpg")
+        .project__screenshot.project__screenshot--stream.lazyloaded(data-src="assets/images/projects/#{project.abbr}-screen.gif")
+          //- (style="background-image: url(assets/images/projects/#{project.abbr}-screen.jpg);")
           include ../assets/images/svg/ui-phone.svg
         ul.project__links
           - if (project.caseStudy !== null)
