@@ -22,6 +22,7 @@ gulp.task('watch', ['browsersync'], function() {
   // gulp.watch([paths.base.src + "/*.*", paths.base.src + "/data/**/*"], ['static-files']);
   gulp.watch(paths.src.html + "/**/*.jade", ['html']);
   gulp.watch(paths.src.data + "/**/*.json", ['html']);
+  gulp.watch(paths.src.images + "/**/*.svg", ['html']);
   gulp.watch(paths.src.css + "/**/*", ['css']);
   // gulp.watch(paths.src.fonts + "/**/*", ['fonts']);
   gulp.watch(paths.src.js + "/**/*", ['js']);
