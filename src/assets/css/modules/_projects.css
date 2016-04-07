@@ -48,7 +48,7 @@
     right: 0;
     border-radius: 1rem;
     overflow: hidden;
-    background-size: cover;
+    background-size: 100% auto;
     box-shadow: 0 0 2rem 0 color(#000 a(.25));
     transform: rotate(4deg);
   }
