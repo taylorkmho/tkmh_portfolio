@@ -16,10 +16,12 @@ block content
     each project in projects
       .projects__project.project(data-format=project.thumbSize style="background-image: url('assets/images/projects/#{project.abbr}-bg.jpg'); background-color: #{project.hexColor};")
         img.project__logo(src="assets/images/svg/logo-#{project.abbr}.svg")
+        .project__screenshot(style="background-image: url(assets/images/projects/#{project.abbr}-screen.jpg);")
+          include ../assets/images/svg/ui-phone.svg
         ul.project__links
           - if (project.caseStudy !== null)
             li: a.btn.btn--primary(href=project.caseStudy target="_blank" style="color: #{project.hexColor};") case study
-          li: a.btn(href=project.url target="_blank") view site
+          li: a.btn.btn--plain(href=project.url target="_blank") view site
   section.skills
     each skill in skills
       .skills__skill.skill

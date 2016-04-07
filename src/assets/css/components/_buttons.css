@@ -3,11 +3,16 @@
   text-transform: uppercase;
   letter-spacing: .05rem;
   color: #fff;
+  &--primary,
+  &--plain {
+    display: block;
+    padding: calc($column-gutter/4);
+  }
   &--primary {
     background-color: #fff;
     color: $c-primary;
-    padding: calc($column-gutter/4) calc($column-gutter/2);
     border: 2px solid transparent;
+    transition: all 125ms ease-out;
     &:hover {
       background-color: transparent;
       color: #fff !important;
