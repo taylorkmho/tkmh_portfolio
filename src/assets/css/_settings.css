@@ -5,7 +5,7 @@ $sectionBaseZ:           100;
 $row-width:              1200px;
 $row-width--inner:       820px;
 
-$mq-split:               920px;
+$mq-small:               768px;
 
 $body-font-family:       "ff-tisa-web-pro", sans-serif;
 $header-font-family:      "museo-sans", "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;

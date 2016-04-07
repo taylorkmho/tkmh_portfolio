@@ -1,20 +1,24 @@
 .projects {
   lost-utility: clearfix;
   lost-center: $row-width;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media screen and (min-width: $mq-small) {
+  .projects {
+    padding-left: $column-gutter;
+    padding-right: $column-gutter;
+  }
 }
 
 .project {
   position: relative;
   z-index: 110;
-  lost-column: 1/2 2 $column-gutter;
-  margin-bottom: $column-gutter;
   height: 0;
   background-color: $c-primary;
   background-size: cover;
-  padding: $column-gutter $column-gutter calc(100%/3);
-  &:nth-last-child(-n+2) {
-    margin-bottom: 0;
-  }
+  padding: $column-gutter $column-gutter 75%;
   &__logo {
     display: block;
     height: 3rem;
@@ -39,6 +43,17 @@
         color: #fff;
       }
       text-decoration: none;
+    }
+  }
+}
+
+@media screen and (min-width: $mq-small) {
+  .project {
+    lost-column: 1/2 2 $column-gutter;
+    margin-bottom: $column-gutter;
+    padding-bottom: calc(100%/3);
+    &:nth-last-child(-n+2) {
+      margin-bottom: 0;
     }
   }
 }

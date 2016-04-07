@@ -10,7 +10,7 @@
   }
 }
 
-@media screen and (min-width: $mq-split) {
+@media screen and (min-width: $mq-small) {
   .content {
     > h2 {
       margin: calc($column-gutter*8) 0 0;
