@@ -21,6 +21,9 @@
         margin-bottom: 0;
       }
     }
+    strong {
+      color: $c-primary;
+    }
   }
 }
 
