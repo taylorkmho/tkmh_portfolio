@@ -19,11 +19,15 @@
   background-color: $c-primary;
   background-size: cover;
   overflow: hidden;
-  padding: $column-gutter $column-gutter 75%;
+  padding: $column-gutter $column-gutter 25%;
+
   &__logo {
+    position: relative;
+    z-index: 300;
     display: block;
     height: 8vw;
     margin-bottom: $column-gutter;
+    transition: all 250ms ease-out;
     path {
       fill: #fff;
     }
@@ -32,10 +36,12 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: 300;
     list-style: none;
     margin: calc($column-gutter*2) 0 0;
     padding: $column-gutter;
     a {
+      margin-left: -.5rem;
       &:not(.btn) {
         color: #fff;
       }
@@ -44,8 +50,9 @@
   }
   &__screenshot {
     position: absolute;
-    top: -1rem;
-    right: 0;
+    top: -2rem;
+    right: -1rem;
+    z-index: 300;
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 0 2rem 0 color(#000 a(.25));
@@ -68,16 +75,7 @@
     transform: translateZ(0);
   }
   &__motion {
-    z-index: 110;
-  }
-  &__still {
-    z-index: 120;
-    .lazyloaded + & {
-      transition: opacity 500ms ease-out;
-      .project:hover & {
-        opacity: 0;
-      }
-    }
+    display:none;
   }
 }
 
@@ -86,11 +84,45 @@
     lost-column: 1/2 2 $column-gutter;
     margin-bottom: $column-gutter;
     padding-bottom: calc(100%/3);
+    background-blend-mode: luminosity;
+    background-color: color(#222 a(1));
+    transition: all 250ms ease-out;
+    &:hover {
+      background-color: color(#222 a(0));
+      .project__screenshot {
+        transform: scale(.975) rotate(4deg);
+      }
+    }
     &:nth-last-child(-n+2) {
       margin-bottom: 0;
     }
+    &:nth-child(2n) {
+      transform: translateY(50%);
+    }
     &__logo {
       height: 3rem;
+    }
+    &__links {
+      a {
+        margin-left: 0;
+      }
+    }
+    &__screenshot {
+      top: -1rem;
+      right: 0;
+    }
+    &__motion {
+      display: block;
+      z-index: 110;
+    }
+    &__still {
+      z-index: 120;
+      .lazyloaded + & {
+        transition: opacity 500ms ease-out;
+        .project:hover & {
+          opacity: 0;
+        }
+      }
     }
   }
 }
@@ -110,7 +142,7 @@
 }
 
 .ui-phone {
-  height: 90vw;
+  height: 50vw;
   width: auto;
 }
 

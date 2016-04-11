@@ -1,0 +1,6 @@
+.status {
+  &__container {
+    lost-center: $row-width--inner;
+    background: #bada55;
+  }
+}
