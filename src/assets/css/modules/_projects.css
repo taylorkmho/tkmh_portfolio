@@ -3,12 +3,28 @@
   lost-center: $row-width;
   padding-left: 0;
   padding-right: 0;
+  &__title {
+    text-align: left;
+    border-top: .5rem solid $c-body-font;
+    padding: calc($column-gutter/2) 0 $column-gutter;
+    h2 {
+      font-size: 4rem;
+      letter-spacing: .5rem;
+      font-weight: 600;
+      margin: 0;
+      line-height: 1;
+    }
+  }
 }
 
 @media screen and (min-width: $mq-small) {
   .projects {
     padding-left: $column-gutter;
     padding-right: $column-gutter;
+    &__list {
+      lost-utility: clearfix;
+      margin-bottom: 25%;
+    }
   }
 }
 
@@ -83,6 +99,7 @@
   .project {
     lost-column: 1/2 2 $column-gutter;
     margin-bottom: $column-gutter;
+    overflow: initial;
     padding-bottom: calc(100%/3);
     background-blend-mode: luminosity;
     background-color: color(#222 a(1));

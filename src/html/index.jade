@@ -14,17 +14,20 @@ block content
         p I love making things just work, using design and technology to take concepts all the way to launch.
         //- It&rsquo;s just so damn inspiring working with people in and out of technology and design.
   section.projects
-    each project in projects
-      .projects__project.project.lazyload(data-format=project.thumbSize data-src="assets/images/projects/#{project.abbr}-bg.jpg")
-        img.project__logo(src="assets/images/svg/logo-#{project.abbr}.svg")
-        .project__screenshot
-          .project__motion.lazyload(data-src="assets/images/projects/#{project.abbr}-screen.gif")
-          .project__still.lazyload(data-src="assets/images/projects/#{project.abbr}-screen.jpg")
-          include ../assets/images/svg/ui-phone.svg
-        ul.project__links
-          - if (project.caseStudy !== null)
-            li: a.btn.btn--primary(href=project.caseStudy target="_blank" style="color: #{project.hexColor};") case study
-          li: a.btn.btn--plain(href=project.url target="_blank") view site
+    .projects__title
+      h2 SELECTED<br>WORK
+    .projects__list
+      each project in projects
+        .projects__project.project.lazyload(data-format=project.thumbSize data-src="assets/images/projects/#{project.abbr}-bg.jpg")
+          img.project__logo(src="assets/images/svg/logo-#{project.abbr}.svg")
+          .project__screenshot
+            .project__motion.lazyload(data-src="assets/images/projects/#{project.abbr}-screen.gif")
+            .project__still.lazyload(data-src="assets/images/projects/#{project.abbr}-screen.jpg")
+            include ../assets/images/svg/ui-phone.svg
+          ul.project__links
+            - if (project.caseStudy !== null)
+              li: a.btn.btn--primary(href=project.caseStudy target="_blank" style="color: #{project.hexColor};") case study
+            li: a.btn.btn--plain(href=project.url target="_blank") view site
   //- section.skills
   //-   each skill in skills
   //-     .skills__skill.skill
