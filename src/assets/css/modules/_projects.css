@@ -1,8 +1,11 @@
 .projects {
   lost-utility: clearfix;
-  lost-center: $row-width;
   padding-left: 0;
   padding-right: 0;
+  &__title,
+  &__list {
+    lost-center: $row-width;
+  }
   &__title {
     text-align: left;
     border-top: .5rem solid $c-body-font;
@@ -23,14 +26,13 @@
     padding-right: $column-gutter;
     &__list {
       lost-utility: clearfix;
-      margin-bottom: 25%;
+      margin-bottom: 12.5%;
     }
   }
 }
 
 .project {
   position: relative;
-  z-index: 110;
   height: 0;
   background-color: $c-primary;
   background-size: cover;
@@ -88,6 +90,7 @@
     width: 100%;
     height: 100%;
     background-size: cover;
+    background-position: center center;
     transform: translateZ(0);
   }
   &__motion {
@@ -97,24 +100,17 @@
 
 @media screen and (min-width: $mq-small) {
   .project {
-    lost-column: 1/2 2 $column-gutter;
-    margin-bottom: $column-gutter;
     overflow: initial;
-    padding-bottom: calc(100%/3);
+    padding-bottom: calc(100%/2);
+    margin-bottom: $column-gutter;
     background-blend-mode: luminosity;
     background-color: color(#222 a(1));
     transition: all 250ms ease-out;
     &:hover {
       background-color: color(#222 a(0));
       .project__screenshot {
-        transform: scale(.975) rotate(4deg);
+        transform: scale(1.1) rotate(4deg);
       }
-    }
-    &:nth-last-child(-n+2) {
-      margin-bottom: 0;
-    }
-    &:nth-child(2n) {
-      transform: translateY(50%);
     }
     &__logo {
       height: 3rem;
@@ -125,8 +121,8 @@
       }
     }
     &__screenshot {
-      top: -1rem;
-      right: 0;
+      top: 1.5rem;
+      right: 2rem;
     }
     &__motion {
       display: block;
@@ -152,9 +148,6 @@
         margin-right: calc($column-gutter/2);
       }
     }
-    &__screenshot {
-      top: 0;
-    }
   }
 }
 
@@ -166,12 +159,12 @@
 
 @media screen and (min-width: $mq-small) {
   .ui-phone {
-    height: 40vw;
+    height: 45vw;
   }
 }
 
 @media screen and (min-width: $row-width) {
   .ui-phone {
-    height: 420px;
+    height: 36rem;
   }
 }
