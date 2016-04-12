@@ -5,11 +5,14 @@
   &__title,
   &__list {
     lost-center: $row-width;
+    padding: 0 $column-gutter;
   }
   &__title {
     text-align: left;
     border-top: .5rem solid $c-body-font;
-    padding: calc($column-gutter/2) 0 $column-gutter;
+    padding-top: $column-gutter;
+    padding-bottom: $column-gutter;
+    margin-bottom: $column-gutter;
     h2 {
       font-size: 4rem;
       letter-spacing: .5rem;
@@ -27,6 +30,7 @@
     &__list {
       lost-utility: clearfix;
       margin-bottom: 12.5%;
+      padding: 0;
     }
   }
 }
@@ -36,7 +40,8 @@
   height: 0;
   background-color: $c-primary;
   background-size: cover;
-  overflow: hidden;
+  margin-bottom: $column-gutter;
+  z-index: 100;
   padding: $column-gutter $column-gutter 25%;
 
   &__logo {
@@ -44,20 +49,16 @@
     z-index: 300;
     display: block;
     height: 8vw;
-    margin-bottom: $column-gutter;
+    margin-bottom: calc($column-gutter/4);
     transition: all 250ms ease-out;
     path {
       fill: #fff;
     }
   }
   &__links {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 300;
     list-style: none;
-    margin: calc($column-gutter*2) 0 0;
-    padding: $column-gutter;
+    margin: 0;
+    padding: 0;
     a {
       margin-left: -.5rem;
       &:not(.btn) {
@@ -68,10 +69,10 @@
   }
   &__screenshot {
     position: absolute;
-    top: -2rem;
-    right: -1rem;
+    top: -.5rem;
+    right: -.5rem;
     z-index: 300;
-    border-radius: 1rem;
+    border-radius: .25rem;
     overflow: hidden;
     box-shadow: 0 0 2rem 0 color(#000 a(.25));
     transform: rotate(4deg);
@@ -100,13 +101,15 @@
 
 @media screen and (min-width: $mq-small) {
   .project {
+    z-index: initial;
     overflow: initial;
     padding-bottom: calc(100%/2);
     margin-bottom: $column-gutter;
     background-blend-mode: luminosity;
     background-color: color(#222 a(1));
     transition: all 250ms ease-out;
-    &:hover {
+    &:hover,
+    &.is-active {
       background-color: color(#222 a(0));
       .project__screenshot {
         transform: scale(1.1) rotate(4deg);
@@ -116,13 +119,17 @@
       height: 3rem;
     }
     &__links {
-      a {
-        margin-left: 0;
-      }
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 300;
+      margin: calc($column-gutter*2) 0 0;
+      padding: $column-gutter;
     }
     &__screenshot {
       top: 1.5rem;
       right: 2rem;
+      border-radius: 1rem;
     }
     &__motion {
       display: block;
@@ -132,7 +139,8 @@
       z-index: 120;
       .lazyloaded + & {
         transition: opacity 500ms ease-out;
-        .project:hover & {
+        .project:hover &,
+        .project.is-active & {
           opacity: 0;
         }
       }
@@ -152,7 +160,7 @@
 }
 
 .ui-phone {
-  height: 50vw;
+  height: 25vw;
   width: auto;
 }
 
