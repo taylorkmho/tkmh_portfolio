@@ -10,10 +10,10 @@ $mq-small:               768px;
 $body-font-family:       "ff-tisa-web-pro", sans-serif;
 $header-font-family:      "museo-sans", "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;
 
-$c-primary:              #999;
-$c-secondary:            #6b5d57;
+$c-primary:              #F24C27;
+$c-secondary:            #ddd;
 $c-bg-color:             #fff;
-$c-body-font:            #222;
+$c-body-font:            #404040;
 
 * {
   box-sizing: border-box;

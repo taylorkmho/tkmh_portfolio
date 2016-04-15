@@ -1,9 +1,24 @@
 .splash {
   display: flex;
-  min-height: 420px;
-  height: 80vh;
+  min-height: 200px;
+  height: 60vh;
   align-items: center;
   h2 {
     margin: 0;
+  }
+  svg {
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
+    padding: 0 $column-gutter;
+  }
+}
+
+.logo-tho {
+  &__shadow {
+    fill: $c-secondary;
+  }
+  &__base {
+    fill: $c-primary;
   }
 }

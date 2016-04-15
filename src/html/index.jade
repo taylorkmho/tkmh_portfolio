@@ -5,6 +5,7 @@ block vars
 
 block content
   section.splash
+    include ../assets/images/svg/logo-tho.svg
   section.intro
     .intro__container
       aside.intro__aside
@@ -14,8 +15,9 @@ block content
         p I love making things just work, using design and technology to take concepts all the way to launch.
         //- It&rsquo;s just so damn inspiring working with people in and out of technology and design.
   section.projects
-    .projects__title
-      h2 SELECTED<br>WORK
+    .projects__title.section-title
+      h2.section-title__header SELECTED<br>WORK
+      p.section-title__tagline Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue.
     .projects__list
       each project in projects
         .projects__project.project.lazyload(data-format=project.thumbSize data-src="assets/images/projects/#{project.abbr}-bg.jpg")
