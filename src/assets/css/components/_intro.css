@@ -1,35 +1,48 @@
 .intro {
-  lost-center: $row-width;
-  padding: calc($column-gutter*2) $column-gutter;
-  &__aside {
-    h2 {
-      position: relative;
-      margin: 0;
-      font-size: 3rem;
-      letter-spacing: .25rem;
-      br {
-        display: none;
-      }
+  padding: 30rem $column-gutter calc($column-gutter*2);
+  background-position: top center;
+  background-attachment: fixed;
+  background-size: auto 100%;
+  color: #fff;
+  &__splash {
+    svg {
+      display: block;
+      height: 24rem;
+      margin: 0 auto calc($column-gutter*2);
+      width: auto;
     }
   }
-  &__main {
-    p {
-      font-size: 1.25rem;
-      &:first-of-type {
-        margin-top: 0;
-      }
-      &:last-of-type {
-        margin-bottom: 0;
-      }
+  &__container {
+    lost-center: $row-width;
+    padding: 0 calc($column-gutter/2);
+  }
+  h2 {
+    position: relative;
+    margin: 0 0 calc($column-gutter/2);
+    font-size: 3rem;
+    letter-spacing: .25rem;
+    br {
+      display: none;
     }
-    strong {
-      color: $c-primary;
+  }
+  p {
+    font-size: 1.25rem;
+    &:first-of-type {
+      margin-top: 0;
     }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  strong {
+    color: $c-primary;
   }
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 768px) {
   .intro {
+    padding: calc($column-gutter*6) $column-gutter;
+    background-position: left center;
     &__aside, &__main {
       lost-column: 1/2 2;
     }
@@ -37,6 +50,9 @@
       br {
         display: inline;
       }
+    }
+    &__main {
+      position: relative;
       &:after {
         content: "";
         position: absolute;
@@ -47,5 +63,28 @@
         background: $c-primary;
       }
     }
+    &__container {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+@media screen and (min-width: $row-width) {
+  .intro {
+    &__aside {
+      h2 {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.logo-tho {
+  &__shadow {
+    fill: color($c-primary a(.8));
+  }
+  &__base {
+    fill: #fff;
   }
 }

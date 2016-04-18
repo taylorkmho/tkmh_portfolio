@@ -4,20 +4,22 @@ block vars
   - var bodyTemplate = "home"
 
 block content
-  section.splash
-    include ../assets/images/svg/logo-tho.svg
-  section.intro
+  //- section.splash
+  section.intro.lazyload(data-src-small="../assets/images/bg-splash-mobile.jpg" data-src="../assets/images/bg-splash.jpg")
+    //- .intro__splash
+    //-   include ../assets/images/svg/logo-tho.svg
     .intro__container
       aside.intro__aside
         h2 I BUILD WEB <br>APPS + SITES <br>FOR A LIVING
       main.intro__main
-        p and I am absolutely <strong>passionate</strong> about what I do. My name is <strong>Taylor Ho</strong> and I am a driven <strong>front-end developer + designer</strong> with several <strong>years of experience</strong>.
-        p I love making things just work, using design and technology to take concepts all the way to launch.
-        //- It&rsquo;s just so damn inspiring working with people in and out of technology and design.
+        p and I am absolutely passionate about what I do. I love building things and making them just work. I use design and technology to take concepts all the way to launch.
+        p My name is <strong>Taylor Ho</strong> and I am a <strong>front-end developer + designer</strong> with <strong>several years of experience</strong> living in <strong>San Francisco</strong>.
+        p I am currently working freelance, seeking a full-time opportunity with a product-driven company. I am looking to join a team that I can contribute to and grow with.
   section.projects
     .projects__title.section-title
-      h2.section-title__header SELECTED<br>WORK
-      p.section-title__tagline Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue.
+      .section-title__column
+        h2 SELECTED<br>WORK
+        p Following a mobile-first philosophy, all projects are built to serve users across all devices. Front-end code should be lean and mean. Semantic mark-up is the way. Each project is an opportunity to try and learn something new.
     .projects__list
       each project in projects
         .projects__project.project.lazyload(data-format=project.thumbSize data-src="assets/images/projects/#{project.abbr}-bg.jpg")

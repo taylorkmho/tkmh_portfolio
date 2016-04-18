@@ -2,16 +2,17 @@
   lost-utility: clearfix;
   padding-left: 0;
   padding-right: 0;
+  background-color: $c-body-font;
+  color: #fff;
   &__title,
   &__list {
     lost-center: $row-width;
     padding: 0 $column-gutter;
   }
   &__title {
-    border-top: .5rem solid $c-body-font;
-    padding-top: calc($column-gutter*2);
-    padding-bottom: $column-gutter;
+    padding: calc($column-gutter*2) $column-gutter;
     margin-bottom: $column-gutter;
+    position: relative;
   }
 }
 
@@ -20,9 +21,19 @@
     padding-left: $column-gutter;
     padding-right: $column-gutter;
     &__list {
+      position: relative;
       lost-utility: clearfix;
-      margin-bottom: 12.5%;
+      /* margin-bottom: 12.5%; */
       padding: 0;
+    }
+  }
+}
+
+
+@media screen and (min-width: $row-width) {
+  .projects {
+    &__list {
+      top: -20rem;
     }
   }
 }
@@ -156,18 +167,36 @@
 }
 
 .section-title {
-  &__header,
-  &__tagline {
-    lost-column: 1/2 2 $column-gutter;
-    margin: 0;
+  &__column {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: calc(-$column-gutter);
+      left: 0;
+      height: .5rem;
+      width: 6rem;
+      background: $c-primary;
+    }
   }
-  &__header {
+  h2 {
     margin: 0;
     font-size: 3rem;
     letter-spacing: .25rem;
   }
-  &__tagline {
+  p {
     font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: $row-width) {
+  .section-title {
+    &__column {
+      lost-column: 1/2 2 $column-gutter;
+    }
+    h2 {
+      margin-bottom: 0;
+    }
   }
 }
 

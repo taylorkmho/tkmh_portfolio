@@ -9,14 +9,30 @@ let ScrollMagic        = require('scrollmagic');
 let blazy = new Blazy({
   selector: '.lazyload',
   successClass: 'lazyloaded',
-  errorClass: 'lazyerrored'
+  errorClass: 'lazyerrored',
+  src: 'data-src',
+  breakpoints: [{
+    width: 768,
+    src: 'data-src-small'
+  }],
+  success: function(ele, msg){
+    console.log(ele);
+  },
+  error: function(ele, msg){
+    if(msg === 'missing'){
+      console.log(ele + ' was missing')
+    }
+    else if(msg === 'invalid'){
+      console.log(ele + ' was invalid')
+    }
+  }
 });
 
 let controller = new ScrollMagic.Controller();
 
 const projects = document.querySelectorAll('.project');
 for (let el of projects) {
-  var mainTween = TweenMax.fromTo(el, 1,
+  var bgTween = TweenMax.fromTo(el, 1,
     {
       backgroundColor: "rgba(34,34,34,1)"
     },
@@ -24,7 +40,7 @@ for (let el of projects) {
       backgroundColor: "rgba(34,34,34,0)"
     }
   );
-  var secondaryTween = TweenMax.fromTo(el.querySelector('.project__screenshot'), 1,
+  var screenTween = TweenMax.fromTo(el.querySelector('.project__screenshot'), 1,
     {
       scale: '1',
       rotation: '0'
@@ -40,7 +56,7 @@ for (let el of projects) {
         duration: '25%'
       }
     )
-    .setTween(mainTween)
+    .setTween(bgTween)
     .addTo(controller);
   let scene02 = new ScrollMagic.Scene(
       {
@@ -48,32 +64,6 @@ for (let el of projects) {
         duration: '25%'
       }
     )
-    .setTween(secondaryTween)
+    .setTween(screenTween)
     .addTo(controller);
 }
-
-// const projects = document.querySelectorAll('.project');
-// for (let el of projects) {
-//   let waypoint1 = new Waypoint({
-//     element: el,
-//     handler: function(direction) {
-//       if (direction === 'down') {
-//         addClass(el, 'is-active')
-//       } else if (direction === 'up') {
-//         removeClass(el, 'is-active')
-//       }
-//     },
-//     offset: '75%'
-//   })
-//   let waypoint2 = new Waypoint({
-//     element: el,
-//     handler: function(direction) {
-//       if (direction === 'down') {
-//         removeClass(el, 'is-active')
-//       } else if (direction === 'up') {
-//         addClass(el, 'is-active')
-//       }
-//     },
-//     offset: '-25%'
-//   })
-// }

@@ -1,24 +1,21 @@
-.splash {
-  display: flex;
+/* .splash {
   min-height: 200px;
-  height: 60vh;
-  align-items: center;
+  height: 90vh;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: calc($column-gutter*4);
+  padding-bottom: calc($column-gutter*4);
+  background-image: url('../images/bg-splash.jpg');
+  background-size:  auto 100%;
+  background-position: left center;
   h2 {
     margin: 0;
   }
   svg {
+    display: block;
     height: 100%;
     width: auto;
     margin: 0 auto;
     padding: 0 $column-gutter;
   }
-}
-
-.logo-tho {
-  &__shadow {
-    fill: $c-secondary;
-  }
-  &__base {
-    fill: $c-primary;
-  }
-}
+} */

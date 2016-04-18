@@ -13,7 +13,7 @@ $header-font-family:      "museo-sans", "Helvetica Neue", Arial, Helvetica, Verd
 $c-primary:              #F24C27;
 $c-secondary:            #ddd;
 $c-bg-color:             #fff;
-$c-body-font:            #404040;
+$c-body-font:            #222;
 
 * {
   box-sizing: border-box;
