@@ -33,19 +33,25 @@
     list-style: none;
     margin: 0 0 0 1rem;
     padding: 0;
-    width: 5rem;
+    width: 5.5rem;
     li {
       display: inline-block;
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 2.75rem;
+      height: 2.75rem;
     }
     a {
       padding: .5rem;
       display: block;
+      &:hover {
+        &[href*="codepen"] svg   { fill: #30A9F4; }
+        &[href*="linkedin"] svg  { fill: #1B85BD; }
+        &[href*="twitter"] svg   { fill: #1DA1F2; }
+        &[href*="instagram"] svg { fill: #125688; }
+      }
     }
     svg {
-      height: 1.5rem;
-      width: 1.5rem;
+      height: 1.75rem;
+      width: 1.75rem;
       fill: color($c-body-font tint(25%));
     }
   }
