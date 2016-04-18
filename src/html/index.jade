@@ -5,14 +5,25 @@ block vars
 
 block content
 
-  section.intro
-    .intro__background.lazyload(data-src-small="../assets/images/bg-splash-mobile.jpg" data-src="../assets/images/bg-splash.jpg")
-      svg.intro__subject(viewBox="0 0 400 400")
+  section.splash
+    .splash__background.lazyload(data-src-small="../assets/images/bg-splash-mobile.jpg" data-src="../assets/images/bg-splash.jpg")
+      svg(viewBox="0 0 400 400")
         defs
           mask#mask(maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse")
             image(width="400" height="400" xlink:href="../assets/images/bg-subject.png")
         //- rect(x="50" y="50" height="300" width="300" stroke="#fff" stroke-width="10" fill="none")
         image(xlink:href="../assets/images/bg-splash.jpg" x="0" y="0" height="400" width="1239")
+  section.short-bio
+    .short-bio__container
+      .short-bio__copy
+        h1 Taylor Ho
+        h2 Front-end developer &amp; designer
+      ul.short-bio__social
+        li: a(href="#" target="_blank"): include ../assets/images/svg/icon-codepen.svg
+        li: a(href="#" target="_blank"): include ../assets/images/svg/icon-linkedin.svg
+        li: a(href="#" target="_blank"): include ../assets/images/svg/icon-twitter.svg
+        li: a(href="#" target="_blank"): include ../assets/images/svg/icon-instagram.svg
+  section.intro
     .intro__main
       .intro__copy
         p My name is <strong>Taylor Ho</strong> and I am a <strong>front-end developer + designer</strong> with <strong>several years of experience</strong> living in <strong>San Francisco</strong>.

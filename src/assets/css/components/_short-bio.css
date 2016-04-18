@@ -1,0 +1,50 @@
+.short-bio {
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  &__container {
+    lost-center: $row-width;
+    width: 100%;
+  }
+  &__copy {
+    float: left;
+    text-transform: uppercase;
+    line-height: 1;
+    h1, h2 {
+      margin: 0;
+    }
+    h1 {
+      font-size: 4rem;
+      /* color: #fff; */
+      letter-spacing: .25rem;
+    }
+    h2 {
+      margin-top: .5rem;
+      font-size: 1rem;
+      color: color($c-body-font tint(25%));
+      letter-spacing: .125rem;
+    }
+  }
+  &__social {
+    position: relative;
+    float: right;
+    list-style: none;
+    margin: 0 0 0 1rem;
+    padding: 0;
+    width: 5rem;
+    li {
+      display: inline-block;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    a {
+      padding: .5rem;
+      display: block;
+    }
+    svg {
+      height: 1.5rem;
+      width: 1.5rem;
+      fill: color($c-body-font tint(25%));
+    }
+  }
+}
