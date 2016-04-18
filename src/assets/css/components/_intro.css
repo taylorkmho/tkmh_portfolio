@@ -1,12 +1,14 @@
 .intro {
-  /* padding: 30rem $column-gutter calc($column-gutter*2); */
+  padding: 0 0 calc($column-gutter*6);
   &__main {
     position: relative;
     z-index: 200;
     lost-center: $row-width;
+    padding-left: $column-gutter;
+    padding-right: $column-gutter;
   }
   &__copy {
-    lost-column: 1/2 1;
+    lost-column: 1/2;
     float: right;
   }
   p {
