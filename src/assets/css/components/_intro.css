@@ -15,26 +15,14 @@
   &__subject {
     display: none;
   }
-  &__splash {
-    svg {
-      display: block;
-      height: 24rem;
-      margin: 0 auto calc($column-gutter*2);
-      width: auto;
-    }
-  }
-  &__container {
-    lost-center: $row-width;
-    padding: 0 calc($column-gutter/2);
-  }
-  h2 {
+  &__main {
     position: relative;
-    margin: 0 0 calc($column-gutter/2);
-    font-size: 3rem;
-    letter-spacing: .25rem;
-    br {
-      display: none;
-    }
+    z-index: 200;
+    lost-center: $row-width;
+  }
+  &__copy {
+    lost-column: 1/2 1;
+    float: right;
   }
   p {
     font-size: 1.25rem;
@@ -56,33 +44,10 @@
     &__background {
       background-position: left center;
     }
-    &__aside, &__main {
-      lost-column: 1/2 2;
-    }
-    &__aside h2 {
-      br {
-        display: inline;
-      }
-    }
-    &__main {
-      position: relative;
-      &:after {
-        content: "";
-        position: absolute;
-        bottom: -2rem;
-        left: 0;
-        height: .5rem;
-        width: 6rem;
-        background: $c-primary;
-      }
-    }
-    &__container {
-      display: flex;
-      align-items: center;
-    }
     &__subject {
       display: block;
       position: absolute;
+      z-index: 200;
       height: 100%;
       width: auto;
       image {
