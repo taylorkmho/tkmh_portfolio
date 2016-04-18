@@ -1,9 +1,20 @@
 .intro {
+  position: relative;
   padding: 30rem $column-gutter calc($column-gutter*2);
-  background-position: top center;
-  background-attachment: fixed;
-  background-size: auto 100%;
   color: #fff;
+  overflow: hidden;
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: top center;
+    background-size: auto 100%;
+  }
+  &__subject {
+    display: none;
+  }
   &__splash {
     svg {
       display: block;
@@ -42,7 +53,9 @@
 @media screen and (min-width: 768px) {
   .intro {
     padding: calc($column-gutter*6) $column-gutter;
-    background-position: left center;
+    &__background {
+      background-position: left center;
+    }
     &__aside, &__main {
       lost-column: 1/2 2;
     }
@@ -66,6 +79,19 @@
     &__container {
       display: flex;
       align-items: center;
+    }
+    &__subject {
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: auto;
+      image {
+        mask: url("#mask");
+      }
+      /* mask-image: url('../images/bg-subject.png');
+      mask-size: auto 100%;
+      mask-type: luminance;
+      mask-mode: luminance; */
     }
   }
 }

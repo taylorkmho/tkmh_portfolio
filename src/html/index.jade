@@ -4,10 +4,14 @@ block vars
   - var bodyTemplate = "home"
 
 block content
-  //- section.splash
-  section.intro.lazyload(data-src-small="../assets/images/bg-splash-mobile.jpg" data-src="../assets/images/bg-splash.jpg")
-    //- .intro__splash
-    //-   include ../assets/images/svg/logo-tho.svg
+
+  section.intro
+    .intro__background.lazyload(data-src-small="../assets/images/bg-splash-mobile.jpg" data-src="../assets/images/bg-splash.jpg")
+      svg.intro__subject(viewBox="0 0 400 400")
+        defs
+          mask#mask(maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse")
+            image(width="400" height="400" xlink:href="../assets/images/bg-subject.png")
+        image(xlink:href="../assets/images/bg-splash.jpg" x="0" y="0" height="400" width="1239")
     .intro__container
       aside.intro__aside
         h2 I BUILD WEB <br>APPS + SITES <br>FOR A LIVING

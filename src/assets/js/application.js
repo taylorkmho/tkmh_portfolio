@@ -15,9 +15,6 @@ let blazy = new Blazy({
     width: 768,
     src: 'data-src-small'
   }],
-  success: function(ele, msg){
-    console.log(ele);
-  },
   error: function(ele, msg){
     if(msg === 'missing'){
       console.log(ele + ' was missing')
