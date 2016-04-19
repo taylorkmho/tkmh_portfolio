@@ -76,17 +76,25 @@ for (let el of projects) {
 let tlHand = new TimelineMax({repeat: -1});
 let hand = document.querySelector('.graphic--prototyping__hand');
 tlHand.add( TweenLite.to(hand, .125, {scale:.9, transformOrigin:"center center"}) );
-tlHand.add( TweenLite.to(hand, .25,  {scale:1}) ); // 2.25
-tlHand.add( TweenLite.to(hand, 2.625, {scale:1}) ); // 4.5
-// start over
+tlHand.add( TweenLite.to(hand, .25,  {scale:1}) );
+tlHand.add( TweenLite.to(hand, 2.625, {scale:1}) );
 
-let tlBoxes = new TimelineMax({repeat: -1});
+let tlBox1 = new TimelineMax({repeat: -1});
 let box1 = document.querySelector('.graphic--prototyping__box--01');
-tlBoxes.add( TweenLite.to(box1, .25,  {scaleX:2, transformOrigin:"left center", delay: .125}) );
-tlBoxes.add( TweenLite.to(box1, .25,  {scaleX:1, delay: 2.75}) );
-tlBoxes.add( TweenLite.to(box1, 2.625, {scaleX:1}) );
+tlBox1.add(
+  TweenMax.fromTo(box1, .25,
+    {width:52, fill: '#555', stroke: '#bbb'},
+    {width:86, fill: '#F24C27', stroke: '#F24C27', transformOrigin:"left center", delay: .125}
+  )
+);
+tlBox1.add( TweenLite.to(box1, .25, {width:52, fill: '#555', stroke: '#bbb', delay: 2.75}) );
+tlBox1.add( TweenLite.to(box1, 2.625, {width:52 }) );
 
+let tlBox2 = new TimelineMax({repeat: -1});
 let box2 = document.querySelector('.graphic--prototyping__box--02');
+tlBox2.add( TweenLite.to(box2, .25, {x: '100%', opacity: 0, delay: .125}) );
+tlBox2.add( TweenLite.to(box2, .25,  {x: '0%', opacity: 1, delay: 2.75}) );
+tlBox2.add( TweenLite.to(box2, 2.625, {x: '0%'}) );
 // start over
 
 

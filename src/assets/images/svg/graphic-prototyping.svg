@@ -3,7 +3,7 @@
     <path fill="#FAFAFA" d="M0 0h86v71H0z"/>
     <path stroke="#F3F3F3" d="M0 7.5h86m-86 9h86m-86 9h86m-86 9h86m-86 9h86m-86 9h86m-86 9h86m-86 9h86" stroke-linecap="square"/>
   </g>
-  <g class="graphic--prototyping__boxes" transform="translate(1)" fill="#555" fill-opacity=".1" stroke="#B1B1B1" stroke-width="1.5">
+  <g class="graphic--prototyping__boxes" transform="translate(1)" fill-opacity=".1" stroke-width="1.5">
     <rect width="86" height="23" y="7" rx="2"/>
     <rect class="graphic--prototyping__box graphic--prototyping__box--01" width="52" height="26.57" y="35" rx="2"/>
     <rect class="graphic--prototyping__box graphic--prototyping__box--02" width="29" height="26.57" x="57" y="35" rx="2"/>

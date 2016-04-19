@@ -49,8 +49,13 @@
     &__boxes {
       animation: marching-ants 15s linear infinite;
       stroke-dasharray: 5;
-
       stroke: $c-primary;
+    }
+  }
+  &--prototyping {
+    &__boxes {
+      fill: #555;
+      stroke: #bbb;
     }
   }
 }
