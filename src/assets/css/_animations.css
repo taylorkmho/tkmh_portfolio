@@ -1,0 +1,3 @@
+@keyframes marching-ants {
+  to { stroke-dashoffset: 100%; }
+}
