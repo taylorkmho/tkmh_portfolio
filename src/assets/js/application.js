@@ -30,22 +30,8 @@ let controller = new ScrollMagic.Controller();
 const projects = document.querySelectorAll('.project');
 for (let el of projects) {
   var bgTween = TweenMax.fromTo(el, 1,
-    {
-      backgroundColor: "rgba(34,34,34,1)"
-    },
-    {
-      backgroundColor: "rgba(34,34,34,0)"
-    }
-  );
-  var screenTween = TweenMax.fromTo(el.querySelector('.project__screenshot'), 1,
-    {
-      scale: '1',
-      rotation: '0'
-    },
-    {
-      scale: '1.1',
-      rotation: '4'
-    }
+    { backgroundColor: "rgba(34,34,34,1)" },
+    { backgroundColor: "rgba(34,34,34,0)" }
   );
   let scene = new ScrollMagic.Scene(
       {
@@ -55,6 +41,12 @@ for (let el of projects) {
     )
     .setTween(bgTween)
     .addTo(controller);
+
+  var screenTween = TweenMax.fromTo(el.querySelector('.project__screenshot'), 1,
+    { scale: '1',   rotation: '0' },
+    { scale: '1.1', rotation: '4' }
+  );
+
   let scene02 = new ScrollMagic.Scene(
       {
         triggerElement: el,
