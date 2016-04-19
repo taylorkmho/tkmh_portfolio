@@ -47,8 +47,10 @@
 .graphic {
   &--uiux {
     &__boxes {
-      animation: marching-ants 20s linear infinite;
-      stroke-dasharray: 3;
+      animation: marching-ants 15s linear infinite;
+      stroke-dasharray: 5;
+
+      stroke: $c-primary;
     }
   }
 }

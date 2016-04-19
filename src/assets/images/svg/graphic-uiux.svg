@@ -3,9 +3,9 @@
     <path fill="#FAFAFA" d="M1 0h86v71H1z"/>
     <path d="M1 7.5h86m-86 9h86m-86 9h86m-86 9h86m-86 9h86m-86 9h86m-86 9h86m-86 9h86" stroke="#F3F3F3" stroke-linecap="square"/>
   </g>
-  <g class="graphic--uiux__boxes" transform="translate(1 7)" stroke="#F24C27" stroke-width="1.5" fill="#F24C27" fill-opacity=".1" stroke-dasharray="3 2">
-    <rect id="a" y="28" width="52" height="26.57" rx="2"/>
-    <rect id="b" width="86" height="23" rx="2"/>
-    <rect id="c" x="57" y="28" width="29" height="26.57" rx="2"/>
+  <g class="graphic--uiux__boxes" transform="translate(1 7)" stroke="#F24C27" fill="none" stroke-width="1.5" stroke-dasharray="3 2">
+    <rect width="86" height="23" rx="2"/>
+    <rect y="28" width="52" height="26.57" rx="2"/>
+    <rect x="57" y="28" width="29" height="26.57" rx="2"/>
   </g>
 </svg>
