@@ -23,6 +23,9 @@
   "overrides": {
     "modernizr": {
       "main": "modernizr.js"
+    },
+    "gsap": {
+      "main": "src/minified/TimelineMax.min.js"
     }
   }
 }

@@ -68,3 +68,27 @@ for (let el of projects) {
     .addTo(controller);
 }
 
+/*
+  Projects scroll-based animations
+  via GSAP library
+*/
+
+let tlHand = new TimelineMax({repeat: -1});
+let hand = document.querySelector('.graphic--prototyping__hand');
+tlHand.add( TweenLite.to(hand, .125, {scale:.9, transformOrigin:"center center"}) );
+tlHand.add( TweenLite.to(hand, .25,  {scale:1}) ); // 2.25
+tlHand.add( TweenLite.to(hand, 2.625, {scale:1}) ); // 4.5
+// start over
+
+let tlBoxes = new TimelineMax({repeat: -1});
+let box1 = document.querySelector('.graphic--prototyping__box--01');
+tlBoxes.add( TweenLite.to(box1, .25,  {scaleX:2, transformOrigin:"left center", delay: .125}) );
+tlBoxes.add( TweenLite.to(box1, .25,  {scaleX:1, delay: 2.75}) );
+tlBoxes.add( TweenLite.to(box1, 2.625, {scaleX:1}) );
+
+let box2 = document.querySelector('.graphic--prototyping__box--02');
+// start over
+
+
+
+
