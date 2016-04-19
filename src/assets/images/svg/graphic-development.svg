@@ -1,30 +1,30 @@
-<svg viewBox="0 0 88 71" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <g fill="none" fill-rule="evenodd">
+<svg class="graphic graphic--development" viewBox="0 0 88 71" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g class="graphic__base" transform="translate(1)">
     <path fill="#FAFAFA" d="M1 0h86v71H1z"/>
     <path d="M1 7.5h86m-86 9h86m-86 9h86m-86 9h86m-86 9h86m-86 9h86m-86 9h86m-86 9h86" stroke="#F3F3F3" stroke-linecap="square"/>
-    <g transform="translate(17 1)">
-      <rect fill="#000" width="55" height="36" rx="3"/>
-      <rect fill="#FFF" x="3" y="3" width="49" height="30" rx="1"/>
-      <rect id="a" x="32" y="18" width="13" height="14" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DBDBDB" />
-      <rect id="b" x="9" y="4" width="36" height="13" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DCDCDC"/>
-      <rect id="c" x="9" y="18" width="22" height="14" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DBDBDB"/>
-      <path d="M52.5 13.67c1.38-.92 2.5-.33 2.5 1.32v18c0 1.63-1.35 3-3 3H22c-1.65 0-1.88-.77-.5-1.7l31-20.66z" fill-opacity=".32" fill="#F24C27"/>
-    </g>
-    <g transform="translate(17 39)">
-      <rect fill="#000" width="19" height="30" rx="3"/>
-      <rect fill="#FFF" x="2" y="2" width="15" height="26" rx="1"/>
-      <rect id="d" x="3" y="3" width="13" height="11" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DCDCDC"/>
-      <rect id="e" x="3" y="15" width="13" height="6" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DCDCDC"/>
-      <rect id="f" x="3" y="22" width="13" height="4" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DCDCDC"/>
-      <path d="M16.66 19.7c1.3-1.03 2.34-.52 2.34 1.14V27c0 1.65-1.35 3-3 3H6.8c-1.66 0-1.96-.84-.66-1.87l10.52-8.42z" fill-opacity=".32" fill="#F24C27" opacity=".6"/>
-    </g>
-    <g transform="translate(39 42)">
-      <rect fill="#000" width="33" height="25" rx="3"/>
-      <rect fill="#FFF" x="2" y="2" width="29" height="21" rx="1"/>
-      <rect id="g" x="4" y="3" width="25" height="11" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DCDCDC"/>
-      <rect id="h" x="4" y="15" width="17" height="7" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DCDCDC"/>
-      <rect id="i" x="22" y="15" width="7" height="7" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DCDCDC"/>
-      <path d="M30.52 13.4c1.37-.92 2.48-.33 2.48 1.32V22c0 1.66-1.35 3-3 3H16.4c-1.64 0-1.87-.75-.5-1.68l14.62-9.9z" fill-opacity=".32" fill="#F24C27" opacity=".6"/>
-    </g>
+  </g>
+  <g class="graphic--development__lablet" transform="translate(17 1)">
+    <rect fill="#000" width="55" height="36" rx="3"/>
+    <rect fill="#FFF" x="3" y="3" width="49" height="30" rx="1"/>
+    <rect id="a" x="32" y="18" width="13" height="14" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DBDBDB" />
+    <rect id="b" x="9" y="4" width="36" height="13" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DCDCDC"/>
+    <rect id="c" x="9" y="18" width="22" height="14" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DBDBDB"/>
+    <path d="M52.5 13.67c1.38-.92 2.5-.33 2.5 1.32v18c0 1.63-1.35 3-3 3H22c-1.65 0-1.88-.77-.5-1.7l31-20.66z" fill-opacity=".32" fill="#F24C27"/>
+  </g>
+  <g class="graphic--development__phone" transform="translate(17 39)">
+    <rect fill="#000" width="19" height="30" rx="3"/>
+    <rect fill="#FFF" x="2" y="2" width="15" height="26" rx="1"/>
+    <rect id="d" x="3" y="3" width="13" height="11" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DCDCDC"/>
+    <rect id="e" x="3" y="15" width="13" height="6" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DCDCDC"/>
+    <rect id="f" x="3" y="22" width="13" height="4" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DCDCDC"/>
+    <path d="M16.66 19.7c1.3-1.03 2.34-.52 2.34 1.14V27c0 1.65-1.35 3-3 3H6.8c-1.66 0-1.96-.84-.66-1.87l10.52-8.42z" fill-opacity=".32" fill="#F24C27" opacity=".6"/>
+  </g>
+  <g class="graphic--development__tablet" transform="translate(39 42)">
+    <rect fill="#000" width="33" height="25" rx="3"/>
+    <rect fill="#FFF" x="2" y="2" width="29" height="21" rx="1"/>
+    <rect id="g" x="4" y="3" width="25" height="11" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DCDCDC"/>
+    <rect id="h" x="4" y="15" width="17" height="7" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DCDCDC"/>
+    <rect id="i" x="22" y="15" width="7" height="7" rx="1" stroke="#B1B1B1" stroke-width=".75" fill="#DCDCDC"/>
+    <path d="M30.52 13.4c1.37-.92 2.48-.33 2.48 1.32V22c0 1.66-1.35 3-3 3H16.4c-1.64 0-1.87-.75-.5-1.68l14.62-9.9z" fill-opacity=".32" fill="#F24C27" opacity=".6"/>
   </g>
 </svg>
