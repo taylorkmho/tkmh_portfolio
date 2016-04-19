@@ -16,8 +16,3 @@ export function removeClass(el, className) {
     el.setAttribute('class', el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' '));
   }
 }
-
-// Ref: https://jakearchibald.com/2014/iterators-gonna-iterate/
-export function nodeListShim() {
-  NodeList.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
-}

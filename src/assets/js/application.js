@@ -1,7 +1,7 @@
 require('es6-shim');
+require('./lib/_nodelist-shim');
 require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js');
-import { addClass, removeClass, nodeListShim } from "./lib/_helpers";
-nodeListShim();
+import { addClass, removeClass } from "./lib/_helpers";
 
 let Blazy              = require('blazy');
 let ScrollMagic        = require('scrollmagic');
