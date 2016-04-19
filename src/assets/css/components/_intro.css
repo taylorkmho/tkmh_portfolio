@@ -24,3 +24,18 @@
     color: $c-primary;
   }
 }
+
+.skills {
+  lost-utility: clearfix;
+  &__skill {
+    lost-column: 1/3 3;
+  }
+  svg {
+    margin-bottom: calc($column-gutter/4);
+  }
+  h5 {
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+}

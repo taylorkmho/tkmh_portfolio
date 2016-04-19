@@ -11,7 +11,6 @@ block content
         defs
           mask#mask(maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse")
             image(width="400" height="400" xlink:href="../assets/images/bg-subject.png")
-        //- rect(x="50" y="50" height="300" width="300" stroke="#fff" stroke-width="10" fill="none")
         image(xlink:href="../assets/images/bg-splash.jpg" x="0" y="0" height="400" width="1239")
   section.short-bio
     .short-bio__container
@@ -28,6 +27,16 @@ block content
       .intro__copy
         p My name is <strong>Taylor Ho</strong> and I am a <strong>front-end developer + designer</strong> with <strong>several years of experience</strong> living in <strong>San Francisco</strong>.
         p I build web apps and sites for a living and I am absolutely passionate about what I do. I love building things and making them just work. I use design and technology to take concepts all the way to launch.
+        .intro__skills.skills
+          .skills__skill
+            include ../assets/images/svg/graphic-uiux.svg
+            h5 UX/UI DESIGN
+          .skills__skill
+            include ../assets/images/svg/graphic-prototyping.svg
+            h5 PROTOTYPING
+          .skills__skill
+            include ../assets/images/svg/graphic-development.svg
+            h5 DEVELOPMENT
         p I am currently working freelance, seeking a full-time opportunity with a product-driven company. I am looking to join a team that I can contribute to and grow with.
   section.projects
     .projects__title.section-title
