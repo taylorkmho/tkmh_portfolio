@@ -4,7 +4,11 @@ require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js');
 import { addClass, removeClass } from "./lib/_helpers";
 
 let Blazy              = require('blazy');
-let ScrollMagic        = require('scrollmagic');
+
+/*
+  Image lazy-loading
+  via blazy.js
+*/
 
 let blazy = new Blazy({
   selector: '.lazyload',
@@ -24,6 +28,13 @@ let blazy = new Blazy({
     }
   }
 });
+
+/*
+  Projects scroll-based animations
+  via ScrollMagic + its GSAP plug-in
+*/
+
+let ScrollMagic        = require('scrollmagic');
 
 let controller = new ScrollMagic.Controller();
 
@@ -56,3 +67,4 @@ for (let el of projects) {
     .setTween(screenTween)
     .addTo(controller);
 }
+
