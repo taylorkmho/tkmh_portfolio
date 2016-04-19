@@ -16,8 +16,18 @@ body {
   color: $c-body-font;
   > section {
     padding: 0 $column-gutter;
-    /* margin-top: calc($column-gutter*2);
-    margin-bottom: calc($column-gutter*2); */
+    p:last-of-type {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: calc(-3rem);
+        left: 0;
+        height: .5rem;
+        width: 6rem;
+        background: #F24C27;
+      }
+    }
   }
 }
 

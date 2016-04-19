@@ -167,18 +167,6 @@
 }
 
 .section-title {
-  &__column {
-    position: relative;
-    &:after {
-      content: "";
-      position: absolute;
-      bottom: calc(-$column-gutter);
-      left: 0;
-      height: .5rem;
-      width: 6rem;
-      background: $c-primary;
-    }
-  }
   h2 {
     margin: 0;
     font-size: 3rem;
