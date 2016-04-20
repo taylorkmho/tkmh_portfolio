@@ -1,16 +1,37 @@
 .splash {
   position: relative;
-  color: #fff;
   overflow: hidden;
   height: calc(100vh - 12rem);
+  color: #fff;
+  background-color: #222;
+  &:before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    z-index: 200;
+    transform: translate3d(-50%, -50%, 0);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: color(#000 a(.25)) 5px solid;
+    border-right-color: color($c-primary a(.25));
+    animation: spinner 2s linear infinite;
+  }
   &__background {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 210;
     width: 100%;
     height: 100%;
     background-position: top center;
     background-size: auto 100%;
+    opacity: 0;
+    transition: opacity ease-out 500ms;
+    &.lazyloaded {
+      opacity: 1;
+    }
     svg {
       display: none;
     }

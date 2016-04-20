@@ -1,3 +1,8 @@
 @keyframes marching-ants {
   to { stroke-dashoffset: 100%; }
 }
+
+@keyframes spinner {
+  0% { transform: rotate(0) translateZ(0); }
+  99.72% { transform: rotate(359deg) translateZ(0); }
+}
