@@ -1,7 +1,5 @@
 .projects {
   lost-utility: clearfix;
-  padding-left: 0;
-  padding-right: 0;
   background-color: $c-body-font;
   color: #fff;
   &__title,
@@ -18,8 +16,6 @@
 
 @media screen and (min-width: $mq-small) {
   .projects {
-    padding-left: $column-gutter;
-    padding-right: $column-gutter;
     &__list {
       position: relative;
       lost-utility: clearfix;

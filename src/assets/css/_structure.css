@@ -19,7 +19,6 @@ body {
   background: $c-bg-color;
   color: $c-body-font;
   > section {
-    padding: 0 $column-gutter;
     p:last-of-type {
       position: relative;
       &:after {
