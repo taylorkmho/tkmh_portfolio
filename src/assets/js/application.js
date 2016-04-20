@@ -19,6 +19,11 @@ let blazy = new Blazy({
     width: 768,
     src: 'data-src-small'
   }],
+  success: function(ele) {
+    if (window.screen.width > 768) {
+      addClass(ele, 'lazyloaded--desktop');
+    }
+  },
   error: function(ele, msg){
     if(msg === 'missing'){
       console.log(ele + ' was missing')
@@ -104,7 +109,6 @@ const graphicProjects = document.querySelectorAll('.graphic--development__device
 for (let el of graphicProjects) {
   let elBoxes = el.querySelectorAll('.graphic--development__boxes rect');
   let elScreen = el.querySelector('.graphic--development__screen');
-  console.log(elBoxes);
 
   let tlDevice = new TimelineMax({repeat: -1});
   tlDevice.add( TweenLite.fromTo(elScreen, .25, {fill:'#F24C27'},{fill:'#fff', delay: 1}) );

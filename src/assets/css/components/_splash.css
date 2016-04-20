@@ -14,6 +14,9 @@
     svg {
       display: none;
     }
+    &.lazyloaded--desktop {
+      background-position: 8%;
+    }
   }
 }
 
@@ -21,7 +24,9 @@
   .splash {
     padding: calc($column-gutter*6) $column-gutter;
     &__background {
-      background-position: left center;
+      &, &.lazyloaded--desktop {
+        background-position: left center;
+      }
       svg {
         display: block;
         position: absolute;
