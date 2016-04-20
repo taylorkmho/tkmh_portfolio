@@ -58,4 +58,9 @@
       stroke: #bbb;
     }
   }
+  &--development {
+    &__reflection {
+      fill: #fff;
+    }
+  }
 }

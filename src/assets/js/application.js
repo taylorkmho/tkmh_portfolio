@@ -73,6 +73,9 @@ for (let el of projects) {
   via GSAP library
 */
 
+// UI/UX graphic in intro.css
+
+// PROTOTYPING graphic (panel 2)
 let tlHand = new TimelineMax({repeat: -1});
 let hand = document.querySelector('.graphic--prototyping__hand');
 tlHand.add( TweenLite.to(hand, .125, {scale:.9, transformOrigin:"center center"}) );
@@ -95,8 +98,23 @@ let box2 = document.querySelector('.graphic--prototyping__box--02');
 tlBox2.add( TweenLite.to(box2, .25, {x: '100%', opacity: 0, delay: .125}) );
 tlBox2.add( TweenLite.to(box2, .25,  {x: '0%', opacity: 1, delay: 2.75}) );
 tlBox2.add( TweenLite.to(box2, 2.625, {x: '0%'}) );
-// start over
 
+// DEVELOPMENT graphic (panel 3)
+const graphicProjects = document.querySelectorAll('.graphic--development__device');
+for (let el of graphicProjects) {
+  let elBoxes = el.querySelectorAll('.graphic--development__boxes rect');
+  let elScreen = el.querySelector('.graphic--development__screen');
+  console.log(elBoxes);
 
-
-
+  let tlDevice = new TimelineMax({repeat: -1});
+  tlDevice.add( TweenLite.fromTo(elScreen, .25, {fill:'#F24C27'},{fill:'#fff', delay: 1}) );
+  tlDevice.add( TweenLite.fromTo(elBoxes[0], .125, {y:'2px', opacity: 0}, {y:'0px', opacity: 1}) );
+  tlDevice.add( TweenLite.fromTo(elBoxes[1], .125, {y:'2px', opacity: 0}, {y:'0px', opacity: 1}) );
+  tlDevice.add( TweenLite.fromTo(elBoxes[2], .125, {y:'2px', opacity: 0}, {y:'0px', opacity: 1}) );
+  tlDevice.add( TweenLite.to(elBoxes[0], .125, {fill:'#f24c27', stroke:'#f24c27', delay: 4}) );
+  tlDevice.add( TweenLite.to(elBoxes[0], .25, {clearProps: 'fill,stroke'}) );
+  tlDevice.add( TweenLite.to(elBoxes[1], .125, {y:'2px', opacity: 0}) );
+  tlDevice.add( TweenLite.to(elBoxes[2], .125, {y:'2px', opacity: 0}) );
+  tlDevice.add( TweenLite.to(elBoxes[0], .125, {y:'2px', opacity: 0}) );
+  tlDevice.add( TweenLite.to(elScreen, .5, {fill:'#f24c27'}) );
+}
