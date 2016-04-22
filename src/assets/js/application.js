@@ -1,9 +1,24 @@
 require('es6-shim');
 require('./lib/_nodelist-shim');
 require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js');
-import { addClass, removeClass } from "./lib/_helpers";
+import { addClass, removeClass, hasClass } from "./lib/_helpers";
 
 let Blazy              = require('blazy');
+
+/*
+  Killing hover on scroll
+*/
+const body = document.body;
+window.addEventListener('scroll', function() {
+  clearTimeout(timer);
+  if (!hasClass(body, 'disable-hover')) {
+    addClass(body, 'disable-hover')
+  }
+
+  let timer = setTimeout(function(){
+    removeClass(body, 'disable-hover')
+  },500);
+}, false);
 
 /*
   Image lazy-loading
@@ -46,13 +61,13 @@ let blazy = new Blazy({
   const projects = document.querySelectorAll('.project');
   for (let el of projects) {
     var bgTween = TweenMax.fromTo(el, 1,
-      { backgroundColor: "rgba(34,34,34,1)", opacity: .125 },
-      { backgroundColor: "rgba(34,34,34,0)", opacity: 1 }
+      { opacity: .125 },
+      { opacity: 1 }
     );
     let scene = new ScrollMagic.Scene(
         {
           triggerElement: el,
-          duration: '50%'
+          duration: '25%'
         }
       )
       .triggerHook(1)

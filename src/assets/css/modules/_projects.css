@@ -50,11 +50,13 @@
 .project {
   position: relative;
   height: 0;
-  background-color: $c-primary;
+  background-color: #000;
   background-size: cover;
   margin-bottom: $column-gutter;
   z-index: 100;
   padding: calc($column-gutter/2) calc($column-gutter/2) 25%;
+
+  backface-visibility: hidden;
 
   &__logo {
     position: relative;
@@ -123,12 +125,9 @@
     z-index: initial;
     overflow: initial;
     padding: $column-gutter $column-gutter 25%;
-    background-blend-mode: luminosity;
-    background-color: color(#222 a(1));
     transition: all 250ms ease-out;
     &:hover,
     &.is-active {
-      background-color: color(#222 a(0));
       .project__screenshot {
         transform: scale(1.05) rotate(2deg);
       }

@@ -16,3 +16,12 @@ export function removeClass(el, className) {
     el.setAttribute('class', el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' '));
   }
 }
+
+// Ref: http://youmightnotneedjquery.com
+export function hasClass(el, className) {
+  if (el.classList) {
+    el.classList.contains(className);
+  } else {
+    new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+  }
+}
