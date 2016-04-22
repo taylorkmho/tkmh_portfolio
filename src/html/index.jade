@@ -46,7 +46,7 @@ block content
         p Following a mobile-first philosophy, all projects are built to serve users across all devices. Front-end code should be lean and mean. Semantic mark-up is the way. Each project is an opportunity to try and learn something new.
     .projects__list
       each project in projects
-        .projects__project.project.lazyload(data-format=project.thumbSize data-src="assets/images/projects/#{project.abbr}-bg.jpg")
+        .projects__project.project.lazyload(style="background-color: #{project.hexColor};" data-format=project.thumbSize data-src="assets/images/projects/#{project.abbr}-bg.jpg")
           img.project__logo(src="assets/images/svg/logo-#{project.abbr}.svg")
           .project__screenshot
             .project__motion.lazyload(data-src="assets/images/projects/#{project.abbr}-screen.gif")
