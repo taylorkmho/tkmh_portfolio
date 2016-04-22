@@ -962,6 +962,10 @@ img {
   margin: 0;
 }
 
+.standby-for-fonts .short-bio__copy h1, .standby-for-fonts .short-bio__copy h2 {
+  opacity: 0;
+}
+
 .short-bio__copy h1 {
   font-size: 12vw;
   letter-spacing: 1vw;
@@ -984,6 +988,10 @@ img {
   display: inline-block;
   width: 2.75rem;
   height: 2.75rem;
+}
+
+.standby-for-fonts .short-bio__social li {
+  opacity: 0;
 }
 
 .short-bio__social a {
@@ -1320,21 +1328,22 @@ img {
   clear: both;
 }
 
-.footer p {
-  margin: 0;
-  line-height: 1;
-  font-size: 6.75vw;
-  letter-spacing: .25vw;
-  color: #F24C27;
+.footer svg {
   mix-blend-mode: multiply;
 }
 
-.footer p:nth-of-type(2) {
+.footer svg text {
+  fill: #F24C27;
+}
+
+.footer p {
+  margin: calc(32px/2) 0 0;
+  line-height: 1;
+  mix-blend-mode: multiply;
   font-family: "museo-sans", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 600;
-  margin-top: 32px;
   color: rgb(145, 145, 145);
-  font-size: 4.25vw;
+  font-size: 3.5vw;
   letter-spacing: .15vw;
 }
 
@@ -1352,7 +1361,7 @@ img {
   .footer {
     padding: calc(32px*2) 0;
   }
-  .footer p:nth-of-type(2) {
+  .footer p {
     font-size: 3.5vw;
     letter-spacing: .15vw;
   }
@@ -1396,13 +1405,8 @@ img {
 
 @media screen and (min-width: 1200px) {
   .footer p {
-    font-size: 5.5rem;
-    letter-spacing: .125rem;
-  }
-  .footer p:nth-of-type(2) {
     font-size: 2.5rem;
     letter-spacing: .1rem;
-    margin-top: calc(32px*2);
   }
 }
 
@@ -1421,7 +1425,6 @@ img {
 
 .btn--primary {
   background-color: #fff;
-  color: #F24C27;
   border: 2px solid transparent;
 }
 

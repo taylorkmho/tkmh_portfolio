@@ -14790,15 +14790,14 @@ var Blazy = require('blazy');
 /*
   Killing hover on scroll
 */
-var body = document.body;
 window.addEventListener('scroll', function () {
   clearTimeout(timer);
-  if (!(0, _helpers.hasClass)(body, 'disable-hover')) {
-    (0, _helpers.addClass)(body, 'disable-hover');
+  if (!(0, _helpers.hasClass)(document.body, 'disable-hover')) {
+    (0, _helpers.addClass)(document.body, 'disable-hover');
   }
 
   var timer = setTimeout(function () {
-    (0, _helpers.removeClass)(body, 'disable-hover');
+    (0, _helpers.removeClass)(document.body, 'disable-hover');
   }, 500);
 }, false);
 
@@ -14831,58 +14830,44 @@ var blazy = new Blazy({
 });
 
 /*
-  Projects scroll-based animations
-  via ScrollMagic + its GSAP plug-in
+  Animating in text in Short Bio section
 */
 
-// For media query, refer to $mq-small in _settings.css
-var animDuration = '25%',
-    animTriggerHook = 1;
-if (!window.matchMedia("(min-width: 768px)").matches) {
-  animDuration = '50%';
-}
+var removeFontsStandby = function removeFontsStandby() {
+  (0, _helpers.removeClass)(document.documentElement, 'standby-for-fonts');
+};
 
-var ScrollMagic = require('scrollmagic');
-var controller = new ScrollMagic.Controller();
-var projects = document.querySelectorAll('.project');
-var _iteratorNormalCompletion = true;
-var _didIteratorError = false;
-var _iteratorError = undefined;
+var fontsActiveCallback = function fontsActiveCallback() {
+  removeFontsStandby();
+  var tlTitles = new TimelineLite();
+  var shortBio = document.querySelector('.short-bio');
+  tlTitles.add(TweenLite.fromTo(shortBio.querySelector('h1'), .5, { opacity: 0, y: '6rem' }, { opacity: 1, y: '0' }));
+  tlTitles.add(TweenLite.fromTo(shortBio.querySelector('h2'), .25, { opacity: 0, y: '6rem' }, { opacity: 1, y: '0' }));
+  var tlSocial = new TimelineLite();
+  tlSocial.add(TweenLite.fromTo(shortBio.querySelector('li:nth-child(1)'), .125, { opacity: 0, x: '-4rem' }, { opacity: 1, x: '0', delay: .5 }));
+  tlSocial.add(TweenLite.fromTo(shortBio.querySelector('li:nth-child(2)'), .125, { opacity: 0, y: '-4rem' }, { opacity: 1, y: '0' }));
+  tlSocial.add(TweenLite.fromTo(shortBio.querySelector('li:nth-child(4)'), .125, { opacity: 0, x: '4rem' }, { opacity: 1, x: '0' }));
+  tlSocial.add(TweenLite.fromTo(shortBio.querySelector('li:nth-child(3)'), .125, { opacity: 0, y: '4rem' }, { opacity: 1, y: '0' }));
+};
 
 try {
-  for (var _iterator = projects[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-    var el = _step.value;
-
-    var bgTween = TweenMax.fromTo(el, 1, { opacity: .125 }, { opacity: 1 });
-    var scene = new ScrollMagic.Scene({
-      triggerElement: el,
-      duration: animDuration
-    }).triggerHook(animTriggerHook).setTween(bgTween).addTo(controller);
-  }
-
-  /*
-    Projects scroll-based animations
-    via GSAP library
-  */
-
-  // UI/UX graphic in intro.css
-
-  // PROTOTYPING graphic (panel 2)
-} catch (err) {
-  _didIteratorError = true;
-  _iteratorError = err;
-} finally {
-  try {
-    if (!_iteratorNormalCompletion && _iterator.return) {
-      _iterator.return();
-    }
-  } finally {
-    if (_didIteratorError) {
-      throw _iteratorError;
-    }
-  }
+  Typekit.load({
+    async: true,
+    active: fontsActiveCallback,
+    inactive: removeFontsStandby
+  });
+} catch (e) {
+  removeFontsStandby();
 }
 
+/*
+  Skills animations in Intro section
+  via GSAP library
+*/
+
+// UI/UX graphic in intro.css
+
+// PROTOTYPING graphic (panel 2)
 var tlHand = new TimelineMax({ repeat: -1 });
 var hand = document.querySelector('.graphic--prototyping__hand');
 tlHand.add(TweenLite.to(hand, .125, { scale: .9, transformOrigin: "center center" }));
@@ -14903,13 +14888,13 @@ tlBox2.add(TweenLite.to(box2, 2.625, { x: '0%' }));
 
 // DEVELOPMENT graphic (panel 3)
 var graphicProjects = document.querySelectorAll('.graphic--development__device');
-var _iteratorNormalCompletion2 = true;
-var _didIteratorError2 = false;
-var _iteratorError2 = undefined;
+var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;
 
 try {
-  for (var _iterator2 = graphicProjects[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-    var el = _step2.value;
+  for (var _iterator = graphicProjects[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    var el = _step.value;
 
     var elBoxes = el.querySelectorAll('.graphic--development__boxes rect');
     var elScreen = el.querySelector('.graphic--development__screen');
@@ -14928,7 +14913,52 @@ try {
   }
 
   /*
-    Footer "question" swap-out
+    Projects scroll-based animations in Projects section
+    via ScrollMagic + its GSAP plug-in
+  */
+
+  // For media query, refer to $mq-small in _settings.css
+} catch (err) {
+  _didIteratorError = true;
+  _iteratorError = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion && _iterator.return) {
+      _iterator.return();
+    }
+  } finally {
+    if (_didIteratorError) {
+      throw _iteratorError;
+    }
+  }
+}
+
+var animDuration = '25%',
+    animTriggerHook = 1;
+if (!window.matchMedia("(min-width: 768px)").matches) {
+  animDuration = '50%';
+}
+
+var ScrollMagic = require('scrollmagic');
+var controller = new ScrollMagic.Controller();
+var projects = document.querySelectorAll('.project');
+var _iteratorNormalCompletion2 = true;
+var _didIteratorError2 = false;
+var _iteratorError2 = undefined;
+
+try {
+  for (var _iterator2 = projects[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+    var el = _step2.value;
+
+    var bgTween = TweenMax.fromTo(el, 1, { opacity: .125 }, { opacity: 1 });
+    var scene = new ScrollMagic.Scene({
+      triggerElement: el,
+      duration: animDuration
+    }).triggerHook(animTriggerHook).setTween(bgTween).addTo(controller);
+  }
+
+  /*
+    "Phrase" swap-out for Footer section
   */
 } catch (err) {
   _didIteratorError2 = true;
@@ -14948,7 +14978,7 @@ try {
 var footerPhrase = document.getElementById('footer-phrase');
 if (footerPhrase) {
   (function () {
-    var phraseArray = ['ARE WE MEANT TO BE?', 'YOUR TEAM + ME = AWESOME?', 'LET US BE ONE?', 'WOULD I FIT IN?', 'DOES YOUR TEAM NEED A &ldquo;ME&rdquo;?', 'DO I COMPLETE YOU(R TEAM)?', 'SHOULD WE DO THIS?', 'BECAUSE WHY NOT?', 'LET&rsquo;S DO THIS.', '&ldquo;WHAT A GREAT HIRE.&rdquo; – YOUR BOSS', 'FANCY A NEW TEAMMATE?', 'WHY NOT US? WHY NOT NOW?', 'I SEE YOU LOOKING.', 'WE SHOULD TRY THIS.', 'NEED A DESIGN-MINDED DEV?', 'HIRING A FRONT-END?', 'WANT A RESUMÉ?'];
+    var phraseArray = ['ARE WE MEANT TO BE?', 'YOUR TEAM + ME = AWESOME?', 'LET US BE ONE?', 'NEED A DIFFERENT OUTLOOK?', 'DOES YOUR TEAM NEED A &ldquo;ME&rdquo;?', 'DO I COMPLETE YOU(R TEAM)?', 'SHOULD WE DO THIS?', 'BECAUSE WHY NOT?', 'LET&rsquo;S DO THIS.', '&ldquo;WHAT A GREAT HIRE.&rdquo; – YOUR BOSS', 'FANCY A NEW TEAMMATE?', 'WHY NOT US? WHY NOT NOW?', 'I SEE YOU LOOKING.', 'WE SHOULD TRY THIS.', 'NEED A DESIGN-MINDED DEV?', 'HIRING A FRONT-END?', 'WANT A RESUMÉ?', 'LET&lsquo;S PUT &ldquo;U&rdquo; &amp; &ldquo;I&rdquo; TOGETHER.'];
 
     setInterval(function () {
       TweenLite.fromTo(footerPhrase, 1, { opacity: '1' }, {
