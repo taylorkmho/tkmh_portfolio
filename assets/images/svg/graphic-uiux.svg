@@ -1,7 +1,0 @@
-<svg class="graphic graphic--uiux" viewBox="0 0 88 71" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <g class="graphic--uiux__boxes" transform="translate(1 7)" stroke="#F24C27" fill="none" stroke-width="1.5" stroke-dasharray="3 2">
-    <rect width="86" height="23" rx="2"/>
-    <rect y="28" width="52" height="26.57" rx="2"/>
-    <rect x="57" y="28" width="29" height="26.57" rx="2"/>
-  </g>
-</svg>
