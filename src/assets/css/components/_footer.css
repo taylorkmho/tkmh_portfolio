@@ -1,0 +1,98 @@
+.footer {
+  padding: $column-gutter 0;
+  background-size: cover;
+  background-position: center center;
+  &__container {
+    lost-center: $row-width;
+    padding: 0 $column-gutter;
+  }
+  p {
+    margin: 0;
+    line-height: 1;
+    font-size: 6.75vw;
+    letter-spacing: .25vw;
+    color: $c-primary;
+    mix-blend-mode: multiply;
+    &:nth-of-type(2) {
+      font-family: $header-font-family;
+      font-weight: 600;
+      margin-top: calc($column-gutter/2);
+      color: color($c-body-font tint(50%));
+      font-size: 4vw;
+      letter-spacing: .15vw;
+    }
+  }
+  a {
+    position: relative;
+    mix-blend-mode: multiply;
+    white-space: nowrap;
+    color: color($c-body-font tint(66.66%));
+    text-decoration: none;
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .footer {
+    p {
+      font-size: 7.2vw;
+      &:nth-of-type(2) {
+        font-size: 4.5vw;
+        letter-spacing: .15vw;
+        margin-top: $column-gutter;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: calc($column-gutter*2) 0;
+    a {
+      border-left: .5vw solid transparent;
+      border-right: .5vw solid transparent;
+      padding-left: calc($column-gutter/2);
+      padding-right: calc($column-gutter/2);
+      transition: border 250ms ease-out;
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: .5vw;
+        opacity: 0;
+        background-color: $c-primary;
+        transition: all 250ms ease-out;
+      }
+      &:before {
+        top: 0;
+        left: 0;
+      }
+      &:after {
+        bottom: 0;
+        right: 0;
+      }
+      &:hover {
+        border-left-color: $c-primary;
+        border-right-color: $c-primary;
+        &:before,
+        &:after {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $row-width) {
+  .footer {
+    p {
+      font-size: 5.5rem;
+      letter-spacing: .125rem;
+      &:nth-of-type(2) {
+        font-size: 3.25rem;
+        margin-top: calc($column-gutter*2);
+      }
+    }
+  }
+}
