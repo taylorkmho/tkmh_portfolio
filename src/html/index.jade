@@ -59,7 +59,12 @@ block content
 
   footer.footer.lazyload(data-src="../assets/images/bg-footer.jpg")
     .footer__container
-      p I am seeking a full-time opportunity with a product-driven company.
+      svg(viewBox="0 0 800 255")
+        g(font-size="70")
+          text(y="55") I am seeking a full-time
+          text(y="145") opportunity with a
+          text(y="235") product-driven company.
+      //- p I am seeking a full-time opportunity with a product-driven company.
       p
         | <span id="footer-phrase">&ldquo;WHAT A GREAT HIRE.&rdquo; – YOUR BOSS</span>&nbsp;
         a(href="mailto:taylorkmho@gmail.com" data-copy="EMAIL ME") EMAIL ME
