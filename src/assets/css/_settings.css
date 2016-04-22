@@ -7,8 +7,8 @@ $row-width--inner:       820px;
 
 $mq-small:               768px;
 
-$body-font-family:       "ff-tisa-web-pro", sans-serif;
-$header-font-family:      "museo-sans", "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;
+$body-font-family:       "ff-tisa-web-pro", Cambria, Georgia, serif;
+$header-font-family:      "museo-sans", "Helvetica Neue", Helvetica, sans-serif;
 
 $c-primary:              #F24C27;
 $c-secondary:            #ddd;
