@@ -8,16 +8,15 @@ let Blazy              = require('blazy');
 /*
   Killing hover on scroll
 */
-const body = document.body;
 window.addEventListener('scroll', function() {
   clearTimeout(timer);
-  if (!hasClass(body, 'disable-hover')) {
-    addClass(body, 'disable-hover')
+  if (!hasClass(document.body, 'disable-hover')) {
+    addClass(document.body, 'disable-hover')
   }
 
   let timer = setTimeout(function(){
-    removeClass(body, 'disable-hover')
-  },500);
+    removeClass(document.body, 'disable-hover')
+  }, 500);
 }, false);
 
 /*
@@ -48,6 +47,56 @@ let blazy = new Blazy({
     }
   }
 });
+
+/*
+  Animating in text in Short Bio section
+*/
+
+let removeFontsStandby = () => {
+  removeClass(document.documentElement, 'standby-for-fonts');
+}
+
+let fontsActiveCallback = () => {
+  removeFontsStandby();
+  let tlTitles = new TimelineLite();
+  let shortBio = document.querySelector('.short-bio');
+  tlTitles.add(TweenLite.fromTo(shortBio.querySelector('h1'), .5,
+    {opacity:0, y: '6rem'},
+    {opacity:1, y: '0'}
+  ));
+  tlTitles.add(TweenLite.fromTo(shortBio.querySelector('h2'), .25,
+    {opacity:0, y: '6rem'},
+    {opacity:1, y: '0'}
+  ));
+  let tlSocial = new TimelineLite();
+  tlSocial.add(TweenLite.fromTo(shortBio.querySelector('li:nth-child(1)'), .125,
+    {opacity:0, x: '-4rem'},
+    {opacity:1, x: '0', delay: .5}
+  ));
+  tlSocial.add(TweenLite.fromTo(shortBio.querySelector('li:nth-child(2)'), .125,
+    {opacity:0, y: '-4rem'},
+    {opacity:1, y: '0'}
+  ));
+  tlSocial.add(TweenLite.fromTo(shortBio.querySelector('li:nth-child(4)'), .125,
+    {opacity:0, x: '4rem'},
+    {opacity:1, x: '0'}
+  ));
+  tlSocial.add(TweenLite.fromTo(shortBio.querySelector('li:nth-child(3)'), .125,
+    {opacity:0, y: '4rem'},
+    {opacity:1, y: '0'}
+  ));
+}
+
+try{
+  Typekit.load({
+    async: true,
+    active: fontsActiveCallback,
+    inactive: removeFontsStandby
+  });
+}
+catch(e){
+  removeFontsStandby();
+}
 
 /*
   Skills animations in Intro section

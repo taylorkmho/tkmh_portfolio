@@ -11,6 +11,9 @@
     line-height: 1;
     h1, h2 {
       margin: 0;
+      .standby-for-fonts & {
+        opacity: 0;
+      }
     }
     h1 {
       font-size: 12vw;
@@ -31,6 +34,9 @@
       display: inline-block;
       width: 2.75rem;
       height: 2.75rem;
+      .standby-for-fonts & {
+        opacity: 0;
+      }
     }
     a {
       padding: .5rem;

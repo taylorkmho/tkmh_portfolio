@@ -4,14 +4,14 @@ block vars
   - var pageTitle = ""
 
 doctype
-html
+html.standby-for-fonts
   head
     title Taylor Ho portfolio#{pageTitle ? " - " + pageTitle : ""}
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    script(src="assets/js/vendor/modernizr.js")
     link(type="text/css" rel="stylesheet" href="assets/css/app.css")
-    include ../shared/_typekit
+    script(src="assets/js/vendor/modernizr.js")
+    script(src="https://use.typekit.net/odk2uwz.js")
     //- include ../shared/_favicon
     //- include ../shared/_seo
     block additionalHead
