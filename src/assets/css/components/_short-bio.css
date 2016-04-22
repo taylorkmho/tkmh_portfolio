@@ -39,7 +39,7 @@
         &[href*="codepen"] svg   { fill: #30A9F4; }
         &[href*="linkedin"] svg  { fill: #1B85BD; }
         &[href*="twitter"] svg   { fill: #1DA1F2; }
-        &[href*="instagram"] svg { fill: #125688; }
+        &[href*="github"] svg    { fill: #151515; }
       }
     }
     svg {
