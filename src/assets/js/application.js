@@ -50,38 +50,7 @@ let blazy = new Blazy({
 });
 
 /*
-  Projects scroll-based animations
-  via ScrollMagic + its GSAP plug-in
-*/
-
-// For media query, refer to $mq-small in _settings.css
-let animDuration = '25%',
-    animTriggerHook = 1;
-if (!window.matchMedia("(min-width: 768px)").matches) {
-  animDuration = '50%';
-}
-
-let ScrollMagic        = require('scrollmagic');
-let controller = new ScrollMagic.Controller();
-const projects = document.querySelectorAll('.project');
-for (let el of projects) {
-  var bgTween = TweenMax.fromTo(el, 1,
-    { opacity: .125 },
-    { opacity: 1 }
-  );
-  let scene = new ScrollMagic.Scene(
-      {
-        triggerElement: el,
-        duration: animDuration
-      }
-    )
-    .triggerHook(animTriggerHook)
-    .setTween(bgTween)
-    .addTo(controller);
-}
-
-/*
-  Projects scroll-based animations
+  Skills animations in Intro section
   via GSAP library
 */
 
@@ -131,7 +100,38 @@ for (let el of graphicProjects) {
 }
 
 /*
-  Footer "question" swap-out
+  Projects scroll-based animations in Projects section
+  via ScrollMagic + its GSAP plug-in
+*/
+
+// For media query, refer to $mq-small in _settings.css
+let animDuration = '25%',
+    animTriggerHook = 1;
+if (!window.matchMedia("(min-width: 768px)").matches) {
+  animDuration = '50%';
+}
+
+let ScrollMagic        = require('scrollmagic');
+let controller = new ScrollMagic.Controller();
+const projects = document.querySelectorAll('.project');
+for (let el of projects) {
+  var bgTween = TweenMax.fromTo(el, 1,
+    { opacity: .125 },
+    { opacity: 1 }
+  );
+  let scene = new ScrollMagic.Scene(
+      {
+        triggerElement: el,
+        duration: animDuration
+      }
+    )
+    .triggerHook(animTriggerHook)
+    .setTween(bgTween)
+    .addTo(controller);
+}
+
+/*
+  "Phrase" swap-out for Footer section
 */
 let footerPhrase = document.getElementById('footer-phrase');
 if (footerPhrase) {
