@@ -55,26 +55,30 @@ let blazy = new Blazy({
 */
 
 // For media query, refer to $mq-small in _settings.css
-// if (window.matchMedia("(min-width: 768px)").matches) {
-  let ScrollMagic        = require('scrollmagic');
-  let controller = new ScrollMagic.Controller();
-  const projects = document.querySelectorAll('.project');
-  for (let el of projects) {
-    var bgTween = TweenMax.fromTo(el, 1,
-      { opacity: .125 },
-      { opacity: 1 }
-    );
-    let scene = new ScrollMagic.Scene(
-        {
-          triggerElement: el,
-          duration: '25%'
-        }
-      )
-      .triggerHook(1)
-      .setTween(bgTween)
-      .addTo(controller);
-  }
-// }
+let animDuration = '25%',
+    animTriggerHook = 1;
+if (!window.matchMedia("(min-width: 768px)").matches) {
+  animDuration = '50%';
+}
+
+let ScrollMagic        = require('scrollmagic');
+let controller = new ScrollMagic.Controller();
+const projects = document.querySelectorAll('.project');
+for (let el of projects) {
+  var bgTween = TweenMax.fromTo(el, 1,
+    { opacity: .125 },
+    { opacity: 1 }
+  );
+  let scene = new ScrollMagic.Scene(
+      {
+        triggerElement: el,
+        duration: animDuration
+      }
+    )
+    .triggerHook(animTriggerHook)
+    .setTween(bgTween)
+    .addTo(controller);
+}
 
 /*
   Projects scroll-based animations
@@ -131,7 +135,7 @@ for (let el of graphicProjects) {
 */
 let footerPhrase = document.getElementById('footer-phrase');
 if (footerPhrase) {
-  const phraseArray = ['ARE WE MEANT TO BE?', 'YOUR TEAM + ME = AWESOME?', 'LET US BE ONE?', 'WOULD I FIT IN?', 'DOES YOUR TEAM NEED A &ldquo;ME&rdquo;?', 'DO I COMPLETE YOU?', 'SHOULD WE DO THIS?', 'BECAUSE WHY NOT?', 'LET&rsquo;S DO THIS.', '&ldquo;WHAT A GREAT HIRE.&rdquo; – YOUR BOSS', 'FANCY A NEW TEAMMATE?', 'WHY NOT US? WHY NOT NOW?', 'I SEE YOU LOOKING.', 'WE SHOULD TRY THIS.', 'NEED A DESIGN-MINDED DEV?', 'HIRING A FRONT-END?'];
+  const phraseArray = ['ARE WE MEANT TO BE?', 'YOUR TEAM + ME = AWESOME?', 'LET US BE ONE?', 'WOULD I FIT IN?', 'DOES YOUR TEAM NEED A &ldquo;ME&rdquo;?', 'DO I COMPLETE YOU(R TEAM)?', 'SHOULD WE DO THIS?', 'BECAUSE WHY NOT?', 'LET&rsquo;S DO THIS.', '&ldquo;WHAT A GREAT HIRE.&rdquo; – YOUR BOSS', 'FANCY A NEW TEAMMATE?', 'WHY NOT US? WHY NOT NOW?', 'I SEE YOU LOOKING.', 'WE SHOULD TRY THIS.', 'NEED A DESIGN-MINDED DEV?', 'HIRING A FRONT-END?', 'WANT A RESUMÉ?'];
 
   setInterval(()=>{
     TweenLite.fromTo(footerPhrase, 1, {opacity:'1'},{

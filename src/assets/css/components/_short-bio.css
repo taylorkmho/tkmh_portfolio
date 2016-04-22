@@ -19,7 +19,7 @@
     h2 {
       margin-top: .5rem;
       font-size: 3.25vw;
-      letter-spacing: .75vw;
+      letter-spacing: .5vw;
       color: color($c-body-font tint(25%));
     }
   }

@@ -16,13 +16,15 @@
     &:nth-of-type(2) {
       font-family: $header-font-family;
       font-weight: 600;
-      margin-top: calc($column-gutter/2);
+      margin-top: $column-gutter;
       color: color($c-body-font tint(50%));
-      font-size: 3.2vw;
+      font-size: 4.25vw;
       letter-spacing: .15vw;
     }
   }
   a {
+    display: block;
+    margin-top: calc($column-gutter/4);
     position: relative;
     mix-blend-mode: multiply;
     white-space: nowrap;
@@ -31,25 +33,20 @@
   }
 }
 
-@media screen and (min-width: 420px) {
-  .footer {
-    p {
-      font-size: 7.2vw;
-      &:nth-of-type(2) {
-        font-size: 3.5vw;
-        letter-spacing: .15vw;
-        margin-top: $column-gutter;
-      }
-    }
-  }
-}
-
 @media screen and (min-width: 768px) {
   .footer {
     padding: calc($column-gutter*2) 0;
+    p {
+      &:nth-of-type(2) {
+        font-size: 3.5vw;
+        letter-spacing: .15vw;
+      }
+    }
     a {
-      border-left: .3vw solid transparent;
-      border-right: .3vw solid transparent;
+      display: inline;
+      margin-top: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
       padding-left: calc($column-gutter/2);
       padding-right: calc($column-gutter/2);
       transition: border 250ms ease-out;
@@ -58,7 +55,7 @@
         content: "";
         position: absolute;
         width: 0;
-        height: .3vw;
+        height: 4px;
         opacity: 0;
         background-color: $c-primary;
         transition: all 250ms ease-out;

@@ -1,8 +1,7 @@
 .splash {
   position: relative;
   overflow: hidden;
-  height: calc(100vh - 12rem);
-  min-height: 420px;
+  height: 420px;
   color: #fff;
   background-color: #222;
   &:before {
@@ -45,6 +44,8 @@
 
 @media screen and (min-width: 768px) {
   .splash {
+    height: calc(100vh - 12rem);
+    min-height: 420px;
     padding: calc($column-gutter*6) $column-gutter;
     &__background {
       &, &.lazyloaded--desktop {
