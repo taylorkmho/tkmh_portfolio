@@ -6,21 +6,21 @@
     lost-center: $row-width;
     padding: 0 $column-gutter;
   }
-  p {
-    margin: 0;
-    line-height: 1;
-    font-size: 6.75vw;
-    letter-spacing: .25vw;
-    color: $c-primary;
+  svg {
     mix-blend-mode: multiply;
-    &:nth-of-type(2) {
-      font-family: $header-font-family;
-      font-weight: 600;
-      margin-top: $column-gutter;
-      color: color($c-body-font tint(50%));
-      font-size: 4.25vw;
-      letter-spacing: .15vw;
+    text {
+      fill: $c-primary;
     }
+  }
+  p {
+    margin: calc($column-gutter/2) 0 0;
+    line-height: 1;
+    mix-blend-mode: multiply;
+    font-family: $header-font-family;
+    font-weight: 600;
+    color: color($c-body-font tint(50%));
+    font-size: 3.5vw;
+    letter-spacing: .15vw;
   }
   a {
     display: block;
@@ -37,10 +37,8 @@
   .footer {
     padding: calc($column-gutter*2) 0;
     p {
-      &:nth-of-type(2) {
-        font-size: 3.5vw;
-        letter-spacing: .15vw;
-      }
+      font-size: 3.5vw;
+      letter-spacing: .15vw;
     }
     a {
       display: inline;
@@ -84,13 +82,8 @@
 @media screen and (min-width: $row-width) {
   .footer {
     p {
-      font-size: 5.5rem;
-      letter-spacing: .125rem;
-      &:nth-of-type(2) {
-        font-size: 2.5rem;
-        letter-spacing: .1rem;
-        margin-top: calc($column-gutter*2);
-      }
+      font-size: 2.5rem;
+      letter-spacing: .1rem;
     }
   }
 }
