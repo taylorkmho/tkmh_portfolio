@@ -1,14 +1,6 @@
 {
   "projects": [
     {
-      "name": "Surf Status",
-      "abbr": "sus",
-      "hexColor": "#eb4329",
-      "description": "A web app driven by several RESTful API&rsquo;s. Tools include MongoDB, Express, Node.js, and d3.",
-      "url": "http://surfstat.us",
-      "caseStudy": null
-    },
-    {
       "name": "JJ Dolan&rsquo;s",
       "abbr": "jjd",
       "hexColor": "#02b770",
@@ -17,11 +9,11 @@
       "caseStudy": null
     },
     {
-      "name": "Foundry Salon",
-      "abbr": "fnd",
-      "hexColor": "#d5c1a5",
-      "description": "A hair salon website designed with minimal aesthetics to suit the company&rsquo;s branding.",
-      "url": "http://foundrysalon.com",
+      "name": "Surf Status",
+      "abbr": "sus",
+      "hexColor": "#eb4329",
+      "description": "A web app driven by several RESTful API&rsquo;s. Tools include MongoDB, Express, Node.js, and d3.",
+      "url": "http://surfstat.us",
       "caseStudy": null
     },
     {
@@ -30,6 +22,14 @@
       "hexColor": "#837b54",
       "description": "A branding website for Hawaii-based event planner. Built with HTML5, CSS3, and Ruby-on-Rails",
       "url": "http://surfjack.com",
+      "caseStudy": null
+    },
+    {
+      "name": "Foundry Salon",
+      "abbr": "fnd",
+      "hexColor": "#d5c1a5",
+      "description": "A hair salon website designed with minimal aesthetics to suit the company&rsquo;s branding.",
+      "url": "http://foundrysalon.com",
       "caseStudy": null
     },
     {
