@@ -22,6 +22,31 @@
   strong {
     color: $c-primary;
   }
+  a {
+    position: relative;
+    color: $c-body-font;
+    text-decoration: none;
+    transition: all ease-out 250ms;
+    white-space: nowrap;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: -2px;
+      z-index: -1;
+      width: calc(100% + 4px);
+      height: 2px;
+      background-color: $c-primary;
+      transition: height ease-out 125ms;
+    }
+    &:hover {
+      color: #fff;
+      &:after {
+        height: 100%;
+        transition-duration: 250ms;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {
