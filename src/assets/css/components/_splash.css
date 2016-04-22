@@ -2,6 +2,7 @@
   position: relative;
   overflow: hidden;
   height: calc(100vh - 12rem);
+  min-height: 420px;
   color: #fff;
   background-color: #222;
   &:before {
@@ -15,7 +16,7 @@
     height: 50px;
     border-radius: 50%;
     border: color(#000 a(.25)) 5px solid;
-    border-right-color: color($c-primary a(.25));
+    border-right-color: color(#fff a(.5));
     animation: spinner 2s linear infinite;
   }
   &__background {
@@ -26,7 +27,7 @@
     width: 100%;
     height: 100%;
     background-position: top center;
-    background-size: auto 100%;
+    background-size: cover;
     opacity: 0;
     transition: opacity ease-out 500ms;
     &.lazyloaded {
@@ -36,6 +37,7 @@
       display: none;
     }
     &.lazyloaded--desktop {
+      background-size: auto 100%;
       background-position: 8%;
     }
   }

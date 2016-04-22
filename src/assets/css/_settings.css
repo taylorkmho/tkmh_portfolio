@@ -1,5 +1,5 @@
 $easeOutExpo:            cubic-bezier(0.19, 1, 0.22, 1);
-$column-gutter:          2rem;
+$column-gutter:          32px;
 $sectionBaseZ:           100;
 
 $row-width:              1200px;

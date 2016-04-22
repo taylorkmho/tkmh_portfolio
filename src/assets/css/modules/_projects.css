@@ -4,12 +4,14 @@
   color: #fff;
   &__title,
   &__list {
-    lost-center: $row-width;
     padding: 0 $column-gutter;
   }
+  &__list {
+    lost-center: 1264px;
+  }
   &__title {
+    lost-center: $row-width;
     padding: calc($column-gutter*2) $column-gutter;
-    margin-bottom: $column-gutter;
     position: relative;
   }
 }
@@ -20,16 +22,27 @@
       position: relative;
       lost-utility: clearfix;
       /* margin-bottom: 12.5%; */
-      padding: 0;
+      padding: 0 $column-gutter;
+    }
+    &__title {
+      margin-bottom: $column-gutter;
     }
   }
 }
 
 
+@media screen and (min-width: $mq-small) {
+  .projects {
+    &__list {
+      top: -18vw;
+    }
+  }
+}
+
 @media screen and (min-width: $row-width) {
   .projects {
     &__list {
-      top: -20rem;
+      top: -12rem;
     }
   }
 }
@@ -41,14 +54,13 @@
   background-size: cover;
   margin-bottom: $column-gutter;
   z-index: 100;
-  padding: $column-gutter $column-gutter 25%;
+  padding: calc($column-gutter/2) calc($column-gutter/2) 25%;
 
   &__logo {
     position: relative;
     z-index: 300;
     display: block;
     height: 8vw;
-    margin-bottom: calc($column-gutter/4);
     transition: all 250ms ease-out;
     path {
       fill: #fff;
@@ -74,7 +86,7 @@
     border-radius: .25rem;
     overflow: hidden;
     box-shadow: 0 0 2rem 0 color(#000 a(.25));
-    transform: rotate(4deg);
+    /* transform: rotate(4deg); */
     transition: transform 250ms ease-out;
     svg {
       position: relative;
@@ -98,12 +110,19 @@
   }
 }
 
+@media screen and (min-width: 375px) {
+  .project {
+    &__logo {
+      margin-bottom: calc($column-gutter/4);
+    }
+  }
+}
+
 @media screen and (min-width: $mq-small) {
   .project {
     z-index: initial;
     overflow: initial;
-    padding-bottom: calc(100%/2);
-    margin-bottom: $column-gutter;
+    padding: $column-gutter $column-gutter 25%;
     background-blend-mode: luminosity;
     background-color: color(#222 a(1));
     transition: all 250ms ease-out;
@@ -111,7 +130,7 @@
     &.is-active {
       background-color: color(#222 a(0));
       .project__screenshot {
-        transform: scale(1.1) rotate(4deg);
+        transform: scale(1.05) rotate(2deg);
       }
     }
     &__logo {
@@ -126,9 +145,9 @@
       padding: $column-gutter;
     }
     &__screenshot {
-      top: 1.5rem;
+      top: 0.5rem;
       right: 2rem;
-      border-radius: 1rem;
+      border-radius: .75rem;
     }
     &__motion {
       display: block;
@@ -147,7 +166,7 @@
   }
 }
 
-@media screen and (min-width: $row-width) {
+@media screen and (min-width: $mq-small) {
   .project {
     lost-column: 1/2 2 $column-gutter;
     &:nth-child(2n-1) {
@@ -173,7 +192,7 @@
   }
 }
 
-@media screen and (min-width: $row-width) {
+@media screen and (min-width: $mq-small) {
   .section-title {
     &__column {
       lost-column: 1/2 2 $column-gutter;
@@ -192,12 +211,12 @@
 
 @media screen and (min-width: $mq-small) {
   .ui-phone {
-    height: 45vw;
+    height: 24.75vw;
   }
 }
 
 @media screen and (min-width: $row-width) {
   .ui-phone {
-    height: 36rem;
+    height: 19.5rem;
   }
 }

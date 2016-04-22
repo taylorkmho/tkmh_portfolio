@@ -1,7 +1,5 @@
 .short-bio {
-  height: 12rem;
-  display: flex;
-  align-items: center;
+  padding: $column-gutter 0;
   &__container {
     lost-center: $row-width;
     width: 100%;
@@ -9,31 +7,26 @@
     padding-right: $column-gutter;
   }
   &__copy {
-    float: left;
     text-transform: uppercase;
     line-height: 1;
     h1, h2 {
       margin: 0;
     }
     h1 {
-      font-size: 4rem;
-      /* color: #fff; */
-      letter-spacing: .25rem;
+      font-size: 12vw;
+      letter-spacing: 1vw;
     }
     h2 {
       margin-top: .5rem;
-      font-size: 1rem;
+      font-size: 3.25vw;
+      letter-spacing: .75vw;
       color: color($c-body-font tint(25%));
-      letter-spacing: .125rem;
     }
   }
   &__social {
     position: relative;
-    float: right;
     list-style: none;
-    margin: 0 0 0 1rem;
     padding: 0;
-    width: 5.5rem;
     li {
       display: inline-block;
       width: 2.75rem;
@@ -53,6 +46,32 @@
       height: 1.75rem;
       width: 1.75rem;
       fill: color($c-body-font tint(25%));
+    }
+  }
+}
+
+@media screen and (min-width: 520px) {
+  .short-bio {
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    &__copy {
+      float: left;
+      h1 {
+        font-size: 4rem;
+        letter-spacing: .25rem;
+      }
+      h2 {
+        font-size: 1rem;
+        letter-spacing: .125rem;
+      }
+    }
+    &__social {
+      float: right;
+      width: 5.5rem;
+      margin: 0 0 0 1rem;
     }
   }
 }

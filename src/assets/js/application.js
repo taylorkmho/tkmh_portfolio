@@ -39,39 +39,27 @@ let blazy = new Blazy({
   via ScrollMagic + its GSAP plug-in
 */
 
-let ScrollMagic        = require('scrollmagic');
-
-let controller = new ScrollMagic.Controller();
-
-const projects = document.querySelectorAll('.project');
-for (let el of projects) {
-  var bgTween = TweenMax.fromTo(el, 1,
-    { backgroundColor: "rgba(34,34,34,1)" },
-    { backgroundColor: "rgba(34,34,34,0)" }
-  );
-  let scene = new ScrollMagic.Scene(
-      {
-        triggerElement: el,
-        duration: '25%'
-      }
-    )
-    .setTween(bgTween)
-    .addTo(controller);
-
-  var screenTween = TweenMax.fromTo(el.querySelector('.project__screenshot'), 1,
-    { scale: '1',   rotation: '0' },
-    { scale: '1.1', rotation: '4' }
-  );
-
-  let scene02 = new ScrollMagic.Scene(
-      {
-        triggerElement: el,
-        duration: '25%'
-      }
-    )
-    .setTween(screenTween)
-    .addTo(controller);
-}
+// For media query, refer to $mq-small in _settings.css
+// if (window.matchMedia("(min-width: 768px)").matches) {
+  let ScrollMagic        = require('scrollmagic');
+  let controller = new ScrollMagic.Controller();
+  const projects = document.querySelectorAll('.project');
+  for (let el of projects) {
+    var bgTween = TweenMax.fromTo(el, 1,
+      { backgroundColor: "rgba(34,34,34,1)", opacity: .125 },
+      { backgroundColor: "rgba(34,34,34,0)", opacity: 1 }
+    );
+    let scene = new ScrollMagic.Scene(
+        {
+          triggerElement: el,
+          duration: '50%'
+        }
+      )
+      .triggerHook(1)
+      .setTween(bgTween)
+      .addTo(controller);
+  }
+// }
 
 /*
   Projects scroll-based animations
