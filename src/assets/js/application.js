@@ -110,3 +110,21 @@ for (let el of graphicProjects) {
   tlDevice.add( TweenLite.to(elBoxes[0], .125, {y:'2px', opacity: 0}) );
   tlDevice.add( TweenLite.to(elScreen, .5, {fill:'#f24c27'}) );
 }
+
+/*
+  Footer "question" swap-out
+*/
+let footerPhrase = document.getElementById('footer-phrase');
+if (footerPhrase) {
+  const phraseArray = ['ARE WE MEANT TO BE?', 'YOUR TEAM + ME = AWESOME?', 'LET US BE ONE?', 'WOULD I FIT IN?', 'DOES YOUR TEAM NEED A &ldquo;ME&rdquo;?', 'DO I COMPLETE YOU?', 'SHOULD WE DO THIS?', 'BECAUSE WHY NOT?', 'LET&rsquo;S DO THIS.', '&ldquo;WHAT A GREAT HIRE.&rdquo; – YOUR BOSS', 'FANCY A NEW TEAMMATE?', 'WHY NOT US? WHY NOT NOW?', 'I SEE YOU LOOKING.', 'WE SHOULD TRY THIS.', 'NEED A DESIGN-MINDED DEV?', 'HIRING A FRONT-END?'];
+
+  setInterval(()=>{
+    TweenLite.fromTo(footerPhrase, 1, {opacity:'1'},{
+      opacity: 0,
+      onComplete: function() {
+        TweenLite.to(footerPhrase, 0, {clearProps: 'opacity'});
+        footerPhrase.innerHTML = phraseArray[Math.floor(Math.random()*phraseArray.length)];
+      }
+    })
+  }, 6000)
+}

@@ -18,7 +18,7 @@
       font-weight: 600;
       margin-top: calc($column-gutter/2);
       color: color($c-body-font tint(50%));
-      font-size: 4vw;
+      font-size: 3.2vw;
       letter-spacing: .15vw;
     }
   }
@@ -36,7 +36,7 @@
     p {
       font-size: 7.2vw;
       &:nth-of-type(2) {
-        font-size: 4.5vw;
+        font-size: 3.5vw;
         letter-spacing: .15vw;
         margin-top: $column-gutter;
       }
@@ -48,8 +48,8 @@
   .footer {
     padding: calc($column-gutter*2) 0;
     a {
-      border-left: .5vw solid transparent;
-      border-right: .5vw solid transparent;
+      border-left: .3vw solid transparent;
+      border-right: .3vw solid transparent;
       padding-left: calc($column-gutter/2);
       padding-right: calc($column-gutter/2);
       transition: border 250ms ease-out;
@@ -58,7 +58,7 @@
         content: "";
         position: absolute;
         width: 0;
-        height: .5vw;
+        height: .3vw;
         opacity: 0;
         background-color: $c-primary;
         transition: all 250ms ease-out;
@@ -90,7 +90,8 @@
       font-size: 5.5rem;
       letter-spacing: .125rem;
       &:nth-of-type(2) {
-        font-size: 3.25rem;
+        font-size: 2.5rem;
+        letter-spacing: .1rem;
         margin-top: calc($column-gutter*2);
       }
     }
