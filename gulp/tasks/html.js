@@ -6,7 +6,7 @@ var gulp         = require('gulp'),
     jade         = require ('gulp-jade');
 
 gulp.task('html', function() {
-  return gulp.src(paths.src.html + "/**/[^_]*.jade")
+  gulp.src(paths.src.html + "/**/[^_]*.jade")
     .pipe(data(function(file) {
       return JSON.parse(fs.readFileSync(paths.src.data + '/content.json'));
     }))
@@ -14,3 +14,8 @@ gulp.task('html', function() {
     .on('error', errorHandler)
     .pipe(gulp.dest(paths.dist.html))
 });
+
+gulp.task('rootFiles', function() {
+  gulp.src(paths.base.src + "*")
+    .pipe(gulp.dest(paths.base.dist));
+})
