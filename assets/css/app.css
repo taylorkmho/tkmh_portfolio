@@ -898,13 +898,13 @@ img {
   opacity: 1;
 }
 
-.splash__background svg {
-  display: none;
-}
-
 .splash__background.lazyloaded--desktop {
   background-size: auto 100%;
   background-position: 8%;
+}
+
+.splash__mask {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -916,16 +916,24 @@ img {
   .splash__background, .splash__background.lazyloaded--desktop {
     background-position: left center;
   }
-  .splash__background svg {
+  .splash__mask {
     display: block;
     position: absolute;
     z-index: 200;
     height: 100%;
     width: auto;
+    transition: -webkit-transform 750ms ease-out;
+    transition: transform 750ms ease-out;
+    transition: transform 750ms ease-out, -webkit-transform 750ms ease-out;
   }
-  .splash__background svg image {
+  .splash__mask image {
     -webkit-mask: url("#mask");
             mask: url("#mask");
+  }
+  .splash__mask.is-animated {
+    -webkit-transform: scale(1.025);
+        -ms-transform: scale(1.025);
+            transform: scale(1.025);
   }
 }
 
