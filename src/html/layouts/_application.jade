@@ -19,7 +19,7 @@ html.standby-for-fonts
   body(data-template="#{bodyTemplate}")
     //- include ../shared/_google-analytics
     block content
-    script(src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TimelineMax.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js")
     script.
-      window.TweenMax || document.write('<script src="assets/js/vendor/TimelineMax.min.js">\x3C/script>')
+      window.TimelineMax || document.write('<script src="assets/js/vendor/TweenMax.min.js">\x3C/script>')
     script(src="assets/js/app.js")

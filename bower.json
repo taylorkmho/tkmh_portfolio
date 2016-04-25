@@ -25,7 +25,7 @@
       "main": "modernizr.js"
     },
     "gsap": {
-      "main": "src/minified/TimelineMax.min.js"
+      "main": "src/minified/TweenMax.min.js"
     }
   }
 }
