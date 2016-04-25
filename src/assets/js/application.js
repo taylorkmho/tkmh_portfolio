@@ -107,6 +107,10 @@ catch(e){
   removeFontsStandby();
 }
 
+setTimeout(()=>{
+  removeFontsStandby();
+},3000)
+
 /*
   Skills animations in Intro section
   via GSAP library
