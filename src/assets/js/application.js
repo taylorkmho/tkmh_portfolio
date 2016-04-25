@@ -1,8 +1,6 @@
+import { addClass, removeClass, hasClass } from "./lib/_helpers";
 require('es6-shim');
 require('./lib/_nodelist-shim');
-
-import { addClass, removeClass, hasClass } from "./lib/_helpers";
-
 let Blazy              = require('blazy');
 
 /*
@@ -33,12 +31,23 @@ let blazy = new Blazy({
     width: 768,
     src: 'data-src-small'
   }],
-  success: function(ele) {
+  success: (ele) => {
     if (window.screen.width > 768) {
       addClass(ele, 'lazyloaded--desktop');
+      if (hasClass(ele, 'splash__background')) {
+        let tempDiv = document.createElement('div');
+        tempDiv.innerHTML = '<svg viewBox="0 0 400 400" class="splash__mask"><defs><mask id="mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse"><image width="400" height="400" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/bg-subject.png"></image></mask></defs><image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/bg-splash.jpg" x="0" y="0" height="400" width="1239"></image></svg>';
+        let splashMask = tempDiv.firstChild;
+
+        let splashBackground = document.querySelector('.splash__background');
+        splashBackground.appendChild(splashMask);
+        setTimeout(()=>{
+          addClass(splashMask, 'is-animated');
+        }, 100)
+      }
     }
   },
-  error: function(ele, msg){
+  error: (ele, msg) => {
     if(msg === 'missing'){
       console.log(ele + ' was missing')
     }

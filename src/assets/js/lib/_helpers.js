@@ -19,9 +19,5 @@ export function removeClass(el, className) {
 
 // Ref: http://youmightnotneedjquery.com
 export function hasClass(el, className) {
-  if (el.classList) {
-    el.classList.contains(className);
-  } else {
-    new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
-  }
+  return el.className && new RegExp("(\\s|^)" + className + "(\\s|$)").test(el.className);
 }
