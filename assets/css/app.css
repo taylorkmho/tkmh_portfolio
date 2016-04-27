@@ -679,8 +679,13 @@ img {
   padding: 0;
 }
 
-.project__links a {
+.project__links li {
   display: inline-block;
+  margin-right: calc(32px/2);
+}
+
+.project__links a {
+  display: block;
   margin-left: -.5rem;
   text-decoration: none;
 }
@@ -798,10 +803,6 @@ img {
     -webkit-transform: translateY(50%);
         -ms-transform: translateY(50%);
             transform: translateY(50%);
-  }
-  .project__links li {
-    display: inline-block;
-    margin-right: calc(32px/2);
   }
 }
 
@@ -1438,6 +1439,15 @@ img {
   border: 2px solid transparent;
 }
 
+.btn--svg {
+  padding: .5rem;
+}
+
+.btn--svg img {
+  height: 1rem;
+  width: auto;
+}
+
 @media screen and (min-width: 768px) {
   .btn--primary {
     transition: all 125ms ease-out;
@@ -1446,6 +1456,63 @@ img {
     background-color: transparent;
     color: #fff !important;
     border: 2px solid #fff;
+  }
+  .btn--tooltip {
+    position: relative;
+  }
+  .btn--tooltip:before,
+      .btn--tooltip:after {
+    pointer-events: none;
+  }
+  .btn--tooltip:before {
+    content: "";
+    position: absolute;
+    bottom: -.25rem;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: .25rem solid transparent;
+    border-right: .25rem solid transparent;
+    border-bottom: .25rem solid rgba(255, 255, 255, 0.75);
+    opacity: 0;
+    -webkit-transform: translate(-50%,-.25rem);
+        -ms-transform: translate(-50%,-.25rem);
+            transform: translate(-50%,-.25rem);
+    transition: all 500ms ease-out;
+  }
+  .btn--tooltip:after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    opacity: 0;
+    -webkit-transform: translate(-50%, calc(100%));
+        -ms-transform: translate(-50%, calc(100%));
+            transform: translate(-50%, calc(100%));
+    color: #fff;
+    border-radius: .125rem;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #222;
+    padding: .5rem;
+    font-size: .75rem;
+    max-width: 240px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    transition: all 500ms ease-out;
+  }
+  .btn--tooltip:hover:before {
+    opacity: 1;
+    -webkit-transform: translate(-50%,0);
+        -ms-transform: translate(-50%,0);
+            transform: translate(-50%,0);
+  }
+  .btn--tooltip:hover:after {
+    opacity: 1;
+    -webkit-transform: translate(-50%, calc(100% + .25rem));
+        -ms-transform: translate(-50%, calc(100% + .25rem));
+            transform: translate(-50%, calc(100% + .25rem));
   }
 }
 /*# sourceMappingURL=maps/app.css.map */
