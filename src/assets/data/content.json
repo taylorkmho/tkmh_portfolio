@@ -4,49 +4,48 @@
       "name": "JJ Dolan&rsquo;s",
       "abbr": "jjd",
       "hexColor": "#02b770",
-      "description": "A restaurant website + web app for drawing things on this guy&rsquo;s funny mug.",
-      "url": "http://jjdolans.com",
-      "caseStudy": null
+      "shortUrl": "jjdolans.com",
+      "url": "http://jjdolans.com"
     },
     {
       "name": "Surf Status",
       "abbr": "sus",
       "hexColor": "#eb4329",
-      "description": "A web app driven by several RESTful API&rsquo;s. Tools include MongoDB, Express, Node.js, and d3.",
+      "shortUrl": "surfstat.us",
       "url": "http://surfstat.us",
-      "caseStudy": null
+      "additional": [{
+        "provider": "medium",
+        "url": "https://medium.com/@tkmh/how-i-built-surf-status-2ca2ca8a6fbf",
+        "message": "READ CASE STUDY"
+      }]
     },
     {
       "name": "Surfjack Hotel",
       "abbr": "sjk",
       "hexColor": "#E7695D",
-      "description": "A branding website for Hawaii-based event planner. Built with HTML5, CSS3, and Ruby-on-Rails",
-      "url": "http://surfjack.com",
-      "caseStudy": null
+      "shortUrl": "surfjack.com",
+      "url": "http://surfjack.com"
     },
     {
       "name": "Foundry Salon",
       "abbr": "fnd",
       "hexColor": "#d5c1a5",
-      "description": "A hair salon website designed with minimal aesthetics to suit the company&rsquo;s branding.",
-      "url": "http://foundrysalon.com",
-      "caseStudy": null
+      "shortUrl": "foundrysalon.com",
+      "url": "http://foundrysalon.com"
     },
     {
       "name": "Hallowbaloo",
       "abbr": "hbl",
       "hexColor": "#5d0f43",
-      "description": "A music festival website optimized to display an array of typography, photography, and vector artwork.",
-      "url": "http://hallowbaloo.com/2015",
-      "caseStudy": null
+      "shortUrl": "hallowbaloo.com",
+      "url": "http://hallowbaloo.com/2015"
     },
     {
       "name": "Blake Entertainment",
       "abbr": "bla",
       "hexColor": "#222",
-      "description": "A branding website for Hawaii-based event planner. Built with HTML5, CSS3, and Ruby-on-Rails",
-      "url": "http://blakeentertainmenthawaii.com",
-      "caseStudy": null
+      "shortUrl": "blakeentertainmenthawaii.com",
+      "url": "http://blakeentertainmenthawaii.com"
     }
   ],
 

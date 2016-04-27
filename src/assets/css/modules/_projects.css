@@ -72,8 +72,12 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    a {
+    li {
       display: inline-block;
+      margin-right: calc($column-gutter/2);
+    }
+    a {
+      display: block;
       margin-left: -.5rem;
       &:not(.btn) {
         color: #fff;
@@ -171,12 +175,6 @@
     lost-column: 1/2 2 $column-gutter;
     &:nth-child(2n-1) {
       transform: translateY(50%);
-    }
-    &__links {
-      li {
-        display: inline-block;
-        margin-right: calc($column-gutter/2);
-      }
     }
   }
 }

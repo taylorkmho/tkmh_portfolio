@@ -53,9 +53,11 @@ block content
             .project__still.lazyload(data-src="assets/images/projects/#{project.abbr}-screen.jpg")
             include ../assets/images/svg/ui-phone.svg
           ul.project__links
-            - if (project.caseStudy !== null)
-              li: a.btn.btn--primary(href=project.caseStudy target="_blank" style="color: #{project.hexColor};") case study
-            li: a.btn.btn--plain(href=project.url target="_blank") view site
+            li: a.btn.btn--plain.btn--tooltip(href=project.url target="_blank" data-tooltip="GO TO #{project.shortUrl}") view site
+            - if (project.additional !== undefined)
+              each item in project.additional
+                li: a.btn.btn--svg.btn--tooltip(href=item.url target="_blank" data-tooltip=item.message)
+                  img(src="assets/images/svg/icon-#{item.provider}.svg")
 
   footer.footer.lazyload(data-src="../assets/images/bg-footer.jpg")
     .footer__container
