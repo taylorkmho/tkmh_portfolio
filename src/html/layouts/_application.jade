@@ -14,6 +14,13 @@ html.standby-for-fonts
     script(src="https://use.typekit.net/odk2uwz.js")
     //- include ../shared/_favicon
     //- include ../shared/_seo
+    script.
+      if (typeof Array.from === 'undefined') {
+        var es6Script = document.createElement('script');
+        es6Script.async = false;
+        es6Script.src = 'assets/js/vendor/babel-es6-polyfill.js';
+        document.head.appendChild(es6Script);
+      }
     block additionalHead
 
   body(data-template="#{bodyTemplate}")

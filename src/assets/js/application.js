@@ -1,5 +1,4 @@
 import { addClass, removeClass, hasClass } from "./lib/_helpers";
-require('es6-shim');
 require('./lib/_nodelist-shim');
 let Blazy              = require('blazy');
 
