@@ -22,7 +22,7 @@
   }
 }
 
-@media screen and (min-width: $mq-small) {
+@media screen and (min-width: $mobile-width) {
   .btn {
     &--primary {
       transition: all 125ms ease-out;

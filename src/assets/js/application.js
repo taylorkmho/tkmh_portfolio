@@ -32,20 +32,6 @@ let blazy = new Blazy({
     src: 'data-src-small'
   }],
   success: (ele) => {
-    if (window.screen.width > 768) {
-      addClass(ele, 'lazyloaded--desktop');
-      if (hasClass(ele, 'splash__background')) {
-        let tempDiv = document.createElement('div');
-        tempDiv.innerHTML = '<svg viewBox="0 0 400 400" class="splash__mask"><defs><mask id="mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse"><image width="400" height="400" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/bg-subject.png"></image></mask></defs><image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/bg-splash.jpg" x="0" y="0" height="400" width="1239"></image></svg>';
-        let splashMask = tempDiv.firstChild;
-
-        let splashBackground = document.querySelector('.splash__background');
-        splashBackground.appendChild(splashMask);
-        setTimeout(()=>{
-          addClass(splashMask, 'is-animated');
-        }, 100)
-      }
-    }
   },
   error: (ele, msg) => {
     if(msg === 'missing'){
@@ -67,33 +53,6 @@ let removeFontsStandby = () => {
 
 let fontsActiveCallback = () => {
   removeFontsStandby();
-  let tlTitles = new TimelineLite();
-  let shortBio = document.querySelector('.short-bio');
-  tlTitles.add(TweenLite.fromTo(shortBio.querySelector('h1'), .5,
-    {opacity:0, y: '6rem'},
-    {opacity:1, y: '0'}
-  ));
-  tlTitles.add(TweenLite.fromTo(shortBio.querySelector('h2'), .25,
-    {opacity:0, y: '6rem'},
-    {opacity:1, y: '0'}
-  ));
-  let tlSocial = new TimelineLite();
-  tlSocial.add(TweenLite.fromTo(shortBio.querySelector('li:nth-child(1)'), .125,
-    {opacity:0, x: '-4rem'},
-    {opacity:1, x: '0', delay: .5}
-  ));
-  tlSocial.add(TweenLite.fromTo(shortBio.querySelector('li:nth-child(2)'), .125,
-    {opacity:0, y: '-4rem'},
-    {opacity:1, y: '0'}
-  ));
-  tlSocial.add(TweenLite.fromTo(shortBio.querySelector('li:nth-child(4)'), .125,
-    {opacity:0, x: '4rem'},
-    {opacity:1, x: '0'}
-  ));
-  tlSocial.add(TweenLite.fromTo(shortBio.querySelector('li:nth-child(3)'), .125,
-    {opacity:0, y: '4rem'},
-    {opacity:1, y: '0'}
-  ));
 }
 
 try{

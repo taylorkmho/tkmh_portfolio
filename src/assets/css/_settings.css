@@ -4,8 +4,7 @@ $sectionBaseZ:           100;
 
 $row-width:              1200px;
 $row-width--inner:       820px;
-
-$mq-small:               768px;
+$mobile-width:           768px;
 
 $body-font-family:       "ff-tisa-web-pro", Cambria, Georgia, serif;
 $header-font-family:      "museo-sans", "Helvetica Neue", Helvetica, sans-serif;

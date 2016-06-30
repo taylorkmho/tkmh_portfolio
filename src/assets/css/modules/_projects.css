@@ -16,7 +16,7 @@
   }
 }
 
-@media screen and (min-width: $mq-small) {
+@media screen and (min-width: $mobile-width) {
   .projects {
     &__list {
       position: relative;
@@ -31,7 +31,7 @@
 }
 
 
-@media screen and (min-width: $mq-small) {
+@media screen and (min-width: $mobile-width) {
   .projects {
     &__list {
       top: -18vw;
@@ -125,7 +125,7 @@
   }
 }
 
-@media screen and (min-width: $mq-small) {
+@media screen and (min-width: $mobile-width) {
   .project {
     z-index: initial;
     overflow: initial;
@@ -170,7 +170,7 @@
   }
 }
 
-@media screen and (min-width: $mq-small) {
+@media screen and (min-width: $mobile-width) {
   .project {
     lost-column: 1/2 2 $column-gutter;
     &:nth-child(2n-1) {
@@ -190,7 +190,7 @@
   }
 }
 
-@media screen and (min-width: $mq-small) {
+@media screen and (min-width: $mobile-width) {
   .section-title {
     &__column {
       lost-column: 1/2 2 $column-gutter;
@@ -207,7 +207,7 @@
 }
 
 
-@media screen and (min-width: $mq-small) {
+@media screen and (min-width: $mobile-width) {
   .ui-phone {
     height: 24.75vw;
   }
