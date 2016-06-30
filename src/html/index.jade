@@ -4,24 +4,10 @@ block vars
   - var bodyTemplate = "home"
 
 block content
-
   header.splash
-    .splash__background.lazyload(data-src-small="../assets/images/bg-splash-mobile.jpg" data-src="../assets/images/bg-splash.jpg")
-      //- svg.splash__mask(viewBox="0 0 400 400")
-      //-   defs
-      //-     mask#mask(maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse")
-      //-       image(width="400" height="400" xlink:href="../assets/images/bg-subject.png")
-      //-   image(xlink:href="../assets/images/bg-splash.jpg" x="0" y="0" height="400" width="1239")
-  section.short-bio
-    .short-bio__container
-      .short-bio__copy
-        h1 Taylor Ho
-        h2 Front-end developer &amp; designer
-      ul.short-bio__social
-        li: a(href="https://github.com/taylorkmho" target="_blank"): include ../assets/images/svg/icon-github.svg
-        li: a(href="https://www.linkedin.com/in/taylorho" target="_blank"): include ../assets/images/svg/icon-linkedin.svg
-        li: a(href="http://codepen.io/tellaho/" target="_blank"): include ../assets/images/svg/icon-codepen.svg
-        li: a(href="https://twitter.com/tellaho_" target="_blank"): include ../assets/images/svg/icon-twitter.svg
+    .splash__container
+      .splash__silhouette
+        include ../assets/images/svg/silhouette.svg
   section.intro
     .intro__main
       .intro__copy

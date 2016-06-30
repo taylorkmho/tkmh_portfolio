@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400">
+  <defs>
+    <mask id="mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
+      <image width="560" height="400" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/splash-portrait.jpg"></image>
+      <rect x="0" y="0" width="110" height="400" fill="#fff" />
+      <rect x="450" y="0" width="110" height="400" fill="#fff" />
+  </mask></defs>
+  <path fill="#fff" d="M0 0h560v400H0z" style="mask: url(#mask)"/>
+</svg>

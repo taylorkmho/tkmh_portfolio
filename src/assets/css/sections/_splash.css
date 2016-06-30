@@ -1,0 +1,34 @@
+.splash {
+  height: 320px;
+  padding: 0 calc($column-gutter*2);
+  overflow: hidden;
+  &__container {
+    lost-center: $row-width;
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+    text-align: center;
+    justify-content: center;
+  }
+  &__silhouette {
+    background-color: $c-primary;
+    height: 240px;
+    box-shadow: 0 0 0 1px #fff inset;
+    svg {
+      display: block;
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+@media screen and (min-width: $mobile-width) {
+  .splash {
+    height: 100vh;
+    min-height: 420px;
+    &__silhouette {
+      height: 80vh;
+      min-height: 336px;
+    }
+  }
+}
