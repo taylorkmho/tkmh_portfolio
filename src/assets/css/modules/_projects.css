@@ -1,6 +1,6 @@
 .projects {
   lost-utility: clearfix;
-  background-color: $c-body-font;
+  background-color: #222;
   color: #fff;
   &__title,
   &__list {

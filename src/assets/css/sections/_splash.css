@@ -7,21 +7,32 @@
     display: flex;
     height: 100%;
     align-items: flex-end;
-    text-align: center;
     justify-content: center;
   }
   &__silhouette {
-    /* background-color: #222; */
-    background-image:
-      radial-gradient(
-        circle at bottom right,
-        $c-primary,
-        yellow
-      );
+    position: relative;
+    z-index: 200;
+    background-color: #fff;
     height: 240px;
-    box-shadow: 0 0 0 1px #fff inset;
     transform: translateY(1px);
+    &,
+    &:after {
+      box-shadow: 0 0 0 1px #fff inset;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      animation: backgroundFade 4s linear 1s normal forwards;
+      background-image: linear-gradient( to top, #222, #444);
+    }
     svg {
+      position: relative;
+      z-index: 210;
       display: block;
       height: 100%;
       width: auto;
