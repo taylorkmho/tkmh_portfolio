@@ -11,9 +11,16 @@
     justify-content: center;
   }
   &__silhouette {
-    background-color: $c-primary;
+    /* background-color: #222; */
+    background-image:
+      radial-gradient(
+        circle at bottom right,
+        $c-primary,
+        yellow
+      );
     height: 240px;
     box-shadow: 0 0 0 1px #fff inset;
+    transform: translateY(1px);
     svg {
       display: block;
       height: 100%;
