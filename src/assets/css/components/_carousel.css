@@ -1,0 +1,56 @@
+.Wallop {
+  &-list {
+    text-align: center;
+  }
+  &-item {
+    max-height: 600px;
+    width: auto;
+  }
+  &-pagination {
+    position: relative;
+    margin-top: calc($column-gutter/2);
+    padding-left: 5rem;
+    padding-right: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__option {
+      position: relative;
+      height: 100px;
+      width: 100px;
+      opacity: .5;
+      transition: opacity 150ms ease-out;
+      margin: 0 calc($column-gutter/4);
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        max-height: 100%;
+        max-width: 100%;
+      }
+      &.is-active {
+        opacity: 1;
+      }
+    }
+    &__arrow {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      display: flex;
+      padding: calc($column-gutter/2);
+      cursor: pointer;
+      &--prev {
+        left: 0;
+      }
+      &--next {
+        right: 0;
+        transform: scaleX(-1);
+      }
+      img {
+        width: 40px;
+        height: auto;
+      }
+    }
+  }
+}

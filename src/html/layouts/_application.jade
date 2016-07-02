@@ -10,7 +10,6 @@ html.standby-for-fonts
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     link(type="text/css" rel="stylesheet" href="assets/css/app.css")
-    script(src="assets/js/vendor/modernizr.js")
     script(src="https://use.typekit.net/odk2uwz.js")
     //- include ../shared/_favicon
     //- include ../shared/_seo
@@ -26,7 +25,13 @@ html.standby-for-fonts
   body(data-template="#{bodyTemplate}")
     include ../shared/_google-analytics
     block content
-    script(src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.slim.js")
     script.
-      window.TimelineMax || document.write('<script src="assets/js/vendor/TweenMax.min.js">\x3C/script>')
+      window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js">\x3C/script>')
+    script(src="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js")
+    script.
+      jQuery.magnificPopup || document.write('<script src="assets/js/vendor/jquery.magnific-popup.min.js">\x3C/script>')
+    script(src="//cdnjs.cloudflare.com/ajax/libs/wallop/2.2.4/js/Wallop.min.js")
+    script.
+      window.Wallop || document.write('<script src="assets/js/vendor/Wallop.min.js">\x3C/script>')
     script(src="assets/js/app.js")

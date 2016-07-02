@@ -13,11 +13,11 @@ block content
       .section-title
         .section-title__column
           h2 PROJECTS
-      .projects__list
+      .projects__list#projects-list
         each project in projects
-          .projects__project.project
-            a.project__image.lazyload(data-format=project.thumbSize data-src="assets/images/projects/#{project.abbr}-bg.jpg" href="#")
+          .project
+            a.project__image.lazyload(data-format=project.thumbSize data-src="assets/images/projects/#{project.abbr}-bg.jpg" href="#" data-content!=project)
               img(src="assets/images/svg/logo-#{project.abbr}.svg")
-            .project__copy
+            .project__title
               h2!= project.name
                 span!= project.type

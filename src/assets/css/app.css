@@ -1,4 +1,6 @@
 @import 'normalize.css/normalize.css';
+@import 'magnific-popup/dist/magnific-popup.css';
+@import 'wallop/css/wallop.css';
 
 @import '_settings.css';
 @import '_structure.css';

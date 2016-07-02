@@ -3,6 +3,16 @@
     {
       "name": "JJ Dolan&rsquo;s",
       "type": "website",
+      "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod.",
+      "imagesList": [
+        "//placehold.it/800x600/ddd/ccc/&text=JJ%20Dolans",
+        "//placehold.it/800x600",
+        "//placehold.it/800x600/333/444",
+        "//placehold.it/800x600/ff0000/aa0000",
+        "//placehold.it/800x600",
+        "//placehold.it/800x600/333/444",
+        "//placehold.it/800x600/ff0000/aa0000"
+      ],
       "abbr": "jjd",
       "shortUrl": "jjdolans.com",
       "url": "http://jjdolans.com"
@@ -10,6 +20,13 @@
     {
       "name": "Surf Status",
       "type": "web app",
+      "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod.",
+      "imagesList": [
+        "//placehold.it/800x600/ddd/ccc/&text=Surf%20Status",
+        "//placehold.it/375x667",
+        "//placehold.it/800x600/333/444",
+        "//placehold.it/800x600/ff0000/aa0000"
+      ],
       "abbr": "sus",
       "shortUrl": "surfstat.us",
       "url": "http://surfstat.us",
@@ -22,6 +39,13 @@
     {
       "name": "Foundry Salon",
       "type": "website",
+      "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod.",
+      "imagesList": [
+        "//placehold.it/800x600/ddd/ccc/&text=Foundry%20Salon",
+        "//placehold.it/800x600",
+        "//placehold.it/800x600/333/444",
+        "//placehold.it/800x600/ff0000/aa0000"
+      ],
       "abbr": "fnd",
       "shortUrl": "foundrysalon.com",
       "url": "http://foundrysalon.com"
@@ -29,6 +53,13 @@
     {
       "name": "Hallowbaloo",
       "type": "website",
+      "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod.",
+      "imagesList": [
+        "//placehold.it/800x600/ddd/ccc/&text=Hallowbaloo",
+        "//placehold.it/800x600",
+        "//placehold.it/800x600/333/444",
+        "//placehold.it/800x600/ff0000/aa0000"
+      ],
       "abbr": "hbl",
       "shortUrl": "hallowbaloo.com",
       "url": "http://hallowbaloo.com/2015"
@@ -36,6 +67,13 @@
     {
       "name": "Surfjack Hotel",
       "type": "website",
+      "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod.",
+      "imagesList": [
+        "//placehold.it/800x600/ddd/ccc/&text=Surfjack%20Hotel",
+        "//placehold.it/800x600",
+        "//placehold.it/800x600/333/444",
+        "//placehold.it/800x600/ff0000/aa0000"
+      ],
       "abbr": "sjk",
       "shortUrl": "surfjack.com",
       "url": "http://surfjack.com"
@@ -43,6 +81,13 @@
     {
       "name": "Blake Entertainment",
       "type": "website",
+      "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod.",
+      "imagesList": [
+        "//placehold.it/800x600/ddd/ccc/&text=Blake%20Entertainment",
+        "//placehold.it/800x600",
+        "//placehold.it/800x600/333/444",
+        "//placehold.it/800x600/ff0000/aa0000"
+      ],
       "abbr": "bla",
       "shortUrl": "blakeentertainmenthawaii.com",
       "url": "http://blakeentertainmenthawaii.com"
