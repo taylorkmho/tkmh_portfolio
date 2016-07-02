@@ -8,23 +8,6 @@ block content
     .splash__container
       .splash__silhouette
         include ../assets/images/svg/silhouette.svg
-  section.intro
-    .intro__main
-      .intro__copy
-        p My name is <strong>Taylor Ho</strong> and I am a <strong>front-end developer &amp; designer</strong> with <strong>several years of experience</strong> living in <strong>San Francisco</strong>.
-        p I build web apps and sites for a living and I am absolutely passionate about what I do. Design and technology enable me to take concepts all the way to launch.
-        .intro__skills.skills
-          .skills__skill
-            include ../assets/images/svg/graphic-uiux.svg
-            h5 UX/UI DESIGN
-          .skills__skill
-            include ../assets/images/svg/graphic-prototyping.svg
-            h5 PROTOTYPING
-          .skills__skill
-            include ../assets/images/svg/graphic-development.svg
-            h5 DEVELOPMENT
-        p I have worked with great creative teams at companies like <a href="http://walltowall.com" target="_blank">Wall-to-Wall Studios</a> in Honolulu and <a href="http://cibosf.com" target="_blank">Cibo</a> in San Francisco.
-        p I am currently working freelance, <strong>seeking a full-time opportunity</strong> with a product-driven company. I am looking to join a team that I can contribute to and grow with.
   section.projects
     .projects__title.section-title
       .section-title__column
@@ -45,14 +28,3 @@ block content
                 li: a.btn.btn--svg.btn--tooltip(href=item.url target="_blank" data-tooltip=item.message)
                   img(src="assets/images/svg/icon-#{item.provider}.svg")
 
-  footer.footer.lazyload(data-src="../assets/images/bg-footer.jpg")
-    .footer__container
-      svg(viewBox="0 0 800 255")
-        g(font-size="70")
-          text(y="55") I am seeking a full-time
-          text(y="145") opportunity with a
-          text(y="235") product-driven company.
-      //- p I am seeking a full-time opportunity with a product-driven company.
-      p
-        | <span id="footer-phrase">&ldquo;WHAT A GREAT HIRE.&rdquo; – YOUR BOSS</span>&nbsp;
-        a(href="mailto:taylorkmho@gmail.com" data-copy="EMAIL ME") EMAIL ME

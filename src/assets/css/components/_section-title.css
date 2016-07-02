@@ -1,0 +1,27 @@
+.section-title {
+  lost-utility: clearfix;
+  margin-bottom: $column-gutter;
+  h2 {
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: .25rem;
+    &:after {
+      content: "_";
+      color: $c-primary;
+    }
+  }
+  p {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: $mobile-width) {
+  .section-title {
+    &__column {
+      lost-column: 1/2 2 $column-gutter;
+    }
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+}
