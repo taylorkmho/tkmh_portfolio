@@ -45,11 +45,6 @@ img {
   color: #eee;
 }
 
-.disable-hover,
-.disable-hover * {
-  pointer-events: none !important;
-}
-
 a {
   &:focus {
     outline: $c-primary auto 5px;

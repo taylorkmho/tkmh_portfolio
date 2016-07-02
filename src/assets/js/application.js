@@ -2,20 +2,6 @@ import { addClass, removeClass, hasClass } from "./lib/_helpers";
 let Blazy              = require('blazy');
 
 /*
-  Killing hover on scroll
-*/
-window.addEventListener('scroll', function() {
-  clearTimeout(timer);
-  if (!hasClass(document.body, 'disable-hover')) {
-    addClass(document.body, 'disable-hover')
-  }
-
-  let timer = setTimeout(function(){
-    removeClass(document.body, 'disable-hover')
-  }, 500);
-}, false);
-
-/*
   Image lazy-loading
   via blazy.js
 */
