@@ -9,22 +9,15 @@ block content
       .splash__silhouette
         include ../assets/images/svg/silhouette.svg
   section.projects
-    .projects__title.section-title
-      .section-title__column
-        h2 SELECTED<br>WORK
-        p Following a mobile-first philosophy, all projects are built to serve users across all devices. Front-end code should be lean and mean. Semantic mark-up is the way. Each project is an opportunity to try and learn something new.
-    .projects__list
-      each project in projects
-        .projects__project.project.lazyload(style="background-color: #{project.hexColor};" data-format=project.thumbSize data-src="assets/images/projects/#{project.abbr}-bg.jpg")
-          img.project__logo(src="assets/images/svg/logo-#{project.abbr}.svg")
-          .project__screenshot
-            .project__motion.lazyload(data-src="assets/images/projects/#{project.abbr}-screen.gif")
-            .project__still.lazyload(data-src="assets/images/projects/#{project.abbr}-screen.jpg")
-            include ../assets/images/svg/ui-phone.svg
-          ul.project__links
-            li: a.btn.btn--plain.btn--tooltip(href=project.url target="_blank" data-tooltip="GO TO #{project.shortUrl}") view site
-            - if (project.additional !== undefined)
-              each item in project.additional
-                li: a.btn.btn--svg.btn--tooltip(href=item.url target="_blank" data-tooltip=item.message)
-                  img(src="assets/images/svg/icon-#{item.provider}.svg")
-
+    .projects__container
+      .section-title
+        .section-title__column
+          h2 PROJECTS
+      .projects__list
+        each project in projects
+          .projects__project.project
+            a.project__image.lazyload(data-format=project.thumbSize data-src="assets/images/projects/#{project.abbr}-bg.jpg" href="#")
+              img(src="assets/images/svg/logo-#{project.abbr}.svg")
+            .project__copy
+              h2!= project.name
+                span!= project.type

@@ -2,15 +2,15 @@
   "projects": [
     {
       "name": "JJ Dolan&rsquo;s",
+      "type": "website",
       "abbr": "jjd",
-      "hexColor": "#02b770",
       "shortUrl": "jjdolans.com",
       "url": "http://jjdolans.com"
     },
     {
       "name": "Surf Status",
+      "type": "web app",
       "abbr": "sus",
-      "hexColor": "#eb4329",
       "shortUrl": "surfstat.us",
       "url": "http://surfstat.us",
       "additional": [{
@@ -20,30 +20,30 @@
       }]
     },
     {
-      "name": "Surfjack Hotel",
-      "abbr": "sjk",
-      "hexColor": "#E7695D",
-      "shortUrl": "surfjack.com",
-      "url": "http://surfjack.com"
-    },
-    {
       "name": "Foundry Salon",
+      "type": "website",
       "abbr": "fnd",
-      "hexColor": "#d5c1a5",
       "shortUrl": "foundrysalon.com",
       "url": "http://foundrysalon.com"
     },
     {
       "name": "Hallowbaloo",
+      "type": "website",
       "abbr": "hbl",
-      "hexColor": "#5d0f43",
       "shortUrl": "hallowbaloo.com",
       "url": "http://hallowbaloo.com/2015"
     },
     {
+      "name": "Surfjack Hotel",
+      "type": "website",
+      "abbr": "sjk",
+      "shortUrl": "surfjack.com",
+      "url": "http://surfjack.com"
+    },
+    {
       "name": "Blake Entertainment",
+      "type": "website",
       "abbr": "bla",
-      "hexColor": "#222",
       "shortUrl": "blakeentertainmenthawaii.com",
       "url": "http://blakeentertainmenthawaii.com"
     }
