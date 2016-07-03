@@ -46,6 +46,11 @@ img {
 }
 
 a {
+  text-decoration: underline;
+  color: $c-primary;
+  &:hover {
+    text-decoration: none;
+  }
   &:focus {
     outline: $c-primary auto 5px;
   }

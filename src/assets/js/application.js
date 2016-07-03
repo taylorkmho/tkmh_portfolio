@@ -61,6 +61,7 @@ setTimeout(()=>{
 $('.project > a').magnificPopup({
   type: 'inline',
   mainClass: 'is-active',
+  closeBtnInside: false,
   callbacks: {
     elementParse: function(item) {
       let data = JSON.parse(item.el.attr('data-content'));
@@ -95,10 +96,14 @@ $('.project > a').magnificPopup({
             '<div class="modal__description">' +
               '<h3>' +
                 data.name +
+                '<b>'+
+                  data.type +
+                '</b>'+
               '</h3>' +
               '<p>' +
                 data.description +
               '</p>' +
+              '<a class="btn btn--filled btn--filled-primary" href="' + data.url + '" target="_blank">View site</a>' +
             '</div>' + // modal__description
           '</div>' + // modal__container
         '</div>' // modal

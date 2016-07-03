@@ -3,7 +3,7 @@
     {
       "name": "JJ Dolan&rsquo;s",
       "type": "website",
-      "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod.",
+      "description": "A website for a compelling pizza kitchen — featuring a progressively loaded, mobile-friendly canvas drawing application at the top of the page. It went on to win a <a href='http://peleawards.com/2016-award-winners/' target='_blank'>2016 Pele Gold</a>.",
       "imagesList": [
         "//placehold.it/800x600/ddd/ccc/&text=JJ%20Dolans",
         "//placehold.it/800x600",
@@ -20,7 +20,7 @@
     {
       "name": "Surf Status",
       "type": "web app",
-      "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod.",
+      "description": "A surf report void of the typical clutter — engineered using MongoDB, Express, and Node.js (known in some circles as the MEN stack). Read more on <a href='https://medium.com/@tkmh/how-i-built-surf-status-2ca2ca8a6fbf' target='_blank'>how it&rsquo;s built</a>.",
       "imagesList": [
         "//placehold.it/800x600/ddd/ccc/&text=Surf%20Status",
         "//placehold.it/375x667",
@@ -39,7 +39,7 @@
     {
       "name": "Foundry Salon",
       "type": "website",
-      "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod.",
+      "description": "A simple, static website for an up-and-coming hair salon based in Kailua. If a client doesn&rsquo;t need a CMS, don&rsquo;t build one!",
       "imagesList": [
         "//placehold.it/800x600/ddd/ccc/&text=Foundry%20Salon",
         "//placehold.it/800x600",
@@ -53,7 +53,7 @@
     {
       "name": "Hallowbaloo",
       "type": "website",
-      "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod.",
+      "description": "A website for the largest Halloween event in Honolulu, with over 25 artist performances. It also innovated in terms of SVG animation, with the feature gaining <a href='http://codepen.io/tellaho/details/PPRjbj/' target='_blank'>much attention on Codepen</a>.",
       "imagesList": [
         "//placehold.it/800x600/ddd/ccc/&text=Hallowbaloo",
         "//placehold.it/800x600",
@@ -67,7 +67,7 @@
     {
       "name": "Surfjack Hotel",
       "type": "website",
-      "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod.",
+      "description": "A website for the one of the newest hotels in Waikiki. A fun balance of aesthetic and functionality per template.",
       "imagesList": [
         "//placehold.it/800x600/ddd/ccc/&text=Surfjack%20Hotel",
         "//placehold.it/800x600",
@@ -81,7 +81,7 @@
     {
       "name": "Blake Entertainment",
       "type": "website",
-      "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod.",
+      "description": "A website for a premier event planner in Honolulu. We made sure to emphasize the breadth of their events — from red carpets to poke bars.",
       "imagesList": [
         "//placehold.it/800x600/ddd/ccc/&text=Blake%20Entertainment",
         "//placehold.it/800x600",

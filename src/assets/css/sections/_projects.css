@@ -1,5 +1,5 @@
 .projects {
-  padding: calc($column-gutter*2);
+  padding: $column-gutter;
   background-color: #222;
   color: #fff;
   &__container {
@@ -31,7 +31,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 360px;
+    height: 180px;
     padding: $column-gutter;
     background-color: $c-primary;
     background-size: cover;
@@ -62,7 +62,7 @@
     }
   }
   &__title {
-    padding: calc($column-gutter/2) 0;
+    margin: calc($column-gutter/4) 0 0;
     h2 {
       margin: 0;
       font-size: 1rem;
@@ -79,5 +79,12 @@
 @media screen and (min-width: $mobile-width) {
   .project {
     lost-column: 1/2 2 $column-gutter;
+    margin-bottom: $column-gutter;
+    &__image {
+      height: 360px;
+    }
+    &__title {
+      margin-top: calc($column-gutter/2);
+    }
   }
 }
