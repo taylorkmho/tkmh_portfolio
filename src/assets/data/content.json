@@ -3,15 +3,12 @@
     {
       "name": "JJ Dolan&rsquo;s",
       "type": "website",
-      "description": "A website for a compelling pizza kitchen — featuring a progressively loaded, mobile-friendly canvas drawing application at the top of the page. It went on to win a <a href='http://peleawards.com/2016-award-winners/' target='_blank'>2016 Pele Gold</a>.",
+      "description": "A website for a compelling pizza kitchen — featuring a progressively loaded, mobile-friendly canvas drawing application at the top of the page. It went on to win a <a href='http://peleawards.com/2016-award-winners/' target='_blank'>AAF Pele Gold</a> in 2016.",
       "imagesList": [
-        "//placehold.it/800x600/ddd/ccc/&text=JJ%20Dolans",
-        "//placehold.it/800x600",
-        "//placehold.it/800x600/333/444",
-        "//placehold.it/800x600/ff0000/aa0000",
-        "//placehold.it/800x600",
-        "//placehold.it/800x600/333/444",
-        "//placehold.it/800x600/ff0000/aa0000"
+        "assets/images/projects/jjd-screen-01.jpg",
+        "assets/images/projects/jjd-screen-02.jpg",
+        "assets/images/projects/jjd-screen-03.jpg",
+        "assets/images/projects/jjd-screen-04.jpg"
       ],
       "abbr": "jjd",
       "shortUrl": "jjdolans.com",
@@ -22,10 +19,9 @@
       "type": "web app",
       "description": "A surf report void of the typical clutter — engineered using MongoDB, Express, and Node.js (known in some circles as the MEN stack). Read more on <a href='https://medium.com/@tkmh/how-i-built-surf-status-2ca2ca8a6fbf' target='_blank'>how it&rsquo;s built</a>.",
       "imagesList": [
-        "//placehold.it/800x600/ddd/ccc/&text=Surf%20Status",
-        "//placehold.it/375x667",
-        "//placehold.it/800x600/333/444",
-        "//placehold.it/800x600/ff0000/aa0000"
+        "assets/images/projects/sus-screen-01.jpg",
+        "assets/images/projects/sus-screen-02.jpg",
+        "assets/images/projects/sus-screen-03.jpg"
       ],
       "abbr": "sus",
       "shortUrl": "surfstat.us",
@@ -41,10 +37,10 @@
       "type": "website",
       "description": "A simple, static website for an up-and-coming hair salon based in Kailua. If a client doesn&rsquo;t need a CMS, don&rsquo;t build one!",
       "imagesList": [
-        "//placehold.it/800x600/ddd/ccc/&text=Foundry%20Salon",
-        "//placehold.it/800x600",
-        "//placehold.it/800x600/333/444",
-        "//placehold.it/800x600/ff0000/aa0000"
+        "assets/images/projects/fnd-screen-01.jpg",
+        "assets/images/projects/fnd-screen-02.jpg",
+        "assets/images/projects/fnd-screen-03.jpg",
+        "assets/images/projects/fnd-screen-04.jpg"
       ],
       "abbr": "fnd",
       "shortUrl": "foundrysalon.com",
@@ -53,12 +49,12 @@
     {
       "name": "Hallowbaloo",
       "type": "website",
-      "description": "A website for the largest Halloween event in Honolulu, with over 25 artist performances. It also innovated in terms of SVG animation, with the feature gaining <a href='http://codepen.io/tellaho/details/PPRjbj/' target='_blank'>much attention on Codepen</a>.",
+      "description": "A website for the largest Halloween event in Honolulu. It innovated in terms of SVG animation, with a feature earning <a href='http://codepen.io/tellaho/details/PPRjbj/' target='_blank'>positive feedback on Codepen</a>.",
       "imagesList": [
-        "//placehold.it/800x600/ddd/ccc/&text=Hallowbaloo",
-        "//placehold.it/800x600",
-        "//placehold.it/800x600/333/444",
-        "//placehold.it/800x600/ff0000/aa0000"
+        "assets/images/projects/hbl-screen-01.jpg",
+        "assets/images/projects/hbl-screen-02.jpg",
+        "assets/images/projects/hbl-screen-03.jpg",
+        "assets/images/projects/hbl-screen-04.jpg"
       ],
       "abbr": "hbl",
       "shortUrl": "hallowbaloo.com",
@@ -69,10 +65,9 @@
       "type": "website",
       "description": "A website for the one of the newest hotels in Waikiki. A fun balance of aesthetic and functionality per template.",
       "imagesList": [
-        "//placehold.it/800x600/ddd/ccc/&text=Surfjack%20Hotel",
-        "//placehold.it/800x600",
-        "//placehold.it/800x600/333/444",
-        "//placehold.it/800x600/ff0000/aa0000"
+        "assets/images/projects/sjk-screen-01.jpg",
+        "assets/images/projects/sjk-screen-02.jpg",
+        "assets/images/projects/sjk-screen-03.jpg"
       ],
       "abbr": "sjk",
       "shortUrl": "surfjack.com",
@@ -83,10 +78,9 @@
       "type": "website",
       "description": "A website for a premier event planner in Honolulu. We made sure to emphasize the breadth of their events — from red carpets to poke bars.",
       "imagesList": [
-        "//placehold.it/800x600/ddd/ccc/&text=Blake%20Entertainment",
-        "//placehold.it/800x600",
-        "//placehold.it/800x600/333/444",
-        "//placehold.it/800x600/ff0000/aa0000"
+        "assets/images/projects/bla-screen-01.jpg",
+        "assets/images/projects/bla-screen-02.jpg",
+        "assets/images/projects/bla-screen-03.jpg"
       ],
       "abbr": "bla",
       "shortUrl": "blakeentertainmenthawaii.com",
