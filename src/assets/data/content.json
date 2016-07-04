@@ -115,25 +115,37 @@
       "url": "http://blakeentertainmenthawaii.com"
     }
   ],
-
+  "otherProjects": [
+    "Subaru",
+    "Hawaii Community Foundation",
+    "Daniel K. Inouye Institute",
+    "Outrigger Resorts",
+    "Hawaii National Bank",
+    "Island Air",
+    "Locations Hawaii",
+    "Leather Soul",
+    "AIGA"
+  ],
   "skills": [
-    {
-      "title": "HTML"
-    },
-    {
-      "title": "CSS"
-    },
-    {
-      "title": "JAVASCRIPT"
-    },
-    {
-      "title": "DESIGN"
-    },
-    {
-      "title": "TEAM THINKING"
-    },
-    {
-      "title": "BUSINESS"
-    }
+    "Front-end Architecture",
+    "Rapid Prototyping",
+    "Semantic Mark-up",
+    "Web Animation",
+    "Mobile-first Responsive",
+    "Visual Design",
+    "Progressive Enhancement",
+    "Browser-specific Quirks",
+    "Client-side Optimization"
+  ],
+  "tools": [
+    "Javascript <span>es<span>2015</span>/jquery</span>",
+    "NodeJS",
+    "Version Control <span>git</span>",
+    "HTML <span>jade/slim</span>",
+    "Ruby-on-Rails",
+    "Command Line <span>CLI&rsquo;s</span>",
+    "CSS <span>postcss/sass/scss</span>",
+    "Adobe Creative",
+    "Sketch"
   ]
 }

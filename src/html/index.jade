@@ -21,3 +21,20 @@ block content
             .project__title
               h2!= project.name
                 span!= project.type
+  section.shortlists
+    .shortlists__container
+      .shortlist
+        h5.shortlist__title OTHER PROJECTS / <br>CLIENTS
+        ul.shortlist__list
+          each project in otherProjects
+            li!= project
+      .shortlist
+        h5.shortlist__title SKILLS
+        ul.shortlist__list
+          each skill in skills
+            li!= skill
+      .shortlist
+        h5.shortlist__title TOOLS
+        ul.shortlist__list
+          each tool in tools
+            li!= tool
