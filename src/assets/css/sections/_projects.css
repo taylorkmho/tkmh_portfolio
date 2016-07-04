@@ -31,8 +31,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 180px;
-    padding: $column-gutter;
+    height: 100px;
+    padding: calc($column-gutter/2) $column-gutter;
     background-color: $c-primary;
     background-size: cover;
     background-position: center center;
@@ -76,12 +76,22 @@
   }
 }
 
+@media screen and (min-width: 480px) {
+  .project {
+    lost-column: 1/2 2;
+    &__image {
+      height: 160px;
+    }
+  }
+}
+
 @media screen and (min-width: $mobile-width) {
   .project {
-    lost-column: 1/2 2 $column-gutter;
+    lost-column: 1/3 3 $column-gutter;
     margin-bottom: $column-gutter;
     &__image {
-      height: 360px;
+      height: 200px;
+      padding: $column-gutter;
     }
     &__title {
       margin-top: calc($column-gutter/2);
