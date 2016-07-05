@@ -1,0 +1,29 @@
+extends layouts/_application
+
+block vars
+  - var bodyTemplate = "about"
+
+block content
+  section.recognition
+    .recognition__container
+      .section-title
+        .section-title__column
+          h2 AWARDS
+      each award in awards
+        .shortlist
+          h5.shortlist__title!= award.year
+          ul.shortlist__list
+            each listItem in award.list
+              li!= listItem
+  section.skills-tools
+    .skills-tools__container
+      .shortlist.shortlist--split
+        h5.shortlist__title SKILLS
+        ul.shortlist__list
+          each skill in skills
+            li!= skill
+      .shortlist.shortlist--split
+        h5.shortlist__title TOOLS
+        ul.shortlist__list
+          each tool in tools
+            li!= tool

@@ -125,6 +125,28 @@
       "filename": "logo-kon.svg"
     }
   ],
+  "codepen": [
+    {
+      "name": "Event Map via SVG",
+      "penID": "PPRjbj",
+      "thumbFormat": "gif"
+    },
+    {
+      "name": "Coffee Slot Machine using GSAP",
+      "penID": "aNPPvN",
+      "thumbFormat": "gif"
+    },
+    {
+      "name": "The Lorax",
+      "penID": "xbEONa",
+      "thumbFormat": "gif"
+    },
+    {
+      "name": "Hawaiian Flag via CSS",
+      "penID": "xJKpb",
+      "thumbFormat": "jpg"
+    }
+  ],
   "awards": [
     {
       "year": 2016,

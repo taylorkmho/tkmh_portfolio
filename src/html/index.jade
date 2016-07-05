@@ -8,7 +8,7 @@ block content
     .splash__container
       .splash__silhouette
         include ../assets/images/svg/silhouette.svg
-  section.projects
+  section.projects.projects--main
     .projects__container
       .section-title
         .section-title__column
@@ -24,26 +24,14 @@ block content
       .projects__sublist
         each project in otherProjects
           img(src="assets/images/svg/#{project.filename}" alt!=project.name)
-  section.recognition
-    .recognition__container
+  section.projects.projects--snippets
+    .projects__container
       .section-title
         .section-title__column
-          h2 AWARDS
-      each award in awards
-        .shortlist
-          h5.shortlist__title!= award.year
-          ul.shortlist__list
-            each listItem in award.list
-              li!= listItem
-  section.skills-tools
-    .skills-tools__container
-      .shortlist.shortlist--split
-        h5.shortlist__title SKILLS
-        ul.shortlist__list
-          each skill in skills
-            li!= skill
-      .shortlist.shortlist--split
-        h5.shortlist__title TOOLS
-        ul.shortlist__list
-          each tool in tools
-            li!= tool
+          h2 SNIPPETS
+      .projects__list#projects-list
+        each pen in codepen
+          .project
+            a.project__image.lazyload(data-src="assets/images/pens/pen-#{pen.penID}.#{pen.thumbFormat}" href="#")
+            .project__title
+              h2!= pen.name

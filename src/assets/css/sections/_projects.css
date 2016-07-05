@@ -1,7 +1,5 @@
 .projects {
   padding: calc($column-gutter*2) $column-gutter;
-  background-color: $c-bg-color--dark;
-  color: $c-body-font--light;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   &__container {
@@ -27,6 +25,10 @@
       width: auto;
       max-width: 12rem;
     }
+  }
+  &--main {
+    background-color: $c-bg-color--dark;
+    color: $c-body-font--light;
   }
 }
 
@@ -72,7 +74,7 @@
     background-position: center center;
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 1px 1px #000, 0 8px 16px color(#000 a(.25));
+    transition: box-shadow 150ms ease-out;
     &:after {
       content: "";
       position: absolute;
@@ -91,10 +93,24 @@
       max-width: 100%;
       max-height: 100%;
     }
-    &:hover,
-    &:focus {
-      &:after {
-        background-color: color($c-primary a(.25));
+    .projects--main & {
+      box-shadow: 0 1px 0 color($c-primary a(.2)) inset, 0 8px 16px color(#000 a(.5));
+      &:hover,
+      &:focus {
+        box-shadow: 0 1px 0 color($c-primary a(.2)) inset, 0 8px 32px color(#000 a(.5));
+        &:after {
+          background-color: color($c-primary a(.125));
+        }
+      }
+    }
+    .projects--snippets & {
+      box-shadow: 0 1px 0 color(#fff a(.5)) inset, 0 8px 16px color(#000 a(.25));
+      &:hover,
+      &:focus {
+        box-shadow: 0 1px 0 color(#fff a(.5)) inset, 0 8px 24px color(#000 a(.35));
+        &:after {
+          background-color: color(#fff a(.0625));
+        }
       }
     }
   }
@@ -102,12 +118,17 @@
     margin: calc($column-gutter/4) 0 0;
     h2 {
       margin: 0;
-      font-size: 1.15rem;
       span {
         font-weight: 200;
         font-size: .85rem;
         color: $c-body-font--light-secondary;
         margin-left: calc($column-gutter/4);
+      }
+      .projects--main & {
+        font-size: 1.15rem;
+      }
+      .projects--snippets & {
+        font-size: .9rem;
       }
     }
   }
@@ -115,7 +136,10 @@
 
 @media screen and (min-width: $phone-width) {
   .project {
-    lost-column: 1/2 2;
+    .projects--main &,
+    .projects--snippets & {
+      lost-column: 1/2 2;
+    }
     &__image {
       height: 160px;
     }
@@ -124,8 +148,13 @@
 
 @media screen and (min-width: $mobile-width) {
   .project {
-    lost-column: 1/3 3 $column-gutter;
     margin-bottom: $column-gutter;
+    .projects--main & {
+      lost-column: 1/3 3;
+    }
+    .projects--snippets & {
+      lost-column: 1/4 4;
+    }
     &:nth-last-of-type(-n+3) {
       margin-bottom: 0;
     }
