@@ -125,6 +125,32 @@
       "filename": "logo-kon.svg"
     }
   ],
+  "awards": [
+    {
+      "year": 2016,
+      "list": [
+        "J.J. Dolan's - Website: Pele Award 2016 (Gold ADDY)"
+      ]
+    },
+    {
+      "year": 2015,
+      "list": [
+        "J.J. Dolan's - Website: Award of Excellence AIGA Hawaii's 5-0",
+        "Buho Cantina - Campaign: Award of Excellence AIGA Hawaii's 5-0",
+        "Ilikai Hotel - Mixed Media Campaign: Award of Excellence AIGA Hawaii's 5-0",
+        "Island Air - Website: Award of Excellence AIGA Hawaii's 5-0",
+        "Wall-to-Wall Studios - Occasional Cards Website: Award of Excellence AIGA Hawaii's 5-0",
+        "Hawaii Community Foundation - Annual Report: Pele Award 2015 (Silver ADDY)"
+      ]
+    },
+    {
+      "year": 2014,
+      "list": [
+        "Hawaii National Bank - Email E-card: Pele Award 2014 (Silver ADDY)",
+        "AIGA - Mixed Media Campaign: Pele Award 2014 (Silver ADDY)"
+      ]
+    }
+  ],
   "skills": [
     "Front-end Architecture",
     "Rapid Prototyping",

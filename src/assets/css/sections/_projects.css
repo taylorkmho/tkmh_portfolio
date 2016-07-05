@@ -30,7 +30,7 @@
   }
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: $phone-width) {
   .projects {
     &__sublist {
       height: 1.5rem;
@@ -113,7 +113,7 @@
   }
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: $phone-width) {
   .project {
     lost-column: 1/2 2;
     &__image {

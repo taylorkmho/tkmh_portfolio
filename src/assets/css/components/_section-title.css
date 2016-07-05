@@ -17,6 +17,7 @@
 
 @media screen and (min-width: $mobile-width) {
   .section-title {
+    margin-bottom: calc($column-gutter*2);
     &__column {
       lost-column: 1/2 2 $column-gutter;
     }

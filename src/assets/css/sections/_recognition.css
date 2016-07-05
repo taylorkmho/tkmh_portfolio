@@ -1,0 +1,18 @@
+.recognition {
+  padding: calc($column-gutter*2) $column-gutter;
+  background-color: $c-bg-color--dark-02;
+  color: $c-body-font--light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &__container {
+    lost-center: $row-width;
+    lost-utility: clearfix;
+  }
+}
+
+@media screen and (min-width: $mobile-width) {
+  .recognition {
+    padding-top: calc($column-gutter*4);
+    padding-bottom: calc($column-gutter*4);
+  }
+}

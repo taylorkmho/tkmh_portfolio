@@ -5,6 +5,7 @@ $sectionBaseZ:           100;
 $row-width:              1200px;
 $row-width--inner:       820px;
 $mobile-width:           768px;
+$phone-width:            480px;
 
 $body-font-family:        "museo-sans", "Helvetica Neue", Helvetica, sans-serif;
 
