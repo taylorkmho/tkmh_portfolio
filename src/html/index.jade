@@ -32,6 +32,6 @@ block content
       .projects__list#projects-list
         each pen in codepen
           .project
-            a.project__image.lazyload(data-modal="iframe" data-mobile-href="http://codepen.io/tellaho/embed/#{pen.penID}" data-src="assets/images/pens/pen-#{pen.penID}.#{pen.thumbFormat}" href="//codepen.io/tellaho/embed/#{pen.penID}/?height=500&theme-id=0&default-tab=html,result&embed-version=2")
+            a.project__image.lazyload(data-modal="iframe" data-src="assets/images/pens/pen-#{pen.penID}.#{pen.thumbFormat}" href="//codepen.io/tellaho/embed/#{pen.penID}/?height=500&theme-id=0&default-tab=result&embed-version=2")
             .project__title
               h2!= pen.name

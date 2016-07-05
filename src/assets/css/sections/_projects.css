@@ -67,7 +67,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100px;
+    height: 160px;
     padding: calc($column-gutter/2) $column-gutter;
     background-color: $c-primary;
     background-size: cover;
