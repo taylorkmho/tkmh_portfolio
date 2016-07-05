@@ -116,26 +116,25 @@
     }
   ],
   "otherProjects": [
-    "Subaru",
-    "Hawaii Community Foundation",
-    "Daniel K. Inouye Institute",
-    "Outrigger Resorts",
-    "Hawaii National Bank",
-    "Island Air",
-    "Locations Hawaii",
-    "Leather Soul",
-    "AIGA"
+    {
+      "name": "Subaru",
+      "filename": "logo-sub.svg"
+    },
+    {
+      "name": "Kona Red",
+      "filename": "logo-kon.svg"
+    }
   ],
   "skills": [
     "Front-end Architecture",
     "Rapid Prototyping",
     "Semantic Mark-up",
-    "Web Animation",
-    "Mobile-first Responsive",
-    "Visual Design",
+    "Data Visualization",
     "Progressive Enhancement",
+    "Mobile-first Responsive",
+    "Web Animation",
     "Browser-specific Quirks",
-    "Client-side Optimization"
+    "Visual Design"
   ],
   "tools": [
     "Javascript <span>es<span>2015</span>/jquery</span>",

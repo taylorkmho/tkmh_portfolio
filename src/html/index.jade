@@ -21,6 +21,9 @@ block content
             .project__title
               h2!= project.name
                 span!= project.type
+      .projects__sublist
+        each project in otherProjects
+          img(src="assets/images/svg/#{project.filename}" alt!=project.name)
   section.shortlists
     .shortlists__container
       .shortlist

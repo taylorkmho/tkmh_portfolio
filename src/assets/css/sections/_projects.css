@@ -1,7 +1,9 @@
 .projects {
-  padding: $column-gutter;
-  background-color: #222;
-  color: #fff;
+  padding: calc($column-gutter*2) $column-gutter;
+  background-color: $c-bg-color--dark;
+  color: $c-body-font--light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   &__container {
     lost-center: $row-width;
     lost-utility: clearfix;
@@ -10,16 +12,48 @@
     padding: calc($column-gutter*2) $column-gutter;
     position: relative;
   }
+  &__list {
+    lost-utility: clearfix;
+    margin-bottom: $column-gutter;
+  }
+  &__sublist {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    height: 1.25rem;
+    img {
+      height: 100%;
+      width: auto;
+      max-width: 12rem;
+    }
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .projects {
+    &__sublist {
+      height: 1.5rem;
+    }
+  }
 }
 
 @media screen and (min-width: $mobile-width) {
   .projects {
+    padding-top: calc($column-gutter*4);
+    padding-bottom: calc($column-gutter*4);
     &__list {
       position: relative;
       lost-utility: clearfix;
+      margin-bottom: calc($column-gutter*2);
     }
     &__title {
       margin-bottom: $column-gutter;
+    }
+    &__sublist {
+      height: 3rem;
+      justify-content: space-around;
+      margin-right: 0;
     }
   }
 }
@@ -57,19 +91,22 @@
       max-width: 100%;
       max-height: 100%;
     }
-    &:hover:after {
-      background-color: color($c-primary a(.25));
+    &:hover,
+    &:focus {
+      &:after {
+        background-color: color($c-primary a(.25));
+      }
     }
   }
   &__title {
     margin: calc($column-gutter/4) 0 0;
     h2 {
       margin: 0;
-      font-size: 1rem;
+      font-size: 1.15rem;
       span {
         font-weight: 200;
         font-size: .85rem;
-        color: #aaa;
+        color: $c-body-font--light-secondary;
         margin-left: calc($column-gutter/4);
       }
     }
@@ -89,6 +126,9 @@
   .project {
     lost-column: 1/3 3 $column-gutter;
     margin-bottom: $column-gutter;
+    &:nth-last-of-type(-n+3) {
+      margin-bottom: 0;
+    }
     &__image {
       height: 200px;
       padding: $column-gutter;

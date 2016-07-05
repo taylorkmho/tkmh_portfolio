@@ -9,10 +9,14 @@ $mobile-width:           768px;
 $body-font-family:       "ff-tisa-web-pro", Cambria, Georgia, serif;
 $header-font-family:      "museo-sans", "Helvetica Neue", Helvetica, sans-serif;
 
-$c-primary:              #F24C27;
-$c-secondary:            #ddd;
-$c-bg-color:             #fff;
-$c-body-font:            #666;
+$c-primary:                     #F24C27;
+$c-secondary:                   #ddd;
+$c-bg-color:                    #fff;
+$c-bg-color--dark:              #222;
+$c-bg-color--dark-02:           #444;
+$c-body-font:                   #666;
+$c-body-font--light:            #fff;
+$c-body-font--light-secondary:  #aaa;
 
 * {
   box-sizing: border-box;
