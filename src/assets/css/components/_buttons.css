@@ -1,6 +1,5 @@
 .btn {
   padding: calc($column-gutter/4) calc($column-gutter/2);
-  font-family: $header-font-family;
   text-transform: uppercase;
   letter-spacing: .05rem;
   color: #fff;

@@ -25,7 +25,6 @@
     padding: 0;
     list-style: none;
     line-height: 1;
-    font-family: $header-font-family;
     li {
       margin-bottom: $column-gutter;
       > span {

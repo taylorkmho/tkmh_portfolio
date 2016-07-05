@@ -16,7 +16,6 @@
     margin: calc($column-gutter/2) 0 0;
     line-height: 1;
     mix-blend-mode: multiply;
-    font-family: $header-font-family;
     font-weight: 600;
     color: color($c-body-font tint(50%));
     font-size: 3.5vw;
