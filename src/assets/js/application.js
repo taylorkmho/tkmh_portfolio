@@ -67,15 +67,6 @@ let carousel = new Carousel('.showcase');
   Projects modal
 */
 
-$('a[data-modal="iframe"]').magnificPopup({
-  disableOn: 700,
-  type: 'iframe',
-  mainClass: 'is-active',
-  preloader: false,
-
-  fixedContentPos: false
-});
-
 $('a[data-modal="carousel"]').magnificPopup({
   type: 'inline',
   mainClass: 'is-active',
