@@ -1,0 +1,6 @@
+.breadcrumb {
+  padding: $column-gutter;
+  &__container {
+    lost-center: $row-width;
+  }
+}

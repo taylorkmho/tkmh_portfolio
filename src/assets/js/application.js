@@ -1,4 +1,7 @@
+'use strict';
+
 import { addClass, removeClass, hasClass } from "./lib/_helpers";
+import Carousel from "./lib/_carousel";
 let Blazy              = require('blazy');
 
 /*
@@ -55,6 +58,12 @@ setTimeout(()=>{
 },3000)
 
 /*
+  Projects - Image Carousel
+*/
+
+let carousel = new Carousel('.showcase');
+
+/*
   Projects modal
 */
 
@@ -90,9 +99,9 @@ $('a[data-modal="carousel"]').magnificPopup({
       }
       // parse elements into modal content
       item.src =
-        '<div class="modal">' +
-          '<div class="modal__container">' +
-            '<div class="modal__images">' +
+        '<div class="showcase">' +
+          '<div class="showcase__container">' +
+            '<div class="showcase__images">' +
               '<div class="Wallop"><div class="Wallop-list">' +
                 buildCarouselImages(data.imagesList) +
               '</div></div>' + // Wallop, Wallop-list
@@ -101,8 +110,8 @@ $('a[data-modal="carousel"]').magnificPopup({
                 buildCarouselPag(data.imagesList) +
                 '<a class="Wallop-pagination__arrow Wallop-pagination__arrow--next"><img src="assets/images/svg/icon-arrow.svg" /></a>' +
               '</div>' + //Wallop-pagination
-            '</div>' + // modal__images
-            '<div class="modal__description">' +
+            '</div>' + // showcase__images
+            '<div class="showcase__description">' +
               '<h3>' +
                 data.name +
                 '<b>'+
@@ -113,39 +122,12 @@ $('a[data-modal="carousel"]').magnificPopup({
                 data.description +
               '</p>' +
               '<a class="btn btn--filled btn--filled-primary" href="' + data.url + '" target="_blank">View site</a>' +
-            '</div>' + // modal__description
-          '</div>' + // modal__container
-        '</div>' // modal
+            '</div>' + // showcase__description
+          '</div>' + // showcase__container
+        '</div>' // showcase
     },
-    open: () => {
-      // init slider
-      let wallopEl = document.querySelector('.modal');
-      let slider = new Wallop(wallopEl, {
-        buttonPreviousClass: 'Wallop-pagination__arrow--prev',
-        buttonNextClass: 'Wallop-pagination__arrow--next'
-      });
-
-      // add `click` to pagination items
-      let pagEls = Array.from(document.querySelectorAll('.Wallop-pagination__option'))
-      pagEls.forEach((pagEl, index)=>{
-        if (index === 0) {
-          pagEl.classList.add('is-active')
-        }
-        pagEl.addEventListener('click', (event)=>{
-          event.preventDefault()
-          slider.goTo(index)
-        }, false)
-      })
-      slider.on('change', function(event) {
-        pagEls.forEach((el, index)=>{
-          if (index !== event.detail.currentItemIndex) {
-            el.classList.remove('is-active')
-          } else {
-            el.classList.add('is-active')
-          }
-        })
-      });
-
+    open: function() {
+      carousel.init()
     }
   }
 })

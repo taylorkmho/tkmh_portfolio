@@ -5,12 +5,13 @@
   color: #fff;
   text-decoration: none;
   &--filled {
-    display: inline-block;
+    display: block;
     border: 2px solid transparent;
     border-radius: 4px;
     font-size: .85rem;
     &-primary {
-      border: 1px solid color($c-primary shade(50%));
+      border-top: 1px solid color($c-primary tint(25%));
+      border-bottom: 1px solid color($c-primary shade(25%));
       &,
       &:focus {
         background-color: $c-primary;

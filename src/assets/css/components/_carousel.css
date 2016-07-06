@@ -1,6 +1,7 @@
 .Wallop {
   &-list {
     text-align: center;
+    padding: calc($column-gutter/2) calc($column-gutter/2) calc($column-gutter/4);
   }
   &-item {
     max-height: 300px;
@@ -8,10 +9,10 @@
   }
   &-pagination {
     position: relative;
-    margin-top: calc($column-gutter/2);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: calc($column-gutter/2);
     &__option {
       position: relative;
       height: 70px;
@@ -54,12 +55,14 @@
 
 @media screen and (min-width: $mobile-width) {
   .Wallop {
+    &-list {
+      padding: calc($column-gutter/2) $column-gutter 0;
+    }
     &-item {
       max-height: 480px;
     }
     &-pagination {
-      padding-left: 5rem;
-      padding-right: 5rem;
+      padding: calc($column-gutter/2) 5rem;
       &__option {
         height: 100px;
         width: 100px;

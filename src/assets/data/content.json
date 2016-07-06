@@ -2,13 +2,14 @@
   "projects": [
     {
       "name": "Luma",
+      "niceName": "luma",
       "type": "website",
       "description": "A website for a smart wifi device&rsquo;s anticipated launch. It was built promptly in time for it to be sold on Amazon and across the nation.",
       "imagesList": [
-        "assets/images/projects/lum-screen-01.jpg",
-        "assets/images/projects/lum-screen-02.jpg",
-        "assets/images/projects/lum-screen-04.jpg",
-        "assets/images/projects/lum-screen-03.jpg"
+        "/assets/images/projects/lum-screen-01.jpg",
+        "/assets/images/projects/lum-screen-02.jpg",
+        "/assets/images/projects/lum-screen-04.jpg",
+        "/assets/images/projects/lum-screen-03.jpg"
       ],
       "abbr": "lum",
       "shortUrl": "getluma.com",
@@ -16,13 +17,14 @@
     },
     {
       "name": "Seekout",
+      "niceName": "seekout",
       "type": "website",
       "description": "A website to help organize and promote safe, fun events for the LGBTQ community. It is using the Mailchimp API and custom JSON API calls to subscribe users. All UI graphics utilize a SVG shell to optimize their file size.",
       "imagesList": [
-        "assets/images/projects/sek-screen-01.jpg",
-        "assets/images/projects/sek-screen-02.jpg",
-        "assets/images/projects/sek-screen-03.jpg",
-        "assets/images/projects/sek-screen-04.jpg"
+        "/assets/images/projects/sek-screen-01.jpg",
+        "/assets/images/projects/sek-screen-02.jpg",
+        "/assets/images/projects/sek-screen-03.jpg",
+        "/assets/images/projects/sek-screen-04.jpg"
       ],
       "abbr": "sek",
       "shortUrl": "seekout.co",
@@ -30,12 +32,13 @@
     },
     {
       "name": "Surf Status",
+      "niceName": "surf-status",
       "type": "web app",
       "description": "A surf report void of the typical clutter — engineered using MongoDB, Express, and Node.js (known in some circles as the MEN stack). Read more on <a href='https://medium.com/@tkmh/how-i-built-surf-status-2ca2ca8a6fbf' target='_blank'>how it&rsquo;s built</a>.",
       "imagesList": [
-        "assets/images/projects/sus-screen-01.jpg",
-        "assets/images/projects/sus-screen-02.jpg",
-        "assets/images/projects/sus-screen-03.jpg"
+        "/assets/images/projects/sus-screen-01.jpg",
+        "/assets/images/projects/sus-screen-02.jpg",
+        "/assets/images/projects/sus-screen-03.jpg"
       ],
       "abbr": "sus",
       "shortUrl": "surfstat.us",
@@ -48,13 +51,14 @@
     },
     {
       "name": "Foundry Salon",
+      "niceName": "foundry-salon",
       "type": "website",
       "description": "A simple, static website for an up-and-coming hair salon based in Kailua. If a client doesn&rsquo;t need a CMS, don&rsquo;t build one!",
       "imagesList": [
-        "assets/images/projects/fnd-screen-01.jpg",
-        "assets/images/projects/fnd-screen-02.jpg",
-        "assets/images/projects/fnd-screen-03.jpg",
-        "assets/images/projects/fnd-screen-04.jpg"
+        "/assets/images/projects/fnd-screen-01.jpg",
+        "/assets/images/projects/fnd-screen-02.jpg",
+        "/assets/images/projects/fnd-screen-03.jpg",
+        "/assets/images/projects/fnd-screen-04.jpg"
       ],
       "abbr": "fnd",
       "shortUrl": "foundrysalon.com",
@@ -62,13 +66,14 @@
     },
     {
       "name": "JJ Dolan&rsquo;s",
+      "niceName": "jj-dolans",
       "type": "website",
       "description": "A website for a compelling pizza kitchen — featuring a progressively loaded, mobile-friendly canvas drawing application at the top of the page. It went on to win a <a href='http://peleawards.com/2016-award-winners/' target='_blank'>AAF Pele Gold</a> in 2016.",
       "imagesList": [
-        "assets/images/projects/jjd-screen-01.jpg",
-        "assets/images/projects/jjd-screen-02.jpg",
-        "assets/images/projects/jjd-screen-03.jpg",
-        "assets/images/projects/jjd-screen-04.jpg"
+        "/assets/images/projects/jjd-screen-01.jpg",
+        "/assets/images/projects/jjd-screen-02.jpg",
+        "/assets/images/projects/jjd-screen-03.jpg",
+        "/assets/images/projects/jjd-screen-04.jpg"
       ],
       "abbr": "jjd",
       "shortUrl": "jjdolans.com",
@@ -76,13 +81,14 @@
     },
     {
       "name": "Hallowbaloo",
+      "niceName": "hallowbaloo",
       "type": "website",
       "description": "A website for the largest Halloween event in Honolulu. It innovated in terms of SVG animation, with a feature earning <a href='http://codepen.io/tellaho/details/PPRjbj/' target='_blank'>positive feedback on Codepen</a>.",
       "imagesList": [
-        "assets/images/projects/hbl-screen-01.jpg",
-        "assets/images/projects/hbl-screen-02.jpg",
-        "assets/images/projects/hbl-screen-03.jpg",
-        "assets/images/projects/hbl-screen-04.jpg"
+        "/assets/images/projects/hbl-screen-01.jpg",
+        "/assets/images/projects/hbl-screen-02.jpg",
+        "/assets/images/projects/hbl-screen-03.jpg",
+        "/assets/images/projects/hbl-screen-04.jpg"
       ],
       "abbr": "hbl",
       "shortUrl": "hallowbaloo.com",
@@ -90,12 +96,13 @@
     },
     {
       "name": "Surfjack Hotel",
+      "niceName": "surfjack-hotel",
       "type": "website",
       "description": "A website for the one of the newest hotels in Waikiki. A fun balance of aesthetic and functionality per template.",
       "imagesList": [
-        "assets/images/projects/sjk-screen-01.jpg",
-        "assets/images/projects/sjk-screen-02.jpg",
-        "assets/images/projects/sjk-screen-03.jpg"
+        "/assets/images/projects/sjk-screen-01.jpg",
+        "/assets/images/projects/sjk-screen-02.jpg",
+        "/assets/images/projects/sjk-screen-03.jpg"
       ],
       "abbr": "sjk",
       "shortUrl": "surfjack.com",
@@ -103,12 +110,13 @@
     },
     {
       "name": "Blake Entertainment",
+      "niceName": "blake-entertainment",
       "type": "website",
       "description": "A website for a premier event planner in Honolulu. We made sure to emphasize the breadth of their events — from red carpets to poke bars.",
       "imagesList": [
-        "assets/images/projects/bla-screen-01.jpg",
-        "assets/images/projects/bla-screen-02.jpg",
-        "assets/images/projects/bla-screen-03.jpg"
+        "/assets/images/projects/bla-screen-01.jpg",
+        "/assets/images/projects/bla-screen-02.jpg",
+        "/assets/images/projects/bla-screen-03.jpg"
       ],
       "abbr": "bla",
       "shortUrl": "blakeentertainmenthawaii.com",

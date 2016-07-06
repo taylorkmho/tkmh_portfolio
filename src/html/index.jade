@@ -16,7 +16,7 @@ block content
       .projects__list#projects-list
         each project in projects
           .project
-            a.project__image.lazyload(data-modal="carousel" data-format=project.thumbSize data-src="assets/images/projects/#{project.abbr}-bg.jpg" href="#" data-content!=project)
+            a.project__image.lazyload(data-modal="carousel" data-format=project.thumbSize data-src="assets/images/projects/#{project.abbr}-bg.jpg" href="/projects/#{project.niceName}.html" data-content!=project)
               img(src="assets/images/svg/logo-#{project.abbr}.svg")
             .project__title
               h2!= project.name

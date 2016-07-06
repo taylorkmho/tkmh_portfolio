@@ -1,0 +1,28 @@
+extends layouts/_application
+
+block vars
+  - var bodyTemplate = "project"
+
+block content
+  .breadcrumb
+    .breadcrumb__container
+      a(href="/") Back to home
+  .showcase.showcase--bordered
+    .showcase__container
+      .showcase__images
+        .Wallop
+          .Wallop-list
+            each image in project.imagesList
+              img.Wallop-item(src!=image)
+        .Wallop-pagination
+          a.Wallop-pagination__arrow.Wallop-pagination__arrow--prev
+            img(src="/assets/images/svg/icon-arrow.svg")
+          each image in project.imagesList
+            a.Wallop-pagination__option(href="#"): img(src!=image)
+          a.Wallop-pagination__arrow.Wallop-pagination__arrow--next
+            img(src="/assets/images/svg/icon-arrow.svg")
+      .showcase__description
+        h3!= project.name
+          b!= project.type
+        p!= project.description
+        a.btn.btn--filled.btn--filled-primary(href!=project.url target="_blank") View site
