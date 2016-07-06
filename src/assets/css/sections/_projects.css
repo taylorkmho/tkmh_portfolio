@@ -72,26 +72,51 @@
     background-color: $c-primary;
     background-size: cover;
     background-position: center center;
-    border-radius: 4px;
-    overflow: hidden;
     transition: box-shadow 150ms ease-out;
+    &,
+    &:after {
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    &:before {
+      /* loading spinner */
+      content: "";
+      position: absolute;
+      top: calc(50% - 15px);
+      left: calc(50% - 15px);
+      z-index: 230;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 5px solid color($c-primary shade(10%));
+      border-bottom-color: color($c-primary tint(50%));
+      animation: spin 1s infinite;
+    }
     &:after {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
-      z-index: 210;
+      z-index: 220;
       width: 100%;
       height: 100%;
-      background-color: color($c-primary a(0));
-      transition: background 150ms ease-out;
+      background-color: $c-primary;
+      transition: background 750ms ease-out;
     }
     img {
       position: relative;
-      z-index: 220;
+      z-index: 250;
       height: 4rem;
       max-width: 100%;
       max-height: 100%;
+    }
+    &.lazyloaded {
+      &:before {
+        opacity: 0;
+      }
+      &:after {
+        background-color: color($c-primary a(0));
+      }
     }
     .projects--main & {
       box-shadow: 0 1px 0 color($c-primary a(.2)) inset, 0 8px 16px color(#000 a(.5));
@@ -99,6 +124,7 @@
       &:focus {
         box-shadow: 0 1px 0 color($c-primary a(.2)) inset, 0 8px 32px color(#000 a(.5));
         &:after {
+          transition-duration: 150ms;
           background-color: color($c-primary a(.125));
         }
       }
