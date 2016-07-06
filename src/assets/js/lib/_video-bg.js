@@ -3,7 +3,7 @@ export default class VideoBG {
     this.selector = selector
     this.el = document.querySelector(selector)
     this.videoEl = document.querySelector(selector + '__video')
-    this.videoID = document.querySelector(selector).getAttribute('data-video-id')
+    this.videoID = this.el ? this.el.getAttribute('data-video-id') : ''
     this.videoVars = {
       autoplay: 1,
       autohide: 1,
