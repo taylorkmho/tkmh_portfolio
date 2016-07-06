@@ -3,7 +3,6 @@
   margin-bottom: $column-gutter;
   h2 {
     margin: 0;
-    font-size: 3rem;
     letter-spacing: .25rem;
     &:after {
       content: "_";
@@ -23,6 +22,7 @@
     }
     h2 {
       margin-bottom: 0;
+      font-size: 3rem;
     }
   }
 }

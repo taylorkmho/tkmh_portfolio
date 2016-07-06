@@ -1,5 +1,8 @@
 .shortlist {
   margin: $column-gutter 0;
+  & + .section-title {
+    margin-top: calc($column-gutter*2);
+  }
   &:first-of-type { margin-top: 0; }
   &:last-of-type { margin-bottom: 0; }
   &__title {
@@ -37,11 +40,11 @@
     display: flex;
     margin: calc($column-gutter*2) 0;
     &__title {
-      lost-column: 1/5 2;
+      lost-column: 1/4 2;
       margin-bottom: 0;
     }
     &__list {
-      lost-column: 4/5 2;
+      lost-column: 3/4 2;
       li {
         margin-bottom: $column-gutter;
       }
