@@ -38,6 +38,17 @@
       height: 100%;
       display: flex;
       cursor: pointer;
+      background: transparent;
+      border: 0;
+      -webkit-appearance: none;
+      outline: none;
+      &:focus,
+      &:hover {
+        background-color: color(#000 a(.05));
+      }
+      &:active {
+        background-color: color(#000 a(.075));
+      }
       &--prev {
         left: -24px;
       }

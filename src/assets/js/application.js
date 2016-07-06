@@ -99,9 +99,9 @@ $('a[data-modal="carousel"]').magnificPopup({
                 buildCarouselImages(data.imagesList) +
               '</div></div>' + // Wallop, Wallop-list
               '<div class="Wallop-pagination">' +
-                '<a class="Wallop-pagination__arrow Wallop-pagination__arrow--prev"><img src="assets/images/svg/icon-arrow.svg" /></a>' +
+                '<button class="Wallop-pagination__arrow Wallop-pagination__arrow--prev"><img src="assets/images/svg/icon-arrow.svg" /></a></button>' +
                 buildCarouselPag(data.imagesList) +
-                '<a class="Wallop-pagination__arrow Wallop-pagination__arrow--next"><img src="assets/images/svg/icon-arrow.svg" /></a>' +
+                '<button class="Wallop-pagination__arrow Wallop-pagination__arrow--next"><img src="assets/images/svg/icon-arrow.svg" /></a></button>' +
               '</div>' + //Wallop-pagination
             '</div>' + // showcase__images
             '<div class="showcase__description">' +
@@ -134,6 +134,7 @@ $('a[data-modal="carousel"]').magnificPopup({
 
     },
     close: function() {
+      carousel.destroy()
       // update history
       history.pushState(null, document.title, '/');
       $(window).off('popstate');

@@ -23,6 +23,7 @@ export default class Carousel {
         slider.goTo(index)
       }, false)
     })
+
     slider.on('change', function(event) {
       pagEls.forEach((el, index)=>{
         if (index !== event.detail.currentItemIndex) {
@@ -32,5 +33,18 @@ export default class Carousel {
         }
       })
     });
+
+    this.keyDownTextField = (e) => {
+      var keyCode = e.keyCode;
+      if (keyCode===37) {
+        slider.previous()
+      } else if (keyCode===39) {
+        slider.next()
+      }
+    }
+    document.addEventListener('keydown', this.keyDownTextField, false)
+  }
+  destroy() {
+    document.removeEventListener('keydown', this.keyDownTextField)
   }
 }

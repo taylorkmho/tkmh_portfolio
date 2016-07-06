@@ -15,11 +15,11 @@ block content
             each image in project.imagesList
               img.Wallop-item(src!=image)
         .Wallop-pagination
-          a.Wallop-pagination__arrow.Wallop-pagination__arrow--prev
+          button.Wallop-pagination__arrow.Wallop-pagination__arrow--prev
             img(src="/assets/images/svg/icon-arrow.svg")
           each image in project.imagesList
             a.Wallop-pagination__option(href="#"): img(src!=image)
-          a.Wallop-pagination__arrow.Wallop-pagination__arrow--next
+          button.Wallop-pagination__arrow.Wallop-pagination__arrow--next
             img(src="/assets/images/svg/icon-arrow.svg")
       .showcase__description
         h3!= project.name
