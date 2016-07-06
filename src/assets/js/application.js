@@ -20,6 +20,9 @@ let blazy = new Blazy({
     src: 'data-src-small'
   }],
   success: (ele) => {
+    if (ele.classList.contains('lazyload--invisible')) {
+      ele.style.backgroundImage = ''
+    }
   },
   error: (ele, msg) => {
     if(msg === 'missing'){
@@ -57,6 +60,51 @@ catch(e){
 setTimeout(()=>{
   removeFontsStandby();
 },3000)
+
+/*
+  Splash - Intro animation
+*/
+
+var controller  = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 'onEnter'
+    }
+  });
+$('.projects--main .project').each(function(index, element){
+  let fromVars = { opacity: 0 }
+
+  switch (true) {
+    case window.innerWidth >= 768:
+      var position = (index % 3) + 1;
+      if (position === 1) {
+        fromVars['x'] = -100
+        fromVars['rotation'] = 15
+      } else if (position === 3) {
+        fromVars['x'] = 100
+        fromVars['rotation'] = -15
+      }
+      break;
+    case window.innerWidth < 768:
+      var position = (index % 2) + 1;
+      if (position === 1) {
+        fromVars['x'] = -100
+        fromVars['rotation'] = 15
+      } else if (position === 2) {
+        fromVars['x'] = 100
+        fromVars['rotation'] = -15
+      }
+      break;
+  }
+
+  let tween = new TimelineMax()
+      .from(element, 1, fromVars);
+  let scene = new ScrollMagic.Scene({
+    triggerElement: element,
+    duration: element.offsetHeight * 1.5
+  })
+    .setTween(tween)
+    .addTo(controller);
+});
 
 /*
   Projects - Image Carousel
