@@ -6,6 +6,7 @@
 @import '_structure.css';
 @import '_animations.css';
 
+@import 'templates/**/*';
 @import 'sections/**/*';
 @import 'components/**/*';
-@import 'modules/**/*';
+@import 'overrides/**/*';

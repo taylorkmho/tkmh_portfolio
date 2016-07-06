@@ -4,6 +4,28 @@ block vars
   - var bodyTemplate = "about"
 
 block content
+  .video-bg
+    iframe.video-bg__video(src="https://www.youtube.com/embed/VSEhrhzK830?autoplay=1&autohide=1&controls=0&loop=1&showinfo=0&start=111" frameborder="0" allowfullscreen)
+  section.skills-tools
+    .skills-tools__container
+      .section-title
+        .section-title__column
+          h2 SKILLS
+      each skillset in skills
+        .shortlist.shortlist--split
+          h5.shortlist__title!= skillset.type
+          ul.shortlist__list
+            each skill in skillset.list
+              li!= skill
+      .section-title
+        .section-title__column
+          h2 TOOLS
+      each toolset in tools
+        .shortlist.shortlist--split
+          h5.shortlist__title!= toolset.type
+          ul.shortlist__list
+            each tool in toolset.list
+              li!= tool
   section.recognition
     .recognition__container
       .section-title
@@ -15,15 +37,3 @@ block content
           ul.shortlist__list
             each listItem in award.list
               li!= listItem
-  section.skills-tools
-    .skills-tools__container
-      .shortlist.shortlist--split
-        h5.shortlist__title SKILLS
-        ul.shortlist__list
-          each skill in skills
-            li!= skill
-      .shortlist.shortlist--split
-        h5.shortlist__title TOOLS
-        ul.shortlist__list
-          each tool in tools
-            li!= tool

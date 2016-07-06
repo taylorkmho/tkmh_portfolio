@@ -1,0 +1,18 @@
+[data-template="about"] {
+  padding: calc($column-gutter*2) 0;
+  color: $c-body-font--light;
+  background-color: $c-bg-color--dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  > section {
+    position: relative;
+    z-index: 200;
+  }
+}
+
+
+@media screen and (min-width: $mobile-width) {
+  [data-template="about"] {
+    padding: calc($column-gutter*4) 0;
+  }
+}

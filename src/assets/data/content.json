@@ -182,25 +182,51 @@
     }
   ],
   "skills": [
-    "Front-end Architecture",
-    "Rapid Prototyping",
-    "Semantic Mark-up",
-    "Data Visualization",
-    "Progressive Enhancement",
-    "Mobile-first Responsive",
-    "Web Animation",
-    "Browser-specific Quirks",
-    "Visual Design"
+    {
+      "type": "ENGINEERING",
+      "list": [
+        "Front-end Architecture",
+        "Rapid Prototyping",
+        "Semantic Mark-up",
+        "Data Visualization",
+        "Progressive Enhancement",
+        "Mobile-first Responsive",
+        "Web Animation",
+        "Browser-specific Quirks",
+        "Client-side Optimization"
+      ]
+    },
+    {
+      "type": "DESIGN",
+      "list": [
+        "Visual Design",
+        "User Experience Oriented",
+        "Motion Graphics"
+      ]
+    }
   ],
   "tools": [
-    "Javascript <span>es<span>2015</span>/jquery</span>",
-    "NodeJS",
-    "Version Control <span>git</span>",
-    "HTML <span>jade/slim</span>",
-    "Ruby-on-Rails",
-    "Command Line <span>CLI&rsquo;s</span>",
-    "CSS <span>postcss/sass/scss</span>",
-    "Adobe Creative",
-    "Sketch"
+    {
+      "type": "ENGINEERING",
+      "list": [
+        "Javascript <span>es<span>2015</span>/jquery</span>",
+        "NodeJS",
+        "Version Control <span>git</span>",
+        "HTML <span>jade/slim</span>",
+        "Gulp.js",
+        "Command Line <span>CLI&rsquo;s</span>",
+        "CSS <span>postcss/sass/scss</span>",
+        "GSAP/d3.js",
+        "Ruby-on-Rails"
+      ]
+    },
+    {
+      "type": "DESIGN",
+      "list": [
+        "Adobe Creative Cloud",
+        "Sketch",
+        "In-browser"
+      ]
+    }
   ]
 }
