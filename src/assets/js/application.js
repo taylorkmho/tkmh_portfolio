@@ -82,6 +82,7 @@ $('a[data-modal="carousel"]').magnificPopup({
   closeBtnInside: false,
   callbacks: {
     elementParse: function(item) {
+      // build data via data-content attribute
       let data = JSON.parse(item.el.attr('data-content'));
       const buildCarouselImages = (imageArray) => {
         let images = '';
@@ -128,6 +129,22 @@ $('a[data-modal="carousel"]').magnificPopup({
     },
     open: function() {
       carousel.init()
+      let $that = $(this);
+      // update history
+      setTimeout(function(){
+        history.pushState(null, document.title, $that[0].currItem.el[0].getAttribute('href'));
+      },10)
+      $(window).on('popstate', function(e) {
+        if(e.originalEvent.state === null) { // initial page
+          $.magnificPopup.close();
+        }
+      });
+
+    },
+    close: function() {
+      // update history
+      history.pushState(null, document.title, '/');
+      $(window).off('popstate');
     }
   }
 })
