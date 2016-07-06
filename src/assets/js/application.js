@@ -2,6 +2,7 @@
 
 import { addClass, removeClass, hasClass } from "./lib/_helpers";
 import Carousel from "./lib/_carousel";
+import VideoBG from "./lib/_video-bg";
 let Blazy              = require('blazy');
 
 /*
@@ -139,3 +140,9 @@ $('a[data-modal="carousel"]').magnificPopup({
     }
   }
 })
+
+/*
+  About video bg
+*/
+
+let videoBG = new VideoBG('.video-bg');
