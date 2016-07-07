@@ -19,6 +19,17 @@
       font-weight: 900;
     }
   }
+  #aloha-shake {
+    display: inline-block;
+    #aloha:target ~ & {
+      animation: shake 2s forwards 1.5s;
+    }
+  }
+}
+
+#aloha-target {
+  position: absolute;
+  top: 0;
 }
 
 @media screen and (min-width: $mobile-width) {

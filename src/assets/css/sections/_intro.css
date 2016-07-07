@@ -37,6 +37,12 @@
         font-size: 7rem;
         margin: 0;
         line-height: .85;
+        a {
+          text-decoration: none;
+          &:hover {
+            color: color($c-primary shade(10%));
+          }
+        }
         span {
           display: block;
           font-size: 2rem;
