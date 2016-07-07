@@ -37,6 +37,9 @@
   &__images {
     lost-column: 1;
     background-color: $c-bg-color--light;
+    [data-template="project"] & {
+      background-color: $c-bg-color--dark;
+    }
   }
 }
 

@@ -1,6 +1,12 @@
 [data-template="project"] {
-  background-color: $c-bg-color--dark;
+  padding-bottom: calc($column-gutter*2);
   color: $c-body-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (min-width: $mobile-width) {
+  [data-template="project"] {
+    padding-bottom: calc($column-gutter*4);
+  }
 }

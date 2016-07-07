@@ -1,6 +1,6 @@
 .about-me {
   padding: 0 $column-gutter;
-  margin-bottom: calc($column-gutter*2);
+  margin: calc($column-gutter*2) 0;
   line-height: 2;
   &__container {
     lost-center: $row-width;

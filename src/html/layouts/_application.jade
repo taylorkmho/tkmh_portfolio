@@ -24,6 +24,12 @@ html.standby-for-fonts
 
   body(data-template="#{bodyTemplate}")
     include ../shared/_google-analytics
+    nav.header-nav
+      a.header-nav__logo(href="/")
+        img(src="//placehold.it/80x40")
+      ul.header-nav__list
+        li
+          a.header-nav__link(href="/about.html") ABOUT
     block content
     script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.slim.min.js")
     script.

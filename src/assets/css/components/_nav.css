@@ -1,0 +1,37 @@
+.header-nav {
+  position: relative;
+  z-index: 500;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: $column-gutter;
+  margin-bottom: $column-gutter;
+  [data-template="home"] & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 0;
+  }
+  &__logo {}
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__link {
+    display: inline-block;
+    font-size: .75rem;
+    padding: 0.875rem;
+    line-height: 1;
+    text-decoration: none;
+    color: $c-bg-color--dark;
+    letter-spacing: .1rem;
+    transition: 250ms ease-out color;
+    [data-template="about"] & {
+      color: #fff;
+    }
+    &:hover {
+      color: $c-primary;
+    }
+  }
+}

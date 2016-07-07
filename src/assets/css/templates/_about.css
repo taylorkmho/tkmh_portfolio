@@ -1,5 +1,5 @@
 [data-template="about"] {
-  padding: calc($column-gutter*2) 0;
+  padding: 0 0 calc($column-gutter*2);
   color: $c-body-font--light;
   background-color: $c-bg-color--dark;
   -webkit-font-smoothing: antialiased;
@@ -13,6 +13,6 @@
 
 @media screen and (min-width: $mobile-width) {
   [data-template="about"] {
-    padding: calc($column-gutter*4) 0;
+    padding: 0 0 calc($column-gutter*4);
   }
 }
