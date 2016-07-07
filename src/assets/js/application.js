@@ -64,47 +64,56 @@ setTimeout(()=>{
 /*
   Splash - Intro animation
 */
-
-var controller  = new ScrollMagic.Controller({
+if (window.innerWidth >= 768) {
+  let controller  = new ScrollMagic.Controller({
     globalSceneOptions: {
       triggerHook: 'onEnter'
     }
   });
-$('.projects--main .project').each(function(index, element){
-  let fromVars = { opacity: 0 }
 
-  switch (true) {
-    case window.innerWidth >= 768:
-      var position = (index % 3) + 1;
-      if (position === 1) {
-        fromVars['x'] = -100
-        fromVars['rotation'] = 15
-      } else if (position === 3) {
-        fromVars['x'] = 100
-        fromVars['rotation'] = -15
-      }
-      break;
-    case window.innerWidth < 768:
-      var position = (index % 2) + 1;
-      if (position === 1) {
-        fromVars['x'] = -100
-        fromVars['rotation'] = 15
-      } else if (position === 2) {
-        fromVars['x'] = 100
-        fromVars['rotation'] = -15
-      }
-      break;
-  }
-
-  let tween = new TimelineMax()
-      .from(element, 1, fromVars);
-  let scene = new ScrollMagic.Scene({
-    triggerElement: element,
-    duration: element.offsetHeight * 1.5
+  let splashTitleEl = $('.splash__title');
+  var splashTitleAnim = TweenMax.to(splashTitleEl, 1, {
+    y: '-50%'
+  });
+  let splashTitleScene = new ScrollMagic.Scene({
+    triggerElement: splashTitleEl,
+    duration: splashTitleEl.innerHeight()
   })
-    .setTween(tween)
+    .setTween(splashTitleAnim)
     .addTo(controller);
-});
+
+  $('.intro__column').each(function(index, element){
+    let toVars = { y: -(index+1)*40 + '%' }
+    let tween = TweenMax.to(element, 1, toVars);
+    let scene = new ScrollMagic.Scene({
+      triggerElement: element,
+      triggerHook: 'onEnter',
+      duration: '300%'
+    })
+      .setTween(tween)
+      .addTo(controller);
+  });
+
+  $('.projects--main .project').each(function(index, element){
+    let fromVars = {opacity: 0}
+    var position = (index % 3) + 1;
+    if (position === 1) {
+      fromVars['x'] = -100
+      fromVars['rotation'] = 15
+    } else if (position === 3) {
+      fromVars['x'] = 100
+      fromVars['rotation'] = -15
+    }
+
+    let tween = TweenLite.from(element, 1, fromVars);
+    let scene = new ScrollMagic.Scene({
+      triggerElement: element,
+      duration: element.offsetHeight * 1.5
+    })
+      .setTween(tween)
+      .addTo(controller);
+  });
+}
 
 /*
   Projects - Image Carousel

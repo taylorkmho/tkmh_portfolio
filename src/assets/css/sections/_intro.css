@@ -2,7 +2,8 @@
   position: relative;
   z-index: 300;
   margin-top: -$column-gutter;
-  margin-bottom: calc(-$column-gutter*2);
+  margin-bottom: calc(-$column-gutter*4);
+  padding: 0 $column-gutter;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   &__container {
@@ -12,7 +13,8 @@
   &__column {
     lost-column: 1/2 2 0;
     &:first-of-type {
-      margin: $column-gutter 0;
+      position: relative;
+      top: $column-gutter;
       padding: $column-gutter 0;
       background-color: #fff;
     }
