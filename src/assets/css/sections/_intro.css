@@ -1,49 +1,71 @@
 .intro {
-  padding: 0 $column-gutter;
-  margin-bottom: calc($column-gutter*2);
-  line-height: 2;
+  position: relative;
+  z-index: 300;
+  margin-top: -$column-gutter;
+  margin-bottom: calc(-$column-gutter*2);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   &__container {
     lost-center: $row-width;
+    display: flex;
   }
-  &__title {
-    font-weight: 700;
-    margin-top: 0;
-  }
-  p {
-    font-size: 1.15rem;
-    font-weight: 300;
+  &__column {
+    lost-column: 1/2 2 0;
     &:first-of-type {
-      font-size: 1.5rem;
+      margin: $column-gutter 0;
+      padding: $column-gutter 0;
+      background-color: #fff;
     }
-    strong {
-      font-weight: 900;
+    &:last-of-type {
+      background: $c-secondary;
+      color: color($c-secondary tint(90%));
+    }
+    h1 {
+      margin: 0;
     }
   }
-}
-
-@media screen and (min-width: $mobile-width) {
-  .intro {
-    &__title {
-      font-size: 3rem;
-    }
-    p {
-      font-size: 1.5rem;
-      &:first-of-type {
-        font-size: 2rem;
+  &__block {
+    line-height: 1.5;
+    padding: 0 calc($column-gutter*2);
+    &--open {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      h1 {
+        color: $c-secondary;
+        font-size: 7rem;
+        margin: 0;
+        line-height: .85;
+        span {
+          display: block;
+          font-size: 2rem;
+          color: color($c-secondary tint(80%));
+        }
       }
     }
-  }
-}
-
-@media screen and (min-width: $row-width) {
-  .intro {
-    &__title {
-      font-size: 4rem;
-    }
-    p {
-      font-size: 1.75rem;
-      &:first-of-type {
-        font-size: 2.5rem;
+    &--boxed {
+      padding-top: calc($column-gutter*2);
+      padding-bottom: calc($column-gutter*2);
+      font-size: 1.25rem;
+      font-weight: 300;
+      p {
+        &:first-of-type {
+          margin-top: 0;
+          font-size: 1.5rem;
+        }
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+      ul {
+        line-height: 1.15;
+        li {
+          margin-bottom: calc($column-gutter/4);
+        }
+      }
+      a {
+        margin-top: $column-gutter;
       }
     }
   }

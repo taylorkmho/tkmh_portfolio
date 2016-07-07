@@ -11,12 +11,14 @@ $phone-width--max:       479px;
 $body-font-family:        "museo-sans", "Helvetica Neue", Helvetica, sans-serif;
 
 $c-primary:                     #F24C27;
-$c-secondary:                   #ddd;
-$c-bg-color:                    #fff;
-$c-bg-color--dark:              #222;
+$c-secondary:                   #374140;
+$c-palette-supplement-01:       #3498DB;
+$c-palette-supplement-02:       #2980B9;
+$c-bg-color:                    #eee;
+$c-bg-color--dark:              #1E1E20;
 $c-bg-color--dark-02:           #444;
 $c-bg-color--light:             #eee;
-$c-body-font:                   #222;
+$c-body-font:                   #1E1E20;
 $c-body-font--light:            #fff;
 $c-body-font--light-secondary:  #aaa;
 $c-border:                      #ddd;

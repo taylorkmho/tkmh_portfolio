@@ -1,5 +1,6 @@
 .projects {
   padding: calc($column-gutter*2) $column-gutter;
+  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   &__container {
@@ -73,6 +74,7 @@
     background-size: cover;
     background-position: center center;
     transition: box-shadow 150ms ease-out;
+    .projects--main & { background-blend-mode: hard-light; }
     &,
     &:after {
       border-radius: 4px;

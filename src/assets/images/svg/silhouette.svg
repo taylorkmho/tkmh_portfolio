@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 345 400">
   <defs>
     <mask id="mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
-      <image width="345" height="400" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/splash-portrait.jpg"></image>
+      <image width="345" height="400" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/splash-portrait--invert.jpg"></image>
     </mask>
   </defs>
-  <path fill="#fff" d="M0 0h345v400H0z" style="mask: url(#mask)"/>
+  <path fill="#1E1E20" d="M0 0h345v400H0z" style="mask: url(#mask)"/>
 </svg>

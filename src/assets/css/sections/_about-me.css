@@ -1,0 +1,50 @@
+.about-me {
+  padding: 0 $column-gutter;
+  margin-bottom: calc($column-gutter*2);
+  line-height: 2;
+  &__container {
+    lost-center: $row-width;
+  }
+  &__title {
+    font-weight: 700;
+    margin-top: 0;
+  }
+  p {
+    font-size: 1.15rem;
+    font-weight: 300;
+    &:first-of-type {
+      font-size: 1.5rem;
+    }
+    strong {
+      font-weight: 900;
+    }
+  }
+}
+
+@media screen and (min-width: $mobile-width) {
+  .about-me {
+    &__title {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.5rem;
+      &:first-of-type {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $row-width) {
+  .about-me {
+    &__title {
+      font-size: 4rem;
+    }
+    p {
+      font-size: 1.75rem;
+      &:first-of-type {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}

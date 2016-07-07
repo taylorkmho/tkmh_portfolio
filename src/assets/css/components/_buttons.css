@@ -1,11 +1,14 @@
 .btn {
-  padding: calc($column-gutter/4) calc($column-gutter/2);
-  text-transform: uppercase;
+  display: inline-block;
   letter-spacing: .05rem;
   color: #fff;
   text-decoration: none;
+  &--plain {
+    font-weight: 600;
+  }
   &--filled {
-    display: block;
+    padding: calc($column-gutter/4) calc($column-gutter/2);
+    text-transform: uppercase;
     border: 2px solid transparent;
     border-radius: 4px;
     font-size: .85rem;
