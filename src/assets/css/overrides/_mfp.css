@@ -6,28 +6,38 @@
 }
 
 .is-active {
+  .mfp-container {
+    padding: 0;
+  }
+  .mfp-content {
+    padding-top: 3.5rem;
+    padding-bottom: $column-gutter;
+  }
   &.mfp-bg {
-    opacity: 0;
+    transform-origin: center bottom;
     transition: all 0.25s ease-out;
-    &.mfp-ready {
-      opacity: 0.75;
-    }
+    &,
     &.mfp-removing {
+      transform: translateY(100%);
       opacity: 0;
+    }
+    &.mfp-ready {
+      opacity: .85;
+      transform: translateY(0);
     }
   }
 
   &.mfp-wrap {
     &.mfp-ready .mfp-content {
       opacity: 1;
-      transform: scale(1);
+      transform: translateY(0);
     }
     &.mfp-removing .mfp-content {
       opacity: 0;
     }
     .mfp-content {
       opacity: 0;
-      /* transform: scale(.95); */
+      transform: translateY($column-gutter);
       transition: all 1s ease-out .25s;
     }
   }

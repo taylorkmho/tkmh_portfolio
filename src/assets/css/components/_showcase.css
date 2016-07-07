@@ -1,13 +1,10 @@
 .showcase {
   lost-center: $row-width;
   lost-utility: clearfix;
-  padding: 0 $column-gutter;
+  padding: 0;
   pointer-events: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  &--bordered {
-    padding: 0;
-  }
   &__description,
   &__images {
     pointer-events: initial;
@@ -45,9 +42,7 @@
 
 @media screen and (min-width: $mobile-width) {
   .showcase {
-    &--bordered {
-      padding: 0 $column-gutter;
-    }
+    padding: 0 $column-gutter;
     &__container {
       display: flex;
     }

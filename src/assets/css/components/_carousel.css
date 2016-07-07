@@ -50,10 +50,10 @@
         background-color: color(#000 a(.075));
       }
       &--prev {
-        left: -24px;
+        left: 0;
       }
       &--next {
-        right: -24px;
+        right: 0;
         transform: scaleX(-1);
       }
       img {
