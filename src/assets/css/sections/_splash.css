@@ -42,6 +42,7 @@
     }
     svg {
       position: relative;
+      right: 5%;
       z-index: 210;
       display: block;
       height: 100%;
@@ -63,18 +64,6 @@
     &__silhouette {
       height: 85vh;
       min-height: 336px;
-    }
-  }
-}
-
-@media screen and (min-width: $row-width) {
-  .splash {
-    &__container {
-      justify-content: flex-start;
-    }
-    &__title {
-      width: 50%;
-      padding: 0 $column-gutter;
     }
   }
 }

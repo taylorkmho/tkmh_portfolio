@@ -73,7 +73,7 @@ if (window.innerWidth >= 768) {
 
   let splashTitleEl = $('.splash__title');
   var splashTitleAnim = TweenMax.to(splashTitleEl, 1, {
-    y: '-50%'
+    y: '-20%'
   });
   let splashTitleScene = new ScrollMagic.Scene({
     triggerElement: splashTitleEl,
@@ -83,7 +83,7 @@ if (window.innerWidth >= 768) {
     .addTo(controller);
 
   $('.intro__column').each(function(index, element){
-    let toVars = { y: -(index+1)*40 + '%' }
+    let toVars = { y: -200/(index+2) + '%' }
     let tween = TweenMax.to(element, 1, toVars);
     let scene = new ScrollMagic.Scene({
       triggerElement: element,

@@ -19,7 +19,7 @@
       "name": "Seekout",
       "niceName": "seekout",
       "type": "website",
-      "description": "A website to help organize and promote safe, fun events for the LGBTQ community. It is using the Mailchimp API and custom JSON API calls to subscribe users. All UI graphics utilize a SVG shell to optimize their file size.",
+      "description": "A website to help organize and promote safe, fun events for the LGBTQ community. It is using the Mailchimp API and custom JSON API calls to subscribe users. Each of the UI screenshots—due to their consistent transparency and long box shadows—utilize a SVG shell to optimize their file size.",
       "imagesList": [
         "sek-screen-01",
         "sek-screen-02",
