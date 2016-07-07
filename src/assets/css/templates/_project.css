@@ -4,9 +4,3 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-@media screen and (min-width: $mobile-width) {
-  [data-template="project"] {
-    padding-bottom: calc($column-gutter*4);
-  }
-}

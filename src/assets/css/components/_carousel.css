@@ -1,11 +1,29 @@
 .Wallop {
   &-list {
+    min-height: 58.5vw;
     text-align: center;
     padding: calc($column-gutter/2) calc($column-gutter/2) calc($column-gutter/4);
   }
   &-item {
     max-height: 300px;
     width: auto;
+    box-shadow: 0 4px 8px color(#000 a(.0625));
+    border-radius: 8px;
+    overflow: hidden;
+    &.lazyload:not(.lazyloaded) {
+      box-shadow: none;
+      margin: 25.25% 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      animation: spin 1s infinite;
+      border: 5px solid color(#fff a(.25));
+      border-bottom-color: color(#fff a(.5));
+      [data-template="project"] & {
+        border: 5px solid color(#000 a(.125));
+        border-bottom-color: #fff;
+      }
+    }
   }
   &-pagination {
     position: relative;
@@ -67,10 +85,12 @@
 @media screen and (min-width: $mobile-width) {
   .Wallop {
     &-list {
-      padding: calc($column-gutter/2) $column-gutter 0;
+      min-height: 34vw;
+      padding: calc($column-gutter/2) $column-gutter;
     }
     &-item {
-      max-height: 480px;
+      max-height: 400px;
+      box-shadow: 0 8px 16px color(#000 a(.125));
     }
     &-pagination {
       padding: calc($column-gutter/2) 5rem;
@@ -90,6 +110,13 @@
           width: 40px;
         }
       }
+    }
+  }
+}
+@media screen and (min-width: $row-width) {
+  .Wallop {
+    &-list {
+      min-height: 430px;
     }
   }
 }

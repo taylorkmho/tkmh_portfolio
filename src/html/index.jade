@@ -30,14 +30,14 @@ block content
       .projects__list#projects-list
         each project in projects
           .project
-            a.project__image.lazyload(data-modal="carousel" data-format=project.thumbSize data-src="assets/images/projects/#{project.abbr}-bg.jpg" href="/projects/#{project.niceName}.html" data-content!=project)
-              img(src="assets/images/svg/logo-#{project.abbr}.svg")
+            a.project__image.lazyload(data-modal="carousel" data-format=project.thumbSize data-src="/assets/images/projects/#{project.abbr}-bg.jpg" href="/projects/#{project.niceName}.html" data-content!=project)
+              img(src="/assets/images/svg/logo-#{project.abbr}.svg")
             .project__title
               h2!= project.name
                 span!= project.type
       .projects__sublist
         each project in otherProjects
-          img(src="assets/images/svg/#{project.filename}" alt!=project.name)
+          img(src="/assets/images/svg/#{project.filename}" alt!=project.name)
   section.projects.projects--snippets
     .projects__container
       .section-title
@@ -46,6 +46,6 @@ block content
       .projects__list#projects-list
         each pen in codepen
           .project
-            a.project__image.lazyload(data-src="assets/images/pens/pen-#{pen.penID}.#{pen.thumbFormat}" href="//codepen.io/tellaho/pen/#{pen.penID}" target="_blank")
+            a.project__image.lazyload(data-src="/assets/images/pens/pen-#{pen.penID}.#{pen.thumbFormat}" href="//codepen.io/tellaho/pen/#{pen.penID}" target="_blank")
             .project__title
               h2!= pen.name

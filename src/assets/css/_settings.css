@@ -15,7 +15,7 @@ $c-primary:                     #F24C27;
 $c-secondary:                   #374140;
 $c-palette-supplement-01:       #3498DB;
 $c-palette-supplement-02:       #2980B9;
-$c-bg-color:                    color(#eee blend($c-palette-supplement-02 5%));
+$c-bg-color:                    #eee;
 $c-bg-color--dark:              #1E1E20;
 $c-bg-color--dark-02:           #444;
 $c-bg-color--light:             #eee;

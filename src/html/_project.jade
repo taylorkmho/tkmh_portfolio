@@ -4,22 +4,21 @@ block vars
   - var bodyTemplate = "project"
 
 block content
-  .showcase.showcase--bordered
+  .showcase.showcase--dark
     .showcase__container
       .showcase__images
         .Wallop
           .Wallop-list
             each image in project.imagesList
-              img.Wallop-item(src!=image)
+              img.Wallop-item.lazyload(src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/images/projects/#{image}.jpg")
         .Wallop-pagination
           button.Wallop-pagination__arrow.Wallop-pagination__arrow--prev
             img(src="/assets/images/svg/icon-arrow.svg")
           each image in project.imagesList
-            a.Wallop-pagination__option(href="#"): img(src!=image)
+            a.Wallop-pagination__option(href="#"): img(src!="/assets/images/projects/#{image}--thumbnail.jpg")
           button.Wallop-pagination__arrow.Wallop-pagination__arrow--next
             img(src="/assets/images/svg/icon-arrow.svg")
       .showcase__description
-        h3!= project.name
-          b!= project.type
+        img(src="/assets/images/svg/logo-#{project.abbr}--dark.svg" alt="#{project.name} logo" title="#{project.name} logo")
         p!= project.description
         a.btn.btn--filled.btn--filled-primary(href!=project.url target="_blank") View site

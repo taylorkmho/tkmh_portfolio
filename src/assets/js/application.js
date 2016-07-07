@@ -136,14 +136,15 @@ $('a[data-modal="carousel"]').magnificPopup({
       const buildCarouselImages = (imageArray) => {
         let images = '';
         imageArray.forEach((image)=>{
-          images += '<img class="Wallop-item" src=' + image + '>';
+          images += '<img class="Wallop-item lazyload" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/images/projects/' + image + '.jpg">';
         })
         return images;
       }
       const buildCarouselPag = (imageArray) => {
         let images = '';
         imageArray.forEach((image)=>{
-          images += '<a class="Wallop-pagination__option" href="#"><img src=' + image + '></a>';
+          console.log(image)
+          images += '<a class="Wallop-pagination__option" href="#"><img src="/assets/images/projects/' + image + '--thumbnail.jpg"></a>';
         })
         return images;
       }
@@ -162,12 +163,7 @@ $('a[data-modal="carousel"]').magnificPopup({
               '</div>' + //Wallop-pagination
             '</div>' + // showcase__images
             '<div class="showcase__description">' +
-              '<h3>' +
-                data.name +
-                '<b>'+
-                  data.type +
-                '</b>'+
-              '</h3>' +
+              '<img src="/assets/images/svg/logo-' + data.abbr + '.svg" alt="' + data.name + ' logo" title="' + data.name + ' logo" />' +
               '<p>' +
                 data.description +
               '</p>' +
@@ -177,8 +173,9 @@ $('a[data-modal="carousel"]').magnificPopup({
         '</div>' // showcase
     },
     open: function() {
-      carousel.init()
-      let $that = $(this);
+      carousel.init();
+      blazy.load(document.querySelectorAll('.Wallop-item'), true)
+      let $that = $(this)
       // update history
       setTimeout(function(){
         history.pushState(null, document.title, $that[0].currItem.el[0].getAttribute('href'));
