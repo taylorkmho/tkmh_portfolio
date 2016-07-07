@@ -21,8 +21,12 @@
   }
   #aloha-shake {
     display: inline-block;
+    animation: shake 2s forwards 1.5s;
     #aloha:target ~ & {
-      animation: shake 2s forwards 1.5s;
+      &:after {
+        content:"*";
+        color: $c-primary;
+      }
     }
   }
 }

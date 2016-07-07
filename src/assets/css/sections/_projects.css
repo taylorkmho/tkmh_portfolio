@@ -74,6 +74,7 @@
     background-size: cover;
     background-position: center center;
     transition: box-shadow 150ms ease-out;
+    outline: none;
     .projects--main & { background-blend-mode: hard-light; }
     &,
     &:after {
@@ -122,22 +123,35 @@
     }
     .projects--main & {
       box-shadow: 0 1px 0 color($c-primary a(.2)) inset, 0 8px 16px color(#000 a(.5));
-      &:hover,
-      &:focus {
+      &:hover {
         box-shadow: 0 1px 0 color($c-primary a(.2)) inset, 0 8px 32px color(#000 a(.5));
         &:after {
           transition-duration: 150ms;
-          background-color: color($c-primary a(.125));
+          background-color: color($c-primary a(.25));
+        }
+      }
+      &:active,
+      &:focus {
+        &:after {
+          transition-duration: 150ms;
+          background-color: color($c-primary a(.5));
         }
       }
     }
     .projects--snippets & {
       box-shadow: 0 1px 0 color(#fff a(.5)) inset, 0 8px 16px color(#000 a(.25));
-      &:hover,
-      &:focus {
+      &:hover {
         box-shadow: 0 1px 0 color(#fff a(.5)) inset, 0 8px 24px color(#000 a(.35));
         &:after {
-          background-color: color(#fff a(.0625));
+          transition-duration: 150ms;
+          background-color: color(#fff a(.125));
+        }
+      }
+      &:active,
+      &:focus {
+        &:after {
+          transition-duration: 150ms;
+          background-color: color(#fff a(.25));
         }
       }
     }

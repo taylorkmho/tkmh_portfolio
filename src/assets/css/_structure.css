@@ -50,9 +50,6 @@ a {
   &:hover {
     text-decoration: none;
   }
-  &:focus {
-    outline: $c-primary auto 5px;
-  }
 }
 
 span {
