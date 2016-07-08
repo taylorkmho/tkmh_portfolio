@@ -113,6 +113,32 @@ if (window.innerWidth >= 768) {
       .setTween(tween)
       .addTo(controller);
   });
+
+  let contactBGEl = $('.contact__bg');
+  var contactBGAnim = TweenMax.from(contactBGEl, 1, {
+    y: -20 + '%'
+  });
+  let contactBGScene = new ScrollMagic.Scene({
+      triggerElement: $('.footer')[0],
+      triggerHook: 'onEnter',
+      duration: '100%'
+  })
+    .setTween(contactBGAnim)
+    .addTo(controller);
+
+  let contactContainerEl = $('.contact__container');
+  var contactContainerAnim = TweenMax.from(contactContainerEl, 1, {
+    y: 100 + '%',
+    opacity: 0
+  });
+  let contactContainerScene = new ScrollMagic.Scene({
+      triggerElement: $('.footer')[0],
+      triggerHook: 'onEnter',
+      duration: '100%'
+  })
+    .setTween(contactContainerAnim)
+    .addTo(controller);
+
 }
 
 /*

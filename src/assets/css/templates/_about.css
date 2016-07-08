@@ -1,5 +1,4 @@
 [data-template="about"] {
-  padding: 0 0 calc($column-gutter*2);
   color: $c-body-font--light;
   background-color: $c-bg-color--dark;
   -webkit-font-smoothing: antialiased;
@@ -7,12 +6,5 @@
   > section {
     position: relative;
     z-index: 200;
-  }
-}
-
-
-@media screen and (min-width: $mobile-width) {
-  [data-template="about"] {
-    padding: 0 0 calc($column-gutter*4);
   }
 }

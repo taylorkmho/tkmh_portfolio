@@ -1,88 +1,161 @@
 .footer {
-  padding: $column-gutter 0;
-  background-size: cover;
-  background-position: center center;
-  &__container {
-    lost-center: $row-width;
-    padding: 0 $column-gutter;
+  &__contact {
+    padding: $column-gutter;
   }
-  svg {
-    mix-blend-mode: multiply;
-    text {
-      fill: $c-primary;
-    }
+  &__social-media {
+    padding: calc($column-gutter * .75) $column-gutter calc($column-gutter/2);
   }
-  p {
-    margin: calc($column-gutter/2) 0 0;
-    line-height: 1;
-    mix-blend-mode: multiply;
-    font-weight: 600;
-    color: color($c-body-font tint(50%));
-    font-size: 3.5vw;
-    letter-spacing: .15vw;
-  }
-  a {
-    display: block;
-    margin-top: calc($column-gutter/4);
-    position: relative;
-    mix-blend-mode: multiply;
-    white-space: nowrap;
-    color: color($c-body-font tint(66.66%));
-    text-decoration: none;
+  &__copyright {
+    padding: 0 $column-gutter $column-gutter;
   }
 }
 
-@media screen and (min-width: 768px) {
+
+@media screen and (min-width: $phone-width) {
   .footer {
-    padding: calc($column-gutter*2) 0;
-    p {
-      font-size: 3.5vw;
-      letter-spacing: .15vw;
+    &__contact {
+      padding-top: calc($column-gutter*2);
+      padding-bottom: calc($column-gutter*2);
     }
-    a {
-      display: inline;
-      margin-top: 0;
-      border-left: 4px solid transparent;
-      border-right: 4px solid transparent;
-      padding-left: calc($column-gutter/2);
-      padding-right: calc($column-gutter/2);
-      transition: border 250ms ease-out;
-      &:before,
-      &:after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 4px;
-        opacity: 0;
-        background-color: $c-primary;
-        transition: all 250ms ease-out;
-      }
-      &:before {
-        top: 0;
-        left: 0;
-      }
-      &:after {
-        bottom: 0;
-        right: 0;
-      }
-      &:hover {
-        border-left-color: $c-primary;
-        border-right-color: $c-primary;
-        &:before,
-        &:after {
-          width: 100%;
-          opacity: 1;
-        }
-      }
+  }
+}
+
+@media screen and (min-width: $mobile-width) {
+  .footer {
+    &__contact {
+      padding-top: calc($column-gutter*4);
+      padding-bottom: calc($column-gutter*4);
+    }
+  }
+}
+
+.contact {
+  position: relative;
+  z-index: 300;
+  background-color: $c-bg-color--dark;
+  color: $c-body-font--light;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &__bg {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    z-index: 300;
+    width: 100%;
+    height: 120%;
+    background-image: url('//placehold.it/1600x2400/1E1E20/222');
+    background-position: center center;
+    background-size: cover;
+  }
+  &__container {
+    lost-center: $row-width;
+    position: relative;
+    z-index: 310;
+  }
+  &__title {
+    margin: 0 0 calc($column-gutter/4);
+    font-size: 1rem;
+  }
+  &__link {
+    color: color($c-body-font tint(10%));
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 2.5rem;
+    &:hover {
+      color: $c-body-font--light;
+    }
+  }
+}
+
+@media screen and (min-width: $phone-width) {
+  .contact {
+    &__container {
+      display: flex;
+      align-items: center;
+    }
+    &__column {
+      lost-column: 1/2 2;
+    }
+    &__title {
+      font-size: 1.5rem;
+      margin-bottom: 0;
+    }
+    &__link {
+      font-size: 9vw;
+    }
+  }
+}
+
+@media screen and (min-width: $mobile-width) {
+  .contact {
+    &__title {
+      font-size: 2rem;
+    }
+    &__link {
+      font-size: 8vw;
     }
   }
 }
 
 @media screen and (min-width: $row-width) {
-  .footer {
-    p {
+  .contact {
+    &__title {
       font-size: 2.5rem;
-      letter-spacing: .1rem;
     }
+    &__link {
+      font-size: 7.5rem;
+    }
+  }
+}
+
+.social-media {
+  position: relative;
+  z-index: 300;
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  &__item {
+    display: inline-block;
+    margin-right: calc($column-gutter/2);
+    &:last-of-type {
+      margin-right: 0;
+    }
+    a {
+      display: block;
+      padding: calc($column-gutter/8);
+    }
+    svg {
+      display: block;
+      height: 1.25rem;
+      width: auto;
+      path {
+        fill: color($c-bg-color shade(20%));
+      }
+    }
+    &:hover svg {
+      @each $site, $color in (github, codepen, linkedin, dribbble, twitter, instagram, medium), (#767676, #FCD000, #2088AF, #EA4C89, #20BCF0, #EA4E51, #00AB6B) {
+        &.icon-$(site) path {
+          fill: $color;
+        }
+      }
+      &.icon-github path {
+        stroke: #201F1F;
+      }
+    }
+  }
+}
+
+.copyright {
+  position: relative;
+  z-index: 300;
+  font-weight: 300;
+  text-align: center;
+  padding-top: 0;
+  p {
+    margin: 0;
   }
 }

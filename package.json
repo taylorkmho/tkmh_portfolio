@@ -39,6 +39,7 @@
     "lost": "^6.7.2",
     "main-bower-files": "^2.11.1",
     "postcss-color-function": "^2.0.1",
+    "postcss-each": "^0.9.3",
     "postcss-easy-import": "^1.0.1",
     "postcss-nested": "^1.0.0",
     "postcss-pxtorem": "^3.3.1",

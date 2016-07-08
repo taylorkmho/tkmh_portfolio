@@ -3,9 +3,6 @@
   letter-spacing: .05rem;
   color: #fff;
   text-decoration: none;
-  &--plain {
-    font-weight: 600;
-  }
   &--filled {
     padding: calc($column-gutter/4) calc($column-gutter/2);
     text-transform: uppercase;

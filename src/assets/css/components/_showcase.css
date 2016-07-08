@@ -5,6 +5,9 @@
   pointer-events: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  [data-template="project"] & {
+    margin-bottom: calc($column-gutter*2);
+  }
   &__description *,
   &__images * {
     pointer-events: initial;
