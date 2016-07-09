@@ -83,16 +83,7 @@ if (window.innerWidth >= 768) {
     .addTo(controller);
 
   $('.intro__column').each(function(index, element){
-    let fromVars = {}
-    let toVars = { y: -200/(index+2) + '%' }
-    if (index === 0) {
-      fromVars['x'] = '-16px'
-      toVars['x'] = '-16px'
-    } else if (index === 1) {
-      fromVars['x'] = '16px'
-      toVars['x'] = '16px'
-    }
-    let tween = TweenMax.fromTo(element, 1, fromVars, toVars);
+    let tween = TweenMax.to(element, 1, { y: -200/(index+2) + '%' });
     let scene = new ScrollMagic.Scene({
       triggerElement: element,
       triggerHook: 'onEnter',
@@ -109,6 +100,30 @@ if (window.innerWidth >= 768) {
       fromVars['x'] = -100
       fromVars['rotation'] = 15
     } else if (position === 3) {
+      fromVars['x'] = 100
+      fromVars['rotation'] = -15
+    }
+
+    let tween = TweenLite.from(element, 1, fromVars);
+    let scene = new ScrollMagic.Scene({
+      triggerElement: element,
+      duration: element.offsetHeight * 1.5
+    })
+      .setTween(tween)
+      .addTo(controller);
+  });
+
+  $('.projects--snippets .project').each(function(index, element){
+    let fromVars = {}
+    var position = (index % 4) + 1;
+    if (position === 1) {
+      fromVars['x'] = -100
+      fromVars['rotation'] = 15
+    } else if (position === 2) {
+      fromVars['x'] = -5
+    } else if (position === 3) {
+      fromVars['x'] = 5
+    } else if (position === 4) {
       fromVars['x'] = 100
       fromVars['rotation'] = -15
     }
@@ -142,7 +157,7 @@ if (window.innerWidth >= 768) {
   let contactContainerScene = new ScrollMagic.Scene({
       triggerElement: $('.footer')[0],
       triggerHook: 'onEnter',
-      duration: '100%'
+      duration: '60%'
   })
     .setTween(contactContainerAnim)
     .addTo(controller);
