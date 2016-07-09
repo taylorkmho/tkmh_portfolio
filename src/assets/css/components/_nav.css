@@ -2,7 +2,7 @@
   position: relative;
   z-index: 500;
   width: 100%;
-  padding: calc($column-gutter/2) $column-gutter 0;
+  padding: $column-gutter $column-gutter 0;
   margin-bottom: $column-gutter;
   &__container {
     display: flex;
@@ -56,10 +56,14 @@
       color: $c-primary;
     }
   }
-  [data-template="home"] & {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-bottom: 0;
+}
+@media screen and (min-width: $mobile-width) {
+  .header-nav {
+    [data-template="home"] & {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-bottom: 0;
+    }
   }
 }
