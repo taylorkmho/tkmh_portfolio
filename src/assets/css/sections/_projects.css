@@ -13,7 +13,6 @@
   }
   &__list {
     lost-utility: clearfix;
-    margin-bottom: $column-gutter;
   }
   &__sublist {
     display: flex;
@@ -21,6 +20,7 @@
     flex-direction: row;
     align-items: center;
     height: 1.25rem;
+    margin-top: calc($column-gutter*2);
     img {
       height: 100%;
       width: auto;
@@ -37,6 +37,7 @@
   .projects {
     &__sublist {
       height: 1.5rem;
+      margin-top: 0;
     }
   }
 }
@@ -58,24 +59,27 @@
       justify-content: space-around;
       margin-right: 0;
     }
+    &--main {
+      padding-top: calc($column-gutter*6);
+    }
   }
 }
 
 .project {
   margin-bottom: $column-gutter;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
   &__image {
+    display: block;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 160px;
     padding: calc($column-gutter/2) $column-gutter;
     background-color: $c-primary;
     background-size: cover;
     background-position: center center;
     transition: box-shadow 150ms ease-out;
     outline: none;
-    .projects--main & { background-blend-mode: hard-light; }
+    height: 0;
     &,
     &:after {
       border-radius: 4px;
@@ -107,21 +111,18 @@
       transition: background 750ms ease-out;
     }
     img {
-      position: relative;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0 $column-gutter;
       z-index: 250;
-      height: 4rem;
+      max-height: 4rem;
       max-width: 100%;
-      max-height: 100%;
-    }
-    &.lazyloaded {
-      &:before {
-        opacity: 0;
-      }
-      &:after {
-        background-color: color($c-primary a(0));
-      }
     }
     .projects--main & {
+      padding-bottom: 66%;
+      background-blend-mode: hard-light;
       box-shadow: 0 1px 0 color($c-primary a(.2)) inset, 0 8px 16px color(#000 a(.5));
       &:hover {
         box-shadow: 0 1px 0 color($c-primary a(.2)) inset, 0 8px 32px color(#000 a(.5));
@@ -139,6 +140,7 @@
       }
     }
     .projects--snippets & {
+      padding-bottom: 50%;
       box-shadow: 0 1px 0 color(#fff a(.5)) inset, 0 8px 16px color(#000 a(.25));
       &:hover {
         box-shadow: 0 1px 0 color(#fff a(.5)) inset, 0 8px 24px color(#000 a(.35));
@@ -153,6 +155,14 @@
           transition-duration: 150ms;
           background-color: color(#fff a(.25));
         }
+      }
+    }
+    &.lazyloaded {
+      &:before {
+        display: none;
+      }
+      &:after {
+        background-color: color($c-primary a(0));
       }
     }
   }
@@ -183,7 +193,6 @@
       lost-column: 1/2 2;
     }
     &__image {
-      height: 160px;
     }
   }
 }
@@ -201,7 +210,6 @@
       margin-bottom: 0;
     }
     &__image {
-      height: 200px;
       padding: $column-gutter;
     }
     &__title {

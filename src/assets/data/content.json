@@ -19,7 +19,7 @@
       "name": "Seekout",
       "niceName": "seekout",
       "type": "website",
-      "description": "A website to help organize and promote safe, fun events for the LGBTQ community. It is using the Mailchimp API and custom JSON API calls to subscribe users. Each of the UI screenshots—due to their consistent transparency and long box shadows—utilize a SVG shell to optimize their file size.",
+      "description": "A website to help organize and promote safe, fun events for the LGBTQ community. It&rsquo;s great to be a part of such a well thought out and good intentioned web application.",
       "imagesList": [
         "sek-screen-01",
         "sek-screen-02",
@@ -159,25 +159,27 @@
     {
       "year": 2016,
       "list": [
-        "J.J. Dolan's - Website: Pele Award 2016 (Gold ADDY)"
+        "J.J. Dolan's – Website: Gold Pele Award 2016, ADDY"
       ]
     },
     {
       "year": 2015,
       "list": [
-        "J.J. Dolan's - Website: Award of Excellence AIGA Hawaii's 5-0",
-        "Buho Cantina - Campaign: Award of Excellence AIGA Hawaii's 5-0",
-        "Ilikai Hotel - Mixed Media Campaign: Award of Excellence AIGA Hawaii's 5-0",
-        "Island Air - Website: Award of Excellence AIGA Hawaii's 5-0",
-        "Wall-to-Wall Studios - Occasional Cards Website: Award of Excellence AIGA Hawaii's 5-0",
-        "Hawaii Community Foundation - Annual Report: Pele Award 2015 (Silver ADDY)"
+        "J.J. Dolan's – Website: Award of Excellence, AIGA Hawaii's 5-0",
+        "Buho Cantina – Campaign: Award of Excellence, AIGA Hawaii's 5-0",
+        "Buho Cantina – Website: Promotion & Marketing Design Award, HOW",
+        "Hawaii Community Foundation – Annual Report: Silver Pele Award 2015, ADDY",
+        "Hawaii Community Foundation – Annual Report: Bronze Anvil Award, PR Society of America",
+        "Ilikai Hotel – Mixed Media Campaign: Award of Excellence, AIGA Hawaii's 5-0",
+        "Island Air – Website: Award of Excellence, AIGA Hawaii's 5-0",
+        "Wall-to-Wall Studios – Occasional Cards Website: Award of Excellence, AIGA Hawaii's 5-0"
       ]
     },
     {
       "year": 2014,
       "list": [
-        "Hawaii National Bank - Email E-card: Pele Award 2014 (Silver ADDY)",
-        "AIGA - Mixed Media Campaign: Pele Award 2014 (Silver ADDY)"
+        "Hawaii National Bank – Email E-card: Silver Pele Award 2014, ADDY",
+        "AIGA – Mixed Media Campaign: Silver Pele Award 2014, ADDY"
       ]
     }
   ],

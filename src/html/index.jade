@@ -16,7 +16,6 @@ block content
         .intro__block.intro__block--boxed
           p My expertise is in building websites and web apps through front-end development.
           p I am now living in San Francisco, working with clients across a number of industries.
-          p Creating engaging online experiences is how I satisfy my creative drive. I love talking about ideas &amp; designs and making them real things on the web.
       .intro__column
         .intro__block.intro__block--open
           h1 Aloha
@@ -24,9 +23,9 @@ block content
             span to you.
   section.projects.projects--main
     .projects__container
-      .section-title
-        .section-title__column
-          h2 PROJECTS
+      .section-title.section-title--centered.section-title--large
+        h2 PROJECTS
+        p Building engaging online experiences is how I satisfy my creative drive. Using technology is how I balance my meticulous mind. I love ideas &amp; designs and using technology to make them real things on the web.
       .projects__list#projects-list
         each project in projects
           .project
@@ -40,9 +39,9 @@ block content
           img(src="/assets/images/svg/#{project.filename}" alt!=project.name)
   section.projects.projects--snippets
     .projects__container
-      .section-title
-        .section-title__column
-          h2 SNIPPETS
+      .section-title.section-title--centered.section-title--large
+        h2 SNIPPETS
+        p Development is a balance of following fundamentals and experimenting with new ideas. Here are some code snippets on Codepen where I put ideas (and libraries/frameworks) to the test.
       .projects__list#projects-list
         each pen in codepen
           .project

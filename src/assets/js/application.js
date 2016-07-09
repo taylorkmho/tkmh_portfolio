@@ -83,8 +83,16 @@ if (window.innerWidth >= 768) {
     .addTo(controller);
 
   $('.intro__column').each(function(index, element){
+    let fromVars = {}
     let toVars = { y: -200/(index+2) + '%' }
-    let tween = TweenMax.to(element, 1, toVars);
+    if (index === 0) {
+      fromVars['x'] = '-16px'
+      toVars['x'] = '-16px'
+    } else if (index === 1) {
+      fromVars['x'] = '16px'
+      toVars['x'] = '16px'
+    }
+    let tween = TweenMax.fromTo(element, 1, fromVars, toVars);
     let scene = new ScrollMagic.Scene({
       triggerElement: element,
       triggerHook: 'onEnter',
@@ -95,7 +103,7 @@ if (window.innerWidth >= 768) {
   });
 
   $('.projects--main .project').each(function(index, element){
-    let fromVars = {opacity: 0}
+    let fromVars = {}
     var position = (index % 3) + 1;
     if (position === 1) {
       fromVars['x'] = -100
