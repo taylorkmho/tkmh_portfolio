@@ -18,6 +18,18 @@ body {
   font-family: $body-font-family;
   background: $c-bg-color;
   color: $c-body-font;
+  html:not(.standby-for-fonts) & {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    nav {
+      animation: fadeIn 1.5s forwards;
+    }
+  }
 }
 
 h1,

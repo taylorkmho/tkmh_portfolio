@@ -89,15 +89,16 @@
       /* loading spinner */
       content: "";
       position: absolute;
-      top: calc(50% - 15px);
-      left: calc(50% - 15px);
+      top: 0;
+      left: 0;
       z-index: 230;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      border: 5px solid color($c-primary shade(10%));
-      border-bottom-color: color($c-primary tint(50%));
-      animation: spin 1s infinite;
+      width: 100%;
+      height: 100%;
+      background-color: color($c-primary shade(20%));
+      animation: backgroundPulse 2s infinite;
+      .project:nth-of-type(even) & {
+        animation-delay: 1s;
+      }
     }
     &:after {
       content: "";
