@@ -3,6 +3,9 @@ extends layouts/_application
 block vars
   - var bodyTemplate = "home"
 
+block additionalHead
+  link(rel="prerender" href="/about.html")
+
 block content
   header.splash
     .splash__container
