@@ -77,23 +77,37 @@ let blazy = new Blazy({
 /*
   Splash - Intro animation
 */
-if (window.innerWidth >= 768) {
-  let controller  = new ScrollMagic.Controller({
-    globalSceneOptions: {
-      triggerHook: 'onEnter'
-    }
-  });
 
-  let splashTitleEl = $('.splash__title');
-  var splashTitleAnim = TweenMax.to(splashTitleEl, 1, {
-    y: '-20%'
-  });
-  let splashTitleScene = new ScrollMagic.Scene({
-    triggerElement: splashTitleEl,
-    duration: splashTitleEl.innerHeight()
-  })
-    .setTween(splashTitleAnim)
-    .addTo(controller);
+let controller  = new ScrollMagic.Controller({
+  globalSceneOptions: {
+    triggerHook: 'onEnter'
+  }
+});
+
+let splashTitleEl = $('.splash__title');
+var splashTitleAnim = TweenMax.to(splashTitleEl, 1, {
+  y: '-20%'
+});
+let splashTitleScene = new ScrollMagic.Scene({
+  triggerElement: splashTitleEl,
+  duration: splashTitleEl.innerHeight()
+})
+  .setTween(splashTitleAnim)
+  .addTo(controller);
+
+let splashBoxEl = $('.splash__box-bg');
+var splashBoxAnim = TweenMax.to(splashBoxEl, 1, {
+  y: '15%',
+  rotation: '-4deg'
+});
+let splashBoxScene = new ScrollMagic.Scene({
+  triggerElement: splashBoxEl,
+  duration: '125%'
+})
+  .setTween(splashBoxAnim)
+  .addTo(controller);
+
+if (window.innerWidth >= 768) {
 
   $('.intro__column').each(function(index, element){
     let tween = TweenMax.to(element, 1, { y: -200/(index+2) + '%' });
@@ -126,7 +140,7 @@ if (window.innerWidth >= 768) {
   let contactContainerScene = new ScrollMagic.Scene({
       triggerElement: $('.footer')[0],
       triggerHook: 'onEnter',
-      duration: '60%'
+      duration: '80%'
   })
     .setTween(contactContainerAnim)
     .addTo(controller);

@@ -11,6 +11,15 @@
     align-items: flex-end;
     justify-content: center;
   }
+  &__box-bg {
+    position: absolute;
+    top: 50%;
+    left: -$column-gutter;
+    background-color: color($c-secondary a(.25));
+    height: calc(9rem + 2*$column-gutter);
+    width: calc(100% + 2*$column-gutter);
+    transform: translateY(-50%) rotate(-2deg);
+  }
   &__title {
     position: absolute;
     top: 0;
