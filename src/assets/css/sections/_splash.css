@@ -36,10 +36,6 @@
     opacity: 0;
     transform: scale(1.2);
     transition: 1000ms ease-out all;
-    &.lazyloaded {
-      opacity: 1;
-      transform: scale(1);
-    }
     svg {
       position: relative;
       right: 5%;
@@ -47,6 +43,13 @@
       display: block;
       height: 100%;
       width: auto;
+    }
+    &.lazyloaded {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .no-js & {
+      animation: fadeIn 2s forwards 2s;
     }
   }
 }

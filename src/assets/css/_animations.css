@@ -35,10 +35,10 @@
 }
 
 @keyframes opacityPulse {
-  0%, 20%, 60%, 100% {
+  0%, 100% {
     opacity: 1;
   }
-  40%, 80% {
+  50% {
     opacity: .5;
   }
 }
