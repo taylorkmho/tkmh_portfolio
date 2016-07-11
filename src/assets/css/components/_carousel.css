@@ -3,6 +3,9 @@
     min-height: 58.5vw;
     text-align: center;
     padding: calc($column-gutter/2) calc($column-gutter/2) calc($column-gutter/4);
+    .no-js & {
+      overflow: initial;
+    }
   }
   &-item {
     max-height: 300px;
@@ -23,6 +26,9 @@
         border: 5px solid color(#000 a(.125));
         border-bottom-color: #fff;
       }
+    }
+    .no-js & {
+      display: none;
     }
   }
   &-pagination {
@@ -78,6 +84,9 @@
         width: 24px;
         height: auto;
       }
+    }
+    .no-js & {
+      display: none;
     }
   }
 }

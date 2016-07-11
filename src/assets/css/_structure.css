@@ -37,6 +37,23 @@ body {
       animation: fadeIn 2s forwards;
     }
   }
+  .no-js & {
+    position: relative;
+    &:before {
+      content: "Uh oh, either something went wrong or Javascript is turned off. Please refresh or adjust your settings for a better experience!";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      text-align: center;
+      padding: calc($column-gutter/2) $column-gutter;
+      background-color: color($c-primary a(.85));
+      color: #fff;
+      transform: translateY(-100%);
+      animation: slideDown 2s forwards 2s;
+    }
+  }
 }
 
 h1,

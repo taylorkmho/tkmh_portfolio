@@ -11,6 +11,8 @@ block content
           .Wallop-list
             each image in project.imagesList
               img.Wallop-item.lazyload(src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/images/projects/#{image}.jpg")
+              noscript
+                img(src="/assets/images/projects/#{image}.jpg")
         .Wallop-pagination
           button.Wallop-pagination__arrow.Wallop-pagination__arrow--prev
             img(src="/assets/images/svg/icon-arrow.svg")
