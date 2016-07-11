@@ -21,3 +21,10 @@ export function removeClass(el, className) {
 export function hasClass(el, className) {
   return el.className && new RegExp("(\\s|^)" + className + "(\\s|$)").test(el.className);
 }
+
+// Ref: https://www.bramstein.com/writing/web-font-loading-patterns.html
+export function timer(time) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(reject, time);
+  });
+}

@@ -6,7 +6,7 @@
     lost-center: $row-width;
   }
   &__title {
-    font-weight: 700;
+    font-weight: 500;
     margin-top: 0;
   }
   p {
@@ -16,7 +16,7 @@
       font-size: 1.5rem;
     }
     strong {
-      font-weight: 900;
+      font-weight: 500;
     }
   }
   #aloha-shake {

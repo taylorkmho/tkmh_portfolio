@@ -9,7 +9,7 @@ $mobile-width--max:      767px;
 $phone-width:            480px;
 $phone-width--max:       479px;
 
-$body-font-family:        "museo-sans", "Helvetica Neue", Helvetica, sans-serif;
+$body-font-family:        "Heebo", "Helvetica Neue", Helvetica, sans-serif;
 
 $c-primary:                     #F24C27;
 $c-secondary:                   #374140;

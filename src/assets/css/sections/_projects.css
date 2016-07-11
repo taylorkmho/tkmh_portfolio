@@ -95,7 +95,7 @@
       width: 100%;
       height: 100%;
       background-color: color($c-primary shade(20%));
-      animation: backgroundPulse 2s infinite;
+      animation: opacityPulse 2s infinite;
       .project:nth-of-type(even) & {
         animation-delay: 1s;
       }

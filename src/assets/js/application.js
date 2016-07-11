@@ -1,9 +1,49 @@
 'use strict';
 
-import { addClass, removeClass, hasClass } from "./lib/_helpers";
+import { addClass, removeClass, hasClass, timer } from "./lib/_helpers";
 import Carousel from "./lib/_carousel";
 import VideoBG from "./lib/_video-bg";
 let Blazy              = require('blazy');
+let FontFaceObserver              = require('fontfaceobserver');
+
+
+/*
+  .no-js management
+*/
+document.documentElement.classList.remove('no-js')
+
+/*
+  Font management
+*/
+
+// If fonts already loaded in session, add `fonts-loaded` class to document (1)
+if (!sessionStorage.fontsLoaded) {
+  let font = new FontFaceObserver('Heebo')
+  // If font.load() fails takes longer than 2000ms (2),
+  // OR if font.load() fails (3),
+  //   add `fonts-error` class to document
+  // If success (4),
+  //   add `fonts-loaded` class to document
+  Promise.race([
+    timer(2000),
+    font.load()
+  ]).then(function () { /* (4) */
+    sessionStorage.fontsLoaded = true;
+    document.documentElement.classList.remove('fonts-standby')
+    document.documentElement.classList.add('fonts-loaded')
+  }, function(){ /* (3) */
+    sessionStorage.fontsLoaded = false;
+    document.documentElement.classList.remove('fonts-standby')
+    document.documentElement.classList.add('fonts-error')
+  }).catch(function () { /* (2) */
+    sessionStorage.fontsLoaded = false;
+    document.documentElement.classList.remove('fonts-standby')
+    document.documentElement.classList.add('fonts-error')
+  });
+} else { /* (1) */
+  document.documentElement.classList.remove('fonts-standby')
+  document.documentElement.classList.add('fonts-loaded')
+}
 
 /*
   Image lazy-loading
@@ -33,33 +73,6 @@ let blazy = new Blazy({
     }
   }
 });
-
-/*
-  Animating in text in Short Bio section
-*/
-
-let removeFontsStandby = () => {
-  removeClass(document.documentElement, 'standby-for-fonts');
-}
-
-let fontsActiveCallback = () => {
-  removeFontsStandby();
-}
-
-try{
-  Typekit.load({
-    async: true,
-    active: fontsActiveCallback,
-    inactive: removeFontsStandby
-  });
-}
-catch(e){
-  removeFontsStandby();
-}
-
-setTimeout(()=>{
-  removeFontsStandby();
-},3000)
 
 /*
   Splash - Intro animation

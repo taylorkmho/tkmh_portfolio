@@ -13,7 +13,7 @@
   }
   &__logo {
     line-height: 1;
-    font-weight: 900;
+    font-weight: 500;
     font-size: 2rem;
     text-decoration: none;
     color: $c-secondary;

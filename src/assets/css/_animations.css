@@ -34,11 +34,11 @@
   }
 }
 
-@keyframes backgroundPulse {
+@keyframes opacityPulse {
   0%, 20%, 60%, 100% {
-    opacity: .5;
+    opacity: 1;
   }
   40%, 80% {
-    opacity: 1;
+    opacity: .5;
   }
 }
