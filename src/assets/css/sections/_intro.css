@@ -112,6 +112,7 @@
   .intro {
     &__column {
       position: relative;
+      transform: none !important;
       &:before,
       &:after {
         content: "";
