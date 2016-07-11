@@ -106,50 +106,6 @@ if (window.innerWidth >= 768) {
       .addTo(controller);
   });
 
-  $('.projects--main .project').each(function(index, element){
-    let fromVars = {}
-    var position = (index % 3) + 1;
-    if (position === 1) {
-      fromVars['x'] = -100
-      fromVars['rotation'] = 15
-    } else if (position === 3) {
-      fromVars['x'] = 100
-      fromVars['rotation'] = -15
-    }
-
-    let tween = TweenLite.from(element, 1, fromVars);
-    let scene = new ScrollMagic.Scene({
-      triggerElement: element,
-      duration: element.offsetHeight * 1.5
-    })
-      .setTween(tween)
-      .addTo(controller);
-  });
-
-  $('.projects--snippets .project').each(function(index, element){
-    let fromVars = {}
-    var position = (index % 4) + 1;
-    if (position === 1) {
-      fromVars['x'] = -100
-      fromVars['rotation'] = 15
-    } else if (position === 2) {
-      fromVars['x'] = -5
-    } else if (position === 3) {
-      fromVars['x'] = 5
-    } else if (position === 4) {
-      fromVars['x'] = 100
-      fromVars['rotation'] = -15
-    }
-
-    let tween = TweenLite.from(element, 1, fromVars);
-    let scene = new ScrollMagic.Scene({
-      triggerElement: element,
-      duration: element.offsetHeight * 1.5
-    })
-      .setTween(tween)
-      .addTo(controller);
-  });
-
   let contactBGEl = $('.contact__bg');
   var contactBGAnim = TweenMax.from(contactBGEl, 1, {
     y: -20 + '%'
