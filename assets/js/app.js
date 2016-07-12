@@ -366,62 +366,63 @@ var blazy = new Blazy({
 
 var controller = new ScrollMagic.Controller();
 
-var splashEl = $('.splash');
+if (document.body.getAttribute('data-template') === 'home') {
+  var splashEl = $('.splash');
+  var splashBGTween = TweenLite.to(splashEl, 1, {
+    backgroundColor: getComputedStyle($('.projects--main')[0]).getPropertyValue('background-color')
+  });
+  var splashBGScene = new ScrollMagic.Scene({
+    triggerElement: $('.projects--main')[0],
+    triggerHook: '.33',
+    duration: '33%'
+  }).setTween(splashBGTween).addTo(controller);
 
-var splashBGTween = TweenLite.to(splashEl, 1, {
-  backgroundColor: getComputedStyle($('.projects--main')[0]).getPropertyValue('background-color')
-});
-var splashBGScene = new ScrollMagic.Scene({
-  triggerElement: $('.projects--main')[0],
-  triggerHook: '.33',
-  duration: '33%'
-}).setTween(splashBGTween).addTo(controller);
+  var splashTitleEl = $('.splash__title');
+  var splashTitleAnim = TweenMax.to(splashTitleEl, 1, {
+    y: '40%',
+    ease: Linear.easeNone
+  });
+  var splashTitleScene = new ScrollMagic.Scene({
+    triggerElement: splashEl,
+    triggerHook: 'onLeave',
+    duration: '100%'
+  }).setTween(splashTitleAnim).addTo(controller);
 
-var splashTitleEl = $('.splash__title');
-var splashTitleAnim = TweenMax.to(splashTitleEl, 1, {
-  y: '40%',
-  ease: Linear.easeNone
-});
-var splashTitleScene = new ScrollMagic.Scene({
-  triggerElement: splashEl,
-  triggerHook: 'onLeave',
-  duration: '100%'
-}).setTween(splashTitleAnim).addTo(controller);
+  var splashSiloEl = $('.splash__silhouette');
+  var splashSiloAnim = TweenMax.to(splashSiloEl, 1, {
+    y: '60%',
+    ease: Linear.easeNone
+  });
+  var splashSiloScene = new ScrollMagic.Scene({
+    triggerElement: splashEl,
+    triggerHook: 'onLeave',
+    duration: '100%'
+  }).setTween(splashSiloAnim).addTo(controller);
 
-var splashSiloEl = $('.splash__silhouette');
-var splashSiloAnim = TweenMax.to(splashSiloEl, 1, {
-  y: '60%',
-  ease: Linear.easeNone
-});
-var splashSiloScene = new ScrollMagic.Scene({
-  triggerElement: splashEl,
-  triggerHook: 'onLeave',
-  duration: '100%'
-}).setTween(splashSiloAnim).addTo(controller);
+  var projectsMainEl = $('.projects--main');
+  var projectsSnippetsEl = $('.projects--snippets');
+  var projectsMainTween = TweenLite.to(projectsMainEl, 1, {
+    backgroundColor: getComputedStyle(projectsSnippetsEl[0]).getPropertyValue('background-color')
+  });
+  var projectsMainScene = new ScrollMagic.Scene({
+    triggerElement: projectsSnippetsEl[0],
+    triggerHook: '.33',
+    duration: '33%'
+  }).setTween(projectsMainTween).addTo(controller);
 
-var projectsMainEl = $('.projects--main');
-var projectsSnippetsEl = $('.projects--snippets');
-var projectsMainTween = TweenLite.to(projectsMainEl, 1, {
-  backgroundColor: getComputedStyle(projectsSnippetsEl[0]).getPropertyValue('background-color')
-});
-var projectsMainScene = new ScrollMagic.Scene({
-  triggerElement: projectsSnippetsEl[0],
-  triggerHook: '.33',
-  duration: '33%'
-}).setTween(projectsMainTween).addTo(controller);
-
-var projectsSnippetsTween = TweenLite.fromTo(projectsSnippetsEl, 1, {
-  backgroundColor: getComputedStyle(projectsSnippetsEl[0]).getPropertyValue('color'),
-  color: getComputedStyle(projectsSnippetsEl[0]).getPropertyValue('background-color')
-}, {
-  color: getComputedStyle(projectsSnippetsEl[0]).getPropertyValue('color'),
-  backgroundColor: getComputedStyle(projectsSnippetsEl[0]).getPropertyValue('background-color')
-});
-var projectsSnippetsScene = new ScrollMagic.Scene({
-  triggerElement: projectsSnippetsEl[0],
-  triggerHook: '.33',
-  duration: '33%'
-}).setTween(projectsSnippetsTween).addTo(controller);
+  var projectsSnippetsTween = TweenLite.fromTo(projectsSnippetsEl, 1, {
+    backgroundColor: getComputedStyle(projectsSnippetsEl[0]).getPropertyValue('color'),
+    color: getComputedStyle(projectsSnippetsEl[0]).getPropertyValue('background-color')
+  }, {
+    color: getComputedStyle(projectsSnippetsEl[0]).getPropertyValue('color'),
+    backgroundColor: getComputedStyle(projectsSnippetsEl[0]).getPropertyValue('background-color')
+  });
+  var projectsSnippetsScene = new ScrollMagic.Scene({
+    triggerElement: projectsSnippetsEl[0],
+    triggerHook: '.33',
+    duration: '33%'
+  }).setTween(projectsSnippetsTween).addTo(controller);
+}
 
 if (window.innerWidth >= 768) {
   var contactBGEl = $('.contact__bg');
