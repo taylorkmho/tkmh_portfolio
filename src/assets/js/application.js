@@ -95,22 +95,23 @@ let splashTitleScene = new ScrollMagic.Scene({
   .setTween(splashTitleAnim)
   .addTo(controller);
 
-let splashBoxEl = $('.splash__box-bg');
-var splashBoxAnim = TweenMax.to(splashBoxEl, 1, {
-  y: '15%',
-  rotation: '-4deg'
-});
-let splashBoxScene = new ScrollMagic.Scene({
-  triggerElement: splashBoxEl,
-  duration: '125%'
-})
-  .setTween(splashBoxAnim)
-  .addTo(controller);
-
 if (window.innerWidth >= 768) {
 
+  $('[data-set-bg]').each(function(index, element){
+    var tween = TweenMax.to($('body'), 1, {
+      backgroundColor: element.getAttribute('data-set-bg')
+    });
+    let bodyScene = new ScrollMagic.Scene({
+      triggerElement: element,
+      offset: '75%',
+      duration: '100%'
+    })
+      .setTween(tween)
+      .addTo(controller);
+  });
+
   $('.intro__column').each(function(index, element){
-    let tween = TweenMax.to(element, 1, { y: -200/(index+2) + '%' });
+    let tween = TweenMax.to(element, 1, { y: (index+2) * -40 + '%' });
     let scene = new ScrollMagic.Scene({
       triggerElement: element,
       triggerHook: 'onEnter',

@@ -8,6 +8,11 @@
   &__copyright {
     padding: 0 $column-gutter $column-gutter;
   }
+  [data-template="home"] & {
+    background-color: $c-bg-color--light;
+    position: relative;
+    z-index: 300;
+  }
 }
 
 
@@ -32,7 +37,7 @@
 .contact {
   position: relative;
   z-index: 300;
-  background-color: $c-bg-color;
+  background-color: $c-bg-color--light;
   color: $c-body-font;
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
@@ -144,7 +149,7 @@
       height: 1.25rem;
       width: auto;
       path {
-        fill: color($c-bg-color shade(20%));
+        fill: color($c-bg-color--light shade(20%));
       }
     }
     &:hover svg {

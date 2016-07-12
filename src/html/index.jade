@@ -17,15 +17,15 @@ block content
   section.intro
     .intro__container
       .intro__column
-        .intro__block.intro__block--boxed
-          p My expertise is in building websites and web apps through front-end development.
-          p I am now living in San Francisco, working with clients across a number of industries.
-      .intro__column
         .intro__block.intro__block--open
           h1 Aloha
             a(href="/about.html#aloha") *
             span to you.
-  section.projects.projects--main
+      .intro__column
+        .intro__block.intro__block--boxed
+          p My expertise is in building websites and web apps through front-end development.
+          p I am now living in San Francisco, working with clients across a number of industries.
+  section.projects.projects--main(data-set-bg="#1e1e20")
     .projects__container
       .section-title.section-title--centered.section-title--large
         h2 WORK
@@ -35,9 +35,9 @@ block content
           .project
             a.project__image.lazyload(data-modal="carousel" data-format=project.thumbSize data-src="/assets/images/projects/#{project.abbr}-bg.jpg" href="/projects/#{project.niceName}.html" data-content!=project)
               img(src="/assets/images/svg/logo-#{project.abbr}.svg")
-            .project__title
-              h2!= project.name
-                span!= project.type
+            //- .project__title
+            //-   h2!= project.name
+            //-     span!= project.type
             noscript
               a.project__noscript(href="/projects/#{project.niceName}.html" style="background-image: url('/assets/images/projects/#{project.abbr}-bg.jpg');")
                 h2!= project.name
@@ -45,7 +45,7 @@ block content
       .projects__sublist
         each project in otherProjects
           img(src="/assets/images/svg/#{project.filename}" alt!=project.name)
-  section.projects.projects--snippets
+  section.projects.projects--snippets(data-set-bg="#eee")
     .projects__container
       .section-title.section-title--centered.section-title--large
         h2 PLAY
