@@ -1630,6 +1630,7 @@ span.strike:after {
 }
 .splash {
   height: calc(100vh - 32px/2);
+  min-height: 420px;
   padding: 0 32px;
   overflow: hidden;
   color: #fff;
@@ -1644,7 +1645,8 @@ span.strike:after {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
+  height: 101%;
+  /* prevents awkward pixel below iOS devices */
   -webkit-align-items: flex-end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -1653,10 +1655,12 @@ span.strike:after {
           justify-content: flex-end;
 }
 .splash__container:before{
+  /* prevents awkward pixel below iOS devices */
   content: '';
   display: table;
 }
 .splash__container:after{
+  /* prevents awkward pixel below iOS devices */
   content: '';
   display: table;
   clear: both;
@@ -1686,13 +1690,15 @@ span.strike:after {
   position: relative;
   z-index: 200;
   color: #fff;
-  height: 85vh;
+  height: 85%;
+  min-height: 336px;
+  width: 100%;
   opacity: 0;
   transition: 1000ms ease-out opacity;
 }
 .splash__silhouette svg {
-  position: relative;
-  right: 5%;
+  position: absolute;
+  right: 0;
   z-index: 210;
   display: block;
   height: 100%;
@@ -1705,22 +1711,27 @@ span.strike:after {
   -webkit-animation: fadeIn 2s forwards 2s;
           animation: fadeIn 2s forwards 2s;
 }
-@media screen and (min-width: 768px) {
-  .splash {
-    min-height: 420px;
-    padding: 0 calc(32px*2);
-  }
+@media screen and (min-width: 480px) {
   .splash__container {
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
+    height: 100%;
+  }
+  .splash__silhouette {
+    width: auto;
+  }
+  .splash__silhouette svg {
+    position: relative;
+    right: 5%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .splash {
+    padding: 0 calc(32px*2);
   }
   .splash__title h1 {
     font-size: 4.5rem;
-  }
-  .splash__silhouette {
-    height: 85vh;
-    min-height: 336px;
   }
 }
 .btn {

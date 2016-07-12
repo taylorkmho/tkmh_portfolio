@@ -361,7 +361,7 @@ var blazy = new Blazy({
 });
 
 /*
-  Splash - Intro animation
+  Scrollmagic - Splash
 */
 
 var controller = new ScrollMagic.Controller();
@@ -424,28 +424,30 @@ if (document.body.getAttribute('data-template') === 'home') {
   }).setTween(projectsSnippetsTween).addTo(controller);
 }
 
-if (window.innerWidth >= 768) {
-  var contactBGEl = $('.contact__bg');
-  var contactBGAnim = TweenMax.from(contactBGEl, 1, {
-    y: -20 + '%'
-  });
-  var contactBGScene = new ScrollMagic.Scene({
-    triggerElement: $('.footer')[0],
-    triggerHook: 'onEnter',
-    duration: '100%'
-  }).setTween(contactBGAnim).addTo(controller);
+/*
+  Scrollmagic - Global
+*/
 
-  var contactContainerEl = $('.contact__container');
-  var contactContainerAnim = TweenMax.from(contactContainerEl, 1, {
-    y: 100 + '%',
-    opacity: 0
-  });
-  var contactContainerScene = new ScrollMagic.Scene({
-    triggerElement: $('.footer')[0],
-    triggerHook: 'onEnter',
-    duration: '80%'
-  }).setTween(contactContainerAnim).addTo(controller);
-}
+var contactBGEl = $('.contact__bg');
+var contactBGAnim = TweenMax.from(contactBGEl, 1, {
+  y: -20 + '%'
+});
+var contactBGScene = new ScrollMagic.Scene({
+  triggerElement: $('.footer')[0],
+  triggerHook: 'onEnter',
+  duration: '100%'
+}).setTween(contactBGAnim).addTo(controller);
+
+var contactContainerEl = $('.contact__container');
+var contactContainerAnim = TweenMax.from(contactContainerEl, 1, {
+  y: 100 + '%',
+  opacity: 0
+});
+var contactContainerScene = new ScrollMagic.Scene({
+  triggerElement: $('.footer')[0],
+  triggerHook: 'onEnter',
+  duration: '80%'
+}).setTween(contactContainerAnim).addTo(controller);
 
 /*
   Projects - Image Carousel
@@ -516,6 +518,25 @@ $('a[data-modal="carousel"]').magnificPopup({
 */
 
 var videoBG = new _videoBg2.default('.video-bg');
+
+/*
+  Set height for mobile - Splash
+*/
+
+if (matchMedia) {
+  var mq = window.matchMedia("(max-width: 767px)");
+  mq.addListener(widthUpdateHandler);
+  widthUpdateHandler(mq);
+}
+
+// media query change
+function widthUpdateHandler(mq) {
+  if (mq.matches) {
+    $('.splash').css('height', $(window).height() - 16);
+  } else {
+    $('.splash').css('height', '');
+  }
+}
 
 },{"./lib/_carousel":4,"./lib/_helpers":5,"./lib/_video-bg":6,"blazy":1,"fontfaceobserver":2}],4:[function(require,module,exports){
 'use strict';
