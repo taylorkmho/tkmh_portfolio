@@ -475,7 +475,6 @@ $('a[data-modal="carousel"]').magnificPopup({
       var buildCarouselPag = function buildCarouselPag(imageArray) {
         var images = '';
         imageArray.forEach(function (image) {
-          console.log(image);
           images += '<a class="Wallop-pagination__option" href="#"><img src="/assets/images/projects/' + image + '--thumbnail.jpg"></a>';
         });
         return images;
