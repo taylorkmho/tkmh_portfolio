@@ -13,23 +13,12 @@ block content
       .splash__silhouette.lazyload.lazyload--invisible(data-src="../assets/images/splash-portrait.jpg")
         include ../assets/images/svg/silhouette.svg
       .splash__title
-        h1 My name is Taylor Ho &amp; I build things for the Internet.
-  section.intro
-    .intro__container
-      .intro__column
-        .intro__block.intro__block--open
-          h1 Aloha
-            a(href="/about.html#aloha") *
-            span to you.
-      .intro__column
-        .intro__block.intro__block--boxed
-          p My expertise is in building websites and web apps through front-end development.
-          p I am now living in San Francisco, working with clients across a number of industries.
-  section.projects.projects--main(data-set-bg="#1e1e20")
+        h1 My name is Taylor Ho &amp; I build things on the Internet.
+  section.projects.projects--main
     .projects__container
       .section-title.section-title--centered.section-title--large
         h2 WORK
-        p Building engaging online experiences is how I satisfy my creative drive. I love ideas &amp; designs and using technology to make them real things on the web. I delve into front-end frameworks to get things done efficiently.
+        p As a <strong>front-end developer</strong> based in <strong>San Francisco</strong>, building engaging online experiences is how I satisfy my creative drive. I love ideas &amp; designs and using technology to make them real things on the web.
       .projects__list#projects-list
         each project in projects
           .project
@@ -45,7 +34,7 @@ block content
       .projects__sublist
         each project in otherProjects
           img(src="/assets/images/svg/#{project.filename}" alt!=project.name)
-  section.projects.projects--snippets(data-set-bg="#eee")
+  section.projects.projects--snippets
     .projects__container
       .section-title.section-title--centered.section-title--large
         h2 PLAY

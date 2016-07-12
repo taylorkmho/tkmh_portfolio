@@ -1,8 +1,9 @@
 .splash {
-  height: 100vh;
+  height: calc(100vh - $column-gutter/2);
   padding: 0 $column-gutter;
   overflow: hidden;
   color: #fff;
+  background-color: $c-primary;
   &__container {
     position: relative;
     lost-center: $row-width;
@@ -34,8 +35,7 @@
     color: #fff;
     height: 85vh;
     opacity: 0;
-    transform: scale(1.2);
-    transition: 1000ms ease-out all;
+    transition: 1000ms ease-out opacity;
     svg {
       position: relative;
       right: 5%;
@@ -46,7 +46,6 @@
     }
     &.lazyloaded {
       opacity: 1;
-      transform: scale(1);
     }
     .no-js & {
       animation: fadeIn 2s forwards 2s;
@@ -56,7 +55,6 @@
 
 @media screen and (min-width: $mobile-width) {
   .splash {
-    height: 100vh;
     min-height: 420px;
     padding: 0 calc($column-gutter*2);
     &__container {

@@ -57,13 +57,3 @@
     }
   }
 }
-@media screen and (min-width: $mobile-width) {
-  .header-nav {
-    [data-template="home"] & {
-      position: absolute;
-      top: 0;
-      left: 0;
-      margin-bottom: 0;
-    }
-  }
-}

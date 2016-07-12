@@ -46,7 +46,6 @@
 
 @media screen and (min-width: $mobile-width) {
   .projects {
-    background-color: initial;
     padding-top: calc($column-gutter*4);
     padding-bottom: calc($column-gutter*4);
     &__list {
@@ -61,13 +60,6 @@
       height: 3rem;
       justify-content: space-around;
       margin-right: 0;
-    }
-    .no-js &--main {
-      background-color: $c-bg-color--dark;
-      padding-top:calc($column-gutter*7);
-    }
-    .no-js &--snippets {
-      background-color: $c-bg-color--light;
     }
   }
 }
