@@ -1,5 +1,6 @@
 .splash {
   height: calc(100vh - $column-gutter/2);
+  min-height: 420px;
   padding: 0 $column-gutter;
   overflow: hidden;
   color: #fff;
@@ -8,7 +9,7 @@
     position: relative;
     lost-center: $row-width;
     display: flex;
-    height: 100%;
+    height: 101%; /* prevents awkward pixel below iOS devices */
     align-items: flex-end;
     justify-content: flex-end;
   }
@@ -33,12 +34,14 @@
     position: relative;
     z-index: 200;
     color: #fff;
-    height: 85vh;
+    height: 85%;
+    min-height: 336px;
+    width: 100%;
     opacity: 0;
     transition: 1000ms ease-out opacity;
     svg {
-      position: relative;
-      right: 5%;
+      position: absolute;
+      right: 0;
       z-index: 210;
       display: block;
       height: 100%;
@@ -53,21 +56,29 @@
   }
 }
 
-@media screen and (min-width: $mobile-width) {
+@media screen and (min-width: $phone-width) {
   .splash {
-    min-height: 420px;
-    padding: 0 calc($column-gutter*2);
     &__container {
       justify-content: center;
+      height: 100%;
     }
+    &__silhouette {
+      width: auto;
+      svg {
+        position: relative;
+        right: 5%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $mobile-width) {
+  .splash {
+    padding: 0 calc($column-gutter*2);
     &__title {
       h1 {
         font-size: 4.5rem;
       }
-    }
-    &__silhouette {
-      height: 85vh;
-      min-height: 336px;
     }
   }
 }

@@ -75,7 +75,7 @@ let blazy = new Blazy({
 });
 
 /*
-  Splash - Intro animation
+  Scrollmagic - Splash
 */
 
 let controller  = new ScrollMagic.Controller();
@@ -94,7 +94,7 @@ if (document.body.getAttribute('data-template') === 'home') {
     .addTo(controller);
 
   let splashTitleEl = $('.splash__title');
-  var splashTitleAnim = TweenMax.to(splashTitleEl, 1, {
+  let splashTitleAnim = TweenMax.to(splashTitleEl, 1, {
     y: '40%',
     ease: Linear.easeNone
   });
@@ -107,7 +107,7 @@ if (document.body.getAttribute('data-template') === 'home') {
     .addTo(controller);
 
   let splashSiloEl = $('.splash__silhouette');
-  var splashSiloAnim = TweenMax.to(splashSiloEl, 1, {
+  let splashSiloAnim = TweenMax.to(splashSiloEl, 1, {
     y: '60%',
     ease: Linear.easeNone
   });
@@ -149,32 +149,34 @@ if (document.body.getAttribute('data-template') === 'home') {
     .addTo(controller);
 }
 
-if (window.innerWidth >= 768) {
-  let contactBGEl = $('.contact__bg');
-  var contactBGAnim = TweenMax.from(contactBGEl, 1, {
-    y: -20 + '%'
-  });
-  let contactBGScene = new ScrollMagic.Scene({
-      triggerElement: $('.footer')[0],
-      triggerHook: 'onEnter',
-      duration: '100%'
-  })
-    .setTween(contactBGAnim)
-    .addTo(controller);
+/*
+  Scrollmagic - Global
+*/
 
-  let contactContainerEl = $('.contact__container');
-  var contactContainerAnim = TweenMax.from(contactContainerEl, 1, {
-    y: 100 + '%',
-    opacity: 0
-  });
-  let contactContainerScene = new ScrollMagic.Scene({
-      triggerElement: $('.footer')[0],
-      triggerHook: 'onEnter',
-      duration: '80%'
-  })
-    .setTween(contactContainerAnim)
-    .addTo(controller);
-}
+let contactBGEl = $('.contact__bg');
+let contactBGAnim = TweenMax.from(contactBGEl, 1, {
+  y: -20 + '%'
+});
+let contactBGScene = new ScrollMagic.Scene({
+    triggerElement: $('.footer')[0],
+    triggerHook: 'onEnter',
+    duration: '100%'
+})
+  .setTween(contactBGAnim)
+  .addTo(controller);
+
+let contactContainerEl = $('.contact__container');
+let contactContainerAnim = TweenMax.from(contactContainerEl, 1, {
+  y: 100 + '%',
+  opacity: 0
+});
+let contactContainerScene = new ScrollMagic.Scene({
+    triggerElement: $('.footer')[0],
+    triggerHook: 'onEnter',
+    duration: '80%'
+})
+  .setTween(contactContainerAnim)
+  .addTo(controller);
 
 /*
   Projects - Image Carousel
@@ -261,3 +263,22 @@ $('a[data-modal="carousel"]').magnificPopup({
 */
 
 let videoBG = new VideoBG('.video-bg');
+
+/*
+  Set height for mobile - Splash
+*/
+
+if (matchMedia) {
+  let mq = window.matchMedia("(max-width: 767px)");
+  mq.addListener(widthUpdateHandler);
+  widthUpdateHandler(mq);
+}
+
+// media query change
+function widthUpdateHandler(mq) {
+  if (mq.matches) {
+    $('.splash').css('height', $(window).height() - 16)
+  } else {
+    $('.splash').css('height', '')
+  }
+}
