@@ -1,16 +1,22 @@
+- var bodyTemplate = 'default'
+- var websiteTitle = 'Taylor Ho | front-end developer and engineer'
+- var pageTitle = 'Home'
+- var metadataURL = 'http://taylorkmho.com/'
+- var metadataImage = 'http://taylorkmho.com/assets/images/og-thumbnail.jpg'
+- var metadataDescription = 'My name is Taylor Ho & I build things for the Internet. My expertise is in building websites and web apps through front-end development. I am now living in San Francisco, working with clients across a number of industries.'
+- var twitterHandle = '@tellaho_'
+
 block vars
-  - var bodyTemplate = "default"
-  - var pageTitle = ""
 
 doctype
 html.no-js.fonts-standby
   head
-    title Taylor Ho | front-end developer and designer#{pageTitle ? " - " + pageTitle : ""}
+    title #{websiteTitle}#{pageTitle ? " - " + pageTitle : ""}
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     link(type="text/css" rel="stylesheet" href="/assets/css/app.css")
     //- include ../shared/_favicon
-    //- include ../shared/_seo
+    include ../shared/_seo
     script.
       if (typeof Array.from === 'undefined') {
         var es6Script = document.createElement('script');
