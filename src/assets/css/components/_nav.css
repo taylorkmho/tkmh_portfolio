@@ -40,6 +40,9 @@
     padding: 0;
     list-style: none;
   }
+  /*
+    TODO: adjust this link. feels out of place. (ref: barry)
+  */
   &__link {
     display: inline-block;
     font-size: .75rem;
