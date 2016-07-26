@@ -3,70 +3,47 @@ extends layouts/_application
 block vars
   - var bodyTemplate = "home"
 
+block additionalHead
+  link(rel="prerender" href="/about.html")
+
 block content
-
   header.splash
-    .splash__background.lazyload(data-src-small="../assets/images/bg-splash-mobile.jpg" data-src="../assets/images/bg-splash.jpg")
-      //- svg.splash__mask(viewBox="0 0 400 400")
-      //-   defs
-      //-     mask#mask(maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse")
-      //-       image(width="400" height="400" xlink:href="../assets/images/bg-subject.png")
-      //-   image(xlink:href="../assets/images/bg-splash.jpg" x="0" y="0" height="400" width="1239")
-  section.short-bio
-    .short-bio__container
-      .short-bio__copy
-        h1 Taylor Ho
-        h2 Front-end developer &amp; designer
-      ul.short-bio__social
-        li: a(href="https://github.com/taylorkmho" target="_blank"): include ../assets/images/svg/icon-github.svg
-        li: a(href="https://www.linkedin.com/in/taylorho" target="_blank"): include ../assets/images/svg/icon-linkedin.svg
-        li: a(href="http://codepen.io/tellaho/" target="_blank"): include ../assets/images/svg/icon-codepen.svg
-        li: a(href="https://twitter.com/tellaho_" target="_blank"): include ../assets/images/svg/icon-twitter.svg
-  section.intro
-    .intro__main
-      .intro__copy
-        p My name is <strong>Taylor Ho</strong> and I am a <strong>front-end developer &amp; designer</strong> with <strong>several years of experience</strong> living in <strong>San Francisco</strong>.
-        p I build web apps and sites for a living and I am absolutely passionate about what I do. Design and technology enable me to take concepts all the way to launch.
-        .intro__skills.skills
-          .skills__skill
-            include ../assets/images/svg/graphic-uiux.svg
-            h5 UX/UI DESIGN
-          .skills__skill
-            include ../assets/images/svg/graphic-prototyping.svg
-            h5 PROTOTYPING
-          .skills__skill
-            include ../assets/images/svg/graphic-development.svg
-            h5 DEVELOPMENT
-        p I have worked with great creative teams at companies like <a href="http://walltowall.com" target="_blank">Wall-to-Wall Studios</a> in Honolulu and <a href="http://cibosf.com" target="_blank">Cibo</a> in San Francisco.
-        p I am currently working freelance, <strong>seeking a full-time opportunity</strong> with a product-driven company. I am looking to join a team that I can contribute to and grow with.
-  section.projects
-    .projects__title.section-title
-      .section-title__column
-        h2 SELECTED<br>WORK
-        p Following a mobile-first philosophy, all projects are built to serve users across all devices. Front-end code should be lean and mean. Semantic mark-up is the way. Each project is an opportunity to try and learn something new.
-    .projects__list
-      each project in projects
-        .projects__project.project.lazyload(style="background-color: #{project.hexColor};" data-format=project.thumbSize data-src="assets/images/projects/#{project.abbr}-bg.jpg")
-          img.project__logo(src="assets/images/svg/logo-#{project.abbr}.svg")
-          .project__screenshot
-            .project__motion.lazyload(data-src="assets/images/projects/#{project.abbr}-screen.gif")
-            .project__still.lazyload(data-src="assets/images/projects/#{project.abbr}-screen.jpg")
-            include ../assets/images/svg/ui-phone.svg
-          ul.project__links
-            li: a.btn.btn--plain.btn--tooltip(href=project.url target="_blank" data-tooltip="GO TO #{project.shortUrl}") view site
-            - if (project.additional !== undefined)
-              each item in project.additional
-                li: a.btn.btn--svg.btn--tooltip(href=item.url target="_blank" data-tooltip=item.message)
-                  img(src="assets/images/svg/icon-#{item.provider}.svg")
-
-  footer.footer.lazyload(data-src="../assets/images/bg-footer.jpg")
-    .footer__container
-      svg(viewBox="0 0 800 255")
-        g(font-size="70")
-          text(y="55") I am seeking a full-time
-          text(y="145") opportunity with a
-          text(y="235") product-driven company.
-      //- p I am seeking a full-time opportunity with a product-driven company.
-      p
-        | <span id="footer-phrase">&ldquo;WHAT A GREAT HIRE.&rdquo; – YOUR BOSS</span>&nbsp;
-        a(href="mailto:taylorkmho@gmail.com" data-copy="EMAIL ME") EMAIL ME
+    .splash__container
+      .splash__silhouette.lazyload.lazyload--invisible(data-src="../assets/images/splash-portrait.jpg")
+        include ../assets/images/svg/silhouette.svg
+      .splash__title
+        h1 My name is Taylor Ho &amp; I build things on the Internet.
+  section.projects.projects--main
+    .projects__container
+      .section-title.section-title--centered.section-title--large
+        h2 WORK
+        p As a <strong>front-end developer</strong> based in <strong>San Francisco</strong>, building engaging online experiences is how I satisfy my creative drive. I love ideas &amp; designs and using technology to make them real things on the web.
+      .projects__list#projects-list
+        each project in projects
+          .project
+            a.project__image.lazyload(data-modal="carousel" data-format=project.thumbSize data-src="/assets/images/projects/#{project.abbr}-bg.jpg" href="/projects/#{project.niceName}.html" data-content!=project)
+              img(src="/assets/images/svg/logo-#{project.abbr}.svg")
+            //- .project__title
+            //-   h2!= project.name
+            //-     span!= project.type
+            noscript
+              a.project__noscript(href="/projects/#{project.niceName}.html" style="background-image: url('/assets/images/projects/#{project.abbr}-bg.jpg');")
+                h2!= project.name
+                  span!= project.type
+      .projects__sublist
+        each project in otherProjects
+          img(src="/assets/images/svg/#{project.filename}" alt!=project.name)
+  section.projects.projects--snippets
+    .projects__container
+      .section-title.section-title--centered.section-title--large
+        h2 PLAY
+        p Development is a balance of following fundamentals and experimenting with new ideas. Here are some code snippets on Codepen where I put ideas to the test.
+      .projects__list#projects-list
+        each pen in codepen
+          .project
+            a.project__image.lazyload(data-src="/assets/images/pens/pen-#{pen.penID}.#{pen.thumbFormat}" href="//codepen.io/tellaho/pen/#{pen.penID}" target="_blank")
+            .project__title
+              h2!= pen.name
+            noscript
+              a.project__noscript(href="//codepen.io/tellaho/pen/#{pen.penID}" style="background-image: url('/assets/images/pens/pen-#{pen.penID}.#{pen.thumbFormat}');")
+                h2!= pen.name

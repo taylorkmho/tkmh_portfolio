@@ -1,0 +1,10 @@
+[data-template="about"] {
+  color: $c-body-font--light;
+  background-color: $c-bg-color--dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  > section {
+    position: relative;
+    z-index: 200;
+  }
+}

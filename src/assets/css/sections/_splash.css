@@ -1,0 +1,84 @@
+.splash {
+  height: calc(100vh - $column-gutter/2);
+  min-height: 420px;
+  padding: 0 $column-gutter;
+  overflow: hidden;
+  color: #fff;
+  background-color: $c-primary;
+  &__container {
+    position: relative;
+    lost-center: $row-width;
+    display: flex;
+    height: 101%; /* prevents awkward pixel below iOS devices */
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  &__title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 250;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    h1 {
+      position: relative;
+      z-index: 260;
+      margin: 0;
+      line-height: 1;
+      font-size: 3rem;
+      font-weight: 500;
+    }
+  }
+  &__silhouette {
+    position: relative;
+    z-index: 200;
+    color: #fff;
+    height: 85%;
+    min-height: 336px;
+    width: 100%;
+    opacity: 0;
+    transition: 1000ms ease-out opacity;
+    svg {
+      position: absolute;
+      right: 0;
+      z-index: 210;
+      display: block;
+      height: 100%;
+      width: auto;
+    }
+    &.lazyloaded {
+      opacity: 1;
+    }
+    .no-js & {
+      animation: fadeIn 2s forwards 2s;
+    }
+  }
+}
+
+@media screen and (min-width: $phone-width) {
+  .splash {
+    &__container {
+      justify-content: center;
+      height: 100%;
+    }
+    &__silhouette {
+      width: auto;
+      svg {
+        position: relative;
+        right: 5%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $mobile-width) {
+  .splash {
+    padding: 0 calc($column-gutter*2);
+    &__title {
+      h1 {
+        font-size: 4.5rem;
+      }
+    }
+  }
+}

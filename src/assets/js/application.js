@@ -1,21 +1,49 @@
-import { addClass, removeClass, hasClass } from "./lib/_helpers";
-require('es6-shim');
-require('./lib/_nodelist-shim');
+'use strict';
+
+import { addClass, removeClass, hasClass, timer } from "./lib/_helpers";
+import Carousel from "./lib/_carousel";
+import VideoBG from "./lib/_video-bg";
 let Blazy              = require('blazy');
+let FontFaceObserver              = require('fontfaceobserver');
+
 
 /*
-  Killing hover on scroll
+  .no-js management
 */
-window.addEventListener('scroll', function() {
-  clearTimeout(timer);
-  if (!hasClass(document.body, 'disable-hover')) {
-    addClass(document.body, 'disable-hover')
-  }
+document.documentElement.classList.remove('no-js')
 
-  let timer = setTimeout(function(){
-    removeClass(document.body, 'disable-hover')
-  }, 500);
-}, false);
+/*
+  Font management
+*/
+
+// If fonts already loaded in session, add `fonts-loaded` class to document (1)
+if (!sessionStorage.fontsLoaded) {
+  let font = new FontFaceObserver('Heebo')
+  // If font.load() fails takes longer than 2000ms (2),
+  // OR if font.load() fails (3),
+  //   add `fonts-error` class to document
+  // If success (4),
+  //   add `fonts-loaded` class to document
+  Promise.race([
+    timer(2000),
+    font.load()
+  ]).then(function () { /* (4) */
+    sessionStorage.fontsLoaded = true;
+    document.documentElement.classList.remove('fonts-standby')
+    document.documentElement.classList.add('fonts-loaded')
+  }, function(){ /* (3) */
+    sessionStorage.fontsLoaded = false;
+    document.documentElement.classList.remove('fonts-standby')
+    document.documentElement.classList.add('fonts-error')
+  }).catch(function () { /* (2) */
+    sessionStorage.fontsLoaded = false;
+    document.documentElement.classList.remove('fonts-standby')
+    document.documentElement.classList.add('fonts-error')
+  });
+} else { /* (1) */
+  document.documentElement.classList.remove('fonts-standby')
+  document.documentElement.classList.add('fonts-loaded')
+}
 
 /*
   Image lazy-loading
@@ -32,19 +60,8 @@ let blazy = new Blazy({
     src: 'data-src-small'
   }],
   success: (ele) => {
-    if (window.screen.width > 768) {
-      addClass(ele, 'lazyloaded--desktop');
-      if (hasClass(ele, 'splash__background')) {
-        let tempDiv = document.createElement('div');
-        tempDiv.innerHTML = '<svg viewBox="0 0 400 400" class="splash__mask"><defs><mask id="mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse"><image width="400" height="400" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/bg-subject.png"></image></mask></defs><image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../assets/images/bg-splash.jpg" x="0" y="0" height="400" width="1239"></image></svg>';
-        let splashMask = tempDiv.firstChild;
-
-        let splashBackground = document.querySelector('.splash__background');
-        splashBackground.appendChild(splashMask);
-        setTimeout(()=>{
-          addClass(splashMask, 'is-animated');
-        }, 100)
-      }
+    if (ele.classList.contains('lazyload--invisible')) {
+      ele.style.backgroundImage = ''
     }
   },
   error: (ele, msg) => {
@@ -58,123 +75,210 @@ let blazy = new Blazy({
 });
 
 /*
-  Animating in text in Short Bio section
+  Scrollmagic - Splash
 */
 
-let removeFontsStandby = () => {
-  removeClass(document.documentElement, 'standby-for-fonts');
-}
+let controller  = new ScrollMagic.Controller();
 
-let fontsActiveCallback = () => {
-  removeFontsStandby();
-  let tlTitles = new TimelineLite();
-  let shortBio = document.querySelector('.short-bio');
-  tlTitles.add(TweenLite.fromTo(shortBio.querySelector('h1'), .5,
-    {opacity:0, y: '6rem'},
-    {opacity:1, y: '0'}
-  ));
-  tlTitles.add(TweenLite.fromTo(shortBio.querySelector('h2'), .25,
-    {opacity:0, y: '6rem'},
-    {opacity:1, y: '0'}
-  ));
-  let tlSocial = new TimelineLite();
-  tlSocial.add(TweenLite.fromTo(shortBio.querySelector('li:nth-child(1)'), .125,
-    {opacity:0, x: '-4rem'},
-    {opacity:1, x: '0', delay: .5}
-  ));
-  tlSocial.add(TweenLite.fromTo(shortBio.querySelector('li:nth-child(2)'), .125,
-    {opacity:0, y: '-4rem'},
-    {opacity:1, y: '0'}
-  ));
-  tlSocial.add(TweenLite.fromTo(shortBio.querySelector('li:nth-child(4)'), .125,
-    {opacity:0, x: '4rem'},
-    {opacity:1, x: '0'}
-  ));
-  tlSocial.add(TweenLite.fromTo(shortBio.querySelector('li:nth-child(3)'), .125,
-    {opacity:0, y: '4rem'},
-    {opacity:1, y: '0'}
-  ));
-}
-
-try{
-  Typekit.load({
-    async: true,
-    active: fontsActiveCallback,
-    inactive: removeFontsStandby
+if (document.body.getAttribute('data-template') === 'home') {
+  let splashEl = $('.splash');
+  let splashBGTween = TweenLite.to(splashEl, 1, {
+    backgroundColor: getComputedStyle($('.projects--main')[0]).getPropertyValue('background-color')
   });
-}
-catch(e){
-  removeFontsStandby();
-}
+  let splashBGScene = new ScrollMagic.Scene({
+    triggerElement: $('.projects--main')[0],
+    triggerHook: '.33',
+    duration: '33%'
+  })
+    .setTween(splashBGTween)
+    .addTo(controller);
 
-setTimeout(()=>{
-  removeFontsStandby();
-},3000)
+  let splashTitleEl = $('.splash__title');
+  let splashTitleAnim = TweenMax.to(splashTitleEl, 1, {
+    y: '40%',
+    ease: Linear.easeNone
+  });
+  let splashTitleScene = new ScrollMagic.Scene({
+    triggerElement: splashEl,
+    triggerHook: 'onLeave',
+    duration: '100%'
+  })
+    .setTween(splashTitleAnim)
+    .addTo(controller);
+
+  let splashSiloEl = $('.splash__silhouette');
+  let splashSiloAnim = TweenMax.to(splashSiloEl, 1, {
+    y: '60%',
+    ease: Linear.easeNone
+  });
+  let splashSiloScene = new ScrollMagic.Scene({
+    triggerElement: splashEl,
+    triggerHook: 'onLeave',
+    duration: '100%'
+  })
+    .setTween(splashSiloAnim)
+    .addTo(controller);
+
+  let projectsMainEl = $('.projects--main')
+  let projectsSnippetsEl = $('.projects--snippets')
+  let projectsMainTween = TweenLite.to(projectsMainEl, 1, {
+    backgroundColor: getComputedStyle(projectsSnippetsEl[0]).getPropertyValue('background-color')
+  });
+  let projectsMainScene = new ScrollMagic.Scene({
+    triggerElement: projectsSnippetsEl[0],
+    triggerHook: '.33',
+    duration: '33%'
+  })
+    .setTween(projectsMainTween)
+    .addTo(controller);
+
+  let projectsSnippetsTween = TweenLite.fromTo(projectsSnippetsEl, 1, {
+    backgroundColor: getComputedStyle(projectsSnippetsEl[0]).getPropertyValue('color'),
+    color: getComputedStyle(projectsSnippetsEl[0]).getPropertyValue('background-color')
+  },
+  {
+    color: getComputedStyle(projectsSnippetsEl[0]).getPropertyValue('color'),
+    backgroundColor: getComputedStyle(projectsSnippetsEl[0]).getPropertyValue('background-color')
+  });
+  let projectsSnippetsScene = new ScrollMagic.Scene({
+    triggerElement: projectsSnippetsEl[0],
+    triggerHook: '.33',
+    duration: '33%'
+  })
+    .setTween(projectsSnippetsTween)
+    .addTo(controller);
+}
 
 /*
-  Skills animations in Intro section
-  via GSAP library
+  Scrollmagic - Global
 */
 
-// UI/UX graphic in intro.css
+let contactBGEl = $('.contact__bg');
+let contactBGAnim = TweenMax.from(contactBGEl, 1, {
+  y: -20 + '%'
+});
+let contactBGScene = new ScrollMagic.Scene({
+    triggerElement: $('.footer')[0],
+    triggerHook: 'onEnter',
+    duration: '100%'
+})
+  .setTween(contactBGAnim)
+  .addTo(controller);
 
-// PROTOTYPING graphic (panel 2)
-let tlHand = new TimelineMax({repeat: -1});
-let hand = document.querySelector('.graphic--prototyping__hand');
-tlHand.add( TweenLite.to(hand, .125, {scale:.9, transformOrigin:"center center"}) );
-tlHand.add( TweenLite.to(hand, .25,  {scale:1}) );
-tlHand.add( TweenLite.to(hand, 2.625, {scale:1}) );
-
-let tlBox1 = new TimelineMax({repeat: -1});
-let box1 = document.querySelector('.graphic--prototyping__box--01');
-tlBox1.add(
-  TweenMax.fromTo(box1, .25,
-    {width:52, fill: '#555', stroke: '#bbb'},
-    {width:86, fill: '#F24C27', stroke: '#F24C27', transformOrigin:"left center", delay: .125}
-  )
-);
-tlBox1.add( TweenLite.to(box1, .25, {width:52, fill: '#555', stroke: '#bbb', delay: 2.75}) );
-tlBox1.add( TweenLite.to(box1, 2.625, {width:52 }) );
-
-let tlBox2 = new TimelineMax({repeat: -1});
-let box2 = document.querySelector('.graphic--prototyping__box--02');
-tlBox2.add( TweenLite.to(box2, .25, {x: '100%', opacity: 0, delay: .125}) );
-tlBox2.add( TweenLite.to(box2, .25,  {x: '0%', opacity: 1, delay: 2.75}) );
-tlBox2.add( TweenLite.to(box2, 2.625, {x: '0%'}) );
-
-// DEVELOPMENT graphic (panel 3)
-const graphicProjects = document.querySelectorAll('.graphic--development__device');
-for (let el of graphicProjects) {
-  let elBoxes = el.querySelectorAll('.graphic--development__boxes rect');
-  let elScreen = el.querySelector('.graphic--development__screen');
-
-  let tlDevice = new TimelineMax({repeat: -1});
-  tlDevice.add( TweenLite.fromTo(elScreen, .25, {fill:'#F24C27'},{fill:'#fff', delay: 1}) );
-  tlDevice.add( TweenLite.fromTo(elBoxes[0], .125, {y:'2px', opacity: 0}, {y:'0px', opacity: 1}) );
-  tlDevice.add( TweenLite.fromTo(elBoxes[1], .125, {y:'2px', opacity: 0}, {y:'0px', opacity: 1}) );
-  tlDevice.add( TweenLite.fromTo(elBoxes[2], .125, {y:'2px', opacity: 0}, {y:'0px', opacity: 1}) );
-  tlDevice.add( TweenLite.to(elBoxes[0], .125, {fill:'#f24c27', stroke:'#f24c27', delay: 4}) );
-  tlDevice.add( TweenLite.to(elBoxes[0], .25, {clearProps: 'fill,stroke'}) );
-  tlDevice.add( TweenLite.to(elBoxes[1], .125, {y:'2px', opacity: 0}) );
-  tlDevice.add( TweenLite.to(elBoxes[2], .125, {y:'2px', opacity: 0}) );
-  tlDevice.add( TweenLite.to(elBoxes[0], .125, {y:'2px', opacity: 0}) );
-  tlDevice.add( TweenLite.to(elScreen, .5, {fill:'#f24c27'}) );
-}
+let contactContainerEl = $('.contact__container');
+let contactContainerAnim = TweenMax.from(contactContainerEl, 1, {
+  y: 100 + '%',
+  opacity: 0
+});
+let contactContainerScene = new ScrollMagic.Scene({
+    triggerElement: $('.footer')[0],
+    triggerHook: 'onEnter',
+    duration: '80%'
+})
+  .setTween(contactContainerAnim)
+  .addTo(controller);
 
 /*
-  "Phrase" swap-out for Footer section
+  Projects - Image Carousel
 */
-let footerPhrase = document.getElementById('footer-phrase');
-if (footerPhrase) {
-  const phraseArray = ['ARE WE MEANT TO BE?', 'YOUR TEAM + ME = AWESOME?', 'LET US BE ONE?', 'NEED A DIFFERENT OUTLOOK?', 'DOES YOUR TEAM NEED A &ldquo;ME&rdquo;?', 'DO I COMPLETE YOU(R TEAM)?', 'SHOULD WE DO THIS?', 'BECAUSE WHY NOT?', 'LET&rsquo;S DO THIS.', '&ldquo;WHAT A GREAT HIRE.&rdquo; – YOUR BOSS', 'FANCY A NEW TEAMMATE?', 'WHY NOT US? WHY NOT NOW?', 'I SEE YOU LOOKING.', 'WE SHOULD TRY THIS.', 'NEED A DESIGN-MINDED DEV?', 'HIRING A FRONT-END?', 'WANT A RESUMÉ?', 'LET&lsquo;S PUT &ldquo;U&rdquo; &amp; &ldquo;I&rdquo; TOGETHER.'];
 
-  setInterval(()=>{
-    TweenLite.fromTo(footerPhrase, 1, {opacity:'1'},{
-      opacity: 0,
-      onComplete: function() {
-        TweenLite.to(footerPhrase, 0, {clearProps: 'opacity'});
-        footerPhrase.innerHTML = phraseArray[Math.floor(Math.random()*phraseArray.length)];
+let carousel = new Carousel('.showcase');
+
+/*
+  Projects modal
+*/
+
+$('a[data-modal="carousel"]').magnificPopup({
+  type: 'inline',
+  mainClass: 'is-active',
+  closeBtnInside: false,
+  callbacks: {
+    elementParse: function(item) {
+      // build data via data-content attribute
+      let data = JSON.parse(item.el.attr('data-content'));
+      const buildCarouselImages = (imageArray) => {
+        let images = '';
+        imageArray.forEach((image)=>{
+          images += '<img class="Wallop-item lazyload" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/images/projects/' + image + '.jpg">';
+        })
+        return images;
       }
-    })
-  }, 6000)
+      const buildCarouselPag = (imageArray) => {
+        let images = '';
+        imageArray.forEach((image)=>{
+          images += '<a class="Wallop-pagination__option" href="#"><img src="/assets/images/projects/' + image + '--thumbnail.jpg"></a>';
+        })
+        return images;
+      }
+      // parse elements into modal content
+      item.src =
+        '<div class="showcase">' +
+          '<div class="showcase__container">' +
+            '<div class="showcase__images">' +
+              '<div class="Wallop"><div class="Wallop-list">' +
+                buildCarouselImages(data.imagesList) +
+              '</div></div>' + // Wallop, Wallop-list
+              '<div class="Wallop-pagination">' +
+                '<button class="Wallop-pagination__arrow Wallop-pagination__arrow--prev"><img src="assets/images/svg/icon-arrow.svg" /></a></button>' +
+                buildCarouselPag(data.imagesList) +
+                '<button class="Wallop-pagination__arrow Wallop-pagination__arrow--next"><img src="assets/images/svg/icon-arrow.svg" /></a></button>' +
+              '</div>' + //Wallop-pagination
+            '</div>' + // showcase__images
+            '<div class="showcase__description">' +
+              '<img src="/assets/images/svg/logo-' + data.abbr + '.svg" alt="' + data.name + ' logo" title="' + data.name + ' logo" />' +
+              '<p>' +
+                data.description +
+              '</p>' +
+              '<a class="btn btn--filled btn--filled-primary" href="' + data.url + '" target="_blank">View site</a>' +
+            '</div>' + // showcase__description
+          '</div>' + // showcase__container
+        '</div>' // showcase
+    },
+    open: function() {
+      carousel.init();
+      blazy.load(document.querySelectorAll('.Wallop-item'), true)
+      let $that = $(this)
+      // update history
+      setTimeout(function(){
+        history.pushState(null, document.title, $that[0].currItem.el[0].getAttribute('href'));
+      },10)
+      $(window).on('popstate', function(e) {
+        if(e.originalEvent.state === null) { // initial page
+          $.magnificPopup.close();
+        }
+      });
+
+    },
+    close: function() {
+      carousel.destroy()
+      // update history
+      history.pushState(null, document.title, '/');
+      $(window).off('popstate');
+    }
+  }
+})
+
+/*
+  About video bg
+*/
+
+let videoBG = new VideoBG('.video-bg');
+
+/*
+  Set height for mobile - Splash
+*/
+
+if (matchMedia) {
+  let mq = window.matchMedia("(max-width: 767px)");
+  mq.addListener(widthUpdateHandler);
+  widthUpdateHandler(mq);
+}
+
+// media query change
+function widthUpdateHandler(mq) {
+  if (mq.matches) {
+    $('.splash').css('height', $(window).height() - 16)
+  } else {
+    $('.splash').css('height', '')
+  }
 }

@@ -1,0 +1,66 @@
+.video-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  overflow: hidden;
+  pointer-events: none;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 110;
+    background: color(#000 a(.75));
+  }
+}
+
+@media screen and (max-width: $phone-width--max) {
+  .video-bg {
+    &:before {
+      background: color(#000 a(.75));
+    }
+    &__video {
+      display: none;
+    }
+    &__photo {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url('../images/bg-about.gif');
+      background-size: cover;
+      background-position: center center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: $phone-width) {
+  .video-bg {
+    &__container {
+      position: relative;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    &__video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-height: 100%;
+      min-width: 100%;
+      height: 56.25vw;
+      width: 177.78vh;
+    }
+    &__photo {
+      display: none;
+    }
+  }
+}

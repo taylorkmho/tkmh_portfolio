@@ -20,8 +20,8 @@ gulp.task('browsersync', function() {
 gulp.task('watch', ['browsersync'], function() {
   var watching = true;
   // gulp.watch([paths.base.src + "/*.*", paths.base.src + "/data/**/*"], ['static-files']);
-  gulp.watch(paths.src.html + "/**/*.jade", ['html']);
-  gulp.watch(paths.src.data + "/**/*.json", ['html']);
+  gulp.watch(paths.src.html + "/**/*.jade", ['html', 'generateProjects']);
+  gulp.watch(paths.src.data + "/**/*.json", ['html', 'generateProjects']);
   gulp.watch(paths.src.images + "/**/*.svg", ['html']);
   gulp.watch(paths.src.css + "/**/*", ['css']);
   // gulp.watch(paths.src.fonts + "/**/*", ['fonts']);

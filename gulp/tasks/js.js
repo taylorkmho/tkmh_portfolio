@@ -8,7 +8,8 @@ var gulp              = require('gulp'),
     buffer            = require('vinyl-buffer'),
     filter            = require('gulp-filter'),
     source            = require('vinyl-source-stream'),
-    sourcemaps        = require('gulp-sourcemaps');
+    sourcemaps        = require('gulp-sourcemaps'),
+    rename            = require('gulp-rename');
 
 gulp.task('js', function() {
   browserify(paths.src.js + '/application.js', {debug: true})
@@ -25,4 +26,8 @@ gulp.task('js', function() {
     .pipe(filter('*.{js,map}'))
     .pipe(gulp.dest(paths.dist.js+'/vendor'))
     .on('error', errorHandler);
+
+  gulp.src('./node_modules/babel-polyfill/browser.js')
+    .pipe(rename('babel-es6-polyfill.js'))
+    .pipe(gulp.dest(paths.dist.js+'/vendor'))
 });

@@ -1,17 +1,13 @@
+@import 'https://fonts.googleapis.com/css?family=Heebo:300,400,500';
 @import 'normalize.css/normalize.css';
+@import 'magnific-popup/dist/magnific-popup.css';
+@import 'wallop/css/wallop.css';
 
 @import '_settings.css';
 @import '_structure.css';
 @import '_animations.css';
 
-@import 'modules/_social-media.css';
-@import 'modules/_projects.css';
-
-@import 'components/_splash.css';
-@import 'components/_short-bio.css';
-@import 'components/_intro.css';
-@import 'components/_content.css';
-@import 'components/_status.css';
-@import 'components/_footer.css';
-
-@import 'components/_buttons.css';
+@import 'templates/**/*';
+@import 'sections/**/*';
+@import 'components/**/*';
+@import 'overrides/**/*';

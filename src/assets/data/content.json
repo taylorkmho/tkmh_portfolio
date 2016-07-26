@@ -1,16 +1,46 @@
 {
   "projects": [
     {
-      "name": "JJ Dolan&rsquo;s",
-      "abbr": "jjd",
-      "hexColor": "#02b770",
-      "shortUrl": "jjdolans.com",
-      "url": "http://jjdolans.com"
+      "name": "Luma",
+      "niceName": "luma",
+      "type": "website",
+      "description": "A website for a smart wifi device&rsquo;s anticipated launch. It was built promptly in time for it to be sold on Amazon and across the nation.",
+      "imagesList": [
+        "lum-screen-01",
+        "lum-screen-02",
+        "lum-screen-04",
+        "lum-screen-03"
+      ],
+      "abbr": "lum",
+      "shortUrl": "getluma.com",
+      "url": "http://getluma.com"
+    },
+    {
+      "name": "Seekout",
+      "niceName": "seekout",
+      "type": "website",
+      "description": "A website to help organize and promote safe, fun events for the LGBTQ community. It&rsquo;s great to be a part of such a well thought out and good intentioned web application.",
+      "imagesList": [
+        "sek-screen-01",
+        "sek-screen-02",
+        "sek-screen-03",
+        "sek-screen-04"
+      ],
+      "abbr": "sek",
+      "shortUrl": "seekout.co",
+      "url": "http://seekout.co"
     },
     {
       "name": "Surf Status",
+      "niceName": "surf-status",
+      "type": "web app",
+      "description": "A surf report void of the typical clutter — engineered using MongoDB, Express, and Node.js (known in some circles as the MEN stack). Read more on <a href='https://medium.com/@tkmh/how-i-built-surf-status-2ca2ca8a6fbf' target='_blank'>how it&rsquo;s built</a>.",
+      "imagesList": [
+        "sus-screen-01",
+        "sus-screen-02",
+        "sus-screen-03"
+      ],
       "abbr": "sus",
-      "hexColor": "#eb4329",
       "shortUrl": "surfstat.us",
       "url": "http://surfstat.us",
       "additional": [{
@@ -20,53 +50,185 @@
       }]
     },
     {
-      "name": "Surfjack Hotel",
-      "abbr": "sjk",
-      "hexColor": "#E7695D",
-      "shortUrl": "surfjack.com",
-      "url": "http://surfjack.com"
-    },
-    {
       "name": "Foundry Salon",
+      "niceName": "foundry-salon",
+      "type": "website",
+      "description": "A simple, static website for an up-and-coming hair salon based in Kailua. If a client doesn&rsquo;t need a CMS, don&rsquo;t build one!",
+      "imagesList": [
+        "fnd-screen-01",
+        "fnd-screen-02",
+        "fnd-screen-03",
+        "fnd-screen-04"
+      ],
       "abbr": "fnd",
-      "hexColor": "#d5c1a5",
       "shortUrl": "foundrysalon.com",
       "url": "http://foundrysalon.com"
     },
     {
+      "name": "JJ Dolan&rsquo;s",
+      "niceName": "jj-dolans",
+      "type": "website",
+      "description": "A website for a compelling pizza kitchen — featuring a progressively loaded, mobile-friendly canvas drawing application at the top of the page. It went on to win a <a href='http://peleawards.com/2016-award-winners/' target='_blank'>AAF Pele Gold</a> in 2016.",
+      "imagesList": [
+        "jjd-screen-01",
+        "jjd-screen-02",
+        "jjd-screen-03",
+        "jjd-screen-04"
+      ],
+      "abbr": "jjd",
+      "shortUrl": "jjdolans.com",
+      "url": "http://jjdolans.com"
+    },
+    {
       "name": "Hallowbaloo",
+      "niceName": "hallowbaloo",
+      "type": "website",
+      "description": "A website for the largest Halloween event in Honolulu. It innovated in terms of SVG animation, with a feature earning <a href='http://codepen.io/tellaho/details/PPRjbj/' target='_blank'>positive feedback on Codepen</a>.",
+      "imagesList": [
+        "hbl-screen-01",
+        "hbl-screen-02",
+        "hbl-screen-03",
+        "hbl-screen-04"
+      ],
       "abbr": "hbl",
-      "hexColor": "#5d0f43",
       "shortUrl": "hallowbaloo.com",
       "url": "http://hallowbaloo.com/2015"
     },
     {
+      "name": "Surfjack Hotel",
+      "niceName": "surfjack-hotel",
+      "type": "website",
+      "description": "A website for the one of the newest hotels in Waikiki. A fun balance of aesthetic and functionality per template.",
+      "imagesList": [
+        "sjk-screen-01",
+        "sjk-screen-02",
+        "sjk-screen-03"
+      ],
+      "abbr": "sjk",
+      "shortUrl": "surfjack.com",
+      "url": "http://surfjack.com"
+    },
+    {
       "name": "Blake Entertainment",
+      "niceName": "blake-entertainment",
+      "type": "website",
+      "description": "A website for a premier event planner in Honolulu. We made sure to emphasize the breadth of their events — from red carpets to poke bars.",
+      "imagesList": [
+        "bla-screen-01",
+        "bla-screen-02",
+        "bla-screen-03"
+      ],
       "abbr": "bla",
-      "hexColor": "#222",
       "shortUrl": "blakeentertainmenthawaii.com",
       "url": "http://blakeentertainmenthawaii.com"
     }
   ],
-
+  "otherProjects": [
+    {
+      "name": "Subaru",
+      "filename": "logo-sub.svg"
+    },
+    {
+      "name": "Kona Red",
+      "filename": "logo-kon.svg"
+    }
+  ],
+  "codepen": [
+    {
+      "name": "Event Map via SVG",
+      "penID": "PPRjbj",
+      "thumbFormat": "gif"
+    },
+    {
+      "name": "Coffee Slot Machine using GSAP",
+      "penID": "aNPPvN",
+      "thumbFormat": "gif"
+    },
+    {
+      "name": "The Lorax",
+      "penID": "xbEONa",
+      "thumbFormat": "gif"
+    },
+    {
+      "name": "Hawaiian Flag via CSS",
+      "penID": "xJKpb",
+      "thumbFormat": "jpg"
+    }
+  ],
+  "awards": [
+    {
+      "year": 2016,
+      "list": [
+        "J.J. Dolan's – Website: Gold Pele Award 2016, ADDY"
+      ]
+    },
+    {
+      "year": 2015,
+      "list": [
+        "J.J. Dolan's – Website: Award of Excellence, AIGA Hawaii's 5-0",
+        "Buho Cantina – Campaign: Award of Excellence, AIGA Hawaii's 5-0",
+        "Buho Cantina – Website: Promotion & Marketing Design Award, HOW",
+        "Hawaii Community Foundation – Annual Report: Silver Pele Award 2015, ADDY",
+        "Hawaii Community Foundation – Annual Report: Bronze Anvil Award, PR Society of America",
+        "Ilikai Hotel – Mixed Media Campaign: Award of Excellence, AIGA Hawaii's 5-0",
+        "Island Air – Website: Award of Excellence, AIGA Hawaii's 5-0",
+        "Wall-to-Wall Studios – Occasional Cards Website: Award of Excellence, AIGA Hawaii's 5-0"
+      ]
+    },
+    {
+      "year": 2014,
+      "list": [
+        "Hawaii National Bank – Email E-card: Silver Pele Award 2014, ADDY",
+        "AIGA – Mixed Media Campaign: Silver Pele Award 2014, ADDY"
+      ]
+    }
+  ],
   "skills": [
     {
-      "title": "HTML"
+      "type": "ENGINEERING",
+      "list": [
+        "Front-end Architecture",
+        "Rapid Prototyping",
+        "Semantic Mark-up",
+        "Data Visualization",
+        "Progressive Enhancement",
+        "Mobile-first Responsive",
+        "Web Animation",
+        "Browser-specific Quirks",
+        "Client-side Optimization"
+      ]
     },
     {
-      "title": "CSS"
+      "type": "DESIGN",
+      "list": [
+        "Visual Design",
+        "User Experience Centric",
+        "Motion Graphics"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "type": "ENGINEERING",
+      "list": [
+        "Javascript <span>es<span>2015</span>/jquery</span>",
+        "NodeJS",
+        "Version Control <span>git</span>",
+        "HTML <span>jade/slim</span>",
+        "Gulp.js",
+        "Command Line <span>CLI&rsquo;s</span>",
+        "CSS <span>postcss/sass/scss</span>",
+        "GSAP/d3.js",
+        "Ruby-on-Rails"
+      ]
     },
     {
-      "title": "JAVASCRIPT"
-    },
-    {
-      "title": "DESIGN"
-    },
-    {
-      "title": "TEAM THINKING"
-    },
-    {
-      "title": "BUSINESS"
+      "type": "DESIGN",
+      "list": [
+        "Adobe Creative Cloud",
+        "Sketch",
+        "In-browser Prototyping"
+      ]
     }
   ]
 }

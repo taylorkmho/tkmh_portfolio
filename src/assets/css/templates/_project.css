@@ -1,0 +1,5 @@
+[data-template="project"] {
+  color: $c-body-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

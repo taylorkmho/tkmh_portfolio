@@ -1,25 +1,50 @@
-include ../_modules/_Modules.jade
+- var bodyTemplate = 'default'
+- var websiteTitle = 'Taylor Ho | front-end developer and engineer'
+- var pageTitle = 'Home'
+- var metadataURL = 'http://taylorkmho.com/'
+- var metadataImage = 'http://taylorkmho.com/assets/images/og-thumbnail.jpg'
+- var metadataDescription = 'My name is Taylor Ho & I build things for the Internet. My expertise is in building websites and web apps through front-end development. I am now living in San Francisco, working with clients across a number of industries.'
+- var twitterHandle = '@tellaho_'
+
 block vars
-  - var bodyTemplate = "default"
-  - var pageTitle = ""
 
 doctype
-html.standby-for-fonts
+html.no-js.fonts-standby
   head
-    title Taylor Ho | front-end developer and designer#{pageTitle ? " - " + pageTitle : ""}
+    title #{websiteTitle}#{pageTitle ? " - " + pageTitle : ""}
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    link(type="text/css" rel="stylesheet" href="assets/css/app.css")
-    script(src="assets/js/vendor/modernizr.js")
-    script(src="https://use.typekit.net/odk2uwz.js")
-    //- include ../shared/_favicon
-    //- include ../shared/_seo
+    link(type="text/css" rel="stylesheet" href="/assets/css/app.css")
+    include ../shared/_favicon
+    include ../shared/_seo
+    script.
+      if (typeof Array.from === 'undefined') {
+        var es6Script = document.createElement('script');
+        es6Script.async = false;
+        es6Script.src = 'assets/js/vendor/babel-es6-polyfill.js';
+        document.head.appendChild(es6Script);
+      }
     block additionalHead
 
   body(data-template="#{bodyTemplate}")
-    //- include ../shared/_google-analytics
+    include ../shared/_google-analytics
+    include ../shared/_header-nav
     block content
-    script(src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js")
+    include ../shared/_footer
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.slim.min.js")
     script.
-      window.TimelineMax || document.write('<script src="assets/js/vendor/TweenMax.min.js">\x3C/script>')
-    script(src="assets/js/app.js")
+      window.jQuery || document.write('<script src="/assets/js/vendor/jquery.slim.min.js">\x3C/script>')
+    script(src="//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js")
+    script.
+      jQuery.magnificPopup || document.write('<script src="/assets/js/vendor/jquery.magnific-popup.min.js">\x3C/script>')
+    script(src="//cdnjs.cloudflare.com/ajax/libs/wallop/2.2.4/js/Wallop.min.js")
+    script.
+      window.Wallop || document.write('<script src="/assets/js/vendor/Wallop.min.js">\x3C/script>')
+    script(src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js")
+    script.
+      window.TweenMax || document.write('<script src="/assets/js/vendor/TweenMax.min.js">\x3C/script>')
+    script(src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js")
+    script.
+      window.ScrollMagic || document.write('<script src="/assets/js/vendor/ScrollMagic.min.js">\x3C/script><script src="/assets/js/vendor/animation.gsap.min.js">\x3C/script>')
+    script(src="/assets/js/app.js")
