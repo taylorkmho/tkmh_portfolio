@@ -3,5 +3,5 @@ var gulp = require('gulp'),
 
 // Build Production Files, the Default Task
 gulp.task('default', function () {
-  runSequence('clean', ['html', 'generateProjects', 'favicon', 'css', 'js', 'images', 'rootFiles'], 'watch');
+  runSequence('clean', ['html', 'generateProjects', 'gists', 'favicon', 'css', 'js', 'images', 'rootFiles'], 'watch');
 });
