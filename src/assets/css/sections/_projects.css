@@ -32,6 +32,9 @@
   }
   &--snippets {
     background-color: $c-bg-color--light;
+    .projects__container {
+      lost-center: $row-width;
+    }
   }
 }
 
