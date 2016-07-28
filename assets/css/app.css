@@ -1665,6 +1665,10 @@ span.strike:after {
   display: table;
   clear: both;
 }
+.splash__title,
+  .splash__silhouette {
+  will-change: transform;
+}
 .splash__title {
   position: absolute;
   top: 0;
@@ -2046,6 +2050,9 @@ span.strike:after {
   padding: 0;
   list-style: none;
 }
+/*
+    TODO: adjust this link. feels out of place. (ref: barry)
+  */
 .header-nav__link {
   display: inline-block;
   font-size: .75rem;
@@ -2238,6 +2245,9 @@ span.strike:after {
             columns: 3;
   }
 }
+/*
+  TODO: remove max-width, adjust for elegant scaling (ref: alex)
+*/
 .showcase {
   *zoom: 1;
   max-width: 1200px;

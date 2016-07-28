@@ -363,7 +363,10 @@ var blazy = new Blazy({
 /*
   Scrollmagic - Splash
 */
-
+/*
+  TODO: Fix jumpiness. (ref: paul)
+        Utilize web worker? Might be difficult without being able to reference the DOM.
+*/
 var controller = new ScrollMagic.Controller();
 
 if (document.body.getAttribute('data-template') === 'home') {
