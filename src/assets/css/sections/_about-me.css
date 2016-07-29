@@ -19,6 +19,12 @@
       font-weight: 500;
     }
   }
+  a {
+    text-decoration: none;
+    &:hover {
+      color: color($c-primary tint(20%) saturation(100%));
+    }
+  }
   #aloha-shake {
     display: inline-block;
     animation: shake 2s forwards 1.5s;

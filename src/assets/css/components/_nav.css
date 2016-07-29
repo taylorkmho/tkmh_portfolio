@@ -31,7 +31,7 @@
     }
     &:hover {
       span {
-        color: color($c-secondary tint(30%) saturation(15%));
+        color: color($c-secondary tint(50%) saturation(15%));
       }
     }
   }
@@ -40,23 +40,20 @@
     padding: 0;
     list-style: none;
   }
-  /*
-    TODO: adjust this link. feels out of place. (ref: barry)
-  */
   &__link {
     display: inline-block;
-    font-size: .75rem;
+    font-size: 1.25rem;
+    font-weight: 500;
     padding: 0.875rem;
     line-height: 1;
     text-decoration: none;
-    color: $c-bg-color--dark;
-    letter-spacing: .1rem;
+      color: $c-body-font--light;
     transition: 250ms ease-out color;
     [data-template="about"] & {
-      color: #fff;
+      color: $c-body-font--light;
     }
     &:hover {
-      color: #fff;
+      color: color($c-secondary tint(80%) saturation(15%));
     }
   }
 }

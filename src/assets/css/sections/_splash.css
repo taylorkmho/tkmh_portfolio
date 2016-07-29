@@ -13,6 +13,10 @@
     align-items: flex-end;
     justify-content: flex-end;
   }
+  &__title,
+  &__silhouette {
+    will-change: transform;
+  }
   &__title {
     position: absolute;
     top: 0;
