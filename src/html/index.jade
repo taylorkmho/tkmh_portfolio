@@ -23,9 +23,6 @@ block content
           .project
             a.project__image.lazyload(data-modal="carousel" data-format=project.thumbSize data-src="/assets/images/projects/#{project.abbr}-bg.jpg" href="/projects/#{project.niceName}.html" data-content!=project)
               img(src="/assets/images/svg/logo-#{project.abbr}.svg")
-            //- .project__title
-            //-   h2!= project.name
-            //-     span!= project.type
             noscript
               a.project__noscript(href="/projects/#{project.niceName}.html" style="background-image: url('/assets/images/projects/#{project.abbr}-bg.jpg');")
                 h2!= project.name
@@ -37,13 +34,13 @@ block content
     .projects__container
       .section-title.section-title--centered.section-title--large
         h2 PLAY
-        p Development is a balance of following fundamentals and experimenting with new ideas. Here are some code snippets on Codepen where I put ideas to the test.
+        p Development is a balance of following fundamentals and experimenting with new ideas. Here are some code snippets where I put ideas to the test.
       .projects__list#projects-list
-        each pen in codepen
+        each snippet in snippets
           .project
-            a.project__image.lazyload(data-src="/assets/images/pens/pen-#{pen.penID}.#{pen.thumbFormat}" href="//codepen.io/tellaho/pen/#{pen.penID}" target="_blank")
+            a.project__image.lazyload(data-src="/assets/images/snippets/#{snippet.thumbFilename}" href="#{snippet.location}" target="_blank")
             .project__title
-              h2!= pen.name
+              h2!= snippet.name
             noscript
-              a.project__noscript(href="//codepen.io/tellaho/pen/#{pen.penID}" style="background-image: url('/assets/images/pens/pen-#{pen.penID}.#{pen.thumbFormat}');")
-                h2!= pen.name
+              a.project__noscript(href="#{snippet.location}" style="background-image: url('/assets/images/snippets/#{snippet.thumbFilename}');")
+                h2!= snippet.name

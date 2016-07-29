@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+      /* application shell (preload) */
+      body {
+        margin: 0;
+        background-color: #eee;
+      }
+      .pseudo-app header {
+        height: 60px;
+        max-width: 520px;
+        margin: 0 auto;
+        background-color: #313148;
+        background-image: radial-gradient(circle at 50% 200%,#6D6E88,#313148 100%);
+      }
+      .pseudo-app main {
+        position: relative;
+        max-width: 520px;
+        height: calc(100vh - 60px);
+        margin: 0 auto;
+        background-color: #fff;
+      }
+      .pseudo-app main:before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: calc(50% - 30px);
+        display: block;
+        width: 30px;
+        height: 30px;
+        border: 8px solid #ddd;
+        border-bottom-color: #6D6E88;
+        border-radius: 50%;
+        animation: spin 1s infinite ease-out;
+      }
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <base href="/gists/angularjs-2-chat/">
+  </head>
+  <body>
+    <my-app>
+      <div class="pseudo-app">
+        <header></header>
+        <main></main>
+      </div>
+    </my-app>
+  <script type="text/javascript" src="http://taylorkmho.com/gists/angularjs-2-chat/js/polyfills.js"></script><script type="text/javascript" src="http://taylorkmho.com/gists/angularjs-2-chat/js/vendor.js"></script><script type="text/javascript" src="http://taylorkmho.com/gists/angularjs-2-chat/js/app.js"></script></body>
+</html>

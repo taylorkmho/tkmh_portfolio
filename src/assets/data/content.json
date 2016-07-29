@@ -133,26 +133,36 @@
       "filename": "logo-kon.svg"
     }
   ],
-  "codepen": [
+  "snippets": [
     {
-      "name": "Event Map via SVG",
-      "penID": "PPRjbj",
-      "thumbFormat": "gif"
+      "name": "Chat App UI — Angular 2",
+      "type": "gist",
+      "location": "http://taylorkmho.com/gists/angularjs-2-chat/",
+      "thumbFilename": "gist-angularjs-2-chat.gif"
     },
     {
-      "name": "Coffee Slot Machine using GSAP",
-      "penID": "aNPPvN",
-      "thumbFormat": "gif"
+      "name": "Animated Event Map — CSS",
+      "type": "codepen",
+      "location": "http://codepen.io/tellaho/pen/PPRjbj",
+      "thumbFilename": "pen-PPRjbj.gif"
     },
     {
-      "name": "The Lorax",
-      "penID": "xbEONa",
-      "thumbFormat": "gif"
+      "name": "Coffee Slot Machine — GSAP",
+      "type": "codepen",
+      "location": "http://codepen.io/tellaho/pen/aNPPvN",
+      "thumbFilename": "pen-aNPPvN.gif"
     },
     {
-      "name": "Hawaiian Flag via CSS",
-      "penID": "xJKpb",
-      "thumbFormat": "jpg"
+      "name": "The Lorax — SVG + CSS",
+      "type": "codepen",
+      "location": "http://codepen.io/tellaho/pen/xbEONa",
+      "thumbFilename": "pen-xbEONa.gif"
+    },
+    {
+      "name": "Hawaiian Flag — CSS shapes",
+      "type": "codepen",
+      "location": "http://codepen.io/tellaho/pen/xJKpb",
+      "thumbFilename": "pen-xJKpb.jpg"
     }
   ],
   "awards": [
@@ -192,7 +202,7 @@
         "Semantic Mark-up",
         "Data Visualization",
         "Progressive Enhancement",
-        "Mobile-first Responsive",
+        "Responsive, Mobile-first",
         "Web Animation",
         "Browser-specific Quirks",
         "Client-side Optimization"

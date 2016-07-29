@@ -18,6 +18,7 @@ paths.src = {
   images:     paths.base.src + 'assets/images',
   data:       paths.base.src + 'assets/data',
   favicon:    paths.base.src + 'assets/favicon',
+  gists:      paths.base.src + 'gists',
   html:       paths.base.src + 'html'
 };
 
@@ -26,6 +27,7 @@ paths.dist = {
   fonts:      paths.base.dist + 'assets/fonts',
   js:         paths.base.dist + 'assets/js',
   images:     paths.base.dist + 'assets/images',
+  gists:      paths.base.dist + 'gists',
   favicon:    paths.base.dist,
   html:       paths.base.dist
 };
