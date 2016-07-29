@@ -1009,6 +1009,12 @@ span.strike:after {
 .about-me p strong {
   font-weight: 500;
 }
+.about-me a {
+  text-decoration: none;
+}
+.about-me a:hover {
+  color: rgb(255, 105, 71);
+}
 .about-me #aloha-shake {
   display: inline-block;
   -webkit-animation: shake 2s forwards 1.5s;
@@ -2058,31 +2064,28 @@ span.strike:after {
   transition: color 250ms ease-out;
 }
 .header-nav__logo:hover span {
-  color: rgb(100, 135, 130);
+  color: rgb(144, 173, 173);
 }
 .header-nav__list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/*
-    TODO: adjust this link. feels out of place. (ref: barry)
-  */
 .header-nav__link {
   display: inline-block;
-  font-size: .75rem;
+  font-size: 1.25rem;
+  font-weight: 500;
   padding: 0.875rem;
   line-height: 1;
   text-decoration: none;
-  color: #1E1E20;
-  letter-spacing: .1rem;
+  color: #fff;
   transition: 250ms ease-out color;
 }
 [data-template="about"] .header-nav__link {
   color: #fff;
 }
 .header-nav__link:hover {
-  color: #fff;
+  color: rgb(211, 222, 222);
 }
 .section-title {
   *zoom: 1;
