@@ -1,6 +1,21 @@
 {
   "projects": [
     {
+      "name": "Foundry Salon",
+      "niceName": "foundry-salon",
+      "type": "website",
+      "description": "A business website for a hair salon based in Kailua. Utilizes external API&rsquo;s for company data, including pulling in its Instagram feed and showing its location on Google Maps.",
+      "imagesList": [
+        "fnd-screen-01",
+        "fnd-screen-02",
+        "fnd-screen-03",
+        "fnd-screen-04"
+      ],
+      "abbr": "fnd",
+      "shortUrl": "foundrysalon.com",
+      "url": "http://foundrysalon.com"
+    },
+    {
       "name": "Luma",
       "niceName": "luma",
       "type": "website",
@@ -48,21 +63,6 @@
         "url": "https://medium.com/@tkmh/how-i-built-surf-status-2ca2ca8a6fbf",
         "message": "READ CASE STUDY"
       }]
-    },
-    {
-      "name": "Foundry Salon",
-      "niceName": "foundry-salon",
-      "type": "website",
-      "description": "A simple, static website for an up-and-coming hair salon based in Kailua. If a client doesn&rsquo;t need a CMS, don&rsquo;t build one!",
-      "imagesList": [
-        "fnd-screen-01",
-        "fnd-screen-02",
-        "fnd-screen-03",
-        "fnd-screen-04"
-      ],
-      "abbr": "fnd",
-      "shortUrl": "foundrysalon.com",
-      "url": "http://foundrysalon.com"
     },
     {
       "name": "JJ Dolan&rsquo;s",
