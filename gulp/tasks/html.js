@@ -30,8 +30,3 @@ gulp.task('generateProjects', function() {
       .pipe(gulp.dest(paths.dist.html + '/projects'))
   })
 })
-
-gulp.task('rootFiles', function() {
-  gulp.src(paths.base.src + "*")
-    .pipe(gulp.dest(paths.base.dist));
-})
