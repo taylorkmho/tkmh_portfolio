@@ -1,6 +1,20 @@
 {
   "projects": [
     {
+      "name": "Subaru – Symmetry",
+      "niceName": "subaru-symmetry",
+      "type": "website",
+      "description": "An interactive website for car maker, Subaru. Built with a custom scene manager in Javascript and the browser&rsquo;s native video API — including a user timing game featuring animated SVG&rsquo;s!",
+      "imagesList": [
+        "sub-screen-01",
+        "sub-screen-02",
+        "sub-screen-03"
+      ],
+      "abbr": "sub",
+      "shortUrl": "whysubaruawd.com",
+      "url": "http://whysubaruawd.com"
+    },
+    {
       "name": "Foundry Salon",
       "niceName": "foundry-salon",
       "type": "website",
