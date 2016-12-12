@@ -132,6 +132,13 @@ $('a[data-modal="carousel"]').magnificPopup({
         return images;
       }
       // parse elements into modal content
+      function getLink() {
+        if (data.url) {
+          return '<a class="btn btn--filled btn--filled-primary" href="' + data.url + '" target="_blank">View site</a>'
+        } else {
+          return ''
+        }
+      }
       item.src =
         '<div class="showcase">' +
           '<div class="showcase__container">' +
@@ -150,7 +157,7 @@ $('a[data-modal="carousel"]').magnificPopup({
               '<p>' +
                 data.description +
               '</p>' +
-              '<a class="btn btn--filled btn--filled-primary" href="' + data.url + '" target="_blank">View site</a>' +
+              getLink() +
             '</div>' + // showcase__description
           '</div>' + // showcase__container
         '</div>' // showcase

@@ -23,4 +23,5 @@ block content
       .showcase__description
         img(src="/assets/images/svg/logo-#{project.abbr}--dark.svg" alt="#{project.name} logo" title="#{project.name} logo")
         p!= project.description
-        a.btn.btn--filled.btn--filled-primary(href!=project.url target="_blank") View site
+        if (project.url !== null)
+          a.btn.btn--filled.btn--filled-primary(href!=project.url target="_blank") View site

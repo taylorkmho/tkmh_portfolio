@@ -1,6 +1,21 @@
 {
   "projects": [
     {
+      "name": "Made With Unity: The Outsiders",
+      "niceName": "mwu-outsiders",
+      "type": "website",
+      "description": "A website featuring an upcoming game made with the Unity engine. Launched just in time for the Unite 2016 event in Los Angeles.",
+      "imagesList": [
+        "mwu-screen-01",
+        "mwu-screen-02",
+        "mwu-screen-03",
+        "mwu-screen-04"
+      ],
+      "abbr": "mwu",
+      "shortUrl": "madewith.unity.com/theoutsiders",
+      "url": "https://madewith.unity.com/theoutsiders"
+    },
+    {
       "name": "Subaru – Symmetry",
       "niceName": "subaru-symmetry",
       "type": "website",
@@ -12,7 +27,7 @@
       ],
       "abbr": "sub",
       "shortUrl": "whysubaruawd.com",
-      "url": "http://whysubaruawd.com"
+      "url": null
     },
     {
       "name": "Foundry Salon",
@@ -30,6 +45,21 @@
       "url": "http://foundrysalon.com"
     },
     {
+      "name": "JJ Dolan&rsquo;s",
+      "niceName": "jj-dolans",
+      "type": "website",
+      "description": "A website for a compelling pizza kitchen — featuring a progressively loaded, mobile-friendly canvas drawing application at the top of the page. It went on to win a <a href='http://peleawards.com/2016-award-winners/' target='_blank'>AAF Pele Gold</a> in 2016.",
+      "imagesList": [
+        "jjd-screen-01",
+        "jjd-screen-02",
+        "jjd-screen-03",
+        "jjd-screen-04"
+      ],
+      "abbr": "jjd",
+      "shortUrl": "jjdolans.com",
+      "url": "http://jjdolans.com"
+    },
+    {
       "name": "Luma",
       "niceName": "luma",
       "type": "website",
@@ -42,7 +72,7 @@
       ],
       "abbr": "lum",
       "shortUrl": "getluma.com",
-      "url": "http://getluma.com"
+      "url": null
     },
     {
       "name": "Seekout",
@@ -79,21 +109,6 @@
       }]
     },
     {
-      "name": "JJ Dolan&rsquo;s",
-      "niceName": "jj-dolans",
-      "type": "website",
-      "description": "A website for a compelling pizza kitchen — featuring a progressively loaded, mobile-friendly canvas drawing application at the top of the page. It went on to win a <a href='http://peleawards.com/2016-award-winners/' target='_blank'>AAF Pele Gold</a> in 2016.",
-      "imagesList": [
-        "jjd-screen-01",
-        "jjd-screen-02",
-        "jjd-screen-03",
-        "jjd-screen-04"
-      ],
-      "abbr": "jjd",
-      "shortUrl": "jjdolans.com",
-      "url": "http://jjdolans.com"
-    },
-    {
       "name": "Hallowbaloo",
       "niceName": "hallowbaloo",
       "type": "website",
@@ -106,21 +121,7 @@
       ],
       "abbr": "hbl",
       "shortUrl": "hallowbaloo.com",
-      "url": "http://hallowbaloo.com/2015"
-    },
-    {
-      "name": "Surfjack Hotel",
-      "niceName": "surfjack-hotel",
-      "type": "website",
-      "description": "A website for the one of the newest hotels in Waikiki. A fun balance of aesthetic and functionality per template.",
-      "imagesList": [
-        "sjk-screen-01",
-        "sjk-screen-02",
-        "sjk-screen-03"
-      ],
-      "abbr": "sjk",
-      "shortUrl": "surfjack.com",
-      "url": "http://surfjack.com"
+      "url": null
     },
     {
       "name": "Blake Entertainment",
@@ -134,10 +135,14 @@
       ],
       "abbr": "bla",
       "shortUrl": "blakeentertainmenthawaii.com",
-      "url": "http://blakeentertainmenthawaii.com"
+      "url": null
     }
   ],
   "otherProjects": [
+    {
+      "name": "Mobilize.io",
+      "filename": "logo-mob.svg"
+    },
     {
       "name": "Kona Red",
       "filename": "logo-kon.svg"
@@ -213,22 +218,25 @@
   ],
   "skills": [
     {
-      "type": "ENGINEERING",
+      "type": "DEVELOPMENT",
       "list": [
         "Front-end architecture",
         "Rapid prototyping",
         "Semantic mark-up",
         "Data visualization",
         "Progressive enhancement",
-        "Responsive, mobile-first",
-        "Web animation",
+        "Responsive (mobile-first)",
         "Browser-specific quirks",
+        "Performance across devices",
         "Client-side optimization"
       ]
     },
     {
       "type": "DESIGN",
       "list": [
+        "User interface",
+        "Accessibility",
+        "Web animation",
         "Visual design",
         "User experience",
         "Motion graphics"
@@ -237,7 +245,7 @@
   ],
   "tools": [
     {
-      "type": "ENGINEERING",
+      "type": "DEVELOPMENT",
       "list": [
         "Javascript <span>es<span>2015</span>/jquery</span>",
         "NodeJS",

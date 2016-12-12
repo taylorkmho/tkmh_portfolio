@@ -118,7 +118,7 @@
         box-shadow: 0 1px 0 color($c-bg-color--dark a(.2)) inset, 0 8px 32px color(#000 a(.5));
         &:after {
           transition-duration: 150ms;
-          background-color: color($c-bg-color--dark a(.25));
+          background-color: color(#fff a(.1));
         }
       }
       &:active,
