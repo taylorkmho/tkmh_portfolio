@@ -16,9 +16,10 @@ body {
 
 body {
   position: relative;
-  background: $c-primary;
+  background: $c-bg-color--dark;
   color: $c-body-font;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
+  transition: opacity 100ms ease-out;
   h1,
   h2,
   h3,

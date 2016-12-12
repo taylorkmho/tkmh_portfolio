@@ -22,7 +22,7 @@
     "magnific-popup": "^1.1.0",
     "jquery": "^3.0.0",
     "wallop": "^2.2.4",
-    "scrollmagic": "^2.0.5"
+    "waypoints": "^4.0.1"
   },
   "overrides": {
     "jquery": {
@@ -34,11 +34,8 @@
     "wallop": {
       "main": "js/Wallop.min.js"
     },
-    "gsap": {
-      "main": ["src/minified/TweenMax.min.js"]
-    },
-    "scrollmagic": {
-      "main": ["scrollmagic/minified/ScrollMagic.min.js", "scrollmagic/minified/plugins/animation.gsap.min.js"]
+    "waypoints": {
+      "main": "lib/noframework.waypoints.js"
     }
   }
 }

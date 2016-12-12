@@ -34,20 +34,17 @@
   }
 }
 
-@keyframes opacityPulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: .5;
-  }
-}
-
 @keyframes slideDown {
   0% {
     transform: translateY(-100%);
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes bgFrames {
+  100% {
+    background-position: -300% 0;
   }
 }
