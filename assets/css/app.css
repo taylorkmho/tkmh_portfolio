@@ -1771,23 +1771,6 @@ span.strike:after {
   height: 100%;
   width: auto;
 }
-.splash__arrow {
-  position: fixed;
-  bottom: 16px;
-  left: 50%;
-  z-index: 250;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 36px;
-  height: 13px;
-  padding: 12px;
-  background-image: url('../images/svg/icon-arrow-down.svg');
-  background-size: 100% 100%;
-  pointer-events: initial;
-  -webkit-animation: hintDown 2s ease-out infinite;
-          animation: hintDown 2s ease-out infinite;
-}
 @media screen and (min-width: 480px) {
   .splash__container {
     -webkit-justify-content: center;
@@ -1809,6 +1792,23 @@ span.strike:after {
   }
   .splash__title h1 {
     font-size: 4.5rem;
+  }
+  .splash__arrow {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    z-index: 250;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 36px;
+    height: 13px;
+    padding: 12px;
+    background-image: url('../images/svg/icon-arrow-down.svg');
+    background-size: 100% 100%;
+    pointer-events: initial;
+    -webkit-animation: hintDown 2s ease-out infinite;
+            animation: hintDown 2s ease-out infinite;
   }
 }
 .btn {
