@@ -89,6 +89,20 @@
       width: auto;
     }
   }
+  &__arrow {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    z-index: 250;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 13px;
+    padding: 12px;
+    background-image: url('../images/svg/icon-arrow-down.svg');
+    background-size: 100% 100%;
+    pointer-events: initial;
+    animation: hintDown 2s ease-out infinite;
+  }
 }
 
 @media screen and (min-width: $phone-width) {

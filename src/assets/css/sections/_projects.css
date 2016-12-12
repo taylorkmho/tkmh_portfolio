@@ -50,9 +50,6 @@
   .projects {
     padding-top: calc($column-gutter*4);
     padding-bottom: calc($column-gutter*4);
-    &--main {
-      padding-top: 0;
-    }
     &__list {
       position: relative;
       lost-utility: clearfix;

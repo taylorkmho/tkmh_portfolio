@@ -4,9 +4,11 @@ export default class SplashController {
       splash: {
         silhouette: document.querySelector('.splash__silhouette'),
         title: document.querySelector('.splash__title'),
-        bg: document.querySelector('.splash__bg')
+        bg: document.querySelector('.splash__bg'),
+        arrow: document.querySelector('.splash__arrow')
       },
       projects: {
+        container: document.querySelector('.projects--main'),
         title: document.querySelector('.projects--main .section-title'),
         list: document.querySelector('.projects--main .projects__list')
       }
@@ -23,6 +25,8 @@ export default class SplashController {
     this.elements.projects.title.style.opacity = 0
     this.elements.projects.list.style.opacity = 0
 
+    this.elements.splash.arrow.addEventListener('click', this.scrollHandler)
+
     let waypoint = new Waypoint({
       element: this.elements.projects.title,
       handler: (direction) => {
@@ -34,8 +38,14 @@ export default class SplashController {
           this.hideProjectsContent()
         }
       },
-      offset: '75%'
+      offset: '90%'
     })
+
+  }
+  scrollHandler() {
+    setTimeout(()=>{
+      history.pushState("", document.title, window.location.pathname + window.location.search);
+    }, 100)
   }
   hideSplashContent() {
     this.animSettings.delay = 0
@@ -51,6 +61,11 @@ export default class SplashController {
       { opacity: 1, offset: 0 },
       { opacity: 0, offset: 1 }
     ], this.animSettings)
+    this.elements.splash.arrow.animate([
+      { opacity: 1, offset: 0 },
+      { opacity: 0, offset: 1 }
+    ], this.animSettings)
+    this.elements.splash.arrow.style.pointerEvents = 'none'
   }
   showSplashContent() {
     this.animSettings.delay = 0
@@ -66,6 +81,11 @@ export default class SplashController {
       { opacity: 0, offset: 0 },
       { opacity: 1, offset: 1 }
     ], this.animSettings)
+    this.elements.splash.arrow.animate([
+      { opacity: 0, offset: 0 },
+      { opacity: 1, offset: 1 }
+    ], this.animSettings)
+    this.elements.splash.arrow.style.pointerEvents = 'initial'
   }
   showProjectsContent() {
     this.animSettings.delay = 250
