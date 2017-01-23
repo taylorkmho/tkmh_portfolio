@@ -284,6 +284,10 @@ var _carousel = require('./lib/_carousel');
 
 var _carousel2 = _interopRequireDefault(_carousel);
 
+var _projectsScroll = require('./lib/_projects-scroll');
+
+var _projectsScroll2 = _interopRequireDefault(_projectsScroll);
+
 var _videoBg = require('./lib/_video-bg');
 
 var _videoBg2 = _interopRequireDefault(_videoBg);
@@ -379,7 +383,7 @@ var blazy = new Blazy({
 });
 
 /*
-  Scrollmagic - Splash
+  Fade page on unload
 */
 window.onbeforeunload = function () {
   $('body').css('opacity', 0);
@@ -488,7 +492,16 @@ function widthUpdateHandler(mq) {
   }
 }
 
-},{"./lib/_carousel":4,"./lib/_helpers":5,"./lib/_splash-controller":6,"./lib/_video-bg":7,"blazy":1,"fontfaceobserver":2}],4:[function(require,module,exports){
+/*
+  Projects horizontal scroll
+  - for mobile (<480px)
+*/
+
+if (document.querySelector('.projects--main')) {
+  var scrollMainProjects = new _projectsScroll2.default('.projects--main');
+}
+
+},{"./lib/_carousel":4,"./lib/_helpers":5,"./lib/_projects-scroll":6,"./lib/_splash-controller":7,"./lib/_video-bg":8,"blazy":1,"fontfaceobserver":2}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -614,6 +627,90 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var ProjectsScroll = function () {
+  function ProjectsScroll(selector) {
+    _classCallCheck(this, ProjectsScroll);
+
+    this.selector = selector;
+    this.el = document.querySelector(selector);
+    this.mq = matchMedia ? window.matchMedia('(max-width: 479px)') : null;
+    this.list = this.el.querySelector('[class*="list"]');
+    this.projects = this.el.querySelectorAll('.project');
+    this.gutter = '32px';
+
+    if (this.el !== null && this.mq) {
+      this.mq.addListener(this.resizeHandler.bind(this));
+      this.resizeHandler();
+    }
+  }
+
+  _createClass(ProjectsScroll, [{
+    key: 'resizeHandler',
+    value: function resizeHandler() {
+      if (this.mq.matches) {
+        this.buildContainer();
+      } else if (this.container !== undefined) {
+        console.log(this.container);
+        this.destroyContainer();
+      }
+    }
+  }, {
+    key: 'buildContainer',
+    value: function buildContainer() {
+      this.container = document.createElement('div');
+
+      var tempContainer = document.createDocumentFragment(),
+          count = this.projects.length,
+          el = this.projects[0],
+          width = el.getBoundingClientRect().width + parseInt(window.getComputedStyle(el)['margin-right']);
+
+      // add projects to fragment
+      while (this.list.childNodes.length > 0) {
+        tempContainer.appendChild(this.list.childNodes[0]);
+      }
+
+      // add container to list
+      this.list.appendChild(this.container);
+
+      // append fragment to container
+      this.container.appendChild(tempContainer);
+
+      // apply styles
+      this.list.style.overflow = 'scroll';
+      this.list.style.paddingLeft = this.gutter;
+      this.list.style.width = 'calc(100% + 2 * ' + this.gutter + ')';
+      this.list.style.position = 'relative';
+      this.list.style.left = '-' + this.gutter;
+      this.container.style.width = count * width + 'px';
+    }
+  }, {
+    key: 'destroyContainer',
+    value: function destroyContainer() {
+      this.list.style.overflow = 'initial';
+      this.list.style.paddingLeft = 'initial';
+      this.list.style.width = 'initial';
+      this.list.style.position = 'initial';
+      this.list.style.left = 'initial';
+      this.container.style.width = 'auto';
+    }
+  }]);
+
+  return ProjectsScroll;
+}();
+
+exports.default = ProjectsScroll;
+
+},{}],7:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 var SplashController = function () {
   function SplashController(animSettings) {
     var _this = this;
@@ -711,7 +808,7 @@ var SplashController = function () {
 
 exports.default = SplashController;
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
