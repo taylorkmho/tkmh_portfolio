@@ -1,7 +1,8 @@
 'use strict'
 
-import { addClass, removeClass, hasClass, timer } from "./lib/_helpers"
+import { addClass, removeClass, hasClass, timer } from './lib/_helpers'
 import Carousel from './lib/_carousel'
+import ProjectsScroll from './lib/_projects-scroll'
 import VideoBG from './lib/_video-bg'
 import SplashController from './lib/_splash-controller'
 let Blazy              = require('blazy')
@@ -88,7 +89,7 @@ let blazy = new Blazy({
 });
 
 /*
-  Scrollmagic - Splash
+  Fade page on unload
 */
 window.onbeforeunload = () => {
   $('body').css('opacity', 0)
@@ -211,4 +212,13 @@ function widthUpdateHandler(mq) {
   } else {
     $('.splash').css('height', '')
   }
+}
+
+/*
+  Projects horizontal scroll
+  - for mobile (<480px)
+*/
+
+if (document.querySelector('.projects--main')) {
+  let scrollMainProjects = new ProjectsScroll('.projects--main')
 }

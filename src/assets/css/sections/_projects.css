@@ -1,6 +1,7 @@
 .projects {
   padding: calc($column-gutter*2) $column-gutter;
-  overflow: hidden;
+  /* overflow: hidden; */
+  color: $c-body-font--light;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   &__container {
@@ -24,15 +25,6 @@
       height: 100%;
       width: auto;
       max-width: 12rem;
-    }
-  }
-  &--main {
-    color: $c-body-font--light;
-  }
-  &--snippets {
-    background-color: $c-bg-color--light;
-    .projects__container {
-      lost-center: $row-width;
     }
   }
 }
@@ -67,25 +59,25 @@
 }
 
 .project {
-  margin-bottom: $column-gutter;
-  &:last-of-type {
-    margin-bottom: 0;
-  }
+  position: relative;
+  display: inline-block;
+  margin-right: $column-gutter;
+
   &__image {
     display: block;
     position: relative;
+    width: 180px;
+    height: 120px;
     padding: calc($column-gutter/2) $column-gutter;
+    padding-bottom: 66%;
     background-color: $c-primary;
     background-size: cover;
     background-position: center center;
+    background-blend-mode: hard-light;
+    box-shadow: 0 1px 0 color($c-bg-color--dark a(.2)) inset, 0 8px 16px color(#000 a(.5));
     transition: box-shadow 150ms ease-out;
     outline: none;
-    height: 0;
-    &,
-    &:after {
-      border-radius: 4px;
-      overflow: hidden;
-    }
+
     &:after {
       content: "";
       position: absolute;
@@ -94,8 +86,24 @@
       z-index: 220;
       width: 100%;
       height: 100%;
-      background-color: $c-bg-color--dark;
-      transition: background 750ms ease-out;
+      background-color: color($c-primary a(0));
+      pointer-events: none;
+      transition: background 250ms ease-out;
+    }
+    &,
+    &:after {
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    &:hover {
+      box-shadow: 0 1px 0 color($c-bg-color--dark a(.2)) inset, 0 8px 32px color(#000 a(.5));
+      &:after {
+        background-color: color($c-primary a(.25));
+      }
+    }
+    &:active:after,
+    &:focus:after {
+      background-color: color($c-bg-color--dark a(.5));
     }
     img {
       position: absolute;
@@ -107,48 +115,6 @@
       max-height: 4rem;
       max-width: 100%;
     }
-    .projects--main & {
-      padding-bottom: 66%;
-      background-blend-mode: hard-light;
-      box-shadow: 0 1px 0 color($c-bg-color--dark a(.2)) inset, 0 8px 16px color(#000 a(.5));
-      &:hover {
-        box-shadow: 0 1px 0 color($c-bg-color--dark a(.2)) inset, 0 8px 32px color(#000 a(.5));
-        &:after {
-          transition-duration: 150ms;
-          background-color: color(#fff a(.1));
-        }
-      }
-      &:active,
-      &:focus {
-        &:after {
-          transition-duration: 150ms;
-          background-color: color($c-bg-color--dark a(.5));
-        }
-      }
-    }
-    .projects--snippets & {
-      padding-bottom: 50%;
-      box-shadow: 0 1px 0 color(#fff a(.5)) inset, 0 8px 16px color(#000 a(.25));
-      &:hover {
-        box-shadow: 0 1px 0 color(#fff a(.5)) inset, 0 8px 24px color(#000 a(.35));
-        &:after {
-          transition-duration: 150ms;
-          background-color: color(#fff a(.125));
-        }
-      }
-      &:active,
-      &:focus {
-        &:after {
-          transition-duration: 150ms;
-          background-color: color(#fff a(.25));
-        }
-      }
-    }
-    &.lazyloaded {
-      &:after {
-        background-color: color($c-bg-color--dark a(0));
-      }
-    }
     .no-js & {
       display: none;
     }
@@ -156,18 +122,13 @@
   &__title {
     margin: calc($column-gutter/4) 0 0;
     h2 {
+      font-size: 1.15rem;
       margin: 0;
       span {
         font-weight: 200;
         font-size: .85rem;
         color: $c-body-font--light-secondary;
         margin-left: calc($column-gutter/4);
-      }
-      .projects--main & {
-        font-size: 1.15rem;
-      }
-      .projects--snippets & {
-        font-size: .9rem;
       }
     }
     .no-js & {
@@ -213,25 +174,31 @@
 
 @media screen and (min-width: $phone-width) {
   .project {
+    display: block;
+    margin-right: 0;
     margin-bottom: $column-gutter;
     lost-column: 1/2 2;
+    &:nth-last-of-type(-n+2) {
+      margin-bottom: 0;
+    }
+    &__image {
+      display: block;
+      width: 100%;
+      height: 0;
+      padding-bottom: 50%;
+    }
   }
 }
 
 @media screen and (min-width: $mobile-width) {
   .project {
     margin-bottom: $column-gutter;
-    .projects--main & {
-      lost-column: 1/3 3;
-    }
-    .projects--snippets & {
-      lost-column: 1/4 4;
-    }
+    lost-column: 1/3 3;
     &:nth-last-of-type(-n+3) {
       margin-bottom: 0;
     }
     &__image {
-      padding: $column-gutter;
+      padding-bottom: 66%;
     }
     &__title {
       /* margin-top: calc($column-gutter/2); */
