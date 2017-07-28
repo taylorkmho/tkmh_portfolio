@@ -8,11 +8,6 @@
   &__copyright {
     padding: 0 $column-gutter $column-gutter;
   }
-  [data-template="home"] & {
-    background-color: $c-bg-color--light;
-    position: relative;
-    z-index: 300;
-  }
 }
 
 
@@ -37,26 +32,28 @@
 .contact {
   position: relative;
   z-index: 300;
-  background-color: $c-bg-color--light;
-  color: $c-body-font;
+  background-color: $c-primary;
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  &__bg {
-    position: absolute;
-    top: -10%;
-    left: 0;
-    z-index: 300;
-    width: 100%;
-    height: 120%;
-    background-image: url('../images/bg-ocean.jpg');
-    background-position: center center;
-    background-size: cover;
-  }
   &__container {
     lost-center: $row-width;
     position: relative;
     z-index: 310;
+  }
+  &__bg {
+    [data-template="home"] & {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 300;
+      width: 100%;
+      height: 100%;
+      background-attachment: fixed;
+      background-size: auto 100%;
+      animation: bgFrames 800ms steps(8) infinite;
+      background-image: url('/assets/images/bg-vignette.jpg');
+    }
   }
   &__title {
     margin: 0 0 calc($column-gutter/4);
@@ -74,13 +71,6 @@
   }
   [data-template="about"] & {
     background-color: color(#000 a(.5));
-    color: $c-body-font--light;
-    .contact__bg {
-      display: none;
-    }
-    .contact__link {
-      /* color: $c-primary; */
-    }
   }
 }
 
@@ -168,10 +158,11 @@
 .copyright {
   position: relative;
   z-index: 300;
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
   padding-top: 0;
   p {
     margin: 0;
+    color: #fff;
   }
 }
