@@ -88,14 +88,14 @@ export default class SplashController {
     this.elements.splash.arrow.style.pointerEvents = 'initial'
   }
   showProjectsContent() {
-    this.animSettings.delay = 250
+    this.animSettings.delay = 100
     this.elements.projects.title.animate([
-      {  transform: 'translateY(40px)', opacity: 0, offset: 0 },
+      {  transform: 'translateY(0px)', opacity: .5, offset: 0 },
       {  transform: 'translateY(0px)', opacity: 1, offset: 1 }
     ], this.animSettings)
-    this.animSettings.delay = 500
+    this.animSettings.delay = 300
     this.elements.projects.list.animate([
-      {  transform: 'translateY(40px)', opacity: 0, offset: 0 },
+      {  transform: 'translateY(0px)', opacity: 0, offset: 0 },
       {  transform: 'translateY(0px)', opacity: 1, offset: 1 }
     ], this.animSettings)
   }
