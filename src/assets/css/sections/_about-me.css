@@ -9,12 +9,19 @@
     font-weight: 500;
     margin-top: 0;
   }
+  &__headline {
+    position: relative;
+    font-size: 1.5rem;
+    p {
+      font-size: inherit !important;
+    }
+    img {
+      display: none;
+    }
+  }
   p {
     font-size: 1.15rem;
     font-weight: 300;
-    &:first-of-type {
-      font-size: 1.5rem;
-    }
     strong {
       font-weight: 500;
     }
@@ -47,11 +54,32 @@
     &__title {
       font-size: 3rem;
     }
+    &__headline {
+      font-size: 2rem;
+      img {
+        position: absolute;
+        height: auto;
+        right: 0;
+        top: 50%;
+        z-index: 11;
+        display: block;
+        height: 200%;
+        width: auto;
+        transform: translate(0, -50%);
+        opacity: 0;
+        transition: opacity 1s ease-out 500ms;
+        .fonts-loaded & {
+          opacity: 1;
+        }
+      }
+      p {
+        position: relative;
+        z-index: 12;
+        padding-right: 12.5%;
+      }
+    }
     p {
       font-size: 1.5rem;
-      &:first-of-type {
-        font-size: 2rem;
-      }
     }
   }
 }
@@ -61,11 +89,14 @@
     &__title {
       font-size: 4rem;
     }
+    &__headline {
+      font-size: 2.5rem;
+      img {
+        transform: translate(25%, -50%);
+      }
+    }
     p {
       font-size: 1.75rem;
-      &:first-of-type {
-        font-size: 2.5rem;
-      }
     }
   }
 }
