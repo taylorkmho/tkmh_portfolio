@@ -1,6 +1,6 @@
 .about-me {
   padding: 0 $column-gutter;
-  margin: calc($column-gutter*2) 0;
+  margin: calc($column-gutter*2) 0 calc($column-gutter*4);
   line-height: 2;
   &__container {
     lost-center: $row-width;
@@ -25,11 +25,12 @@
     strong {
       font-weight: 500;
     }
-  }
-  a {
-    text-decoration: none;
-    &:hover {
-      color: color($c-primary tint(20%) saturation(100%));
+
+    > a {
+      text-decoration: none;
+      &:hover {
+        color: color($c-primary tint(20%) saturation(100%));
+      }
     }
   }
   #aloha-shake {
