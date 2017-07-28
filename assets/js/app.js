@@ -1,6 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /*!
-  hey, [be]Lazy.js - v1.5.4 - 2016.03.06
+  hey, [be]Lazy.js - v1.8.2 - 2016.10.25
   A fast, small and dependency free lazy load script (https://github.com/dinbror/blazy)
   (c) Bjoern Klinggaard - @bklinggaard - http://dinbror.dk/blazy
 */
@@ -22,7 +22,7 @@
     'use strict';
 
     //private vars
-    var source, viewport, isRetina;
+    var _source, _viewport, _isRetina, _supportClosest, _attrSrc = 'src', _attrSrcset = 'srcset';
 
     // constructor
     return function Blazy(options) {
@@ -48,31 +48,35 @@
         scope.options = options || {};
         scope.options.error = scope.options.error || false;
         scope.options.offset = scope.options.offset || 100;
+        scope.options.root = scope.options.root || document;
         scope.options.success = scope.options.success || false;
         scope.options.selector = scope.options.selector || '.b-lazy';
         scope.options.separator = scope.options.separator || '|';
-        scope.options.container = scope.options.container ? document.querySelectorAll(scope.options.container) : false;
+        scope.options.containerClass = scope.options.container;
+        scope.options.container = scope.options.containerClass ? document.querySelectorAll(scope.options.containerClass) : false;
         scope.options.errorClass = scope.options.errorClass || 'b-error';
         scope.options.breakpoints = scope.options.breakpoints || false;
         scope.options.loadInvisible = scope.options.loadInvisible || false;
         scope.options.successClass = scope.options.successClass || 'b-loaded';
         scope.options.validateDelay = scope.options.validateDelay || 25;
         scope.options.saveViewportOffsetDelay = scope.options.saveViewportOffsetDelay || 50;
-        scope.options.src = source = scope.options.src || 'data-src';
-        isRetina = window.devicePixelRatio > 1;
-        viewport = {};
-        viewport.top = 0 - scope.options.offset;
-        viewport.left = 0 - scope.options.offset;
+        scope.options.srcset = scope.options.srcset || 'data-srcset';
+        scope.options.src = _source = scope.options.src || 'data-src';
+        _supportClosest = Element.prototype.closest;
+        _isRetina = window.devicePixelRatio > 1;
+        _viewport = {};
+        _viewport.top = 0 - scope.options.offset;
+        _viewport.left = 0 - scope.options.offset;
 
 
         /* public functions
          ************************************/
         scope.revalidate = function() {
-            initialize(this);
+            initialize(scope);
         };
         scope.load = function(elements, force) {
             var opt = this.options;
-            if (elements.length === undefined) {
+            if (elements && elements.length === undefined) {
                 loadElement(elements, force, opt);
             } else {
                 each(elements, function(element) {
@@ -80,11 +84,10 @@
                 });
             }
         };
-        scope.destroy = function() {
-            var self = this;
-            var util = self._util;
-            if (self.options.container) {
-                each(self.options.container, function(object) {
+        scope.destroy = function() {            
+            var util = scope._util;
+            if (scope.options.container) {
+                each(scope.options.container, function(object) {
                     unbindEvent(object, 'scroll', util.validateT);
                 });
             }
@@ -105,49 +108,50 @@
         }, scope.options.saveViewportOffsetDelay, scope);
         saveViewportOffset(scope.options.offset);
 
-        //handle multi-served image src
+        //handle multi-served image src (obsolete)
         each(scope.options.breakpoints, function(object) {
             if (object.width >= window.screen.width) {
-                source = object.src;
+                _source = object.src;
                 return false;
             }
         });
 
         // start lazy load
-        initialize(scope);
+        setTimeout(function() {
+            initialize(scope);
+        }); // "dom ready" fix
+
     };
 
 
     /* Private helper functions
      ************************************/
     function initialize(self) {
-        setTimeout(function() {
-            var util = self._util;
-            // First we create an array of elements to lazy load
-            util.elements = toArray(self.options.selector);
-            util.count = util.elements.length;
-            // Then we bind resize and scroll events if not already binded
-            if (util.destroyed) {
-                util.destroyed = false;
-                if (self.options.container) {
-                    each(self.options.container, function(object) {
-                        bindEvent(object, 'scroll', util.validateT);
-                    });
-                }
-                bindEvent(window, 'resize', util.saveViewportOffsetT);
-                bindEvent(window, 'resize', util.validateT);
-                bindEvent(window, 'scroll', util.validateT);
+        var util = self._util;
+        // First we create an array of elements to lazy load
+        util.elements = toArray(self.options);
+        util.count = util.elements.length;
+        // Then we bind resize and scroll events if not already binded
+        if (util.destroyed) {
+            util.destroyed = false;
+            if (self.options.container) {
+                each(self.options.container, function(object) {
+                    bindEvent(object, 'scroll', util.validateT);
+                });
             }
-            // And finally, we start to lazy load.
-            validate(self);
-        }, 1); // "dom ready" fix
+            bindEvent(window, 'resize', util.saveViewportOffsetT);
+            bindEvent(window, 'resize', util.validateT);
+            bindEvent(window, 'scroll', util.validateT);
+        }
+        // And finally, we start to lazy load.
+        validate(self);
     }
 
     function validate(self) {
         var util = self._util;
         for (var i = 0; i < util.count; i++) {
             var element = util.elements[i];
-            if (elementInView(element) || hasClass(element, self.options.successClass)) {
+            if (elementInView(element, self.options) || hasClass(element, self.options.successClass)) {
                 self.load(element);
                 util.elements.splice(i, 1);
                 util.count--;
@@ -159,43 +163,109 @@
         }
     }
 
-    function elementInView(ele) {
+    function elementInView(ele, options) {
         var rect = ele.getBoundingClientRect();
-        return (
-            // Intersection
-            rect.right >= viewport.left && rect.bottom >= viewport.top && rect.left <= viewport.right && rect.top <= viewport.bottom
-        );
+
+        if(options.container && _supportClosest){
+            // Is element inside a container?
+            var elementContainer = ele.closest(options.containerClass);
+            if(elementContainer){
+                var containerRect = elementContainer.getBoundingClientRect();
+                // Is container in view?
+                if(inView(containerRect, _viewport)){
+                    var top = containerRect.top - options.offset;
+                    var right = containerRect.right + options.offset;
+                    var bottom = containerRect.bottom + options.offset;
+                    var left = containerRect.left - options.offset;
+                    var containerRectWithOffset = {
+                        top: top > _viewport.top ? top : _viewport.top,
+                        right: right < _viewport.right ? right : _viewport.right,
+                        bottom: bottom < _viewport.bottom ? bottom : _viewport.bottom,
+                        left: left > _viewport.left ? left : _viewport.left
+                    };
+                    // Is element in view of container?
+                    return inView(rect, containerRectWithOffset);
+                } else {
+                    return false;
+                }
+            }
+        }      
+        return inView(rect, _viewport);
+    }
+
+    function inView(rect, viewport){
+        // Intersection
+        return rect.right >= viewport.left &&
+               rect.bottom >= viewport.top && 
+               rect.left <= viewport.right && 
+               rect.top <= viewport.bottom;
     }
 
     function loadElement(ele, force, options) {
         // if element is visible, not loaded or forced
         if (!hasClass(ele, options.successClass) && (force || options.loadInvisible || (ele.offsetWidth > 0 && ele.offsetHeight > 0))) {
-            var dataSrc = ele.getAttribute(source) || ele.getAttribute(options.src); // fallback to default 'data-src'
+            var dataSrc = getAttr(ele, _source) || getAttr(ele, options.src); // fallback to default 'data-src'
             if (dataSrc) {
                 var dataSrcSplitted = dataSrc.split(options.separator);
-                var src = dataSrcSplitted[isRetina && dataSrcSplitted.length > 1 ? 1 : 0];
-                var isImage = ele.nodeName.toLowerCase() === 'img';
+                var src = dataSrcSplitted[_isRetina && dataSrcSplitted.length > 1 ? 1 : 0];
+                var srcset = getAttr(ele, options.srcset);
+                var isImage = equal(ele, 'img');
+                var parent = ele.parentNode;
+                var isPicture = parent && equal(parent, 'picture');
                 // Image or background image
                 if (isImage || ele.src === undefined) {
                     var img = new Image();
-                    img.onerror = function() {
+                    // using EventListener instead of onerror and onload
+                    // due to bug introduced in chrome v50 
+                    // (https://productforums.google.com/forum/#!topic/chrome/p51Lk7vnP2o)
+                    var onErrorHandler = function() {
                         if (options.error) options.error(ele, "invalid");
                         addClass(ele, options.errorClass);
+                        unbindEvent(img, 'error', onErrorHandler);
+                        unbindEvent(img, 'load', onLoadHandler);
                     };
-                    img.onload = function() {
-                        // Is element an image or should we add the src as a background image?
-                        isImage ? ele.src = src : ele.style.backgroundImage = 'url("' + src + '")';
+                    var onLoadHandler = function() {
+                        // Is element an image
+                        if (isImage) {
+                            if(!isPicture) {
+                                handleSources(ele, src, srcset);
+                            }
+                        // or background-image
+                        } else {
+                            ele.style.backgroundImage = 'url("' + src + '")';
+                        }
                         itemLoaded(ele, options);
+                        unbindEvent(img, 'load', onLoadHandler);
+                        unbindEvent(img, 'error', onErrorHandler);
                     };
-                    img.src = src; //preload
-                    // An item with src like iframe, unity, video etc
-                } else {
+                    
+                    // Picture element
+                    if (isPicture) {
+                        img = ele; // Image tag inside picture element wont get preloaded
+                        each(parent.getElementsByTagName('source'), function(source) {
+                            handleSource(source, _attrSrcset, options.srcset);
+                        });
+                    }
+                    bindEvent(img, 'error', onErrorHandler);
+                    bindEvent(img, 'load', onLoadHandler);
+                    handleSources(img, src, srcset); // Preload
+
+                } else { // An item with src like iframe, unity games, simpel video etc
                     ele.src = src;
                     itemLoaded(ele, options);
                 }
             } else {
-                if (options.error) options.error(ele, "missing");
-                if (!hasClass(ele, options.errorClass)) addClass(ele, options.errorClass);
+                // video with child source
+                if (equal(ele, 'video')) {
+                    each(ele.getElementsByTagName('source'), function(source) {
+                        handleSource(source, _attrSrc, options.src);
+                    });
+                    ele.load();
+                    itemLoaded(ele, options);
+                } else {
+                    if (options.error) options.error(ele, "missing");
+                    addClass(ele, options.errorClass);
+                }
             }
         }
     }
@@ -204,10 +274,42 @@
         addClass(ele, options.successClass);
         if (options.success) options.success(ele);
         // cleanup markup, remove data source attributes
+        removeAttr(ele, options.src);
+        removeAttr(ele, options.srcset);
         each(options.breakpoints, function(object) {
-            ele.removeAttribute(object.src);
+            removeAttr(ele, object.src);
         });
-        ele.removeAttribute(options.src);
+    }
+
+    function handleSource(ele, attr, dataAttr) {
+        var dataSrc = getAttr(ele, dataAttr);
+        if (dataSrc) {
+            setAttr(ele, attr, dataSrc);
+            removeAttr(ele, dataAttr);
+        }
+    }
+
+    function handleSources(ele, src, srcset){
+        if(srcset) {
+            setAttr(ele, _attrSrcset, srcset); //srcset
+        }
+        ele.src = src; //src 
+    }
+
+    function setAttr(ele, attr, value){
+        ele.setAttribute(attr, value);
+    }
+
+    function getAttr(ele, attr) {
+        return ele.getAttribute(attr);
+    }
+
+    function removeAttr(ele, attr){
+        ele.removeAttribute(attr); 
+    }
+
+    function equal(ele, str) {
+        return ele.nodeName.toLowerCase() === str;
     }
 
     function hasClass(ele, className) {
@@ -215,26 +317,28 @@
     }
 
     function addClass(ele, className) {
-        ele.className = ele.className + ' ' + className;
+        if (!hasClass(ele, className)) {
+            ele.className += ' ' + className;
+        }
     }
 
-    function toArray(selector) {
+    function toArray(options) {
         var array = [];
-        var nodelist = document.querySelectorAll(selector);
+        var nodelist = (options.root).querySelectorAll(options.selector);
         for (var i = nodelist.length; i--; array.unshift(nodelist[i])) {}
         return array;
     }
 
     function saveViewportOffset(offset) {
-        viewport.bottom = (window.innerHeight || document.documentElement.clientHeight) + offset;
-        viewport.right = (window.innerWidth || document.documentElement.clientWidth) + offset;
+        _viewport.bottom = (window.innerHeight || document.documentElement.clientHeight) + offset;
+        _viewport.right = (window.innerWidth || document.documentElement.clientWidth) + offset;
     }
 
     function bindEvent(ele, type, fn) {
         if (ele.attachEvent) {
             ele.attachEvent && ele.attachEvent('on' + type, fn);
         } else {
-            ele.addEventListener(type, fn, false);
+            ele.addEventListener(type, fn, { capture: false, passive: true });
         }
     }
 
@@ -242,7 +346,7 @@
         if (ele.detachEvent) {
             ele.detachEvent && ele.detachEvent('on' + type, fn);
         } else {
-            ele.removeEventListener(type, fn, false);
+            ele.removeEventListener(type, fn, { capture: false, passive: true });
         }
     }
 
@@ -267,13 +371,14 @@
 });
 
 },{}],2:[function(require,module,exports){
-(function(){function l(a,b){document.addEventListener?a.addEventListener("scroll",b,!1):a.attachEvent("scroll",b)}function m(a){document.body?a():document.addEventListener?document.addEventListener("DOMContentLoaded",function c(){document.removeEventListener("DOMContentLoaded",c);a()}):document.attachEvent("onreadystatechange",function k(){if("interactive"==document.readyState||"complete"==document.readyState)document.detachEvent("onreadystatechange",k),a()})};function q(a){this.a=document.createElement("div");this.a.setAttribute("aria-hidden","true");this.a.appendChild(document.createTextNode(a));this.b=document.createElement("span");this.c=document.createElement("span");this.h=document.createElement("span");this.f=document.createElement("span");this.g=-1;this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
+/* Font Face Observer v2.0.13 - © Bram Stein. License: BSD-3-Clause */(function(){function l(a,b){document.addEventListener?a.addEventListener("scroll",b,!1):a.attachEvent("scroll",b)}function m(a){document.body?a():document.addEventListener?document.addEventListener("DOMContentLoaded",function c(){document.removeEventListener("DOMContentLoaded",c);a()}):document.attachEvent("onreadystatechange",function k(){if("interactive"==document.readyState||"complete"==document.readyState)document.detachEvent("onreadystatechange",k),a()})};function r(a){this.a=document.createElement("div");this.a.setAttribute("aria-hidden","true");this.a.appendChild(document.createTextNode(a));this.b=document.createElement("span");this.c=document.createElement("span");this.h=document.createElement("span");this.f=document.createElement("span");this.g=-1;this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
 this.f.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.h.style.cssText="display:inline-block;width:200%;height:200%;font-size:16px;max-width:none;";this.b.appendChild(this.h);this.c.appendChild(this.f);this.a.appendChild(this.b);this.a.appendChild(this.c)}
-function w(a,b){a.a.style.cssText="max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;left:-999px;white-space:nowrap;font:"+b+";"}function x(a){var b=a.a.offsetWidth,c=b+100;a.f.style.width=c+"px";a.c.scrollLeft=c;a.b.scrollLeft=a.b.scrollWidth+100;return a.g!==b?(a.g=b,!0):!1}function z(a,b){function c(){var a=k;x(a)&&null!==a.a.parentNode&&b(a.g)}var k=a;l(a.b,c);l(a.c,c);x(a)};function A(a,b){var c=b||{};this.family=a;this.style=c.style||"normal";this.weight=c.weight||"normal";this.stretch=c.stretch||"normal"}var B=null,C=null,D=null;function H(){if(null===C){var a=document.createElement("div");try{a.style.font="condensed 100px sans-serif"}catch(b){}C=""!==a.style.font}return C}function I(a,b){return[a.style,a.weight,H()?a.stretch:"","100px",b].join(" ")}
-A.prototype.load=function(a,b){var c=this,k=a||"BESbswy",y=b||3E3,E=(new Date).getTime();return new Promise(function(a,b){null===D&&(D=!!window.FontFace);if(D){var J=new Promise(function(a,b){function e(){(new Date).getTime()-E>=y?b():document.fonts.load(I(c,c.family),k).then(function(c){1<=c.length?a():setTimeout(e,25)},function(){b()})}e()}),K=new Promise(function(a,c){setTimeout(c,y)});Promise.race([K,J]).then(function(){a(c)},function(){b(c)})}else m(function(){function r(){var b;if(b=-1!=f&&
--1!=g||-1!=f&&-1!=h||-1!=g&&-1!=h)(b=f!=g&&f!=h&&g!=h)||(null===B&&(b=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(window.navigator.userAgent),B=!!b&&(536>parseInt(b[1],10)||536===parseInt(b[1],10)&&11>=parseInt(b[2],10))),b=B&&(f==t&&g==t&&h==t||f==u&&g==u&&h==u||f==v&&g==v&&h==v)),b=!b;b&&(null!==d.parentNode&&d.parentNode.removeChild(d),clearTimeout(G),a(c))}function F(){if((new Date).getTime()-E>=y)null!==d.parentNode&&d.parentNode.removeChild(d),b(c);else{var a=document.hidden;if(!0===a||void 0===
-a)f=e.a.offsetWidth,g=n.a.offsetWidth,h=p.a.offsetWidth,r();G=setTimeout(F,50)}}var e=new q(k),n=new q(k),p=new q(k),f=-1,g=-1,h=-1,t=-1,u=-1,v=-1,d=document.createElement("div"),G=0;d.dir="ltr";w(e,I(c,"sans-serif"));w(n,I(c,"serif"));w(p,I(c,"monospace"));d.appendChild(e.a);d.appendChild(n.a);d.appendChild(p.a);document.body.appendChild(d);t=e.a.offsetWidth;u=n.a.offsetWidth;v=p.a.offsetWidth;F();z(e,function(a){f=a;r()});w(e,I(c,'"'+c.family+'",sans-serif'));z(n,function(a){g=a;r()});w(n,I(c,'"'+
-c.family+'",serif'));z(p,function(a){h=a;r()});w(p,I(c,'"'+c.family+'",monospace'))})})};"undefined"!==typeof module?module.exports=A:(window.FontFaceObserver=A,window.FontFaceObserver.prototype.load=A.prototype.load);}());
+function t(a,b){a.a.style.cssText="max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;white-space:nowrap;font-synthesis:none;font:"+b+";"}function y(a){var b=a.a.offsetWidth,c=b+100;a.f.style.width=c+"px";a.c.scrollLeft=c;a.b.scrollLeft=a.b.scrollWidth+100;return a.g!==b?(a.g=b,!0):!1}function z(a,b){function c(){var a=k;y(a)&&a.a.parentNode&&b(a.g)}var k=a;l(a.b,c);l(a.c,c);y(a)};function A(a,b){var c=b||{};this.family=a;this.style=c.style||"normal";this.weight=c.weight||"normal";this.stretch=c.stretch||"normal"}var B=null,C=null,E=null,F=null;function G(){if(null===C)if(J()&&/Apple/.test(window.navigator.vendor)){var a=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/.exec(window.navigator.userAgent);C=!!a&&603>parseInt(a[1],10)}else C=!1;return C}function J(){null===F&&(F=!!document.fonts);return F}
+function K(){if(null===E){var a=document.createElement("div");try{a.style.font="condensed 100px sans-serif"}catch(b){}E=""!==a.style.font}return E}function L(a,b){return[a.style,a.weight,K()?a.stretch:"","100px",b].join(" ")}
+A.prototype.load=function(a,b){var c=this,k=a||"BESbswy",q=0,D=b||3E3,H=(new Date).getTime();return new Promise(function(a,b){if(J()&&!G()){var M=new Promise(function(a,b){function e(){(new Date).getTime()-H>=D?b():document.fonts.load(L(c,'"'+c.family+'"'),k).then(function(c){1<=c.length?a():setTimeout(e,25)},function(){b()})}e()}),N=new Promise(function(a,c){q=setTimeout(c,D)});Promise.race([N,M]).then(function(){clearTimeout(q);a(c)},function(){b(c)})}else m(function(){function u(){var b;if(b=-1!=
+f&&-1!=g||-1!=f&&-1!=h||-1!=g&&-1!=h)(b=f!=g&&f!=h&&g!=h)||(null===B&&(b=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(window.navigator.userAgent),B=!!b&&(536>parseInt(b[1],10)||536===parseInt(b[1],10)&&11>=parseInt(b[2],10))),b=B&&(f==v&&g==v&&h==v||f==w&&g==w&&h==w||f==x&&g==x&&h==x)),b=!b;b&&(d.parentNode&&d.parentNode.removeChild(d),clearTimeout(q),a(c))}function I(){if((new Date).getTime()-H>=D)d.parentNode&&d.parentNode.removeChild(d),b(c);else{var a=document.hidden;if(!0===a||void 0===a)f=e.a.offsetWidth,
+g=n.a.offsetWidth,h=p.a.offsetWidth,u();q=setTimeout(I,50)}}var e=new r(k),n=new r(k),p=new r(k),f=-1,g=-1,h=-1,v=-1,w=-1,x=-1,d=document.createElement("div");d.dir="ltr";t(e,L(c,"sans-serif"));t(n,L(c,"serif"));t(p,L(c,"monospace"));d.appendChild(e.a);d.appendChild(n.a);d.appendChild(p.a);document.body.appendChild(d);v=e.a.offsetWidth;w=n.a.offsetWidth;x=p.a.offsetWidth;I();z(e,function(a){f=a;u()});t(e,L(c,'"'+c.family+'",sans-serif'));z(n,function(a){g=a;u()});t(n,L(c,'"'+c.family+'",serif'));
+z(p,function(a){h=a;u()});t(p,L(c,'"'+c.family+'",monospace'))})})};"object"===typeof module?module.exports=A:(window.FontFaceObserver=A,window.FontFaceObserver.prototype.load=A.prototype.load);}());
 
 },{}],3:[function(require,module,exports){
 'use strict';
@@ -789,10 +894,10 @@ var SplashController = function () {
   }, {
     key: 'showProjectsContent',
     value: function showProjectsContent() {
-      this.animSettings.delay = 250;
-      this.elements.projects.title.animate([{ transform: 'translateY(40px)', opacity: 0, offset: 0 }, { transform: 'translateY(0px)', opacity: 1, offset: 1 }], this.animSettings);
-      this.animSettings.delay = 500;
-      this.elements.projects.list.animate([{ transform: 'translateY(40px)', opacity: 0, offset: 0 }, { transform: 'translateY(0px)', opacity: 1, offset: 1 }], this.animSettings);
+      this.animSettings.delay = 100;
+      this.elements.projects.title.animate([{ transform: 'translateY(0px)', opacity: .5, offset: 0 }, { transform: 'translateY(0px)', opacity: 1, offset: 1 }], this.animSettings);
+      this.animSettings.delay = 300;
+      this.elements.projects.list.animate([{ transform: 'translateY(0px)', opacity: 0, offset: 0 }, { transform: 'translateY(0px)', opacity: 1, offset: 1 }], this.animSettings);
     }
   }, {
     key: 'hideProjectsContent',
@@ -888,6 +993,5 @@ var VideoBG = function () {
 exports.default = VideoBG;
 
 },{}]},{},[3])
-
 
 //# sourceMappingURL=maps/app.js.map
