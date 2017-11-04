@@ -226,12 +226,12 @@
     {
       "type": "DEVELOPMENT",
       "list": [
-        "Front-end architecture",
+        "Front-end frameworks",
         "Rapid prototyping",
         "Semantic mark-up",
         "Data visualization",
         "Progressive enhancement",
-        "Responsive (mobile-first)",
+        "Responsive web",
         "Browser-specific quirks",
         "Performance across devices",
         "Client-side optimization"
@@ -241,11 +241,11 @@
       "type": "DESIGN",
       "list": [
         "User interface",
-        "Accessibility",
-        "Web animation",
-        "Visual design",
         "User experience",
-        "Motion graphics"
+        "Web animation",
+        "Motion graphics",
+        "Information architecture",
+        "Visual design"
       ]
     }
   ],
