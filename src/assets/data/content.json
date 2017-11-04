@@ -188,13 +188,19 @@
   ],
   "awards": [
     {
-      "year": 2016,
+      "year": 2017,
       "list": [
-        "Foundry Salon – Website: Star, CSS Winner",
-        "Foundry Salon – Website: Feature, One Page Love",
-        "J.J. Dolan's – Website: Gold Pele Award 2016, ADDY"
+        "Hallowbaloo – Website: Award of Excellence, AIGA Hawaii's 5-0"
       ]
     },
+      {
+        "year": 2016,
+        "list": [
+          "Foundry Salon – Website: Star, CSS Winner",
+          "Foundry Salon – Website: Feature, One Page Love",
+          "J.J. Dolan's – Website: Gold Pele Award 2016, ADDY"
+        ]
+      },
     {
       "year": 2015,
       "list": [
@@ -247,12 +253,12 @@
     {
       "type": "DEVELOPMENT",
       "list": [
-        "Javascript <span>es<span>2015</span>/jquery</span>",
+        "Javascript <span>es6+/typescript</span>",
         "NodeJS",
         "Version Control <span>git</span>",
-        "HTML <span>pug/slim</span>",
-        "Gulp.js",
-        "Command Line <span>CLI&rsquo;s</span>",
+        "HTML",
+        "Task Runners <span>webpack/gulp</span>",
+        "Command Line",
         "CSS <span>postcss/sass/scss</span>",
         "GSAP/d3.js",
         "Ruby-on-Rails"
