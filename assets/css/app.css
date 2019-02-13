@@ -811,10 +811,6 @@ img {
       -ms-user-select: none;
           user-select: none;
 }
-::-moz-selection {
-  background: rgba(51, 51, 51, 0.75);
-  color: #eee;
-}
 ::selection {
   background: rgba(51, 51, 51, 0.75);
   color: #eee;
