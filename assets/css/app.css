@@ -861,6 +861,16 @@ span.strike:after {
     color: #16ADE3;
   }
 }
+@keyframes shake-loop {
+  0%, 50%, 100% {
+    transform: rotate(2deg) scale(1.1);
+    color: #16ADE3;
+  }
+  25%, 75% {
+    transform: rotate(-2deg) scale(1.1);
+    color: #16ADE3;
+  }
+}
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -958,9 +968,8 @@ span.strike:after {
   display: inline-block;
   animation: shake 2s forwards 1.5s;
 }
-#aloha:target ~ .about-me #aloha-shake:after {
-  content:"*";
-  color: #16ADE3;
+.about-me #aloha-shake:hover {
+  animation: shake-loop 0.75s infinite;
 }
 #aloha {
   position: absolute;
